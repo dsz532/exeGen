@@ -1,5 +1,3 @@
-Here are the translations of the given texts into English:
-
 1.
 Problem Content: There is a sequence of numbers where the first number is 1, the second number is 2, and starting from the third number, each number is the sum of the two preceding numbers. What is the 10th number in the sequence?
 Knowledge Point: Sequence Problem
