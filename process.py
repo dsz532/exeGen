@@ -21,7 +21,7 @@ out_groupchat_manager = GroupChatManager(
     llm_config=llm_config,
 )
 
-file = open("test.txt", "r")
+file = open("txtfile/test.txt", "r")
 text = file.read()
 file.close()
 
@@ -77,7 +77,7 @@ chat_res = agent_host.initiate_chat(
     message="You are the moderator of this meeting; "
             "first, you will obtain a list containing question information and students' answer statuses. You need to pass this list to agent_kt to generate a knowledge state. "
             "Then, you need to have agent_exeGen_generator create new questions. "
-            "Finally, you need to submit the newly generated questions to all agent_exeGen_discriminators for evaluation. "
-            "If they deem the exercises unsatisfactory, you will need to go back to the previous step and have agent_exeGen_generator generate the questions again." + text,
+            "Finally, you need to submit the newly generated questions to all agent_exeGen_discriminators for evaluation, with each agent_exeGen_discriminator being responsible for a different aspect of the correctness review"
+            "If any of the agent_exeGen_discriminators find these exercises unsatisfactory, you need to go back to the previous step and have agent_exeGen_generator regenerate the problem." + text,
     summary_method="reflection_with_llm",
 )

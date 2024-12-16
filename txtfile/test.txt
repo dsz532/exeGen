@@ -1,0 +1,43 @@
+Example:
+{
+question:证券市场构成要素包括哪些？{'A': '买方（投资者）', 'B': '卖方（上市公司）', 'C': '中介机构', 'D': '投资产品', 'E': '交易场所'}
+right answer:["A", "B", "C", "D", "E"]
+student answer:["A", "B", "C", "D"]
+type:multiple choice
+point of knowledge:第1章 证券市场概述--1.1证券市场是什么
+explanation:Student carelessness leading to errors or lack of knowledge leading to errors
+}
+
+task:
+{
+question:证券交易程序主要包括：开户、委托、成交、交割和过户等步骤。{'true': '正确', 'false': '错误'}
+right answer:["true"]
+student answer:["true"]
+type:judgment question
+point of knowledge:第1章 证券市场概述--1.2如何进行证券投资
+explanation:
+},
+{
+question:民间借贷利率36%以上不是法律保护。{'true': '正确', 'false': '错误'}
+right answer:["true"]
+student answer:["false"]
+type:judgment question
+point of knowledge:第1章 证券市场概述--1.4  便捷的互联网理财
+explanation:
+},
+{
+question:证券市场监管模式包括{'A': '美国', 'B': '日本', 'C': '德国', 'D': '英国'}
+right answer:["A", "B", "C", "D"]
+student answer:["A", "C", "D"]
+type:multiple choice
+point of knowledge:第3章 证券监管--3.2证券市场监管法律体系
+explanation:
+},
+{
+question:中国债券市场的构成：一级市场（发行市场）和二级市场（交易市场）。{'true': '正确', 'false': '错误'}
+right answer:["true"]
+student answer:["true"]
+type:judgment question
+point of knowledge:第6章 债券投资--6.1债券有用吗
+explanation:
+}

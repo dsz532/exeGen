@@ -1,0 +1,6 @@
+{
+exercise : *exercise content*
+point of knowledge : *Knowledge Points Included in Practice Questions*
+Type of exercise : *multiple choice, single choice, fill in the blanks, subjective questions*
+
+}
