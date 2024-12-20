@@ -5,13 +5,11 @@ agent_exeGen_generator.description = "an exercise generation expert"
 agent_exeGen_discriminator_1.description = "exercise evaluation expert 1"
 agent_exeGen_discriminator_2.description = "exercise evaluation expert 2"
 agent_exeGen_discriminator_3.description = "exercise evaluation expert 3"
-agent_exeGen_discriminator_4.description = "exercise evaluation expert 4"
-agent_exeGen_discriminator_5.description = "exercise evaluation expert 5"
 agent_host.description = "the host of this meeting"
 
 out_groupchat = GroupChat(
     agents=[agent_kt, agent_exeGen_generator, agent_exeGen_discriminator_1, agent_exeGen_discriminator_2,
-            agent_exeGen_discriminator_3, agent_exeGen_discriminator_4, agent_exeGen_discriminator_5, agent_host],
+            agent_exeGen_discriminator_3, agent_host],
     messages=[],
     send_introductions=True,
 )
