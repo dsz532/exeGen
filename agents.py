@@ -5,9 +5,10 @@ from pyexpat.errors import messages
 
 llm_config = {
     "config_list": [{
-        "model": "openai/gpt-3.5-turbo",
-        "base_url": "https://openrouter.ai/api/v1/chat/completions",
-        "api_key": "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"
+        "model": "openai/gpt-4o",
+        "base_url": "https://openrouter.ai/api/v1",
+        "api_key": "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",
+        "price": [0.5, 1.5]
     }]
 }
 
@@ -21,8 +22,8 @@ agent_kt = ConversableAgent(  # 知识追踪代理
     name="agent_kt",
     llm_config=llm_config,
     system_message="You are a knowledge tracking expert;"
-                   "You will receive a list with sample question formats, question information, and student response status."
-                   "Your task is to complete the explanation item in the list of questions and summarize the student's mastery of all the knowledge points in the list.",
+                   "You will receive a file in json format containing some sample questions and the student's record of doing the question, where the explanation attribute represents the reason why the student got the question right or wrong"
+                   "Your task is to complete the explanation attribute of the task list and return the complete list in json format and summarize the student's mastery of all the knowledge points in the list.",
 )
 
 agent_exeGen_generator = ConversableAgent(  # 习题生成代理
@@ -30,10 +31,10 @@ agent_exeGen_generator = ConversableAgent(  # 习题生成代理
     llm_config=llm_config,
     system_message="You are an exercise generation expert; "
                    "you will receive a list containing question information and students' answer statuses, as well as the knowledge tracking expert's summary of the student's mastery of the knowledge points. "
-                   "Based on this information, you will need to generate new questions and their answers in the format provided and indicate the knowledge points and types of questions included for students to practice.",
+                   "Based on this information, you will need to generate ten new questions and their answers in the format provided, indicating the knowledge points and types of questions they contain for students to practice.",
 )
 
-# 5个习题评判专家
+# 3个习题评判专家
 agent_exeGen_discriminator_1 = ConversableAgent(
     name="agent_exeGen_discriminator_1",
     llm_config=llm_config,
@@ -63,9 +64,10 @@ agent_host = ConversableAgent(
     llm_config=llm_config,
     system_message="You are the moderator of this meeting; "
                    "first, you will obtain a list containing question information and students' answer statuses. You need to pass this list to agent_kt to generate a knowledge state. "
-                   "Then, you need to have agent_exeGen_generator create new questions. "
+                   "Then, you need to have agent_exeGen_generator create ten new questions. "
                    "Finally, you need to submit the newly generated questions to all agent_exeGen_discriminators for evaluation, with each agent_exeGen_discriminator being responsible for a different aspect of the correctness review"
-                   "If any of the agent_exeGen_discriminators find these exercises unsatisfactory, you need to go back to the previous step and have agent_exeGen_generator regenerate the problem.",
+                   "If any of the agent_exeGen_discriminators find these exercises unsatisfactory, you need to go back to the previous step and have agent_exeGen_generator regenerate the problem."
+                   "Finally, after all agent_exeGen_ discriminators have found the generated list of questions to be OK, you need to return the final version of the list of exercises in the sample json format",
 )
 
 agent_explanation = ConversableAgent(

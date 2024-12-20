@@ -1,6 +1,4 @@
-
 import pandas
-import agents
 import json
 
 problem = pandas.read_csv("subject_data(1)/problem.csv")
@@ -58,23 +56,30 @@ examples_with_explanation = pandas.read_csv("subject_data(1)/examples_with_expla
 #
 # example.to_csv("subject_data(1)/example.csv", index=False)
 
-# text = {
-#     "examples": [],
-#     "tasks": []
-# }
-#
-# example_data = examples_with_explanation.to_dict(orient='records')
-# example_json = json.dumps(example_data, ensure_ascii=False, indent=4)
-#
-# text["examples"] = example_data
-# text = json.dumps(text, ensure_ascii=False, indent=4)
-# print(text)
+text = {
+    "examples": [],
+    "tasks": []
+}
 
-a = 0
-for index1, row1 in concept_relation.iterrows():
-    for index2, row2 in concept_relation.iterrows():
-        if row1['c1'] == row2['c2'] and row1['c2'] == row2['c1']:
-            print(row1['c1'], row1['c2'])
-            a = a + 1
+# 构造提示词
+example_data = examples_with_explanation.to_dict(orient='records')
+text["examples"] = example_data
 
-print(a)
+selected_columns = ['content', 'option', 'answer', 'concept_id', 'is_correct']
+stuRec = stuRec[selected_columns]
+stuRec = stuRec.head(20)
+stuRec["explanation"] = ""
+stuRec = stuRec.to_dict(orient='records')
+text["tasks"] = stuRec
+
+text = json.dumps(text, ensure_ascii=False, indent=4)
+
+# 排查循环错误
+# a = 0
+# for index1, row1 in concept_relation.iterrows():
+#     for index2, row2 in concept_relation.iterrows():
+#         if row1['c1'] == row2['c2'] and row1['c2'] == row2['c1']:
+#             print(row1['c1'], row1['c2'])
+#             a = a + 1
+#
+# print(a)
