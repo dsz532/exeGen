@@ -17,7 +17,7 @@ examplar_gene = ConversableAgent(
     llm_config=llm_config,
     system_message="",
 )
-
+# json和自然语言两种提示词格式
 agent_kt = ConversableAgent(  # 知识追踪代理
     name="agent_kt",
     llm_config=llm_config,
@@ -35,7 +35,7 @@ agent_exeGen_generator = ConversableAgent(  # 习题生成代理
 )
 
 # 3个习题评判专家
-agent_exeGen_discriminator_1 = ConversableAgent(
+agent_exeGen_discriminator_1 = ConversableAgent(  # 删除多余信息
     name="agent_exeGen_discriminator_1",
     llm_config=llm_config,
     system_message="You are an exercise evaluation expert; "
@@ -43,7 +43,7 @@ agent_exeGen_discriminator_1 = ConversableAgent(
                    "You will need to determine if the newly generated exercises are linguistically fluent based on this information.",
 )
 
-agent_exeGen_discriminator_2 = ConversableAgent(
+agent_exeGen_discriminator_2 = ConversableAgent(  # 链接内容
     name="agent_exeGen_discriminator_2",
     llm_config=llm_config,
     system_message="You are an exercise evaluation expert; "
@@ -51,7 +51,7 @@ agent_exeGen_discriminator_2 = ConversableAgent(
                    "You need to use this information to determine whether the newly generated exercises cover the required knowledge points.",
 )
 
-agent_exeGen_discriminator_3 = ConversableAgent(
+agent_exeGen_discriminator_3 = ConversableAgent(  # 不用限定数量
     name="agent_exeGen_discriminator_3",
     llm_config=llm_config,
     system_message="You are an exercise evaluation expert; "
@@ -59,18 +59,20 @@ agent_exeGen_discriminator_3 = ConversableAgent(
                    "You need to use this information to determine if the newly generated exercise contains at least 2 or more new knowledge points.",
 )
 
-agent_host = ConversableAgent(
+agent_host = ConversableAgent(  # 统一为exe
     name="agent_host",
     llm_config=llm_config,
     system_message="You are the moderator of this meeting; "
-                   "first, you will obtain a list containing question information and students' answer statuses. You need to pass this list to agent_kt to generate a knowledge state. "
+                   "first, you will obtain a list containing question information and a given student's answer statuses. You need to pass this list to agent_kt to generate a knowledge state. "
                    "Then, you need to have agent_exeGen_generator create ten new questions. "
                    "Finally, you need to submit the newly generated questions to all agent_exeGen_discriminators for evaluation, with each agent_exeGen_discriminator being responsible for a different aspect of the correctness review"
                    "If any of the agent_exeGen_discriminators find these exercises unsatisfactory, you need to go back to the previous step and have agent_exeGen_generator regenerate the problem."
-                   "Finally, after all agent_exeGen_ discriminators have found the generated list of questions to be OK, you need to return the final version of the list of exercises in the sample json format",
+                   "Finally, after all agent_exeGen_ discriminators have found the generated list of questions to be correct, you need to return the final version of the list of exercises in the sample json format",
+    # 改为参数,可选格式
+    # 改为参数
 )
 
-agent_explanation = ConversableAgent(
+agent_explanation = ConversableAgent(  # 生成example的所有解释
     name="agent_explanation",
     llm_config=llm_config,
     system_message="你是一个解释者，你将收到一系列学生的做题记录，其中包含了习题的内容、答案和是否正确。你需要根据这些信息对每条记录做出解释，说明学生是由于知识点欠缺或"
