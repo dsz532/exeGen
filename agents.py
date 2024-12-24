@@ -17,7 +17,19 @@ examplar_gene = ConversableAgent(
     llm_config=llm_config,
     system_message="",
 )
+
 # json和自然语言两种提示词格式
+# 采样实验数据 1000个用户
+# example库添加语意向量属性,使用bert生成,计算向量相似度匹配example 取前三
+# 生成题型统一为四种,每次生成只生成同一种题型
+# 代理不读取多余信息
+# 添加一个判断答案是否正确的代理
+# 链接内容
+# 不用限定新知识点数量
+# 统一用词为exercise
+# 输出格式改为参数,可选格式
+# 生成example表中的所有解释
+
 agent_kt = ConversableAgent(  # 知识追踪代理
     name="agent_kt",
     llm_config=llm_config,
@@ -35,7 +47,7 @@ agent_exeGen_generator = ConversableAgent(  # 习题生成代理
 )
 
 # 3个习题评判专家
-agent_exeGen_discriminator_1 = ConversableAgent(  # 删除多余信息,添加一个判断答案是否正确的代理
+agent_exeGen_discriminator_1 = ConversableAgent(
     name="agent_exeGen_discriminator_1",
     llm_config=llm_config,
     system_message="You are an exercise evaluation expert; "
@@ -43,7 +55,7 @@ agent_exeGen_discriminator_1 = ConversableAgent(  # 删除多余信息,添加一
                    "You will need to determine if the newly generated exercises are linguistically fluent based on this information.",
 )
 
-agent_exeGen_discriminator_2 = ConversableAgent(  # 链接内容
+agent_exeGen_discriminator_2 = ConversableAgent(
     name="agent_exeGen_discriminator_2",
     llm_config=llm_config,
     system_message="You are an exercise evaluation expert; "
@@ -51,7 +63,7 @@ agent_exeGen_discriminator_2 = ConversableAgent(  # 链接内容
                    "You need to use this information to determine whether the newly generated exercises cover the required knowledge points.",
 )
 
-agent_exeGen_discriminator_3 = ConversableAgent(  # 不用限定数量
+agent_exeGen_discriminator_3 = ConversableAgent(
     name="agent_exeGen_discriminator_3",
     llm_config=llm_config,
     system_message="You are an exercise evaluation expert; "
@@ -59,7 +71,7 @@ agent_exeGen_discriminator_3 = ConversableAgent(  # 不用限定数量
                    "You need to use this information to determine if the newly generated exercise contains at least 2 or more new knowledge points.",
 )
 
-agent_host = ConversableAgent(  # 统一为exe
+agent_host = ConversableAgent(
     name="agent_host",
     llm_config=llm_config,
     system_message="You are the moderator of this meeting; "
@@ -68,11 +80,9 @@ agent_host = ConversableAgent(  # 统一为exe
                    "Finally, you need to submit the newly generated questions to all agent_exeGen_discriminators for evaluation, with each agent_exeGen_discriminator being responsible for a different aspect of the correctness review"
                    "If any of the agent_exeGen_discriminators find these exercises unsatisfactory, you need to go back to the previous step and have agent_exeGen_generator regenerate the problem."
                    "Finally, after all agent_exeGen_ discriminators have found the generated list of questions to be correct, you need to return the final version of the list of exercises in the sample json format",
-    # 改为参数,可选格式
-    # 改为参数
 )
 
-agent_explanation = ConversableAgent(  # 生成example的所有解释
+agent_explanation = ConversableAgent(
     name="agent_explanation",
     llm_config=llm_config,
     system_message="你是一个解释者，你将收到一系列学生的做题记录，其中包含了习题的内容、答案和是否正确。你需要根据这些信息对每条记录做出解释，说明学生是由于知识点欠缺或"
