@@ -35,7 +35,7 @@ agent_exeGen_generator = ConversableAgent(  # 习题生成代理
 )
 
 # 3个习题评判专家
-agent_exeGen_discriminator_1 = ConversableAgent(  # 删除多余信息
+agent_exeGen_discriminator_1 = ConversableAgent(  # 删除多余信息,添加一个判断答案是否正确的代理
     name="agent_exeGen_discriminator_1",
     llm_config=llm_config,
     system_message="You are an exercise evaluation expert; "
