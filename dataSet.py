@@ -100,6 +100,68 @@ text["tasks"] = stuRec
 
 text = json.dumps(text, ensure_ascii=False, indent=4)
 
+# 将提示词文本转换为自然语言形式
+n_text = json.loads(text)
+
+
+def convert_to_natural_language(n_text):
+    natural_language_text = ""
+
+    # 处理examples
+    natural_language_text += "examples:\n"
+    flag = 0
+    for example in n_text['examples']:
+        content = example['content']
+        options = example['option']
+        answer = example['answer']
+        is_correct = example['is_correct']
+        concept_id = example['concept_id']
+        course_name = example['course_name']
+        knowledge_chain = example['knowledge_chain']
+        explanation = example['explanation']
+
+        flag += 1
+        natural_language_text += str(flag) + ",\n"
+
+        natural_language_text += "content:" + content + "\n"
+        natural_language_text += "option:" + options + "\n"
+        natural_language_text += "answer:" + answer + "\n"
+        natural_language_text += "is_correct:" + str(is_correct) + "\n"
+        natural_language_text += "concept_id:" + concept_id + "\n"
+        natural_language_text += "course_name:" + course_name + "\n"
+        natural_language_text += "knowledge_chain:" + knowledge_chain + "\n"
+        natural_language_text += "explanation:" + explanation + "\n"
+
+    # 处理tasks，逻辑与examples相同
+    natural_language_text += "tasks:\n"
+    flag = 0
+    for task in n_text['tasks']:
+        content = task['content']
+        options = task['option']
+        answer = task['answer']
+        is_correct = task['is_correct']
+        concept_id = task['concept_id']
+        course_name = task['course_name']
+        knowledge_chain = task['knowledge_chain']
+        explanation = task['explanation']
+
+        flag += 1
+        natural_language_text += str(flag) + ",\n"
+        natural_language_text += "content:" + content + "\n"
+        natural_language_text += "option:" + options + "\n"
+        natural_language_text += "answer:" + answer + "\n"
+        natural_language_text += "is_correct:" + str(is_correct) + "\n"
+        natural_language_text += "concept_id:" + concept_id + "\n"
+        natural_language_text += "course_name:" + course_name + "\n"
+        natural_language_text += "knowledge_chain:" + knowledge_chain + "\n"
+        natural_language_text += "explanation:" + explanation + "\n"
+
+    return natural_language_text
+
+
+n_text = convert_to_natural_language(n_text)
+print(n_text)
+
 # 排查循环错误
 # a = 0
 # for index1, row1 in concept_relation_filtered.iterrows():
