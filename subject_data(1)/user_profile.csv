@@ -1,4 +1,4 @@
-id,name,gender,school,year_of_birth
+user_id,name,gender,school,year_of_birth
 U_24,王帅国,1,清华大学,6558.0
 U_1165,王东,0,长春职业技术学院,2016.0
 U_1481,罗宏图,1,清华大学,

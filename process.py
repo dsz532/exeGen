@@ -2,11 +2,13 @@ from openai import OpenAI
 from os import getenv
 from autogen import *
 from pyexpat.errors import messages
-from dataSet import *
+from create_prompt import *
 import argparse
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--type_of_prompt", type=str, help="natural_language_text or json_text")
+parser.add_argument("--exercise_type", type=str,
+                    help="Single_Choice or Multiple_Choice or True or False or Short Answer")
 parser.add_argument("--output_type", type=str, help="natural_language_text or json_text")
 
 llm_config = {
@@ -25,16 +27,16 @@ examplar_gene = ConversableAgent(
 )
 
 # json和自然语言两种提示词格式
-# todo:采样实验数据 1000个用户
+# 采样实验数据 1000个用户
 # todo:example库添加语意向量属性,使用bert生成,计算向量相似度匹配example 取前三
-# todo:生成题型统一为四种,每次生成只生成同一种题型
+# 生成题型统一为四种,每次生成只生成同一种题型
 # 代理不读取多余信息
 # 添加一个判断答案是否正确的代理
 # 链接内容
 # 不用限定新知识点数量
 # 统一用词为exercise
 # 输出格式改为参数,可选格式
-# todo:生成example表中的所有解释
+# 生成example表中的所有解释
 
 agent_kt = ConversableAgent(  # 知识追踪代理
     name="agent_kt",
@@ -44,12 +46,14 @@ agent_kt = ConversableAgent(  # 知识追踪代理
                    "Your task is to complete the explanation attribute of the task list and return the complete list and summarize the student's mastery of all the knowledge points in the list.",
 )
 
+exercise_type = parser.parse_args().exercise_type
+
 agent_exeGen_generator = ConversableAgent(  # 习题生成代理
     name="agent_exeGen_generator",
     llm_config=llm_config,
     system_message="You are an exercise generation expert; "
                    "you will receive a list containing the knowledge tracking expert's summary of the student's mastery of the knowledge points. "
-                   "Based on this information, you will need to generate ten new exercises and their answers in the format provided, indicating the knowledge points they contain for students to practice.",
+                   f"Based on this information, you will need to generate ten new {exercise_type} exercises and their answers in the format provided, indicating the knowledge points they contain for students to practice.",
 )
 
 # 3个习题评判专家
@@ -102,12 +106,6 @@ agent_host = ConversableAgent(
                    "Finally, you need to submit the newly generated exercises to all agent_exeGen_discriminators for evaluation, with each agent_exeGen_discriminator being responsible for a different aspect of the correctness review"
                    "If any of the agent_exeGen_discriminators find these exercises unsatisfactory, you need to go back to the previous step and have agent_exeGen_generator regenerate the problem."
                    "Finally, after all agent_exeGen_ discriminators agree that the generated exercise list is correct, the final version of the exercise list needs to be returned in the following format" + o_fmt,
-)
-
-agent_explanation = ConversableAgent(
-    name="agent_explanation",
-    llm_config=llm_config,
-    system_message="你是一个解释者，你将收到一系列学生的做题记录，其中包含了习题的内容、答案和是否正确。你需要根据这些信息对每条记录做出解释，说明学生是由于知识点欠缺或"
 )
 
 agent_kt.description = "a knowledge tracking expert"
