@@ -28,7 +28,7 @@ examplar_gene = ConversableAgent(
 
 # json和自然语言两种提示词格式
 # 采样实验数据 1000个用户
-# todo:example库添加语意向量属性,使用bert生成,计算向量相似度匹配example 取前三
+# example库添加语意向量属性,使用bert生成,计算向量相似度匹配example 取前三
 # 生成题型统一为四种,每次生成只生成同一种题型
 # 代理不读取多余信息
 # 添加一个判断答案是否正确的代理
