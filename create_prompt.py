@@ -1,17 +1,13 @@
 import pandas
 import json
+import numpy as np
+import ast
 
-problem = pandas.read_csv("subject_data(1)/problem.csv")
-problem_concept = pandas.read_csv("subject_data(1)/problem_concept.csv")
-concept = pandas.read_csv("subject_data(1)/concept.csv")
-concept_relation = pandas.read_csv("subject_data(1)/concept_relationship.csv")
-user_problem = pandas.read_csv("subject_data(1)/user_problem.csv")
-stuRec = pandas.read_csv("subject_data(1)/stuRec.csv")
-example = pandas.read_csv("subject_data(1)/example.csv")
-examples_with_explanation = pandas.read_csv("subject_data(1)/examples_with_explanation.csv")
+from pandas.core.interchange.dataframe_protocol import DataFrame
+
+stuRec_1000_with_tokens = pandas.read_csv("subject_data(1)/stuRec_1000_with_tokens.csv")
+examples_with_explanation_with_tokens = pandas.read_csv("subject_data(1)/examples_with_explanation_with_tokens.csv")
 concept_relation_filtered = pandas.read_csv("subject_data(1)/concept_relationship_filtered.csv")
-course_profile = pandas.read_csv("subject_data(1)/course_profile.csv")
-course_problem = pandas.read_csv("subject_data(1)/course_problem.csv")
 
 
 def get_chain(concept, chain):
@@ -26,29 +22,82 @@ def get_chain(concept, chain):
         return chain
 
 
+def cosine_similarity(vec1, vec2):
+    vec1 = np.array(vec1)  # 确保vec1是numpy数组
+    vec2 = np.array(vec2)  # 确保vec2是numpy数组
+    dot_product = np.dot(vec1, vec2)
+    norm_vec1 = np.linalg.norm(vec1)
+    norm_vec2 = np.linalg.norm(vec2)
+    return dot_product / (norm_vec1 * norm_vec2)
+
+
+def get_examples_by_similarity(example, rec):
+    # 初始化一个空列表来存储结果行
+    result_rows = []
+
+    # 遍历rec的每一行
+    for i, rec_row in rec.iterrows():
+        rec_tokens = ast.literal_eval(rec_row['tokens'])
+
+        # 初始化最大相似度和对应的索引
+        max_similarity = -1
+        max_index = -1
+
+        # 遍历example的每一行
+        for j, example_row in example.iterrows():
+            example_tokens = ast.literal_eval(example_row['tokens'])
+
+            # 计算余弦相似度
+            similarity = cosine_similarity(rec_tokens, example_tokens)
+
+            # 更新最大相似度和索引
+            if similarity > max_similarity:
+                max_similarity = similarity
+                max_index = j
+
+        # 将相似度最高的行添加到结果列表中
+        result_rows.append(example.iloc[max_index])
+
+    # 将结果列表转换为DataFrame
+    result_df = pandas.DataFrame(result_rows)
+
+    return result_df
+
+
 text = {
     "examples": [],
     "tasks": []
 }
 
-examples_with_explanation = examples_with_explanation.groupby('concept_id').head(1)
-examples_with_explanation = pandas.merge(stuRec[['concept_id']].head(10), examples_with_explanation, on='concept_id',
-                                         how='left')
-example_data = examples_with_explanation.to_dict(orient='records')
-text["examples"] = example_data
+stuRec_1000_with_tokens = stuRec_1000_with_tokens.head(10)
+selected_columns1 = ['content', 'option', 'answer', 'course_name', 'concept_id', 'is_correct', 'explanation',
+                     'knowledge_chain']
 
-selected_columns = ['content', 'option', 'answer', 'course_name', 'concept_id', 'is_correct']
-stuRec = stuRec[selected_columns]
+# 获取examples
 
-stuRec["knowledge_chain"] = ""
-for index, row in stuRec.iterrows():
+# examples_with_explanation_with_tokens = examples_with_explanation_with_tokens.groupby('concept_id').head(1)
+# examples_with_explanation_with_tokens = pandas.merge(stuRec_1000_with_tokens[['concept_id']].head(10),
+#                                                      examples_with_explanation_with_tokens, on='concept_id',
+#                                                      how='left')
+# examples_with_explanation_with_tokens = examples_with_explanation_with_tokens[selected_columns]
+# example_data = examples_with_explanation_with_tokens.to_dict(orient='records')
+
+res = get_examples_by_similarity(examples_with_explanation_with_tokens, stuRec_1000_with_tokens)[
+    selected_columns1].to_dict(orient='records')
+
+text["examples"] = res
+
+selected_columns2 = ['content', 'option', 'answer', 'course_name', 'concept_id', 'is_correct']
+stuRec_1000_with_tokens = stuRec_1000_with_tokens[selected_columns2]
+
+stuRec_1000_with_tokens["knowledge_chain"] = ""
+for index, row in stuRec_1000_with_tokens.iterrows():
     chain = get_chain(row['concept_id'], row['concept_id'])
-    stuRec.at[index, 'knowledge_chain'] = chain
+    stuRec_1000_with_tokens.at[index, 'knowledge_chain'] = chain
 
-stuRec = stuRec.head(10)
-stuRec["explanation"] = ""
-stuRec = stuRec.to_dict(orient='records')
-text["tasks"] = stuRec
+stuRec_1000_with_tokens["explanation"] = ""
+stuRec_1000_with_tokens = stuRec_1000_with_tokens.to_dict(orient='records')
+text["tasks"] = stuRec_1000_with_tokens
 
 text = json.dumps(text, ensure_ascii=False, indent=4)
 
@@ -112,3 +161,6 @@ def convert_to_natural_language(n_text):
 
 
 n_text = convert_to_natural_language(n_text)
+
+# print(text)
+# print(n_text)
