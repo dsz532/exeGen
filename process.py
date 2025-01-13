@@ -37,6 +37,11 @@ examplar_gene = ConversableAgent(
 # 统一用词为exercise
 # 输出格式改为参数,可选格式
 # 生成example表中的所有解释
+# todo: 思维链
+# todo: 生成数量
+# todo: 每个知识点匹配正负example
+# todo: 硬匹配和软匹配
+# todo: 做实验
 
 agent_kt = ConversableAgent(  # 知识追踪代理
     name="agent_kt",
@@ -73,7 +78,7 @@ agent_exeGen_discriminator_2 = ConversableAgent(
                    "You need to use this information to determine whether the newly generated exercises cover the required knowledge points.",
 )
 
-agent_exeGen_discriminator_3 = ConversableAgent(
+agent_exeGen_discriminator_3 = ConversableAgent(  # 暂时不使用
     name="agent_exeGen_discriminator_3",
     llm_config=llm_config,
     system_message="You are an exercise evaluation expert; "
@@ -105,7 +110,7 @@ agent_host = ConversableAgent(
                    "Then, you need to have agent_exeGen_generator create ten new exercises. "
                    "Finally, you need to submit the newly generated exercises to all agent_exeGen_discriminators for evaluation, with each agent_exeGen_discriminator being responsible for a different aspect of the correctness review"
                    "If any of the agent_exeGen_discriminators find these exercises unsatisfactory, you need to go back to the previous step and have agent_exeGen_generator regenerate the problem."
-                   "Finally, after all agent_exeGen_ discriminators agree that the generated exercise list is correct, the final version of the exercise list needs to be returned in the following format" + o_fmt,
+                   "Finally, after all agent_exeGen_discriminators agree that the generated list of exercises is correct, the final version of the list of exercises needs to be returned in the following format, and then let the dialog end" + o_fmt,
 )
 
 agent_kt.description = "a knowledge tracking expert"
@@ -118,7 +123,7 @@ agent_host.description = "the host of this meeting"
 
 out_groupchat = GroupChat(
     agents=[agent_kt, agent_exeGen_generator, agent_exeGen_discriminator_1, agent_exeGen_discriminator_2,
-            agent_exeGen_discriminator_3, agent_exeGen_discriminator_4, agent_host],
+            agent_exeGen_discriminator_4, agent_host],
     messages=[],
     send_introductions=True,
 )
