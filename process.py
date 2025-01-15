@@ -116,7 +116,6 @@ out_groupchat = GroupChat(
             agent_exeGen_discriminator_3, agent_exe],
     messages=[],
     send_introductions=True,
-    max_round=50,
 )
 
 out_groupchat_manager = GroupChatManager(
@@ -246,7 +245,7 @@ chat_res = out_groupchat_manager.initiate_chat(
             "Then, you need to have agent_exeGen_generator create ten new exercises. "
             "Finally, you need to submit the newly generated exercises to all agent_exeGen_discriminators for evaluation, with each agent_exeGen_discriminator being responsible for a different aspect of the correctness review"
             "If any of the agent_exeGen_discriminators find these exercises unsatisfactory, you need to go back to the previous step and have agent_exeGen_generator regenerate the problem."
-            "After all agent_exeGen_discriminators have agreed that the list of exercises generated is correct, you need to let agent_exe speak to terminate the chat.\n" + prompt,
+            "After all agent_exeGen_discriminators have agreed that the list of exercises generated is correct, you need to let agent_exe speak to terminate the chat\n" + prompt,
     summary_method="reflection_with_llm",
 )
 
