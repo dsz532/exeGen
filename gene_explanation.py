@@ -22,7 +22,13 @@ agent_explanation = ConversableAgent(
     human_input_mode="NEVER",
 )
 
-for index, row in examples_with_explanation[examples_with_explanation["explanation"] == "No explanation provided."].iterrows():
+examples_with_explanation = examples_with_explanation[
+    ["problem_id", "user_id", "content", "option", "right_answer", "concept_id", "course_name", "knowledge_chain",
+     "is_correct", "explanation"]]
+examples_with_explanation = examples_with_explanation.drop_duplicates()
+
+for index, row in examples_with_explanation[
+    examples_with_explanation["explanation"] == "No explanation provided."].iterrows():
     row = row.to_dict()
     row = json.dumps(row, ensure_ascii=False, indent=4)
     res = agent_explanation.generate_reply(

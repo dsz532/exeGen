@@ -1,4 +1,4 @@
-log_id,problem_id,user_id,is_correct,attempts,score,submit_time,content,option,answer,concept_id,course_id,course_name,knowledge_chain
+log_id,problem_id,user_id,is_correct,attempts,score,submit_time,content,option,right_answer,concept_id,course_id,course_name,knowledge_chain
 14392312_1209650,Pm_1209650,U_14392312,0,1,0.0,2020-07-19 15:44:50,不同VLAN 间数据通信，需通过（ ）进行转发。,"{'A': 'HUB', 'B': '二层交换机', 'C': '路由器', 'D': '中继器'}","[""C""]",K_二层交换机_计算机科学与技术,C_680992,网络综合布线,K_二层交换机_计算机科学与技术
 14392312_1209652,Pm_1209652,U_14392312,0,1,0.0,2020-07-19 15:45:26,虚拟局域网VLAN可根据以下哪些方式划分（）,"{'A': '根据端口划分VLAN', 'B': '根据MAC地址划分VLAN', 'C': '根据网络层（IP地址）划分VLAN', 'D': 'IP组播作为VLAN'}","[""A"", ""B"", ""C"", ""D""]",K_IP地址_信息与通信工程,C_680992,网络综合布线,K_IP地址_信息与通信工程
 14424233_738102,Pm_738102,U_14424233,1,1,1.0,2020-05-18 00:31:16,为保证从分布式存储系统中读取的数据正确，需要采用哪种数据处理方式（  ）,"{'A': '压缩', 'B': '多份存储', 'C': 'Erasure coding编码', 'D': 'Checksum数据校验'}","[""D""]",K_分布式存储系统_计算机科学与技术,C_734011,大数据平台核心技术,K_分布式存储系统_计算机科学与技术

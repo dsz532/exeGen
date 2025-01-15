@@ -63,7 +63,7 @@ examples_with_explanation_with_tokens = pandas.read_csv("subject_data(1)/example
 # example["explanation"] = "No explanation provided."
 # selected_columns = ['content', 'option', 'answer', 'is_correct', 'concept_id','course_name', 'knowledge_chain', 'explanation']
 # df_selected = example[selected_columns]
-# df_selected.to_csv('subject_data(1)/examples_with_explanation.csv', index=False)
+# df_selected.to_csv('subject_data(1)/examples_with_explanation(short).csv', index=False)
 
 # 删除所有无效行
 # df_filtered = concept_relation[concept_relation['ground_truth'] != 0]  # 删除值为0的行
@@ -97,13 +97,13 @@ examples_with_explanation_with_tokens = pandas.read_csv("subject_data(1)/example
 vocab_file = 'bert/vocab.txt'
 tokenizer = BertTokenizer(vocab_file)
 bert = BertModel.from_pretrained('bert/bert-base-chinese')
-stuRec_1000["tokens"] = ""
+examples_with_explanation["tokens"] = ""
 
-for index, row in stuRec_1000.iterrows():
+for index, row in examples_with_explanation.iterrows():
     sentence = ""
     sentence += row['content']
     sentence += str(row['option'])
-    sentence += row['answer']
+    sentence += row['right_answer']
     sentence += str(row['is_correct'])
     sentence += row['concept_id']
     sentence += row['course_name']
@@ -119,9 +119,9 @@ for index, row in stuRec_1000.iterrows():
     tokens = res[0].detach().squeeze(0)
     tokens = torch.sum(tokens, dim=0).tolist()
     print(len(tokens))
-    stuRec_1000.at[index, 'tokens'] = tokens
+    examples_with_explanation.at[index, 'tokens'] = tokens
 
-stuRec_1000.to_csv("subject_data(1)/stuRec_1000_with_tokens.csv", index=False)
+examples_with_explanation.to_csv("subject_data(1)/examples_with_explanation_with_tokens.csv", index=False)
 
 # 获取知识链
 # def get_chain(concept, chain):
