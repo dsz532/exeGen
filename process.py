@@ -15,10 +15,7 @@
 # 硬匹配和软匹配
 # todo: 做实验
 
-from openai import OpenAI
-from os import getenv
 from autogen import *
-from pyexpat.errors import messages
 from create_prompt import *
 import argparse
 
@@ -202,7 +199,7 @@ agent_host = ConversableAgent(
     1. **Obtain Initial Input**:
        - Receive a list containing information about exercises and the student’s answer statuses.
     2. **Track Knowledge State**:
-       - Pass the student’s answer record to the **knowledge tracking expert (agent_kt)**.
+       - Transmit records of students' answers (including content, options, right_answer, knowledge_evidence, is_correct, explanation) to **Knowledge Tracking Specialist (agent_kt)**.
        - Instruct agent_kt to generate a comprehensive summary of the student’s knowledge state, including mastered concepts and weak aspects.
     3. **Generate New Exercises**:
        - Provide the knowledge state from agent_kt to the **exercise generation expert (agent_exeGen_generator)**.
@@ -217,7 +214,7 @@ agent_host = ConversableAgent(
          - Return to agent_exeGen_generator and instruct them to regenerate the exercises based on the feedback provided.
          - Repeat this iterative process until all three agents agree that the exercises meet the required standards.
     6. **Final Output**:
-       - Once all agents have approved the exercise, compile the final version of the list of exercises according to {o_format} and return .
+       - Once all agents have approved the exercise, you need to edit the final version of the exercise list strictly in the format {o_fmt} and return it, then let the chat end.
     **Key Guidelines**:
     - Prioritize the student’s weak knowledge concepts throughout the process to ensure targeted learning.
     - Ensure that all steps are completed efficiently and logically, with clear communication between agents.
@@ -238,6 +235,61 @@ out_groupchat_manager = GroupChatManager(
     llm_config=llm_config,
 )
 
+agent_kt.description = "a knowledge tracking expert"
+agent_exeGen_generator.description = "an exercise generation expert"
+agent_exeGen_discriminator_1.description = "exercise evaluation expert 1"
+agent_exeGen_discriminator_2.description = "exercise evaluation expert 2"
+agent_exeGen_discriminator_3.description = "exercise evaluation expert 3"
+agent_host.description = "host of the chat"
+
+
+def convert_to_natural_language(text):
+    natural_language_text = ""
+
+    # 处理examples
+    natural_language_text += "examples:\n"
+    flag = 0
+    for example in text['examples']:
+        content = example['content']
+        options = example['option']
+        right_answer = example['right_answer']
+        knowledge_evidence = example['knowledge_evidence']
+        is_correct = example['is_correct']
+        explanation = example['explanation']
+
+        flag += 1
+        natural_language_text += str(flag) + ",\n"
+
+        natural_language_text += "content:" + content + "\n"
+        natural_language_text += "option:" + options + "\n"
+        natural_language_text += "right_answer:" + right_answer + "\n"
+        natural_language_text += "knowledge_evidence:" + knowledge_evidence + "\n"
+        natural_language_text += "is_correct:" + str(is_correct) + "\n"
+        natural_language_text += "explanation:" + explanation + "\n"
+
+    # 处理tasks，逻辑与examples相同
+    natural_language_text += "tasks:\n"
+    flag = 0
+    for task in text['tasks']:
+        content = task['content']
+        options = task['option']
+        right_answer = task['right_answer']
+        knowledge_evidence = task['knowledge_evidence']
+        is_correct = task['is_correct']
+        explanation = task['explanation']
+
+        flag += 1
+        natural_language_text += str(flag) + ",\n"
+        natural_language_text += "content:" + content + "\n"
+        natural_language_text += "option:" + options + "\n"
+        natural_language_text += "right_answer:" + right_answer + "\n"
+        natural_language_text += "knowledge_evidence:" + knowledge_evidence + "\n"
+        natural_language_text += "is_correct:" + str(is_correct) + "\n"
+        natural_language_text += "explanation:" + explanation + "\n"
+
+    return natural_language_text
+
+
 text = {
     "examples": [],
     "tasks": []
@@ -245,8 +297,7 @@ text = {
 
 # 获取task数组
 stuRec_1000_with_tokens = stuRec_1000_with_tokens.head(10)
-selected_columns1 = ['content', 'option', 'right_answer', 'course_name', 'concept_id', 'is_correct', 'explanation',
-                     'knowledge_chain']
+selected_columns1 = ['content', 'option', 'right_answer', 'knowledge_evidence', 'is_correct', 'explanation']
 
 # 硬匹配
 hard_example, stuRec_1000_with_tokens = get_examples_by_concept(examples_with_explanation_with_tokens,
@@ -265,15 +316,16 @@ if not stuRec_1000_with_tokens.empty:
 # 匹配完成后重新读取习题记录信息
 stuRec_1000_with_tokens = pandas.read_csv("subject_data(1)/stuRec_1000_with_tokens.csv")
 stuRec_1000_with_tokens = stuRec_1000_with_tokens.head(10)
-selected_columns2 = ['content', 'option', 'right_answer', 'course_name', 'concept_id', 'is_correct']
+selected_columns2 = ['content', 'option', 'right_answer', 'knowledge_evidence', 'is_correct']
 stuRec_1000_with_tokens = stuRec_1000_with_tokens[selected_columns2]
 
 # 计算习题记录的知识链
-stuRec_1000_with_tokens["knowledge_chain"] = ""
-for index, row in stuRec_1000_with_tokens.iterrows():
-    chain = get_chain(row['concept_id'], row['concept_id'])
-    stuRec_1000_with_tokens.at[index, 'knowledge_chain'] = chain
+# stuRec_1000_with_tokens["knowledge_chain"] = ""
+# for index, row in stuRec_1000_with_tokens.iterrows():
+#     chain = get_chain(row['concept_id'], row['concept_id'])
+#     stuRec_1000_with_tokens.at[index, 'knowledge_chain'] = chain
 
+# 将新题目explanation置空
 stuRec_1000_with_tokens["explanation"] = ""
 stuRec_1000_with_tokens = stuRec_1000_with_tokens.to_dict(orient='records')
 text["tasks"] = stuRec_1000_with_tokens
@@ -283,75 +335,14 @@ text = json.dumps(text, ensure_ascii=False, indent=4)
 # 将提示词文本转换为自然语言形式
 n_text = json.loads(text)
 
-
-def convert_to_natural_language(text):
-    natural_language_text = ""
-
-    # 处理examples
-    natural_language_text += "examples:\n"
-    flag = 0
-    for example in text['examples']:
-        content = example['content']
-        options = example['option']
-        right_answer = example['right_answer']
-        is_correct = example['is_correct']
-        concept_id = example['concept_id']
-        course_name = example['course_name']
-        knowledge_chain = example['knowledge_chain']
-        explanation = example['explanation']
-
-        flag += 1
-        natural_language_text += str(flag) + ",\n"
-
-        natural_language_text += "content:" + content + "\n"
-        natural_language_text += "option:" + options + "\n"
-        natural_language_text += "right_answer:" + right_answer + "\n"
-        natural_language_text += "is_correct:" + str(is_correct) + "\n"
-        natural_language_text += "concept_id:" + concept_id + "\n"
-        natural_language_text += "course_name:" + course_name + "\n"
-        natural_language_text += "knowledge_chain:" + knowledge_chain + "\n"
-        natural_language_text += "explanation:" + explanation + "\n"
-
-    # 处理tasks，逻辑与examples相同
-    natural_language_text += "tasks:\n"
-    flag = 0
-    for task in text['tasks']:
-        content = task['content']
-        options = task['option']
-        right_answer = task['right_answer']
-        is_correct = task['is_correct']
-        concept_id = task['concept_id']
-        course_name = task['course_name']
-        knowledge_chain = task['knowledge_chain']
-        explanation = task['explanation']
-
-        flag += 1
-        natural_language_text += str(flag) + ",\n"
-        natural_language_text += "content:" + content + "\n"
-        natural_language_text += "option:" + options + "\n"
-        natural_language_text += "right_answer:" + right_answer + "\n"
-        natural_language_text += "is_correct:" + str(is_correct) + "\n"
-        natural_language_text += "concept_id:" + concept_id + "\n"
-        natural_language_text += "course_name:" + course_name + "\n"
-        natural_language_text += "knowledge_chain:" + knowledge_chain + "\n"
-        natural_language_text += "explanation:" + explanation + "\n"
-
-    return natural_language_text
-
-
 n_text = convert_to_natural_language(n_text)
-
-agent_kt.description = "a knowledge tracking expert"
-agent_exeGen_generator.description = "an exercise generation expert"
-agent_exeGen_discriminator_1.description = "exercise evaluation expert 1"
-agent_exeGen_discriminator_2.description = "exercise evaluation expert 2"
-agent_exeGen_discriminator_3.description = "exercise evaluation expert 3"
-agent_host.description = "host of the chat"
 
 type = parser.parse_args().type_of_prompt
 if type == "natural_language_text":
     prompt = n_text
 elif type == "json_text":
+    prompt = text
+else:
     prompt = text
 
 chat_res = out_groupchat_manager.initiate_chat(
@@ -361,7 +352,7 @@ chat_res = out_groupchat_manager.initiate_chat(
 )
 
 # json_pattern = r'\{[^{}]*\}'
-# matches = re.findall(json_pattern, chat_res, re.DOTALL)
+# matches = re.findall(json_pattern, str(chat_res), re.DOTALL)
 #
 # # 获取最后一个匹配的JSON字符串
 # last_json_str = matches[-1] if matches else None

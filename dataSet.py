@@ -1,23 +1,18 @@
 import pandas
-import json
 
-from sympy.codegen.cnodes import sizeof
-from transformers import BertModel, BertTokenizer, BertConfig
-import torch
-import numpy as np
-
-problem = pandas.read_csv("subject_data(1)/problem.csv")
-problem_concept = pandas.read_csv("subject_data(1)/problem_concept.csv")
-concept = pandas.read_csv("subject_data(1)/concept.csv")
-concept_relation = pandas.read_csv("subject_data(1)/concept_relationship.csv")
-user_problem = pandas.read_csv("subject_data(1)/user_problem.csv")
-stuRec_1000 = pandas.read_csv("subject_data(1)/stuRec_1000.csv")
-example = pandas.read_csv("subject_data(1)/example.csv")
-examples_with_explanation = pandas.read_csv("subject_data(1)/examples_with_explanation.csv")
+# problem = pandas.read_csv("subject_data(1)/problem.csv")
+# problem_concept = pandas.read_csv("subject_data(1)/problem_concept.csv")
+# concept = pandas.read_csv("subject_data(1)/concept.csv")
+# concept_relation = pandas.read_csv("subject_data(1)/concept_relationship.csv")
+# user_problem = pandas.read_csv("subject_data(1)/user_problem.csv")
+stuRec_1000_with_tokens = pandas.read_csv("subject_data(1)/stuRec_1000_with_tokens.csv")
+# example = pandas.read_csv("subject_data(1)/example.csv")
+# examples_with_explanation = pandas.read_csv("subject_data(1)/examples_with_explanation.csv")
 concept_relation_filtered = pandas.read_csv("subject_data(1)/concept_relationship_filtered.csv")
-course_profile = pandas.read_csv("subject_data(1)/course_profile.csv")
-course_problem = pandas.read_csv("subject_data(1)/course_problem.csv")
-user_profile = pandas.read_csv("subject_data(1)/user_profile.csv")
+
+# course_profile = pandas.read_csv("subject_data(1)/course_profile.csv")
+# course_problem = pandas.read_csv("subject_data(1)/course_problem.csv")
+# user_profile = pandas.read_csv("subject_data(1)/user_profile.csv")
 examples_with_explanation_with_tokens = pandas.read_csv("subject_data(1)/examples_with_explanation_with_tokens.csv")
 
 # 构造example
@@ -94,51 +89,72 @@ examples_with_explanation_with_tokens = pandas.read_csv("subject_data(1)/example
 # print(a)
 
 # 用bert生成句向量
-vocab_file = 'bert/vocab.txt'
-tokenizer = BertTokenizer(vocab_file)
-bert = BertModel.from_pretrained('bert/bert-base-chinese')
-examples_with_explanation["tokens"] = ""
-
-for index, row in examples_with_explanation.iterrows():
-    sentence = ""
-    sentence += row['content']
-    sentence += str(row['option'])
-    sentence += row['right_answer']
-    sentence += str(row['is_correct'])
-    sentence += row['concept_id']
-    sentence += row['course_name']
-    sentence += row['knowledge_chain']
-    # sentence += row['explanation']
-
-    text_dict = tokenizer.encode_plus(sentence, add_special_tokens=True, return_attention_mask=True)
-    input_ids = torch.tensor(text_dict['input_ids']).unsqueeze(0)
-    token_type_ids = torch.tensor(text_dict['token_type_ids']).unsqueeze(0)
-    attention_mask = torch.tensor(text_dict['attention_mask']).unsqueeze(0)
-
-    res = bert(input_ids, attention_mask=attention_mask, token_type_ids=token_type_ids)
-    tokens = res[0].detach().squeeze(0)
-    tokens = torch.sum(tokens, dim=0).tolist()
-    print(len(tokens))
-    examples_with_explanation.at[index, 'tokens'] = tokens
-
-examples_with_explanation.to_csv("subject_data(1)/examples_with_explanation_with_tokens.csv", index=False)
+# vocab_file = 'bert/vocab.txt'
+# tokenizer = BertTokenizer(vocab_file)
+# bert = BertModel.from_pretrained('bert/bert-base-chinese')
+# examples_with_explanation["tokens"] = ""
+#
+# for index, row in examples_with_explanation.iterrows():
+#     sentence = ""
+#     sentence += row['content']
+#     sentence += str(row['option'])
+#     sentence += row['right_answer']
+#     sentence += str(row['is_correct'])
+#     sentence += row['concept_id']
+#     sentence += row['course_name']
+#     sentence += row['knowledge_chain']
+#     # sentence += row['explanation']
+#
+#     text_dict = tokenizer.encode_plus(sentence, add_special_tokens=True, return_attention_mask=True)
+#     input_ids = torch.tensor(text_dict['input_ids']).unsqueeze(0)
+#     token_type_ids = torch.tensor(text_dict['token_type_ids']).unsqueeze(0)
+#     attention_mask = torch.tensor(text_dict['attention_mask']).unsqueeze(0)
+#
+#     res = bert(input_ids, attention_mask=attention_mask, token_type_ids=token_type_ids)
+#     tokens = res[0].detach().squeeze(0)
+#     tokens = torch.sum(tokens, dim=0).tolist()
+#     print(len(tokens))
+#     examples_with_explanation.at[index, 'tokens'] = tokens
+#
+# examples_with_explanation.to_csv("subject_data(1)/examples_with_explanation_with_tokens.csv", index=False)
 
 # 获取知识链
-# def get_chain(concept, chain):
+# chain = ""
+#
+#
+# def get_chain(concept):
+#     global chain
 #     filtered_df = concept_relation_filtered[concept_relation_filtered['c2'] == concept]
 #     if not filtered_df.empty:
 #         # 若还存在上级知识点，则链接新链后进行递归
-#         first_row = filtered_df.head(1)
-#         upper_concept = first_row['c1'].iloc[0]
-#         chain = upper_concept + "-" + chain
-#         return get_chain(upper_concept, chain)
+#         for index, row in filtered_df.iterrows():
+#             upper_concept = row['c1']
+#             under_concept = row['c2']
+#             temp = under_concept + "的先修为" + upper_concept + ", "
+#             if chain.find(temp) != -1:
+#                 continue
+#             chain += temp
+#             get_chain(upper_concept)
+#         return
 #     else:
-#         return chain
+#         return
 #
 #
-# stuRec_1000['knowledge_chain'] = ""
-# for index, row in stuRec_1000.iterrows():
-#     chain = get_chain(row['concept_id'], row['concept_id'])
-#     stuRec_1000.at[index, 'knowledge_chain'] = chain
+# examples_with_explanation_with_tokens['knowledge_chain'] = ""
+# for index, row in examples_with_explanation_with_tokens.iterrows():
+#     chain = ""
+#     get_chain(row['concept_id'])
+#     examples_with_explanation_with_tokens.at[index, 'knowledge_chain'] = chain
 #
-# stuRec_1000.to_csv("subject_data(1)/stuRec_1000.csv", index=False)
+# examples_with_explanation_with_tokens.to_csv("subject_data(1)/examples_with_explanation_with_tokens.csv", index=False)
+
+examples_with_explanation_with_tokens["knowledge_evidence"] = ""
+for index, row in examples_with_explanation_with_tokens.iterrows():
+    examples_with_explanation_with_tokens.at[index, 'knowledge_evidence'] += "题目对应知识点为" + row[
+        'concept_id'] + ", "
+    examples_with_explanation_with_tokens.at[index, 'knowledge_evidence'] += row['concept_id'] + "对应的课程为" + row[
+        'course_name'] + ", "
+    # if not str(row['knowledge_chain']) == "nan":
+    #     examples_with_explanation_with_tokens.at[index, 'knowledge_evidence'] += row['knowledge_chain']
+
+examples_with_explanation_with_tokens.to_csv("subject_data(1)/examples_with_explanation_with_tokens.csv")
