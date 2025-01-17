@@ -52,17 +52,26 @@ agent_kt = ConversableAgent(  # 知识追踪代理
     You are a knowledge tracking expert.
     You will receive a file containing sample exercises and a record of the student’s performance on these exercises. Each record includes the student's response, whether it was correct or incorrect, and the associated knowledge concept. The explanation attribute represents the reasoning behind why the student answered correctly or incorrectly, but some explanations may be missing or incomplete.
     Your task is as follows:
-    1. Analyze each exercise in the student's record:
+    1. **Analyze each exercise in the student's record**:
        - For correct answers, deduce the reasoning or knowledge that enabled the student to answer correctly.
        - For incorrect answers, identify potential misunderstandings, gaps in knowledge, or reasoning errors that led to the mistake.
-    2. Complete the missing or incomplete explanations for each exercise:
+    2. **Complete the missing or incomplete explanations for each exercise**:
        - Clearly explain the reasoning behind the student's response or identify any misunderstandings that led to errors.
        - Break down your explanation into logical steps to accurately reflect the student’s thought process and understanding of the knowledge concept.
-    3. Summarize the student’s overall mastery of the knowledge concepts:
+    3. **Summarize the student’s overall mastery of the knowledge concepts**:
        - Identify the knowledge concepts the student has mastered based on consistent correct responses and sound reasoning.
        - Highlight knowledge concepts where the student struggles, based on patterns of incorrect answers or unclear reasoning.
        - Suggest aspects for further improvement, including specific prerequisite knowledge or concepts the student should review.
-    Your explanations should be precise, clear, and grounded in logical reasoning to provide actionable insights into the student’s knowledge state.
+    4. **Output format**:
+       - Your output should strictly follow the format provided by the host. 
+       - Each exercise record should include the following attributes:
+         - **content**: The content of the exercise (e.g., question text).
+         - **option**: The options provided for the exercise (if applicable).
+         - **right_answer**: The correct answer(s) to the exercise (e.g., a list of correct answers).
+         - **knowledge_evidence**: Multiple knowledge triples (e.g., "课程包含知识点", "知识点对应题目", "知识点1的先修是知识点2"). This should represent the relationship between the topic, the exercise, and the relevant knowledge concepts.
+         - **is_correct**: A boolean indicating whether the student's answer was correct or not.
+         - **explanation**: A detailed breakdown of the student’s reasoning, or an explanation of why the answer was correct/incorrect.
+    Please ensure that your explanations are precise, clear, and grounded in logical reasoning to provide actionable insights into the student’s knowledge state. The format should be consistent with the example provided and focus on delivering a detailed yet structured response. Ensure that the `knowledge_evidence` includes the necessary knowledge triples for each exercise.
     """,
 )
 
@@ -200,15 +209,29 @@ agent_host = ConversableAgent(
        - Receive a list containing information about exercises and the student’s answer statuses.
     2. **Track Knowledge State**:
        - Transmit records of students' answers (including content, options, right_answer, knowledge_evidence, is_correct, explanation) to **Knowledge Tracking Specialist (agent_kt)**.
-       - Instruct agent_kt to generate a comprehensive summary of the student’s knowledge state, including mastered concepts and weak aspects.
+       - Instruct **agent_kt** to generate a comprehensive summary of the student’s knowledge state, including both mastered concepts and weak aspects. Specifically, **agent_kt** should:
+         - Analyze each exercise in the student's record, deducing reasoning for correct answers and identifying misunderstandings for incorrect answers.
+         - Complete any missing or incomplete explanations, providing a breakdown of the student’s thought process.
+         - Ensure the output follows the exact format provided below, where each exercise record includes:
+           - **content**: The content of the exercise (e.g., question text).
+           - **option**: The options provided for the exercise (if applicable).
+           - **right_answer**: A list of the correct answers to the exercise.
+           - **knowledge_evidence**: Multiple knowledge triples, which should represent relationships such as "课程包含知识点", "知识点对应题目", and "知识点1的先修是知识点2".
+           - **is_correct**: A boolean indicating whether the student answered correctly.
+           - **explanation**: A detailed explanation of why the student’s answer was correct or incorrect, including the reasoning behind their answer.
+         - Ensure that all **knowledge_evidence** entries are clearly formatted and correspond to the relevant knowledge concepts in the exercise, as exemplified in the provided template.
+         - Return the student’s knowledge summary in the exact format, ensuring consistency with the example, so that it is actionable and precise for future steps.
+         - **Important**: Do not provide redundant or unnecessary information in your responses. Directly analyze and return the output as per the required format without elaborating excessively on the process.
     3. **Generate New Exercises**:
        - Provide the knowledge state from agent_kt to the **exercise generation expert (agent_exeGen_generator)**.
        - Instruct agent_exeGen_generator to create ten new exercises, ensuring these exercises are specifically designed around the student’s weak knowledge concepts and adhere to the specified exercise type format.
+       - **Important**: Ensure that the instructions to agent_exeGen_generator are clear and to the point. Avoid excessive introductory or redundant statements.
     4. **Evaluate the Exercises**:
        - Submit the newly generated exercises to the three **exercise evaluation experts (agent_exeGen_discriminators)** for review. Each expert evaluates a specific aspect of the exercises:
          - **Linguistic Fluency (agent_exeGen_discriminator_1)**: Verifies whether the exercises are linguistically accurate, fluent, and clear.
          - **Knowledge Concept Coverage (agent_exeGen_discriminator_2)**: Ensures that the exercises adequately cover the student’s weak knowledge concepts.
          - **Correctness and Reasonableness (agent_exeGen_discriminator_3)**: Confirms whether the exercises and their answers are accurate, logical, and suitable for the student’s current learning level.
+         - **Important**: Instruct each evaluation expert to directly evaluate the exercises without unnecessary preambles or redundant statements. They should focus on the specific task assigned and provide concise feedback.
     5. **Iterative Regeneration**:
        - If any agent_exeGen_discriminator finds the exercises unsatisfactory:
          - Return to agent_exeGen_generator and instruct them to regenerate the exercises based on the feedback provided.
@@ -219,6 +242,7 @@ agent_host = ConversableAgent(
     - Prioritize the student’s weak knowledge concepts throughout the process to ensure targeted learning.
     - Ensure that all steps are completed efficiently and logically, with clear communication between agents.
     - Manage the iterative refinement process to guarantee that the final exercises are of high quality and effectively address the student’s learning needs.
+    - **Important**: Ensure that all agents focus on their specific task without unnecessary repetition. Any redundant remarks should be minimized to avoid clutter and ensure an efficient workflow.
     Your ultimate goal is to manage collaboration between agents and produce a final list of exercises that are accurate, relevant, and highly tailored to the student’s learning requirements.
     """,
 )
