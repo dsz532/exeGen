@@ -14,6 +14,7 @@
 # 每个知识点匹配正负example
 # 硬匹配和软匹配
 # todo: 做实验
+import json
 
 from autogen import *
 from create_prompt import *
@@ -111,7 +112,7 @@ agent_exeGen_generator = ConversableAgent(  # 习题生成代理
                    "- **Relevance**: Directly test the knowledge concepts mentioned in the summary. "
                    "- **Logicality**: For choice-based exercises, ensure that distractors (incorrect options) are relevant and reasonable, reducing the likelihood of random guessing. "
                    "The generation process is as follows: "
-                   "1. Analyze the knowledge summary, including concept_id, to identify the student's weak knowledge concepts and make these the primary focus of the exercise design. "
+                   "1. Analyze the summary of knowledge states, including concept_id, to identify the student's weak knowledge concepts and make these the primary focus of the exercise design. "
                    "2. Allocate most of the exercises to the weak knowledge concepts while including a few exercises to reinforce the mastered concepts. "
                    "3. Ensure diversity in wording, difficulty levels, and scenarios to maintain the student’s engagement and provide an appropriate level of challenge. "
                    f"The generated exercises must strictly follow the {exercise_type} format, and all knowledge concepts must directly match those provided with concept_id. Your output should reflect a deep analysis of the student's learning needs and a targeted design approach. For example, if exercise_type = Multiple_Choice, you must generate ten multiple-choice exercises in the required format as outlined above."
@@ -198,13 +199,16 @@ if o_format == "natural_language":
 elif o_format == "json":
     f = open("txtfile/j_output.txt", "r")
     o_fmt = f.read()
+else:
+    f = open("txtfile/j_output.txt", "r")
+    o_fmt = f.read()
 
 agent_host = ConversableAgent(
     name="agent_host",
     llm_config=llm_config,
     system_message=f"""
     You are the moderator of this workflow, responsible for overseeing the collaborative process between multiple agents to create and evaluate high-quality exercises tailored to a student’s learning needs.
-    Your responsibilities include the following:
+    Your responsibilities include the following: 
     1. **Obtain Initial Input**:
        - Receive a list containing information about exercises and the student’s answer statuses.
     2. **Track Knowledge State**:
@@ -220,7 +224,7 @@ agent_host = ConversableAgent(
            - **is_correct**: A boolean indicating whether the student answered correctly.
            - **explanation**: A detailed explanation of why the student’s answer was correct or incorrect, including the reasoning behind their answer.
          - Ensure that all **knowledge_evidence** entries are clearly formatted and correspond to the relevant knowledge concepts in the exercise, as exemplified in the provided template.
-         - Return the student’s knowledge summary in the exact format, ensuring consistency with the example, so that it is actionable and precise for future steps.
+         - Return  the summary of student’s knowledge states in the exact format, ensuring consistency with the example, so that it is actionable and precise for future steps.
          - **Important**: Do not provide redundant or unnecessary information in your responses. Directly analyze and return the output as per the required format without elaborating excessively on the process.
     3. **Generate New Exercises**:
        - Provide the knowledge state from agent_kt to the **exercise generation expert (agent_exeGen_generator)**.
@@ -314,13 +318,29 @@ def convert_to_natural_language(text):
     return natural_language_text
 
 
+def extract_last_json(s):
+    pattern = r'```json(.*?)```'
+    matches = re.findall(pattern, s, re.DOTALL)
+    if matches:
+        json_str = matches[-1]
+        try:
+            json_obj = json.loads(json_str)
+            return json_obj
+        except json.JSONDecodeError as e:
+            print(f"解析错误：{e}")
+    return None
+
+
+i = 33
+
 text = {
     "examples": [],
     "tasks": []
 }
 
 # 获取task数组
-stuRec_1000_with_tokens = stuRec_1000_with_tokens.head(10)
+stuRec_1000_with_tokens = pandas.read_csv("subject_data(1)/stuRec_1000_with_tokens.csv")
+stuRec_1000_with_tokens = stuRec_1000_with_tokens.iloc[(i * 10):((i + 1) * 10)]
 selected_columns1 = ['content', 'option', 'right_answer', 'knowledge_evidence', 'is_correct', 'explanation']
 
 # 硬匹配
@@ -339,7 +359,7 @@ if not stuRec_1000_with_tokens.empty:
 
 # 匹配完成后重新读取习题记录信息
 stuRec_1000_with_tokens = pandas.read_csv("subject_data(1)/stuRec_1000_with_tokens.csv")
-stuRec_1000_with_tokens = stuRec_1000_with_tokens.head(10)
+stuRec_1000_with_tokens = stuRec_1000_with_tokens.iloc[(i * 10):((i + 1) * 10)]
 selected_columns2 = ['content', 'option', 'right_answer', 'knowledge_evidence', 'is_correct']
 stuRec_1000_with_tokens = stuRec_1000_with_tokens[selected_columns2]
 
@@ -359,7 +379,7 @@ text = json.dumps(text, ensure_ascii=False, indent=4)
 # 将提示词文本转换为自然语言形式
 n_text = json.loads(text)
 
-n_text = convert_to_natural_language(n_text)
+# n_text = convert_to_natural_language(n_text)
 
 type = parser.parse_args().type_of_prompt
 if type == "natural_language_text":
@@ -375,15 +395,18 @@ chat_res = out_groupchat_manager.initiate_chat(
     summary_method="reflection_with_llm",
 )
 
-# json_pattern = r'\{[^{}]*\}'
-# matches = re.findall(json_pattern, str(chat_res), re.DOTALL)
-#
-# # 获取最后一个匹配的JSON字符串
-# last_json_str = matches[-1] if matches else None
-#
-# # 将JSON字符串解析为Python字典
-# if last_json_str:
-#     last_json_obj = json.loads(last_json_str)
-#     print(last_json_obj)
-# else:
-#     print("没有找到JSON对象")
+# 获取生成的新题目
+chat_cost = chat_res.cost
+chat_his = chat_res.chat_history
+chat_his_str = ""
+for sentence in chat_his:
+    chat_his_str += str(sentence['content']) + "\n"
+res_exe = extract_last_json(chat_his_str)
+text = json.loads(text)
+text["result"] = res_exe
+text["cost"] = chat_cost
+text = json.dumps(text, ensure_ascii=False, indent=4)
+with open('txtfile/result_complete_4o.txt', 'a', encoding='utf-8') as f:
+    f.write(text + ',\n')
+
+print(json.dumps(res_exe, ensure_ascii=False, indent=4))
