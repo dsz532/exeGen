@@ -85,13 +85,13 @@ if exercise_type == "Single_Choice":
     exercise_fmt = """- **Single-Choice Exercises**: 
                    **Exercise:** Example exercise text 
                     - **Options:** {'A': 'Option 1', 'B': 'Option 2', 'C': 'Option 3', 'D': 'Option 4'} 
-                    - **Answer:** ['Correct Answer'] 
+                    - **Answer:** ['Correct Answer'] (There can only be one right answer.)
                     - **Concept:** Related Knowledge Concept (in Chinese, from historical records, matching concept_id) """
 elif exercise_type == "Multiple_Choice":
     exercise_fmt = """- **Multiple-Choice Exercises**: 
                    **Exercise:** Example exercise text 
                     - **Options:** {'A': 'Option 1', 'B': 'Option 2', 'C': 'Option 3', 'D': 'Option 4'} 
-                    - **Answer:** ['Correct Answer 1', 'Correct Answer 2'] 
+                    - **Answer:** ['Correct Answer 1', 'Correct Answer 2'] (More than one correct answer must be present)
                     - **Concept:** Related Knowledge Concept (in Chinese, from historical records, matching concept_id) """
 elif exercise_type == "True_or_False":
     exercise_fmt = """- **True/False Exercises**: 
@@ -99,33 +99,33 @@ elif exercise_type == "True_or_False":
                     - **Answer:** ['True' or 'False'] 
                     - **Concept:** Related Knowledge Concept (in Chinese, from historical records, matching concept_id) """
 
-agent_exeGen_generator = ConversableAgent(  # 习题生成代理
-    name="agent_exeGen_generator",
-    llm_config=llm_config,
-    system_message=f"""
-    You are an exercise generation expert; 
-    you will receive a list containing the knowledge tracking expert's summary of the student's mastery of the knowledge concepts, including examples with concept_id to guide you. 
-    Based on this information, you will need to generate {exercise_number} new {exercise_type} exercises and their answers in the format provided, ensuring that the knowledge concepts (concepts) in the exercises directly correspond to the provided concept_id values. 
-    The exercises must strictly adhere to the specified {exercise_type} format, as outlined below: 
-    {exercise_fmt}\n
-    Focus on generating exercises related to the student's weak knowledge concepts: 
-    - Prioritize designing exercises targeting the student's weak aspects to strengthen their understanding and improve performance. 
-    - Create multiple exercises related to these weak knowledge concepts to reinforce the student's practice of these concepts. 
-    Ensure the knowledge concepts in the exercises meet the following criteria: 
-    - The knowledge concepts must be written in Chinese. 
-    - Each knowledge concept in the generated exercises must directly match a concept_id from the student's historical records. 
-    - Do not create new knowledge concept names or concept_ids. 
-    While focusing on weak knowledge concepts, ensure the generated exercises possess the following characteristics: 
-    - **Clarity**: Use precise language to avoid ambiguity. 
-    - **Relevance**: Directly test the knowledge concepts mentioned in the summary. 
-    - **Logicality**: For choice-based exercises, ensure that distractors (incorrect options) are relevant and reasonable, reducing the likelihood of random guessing. 
-    The generation process is as follows: 
-    1. Analyze the summary of knowledge states, including concept_id, to identify the student's weak knowledge concepts and make these the primary focus of the exercise design. 
-    2. Allocate most of the exercises to the weak knowledge concepts while including a few exercises to reinforce the mastered concepts. 
-    3. Ensure diversity in wording, difficulty levels, and scenarios to maintain the student’s engagement and provide an appropriate level of challenge. 
-    The generated exercises must strictly follow the {exercise_type} format, and all knowledge concepts must directly match those provided with concept_id. Your output should reflect a deep analysis of the student's learning needs and a targeted design approach. For example, if exercise_type = Multiple_Choice, you must generate ten multiple-choice exercises in the required format as outlined above.
-    """,
-)
+# agent_exeGen_generator = ConversableAgent(  # 习题生成代理
+#     name="agent_exeGen_generator",
+#     llm_config=llm_config,
+#     system_message=f"""
+#     You are an exercise generation expert;
+#     you will receive a list containing the knowledge tracking expert's summary of the student's mastery of the knowledge concepts, including examples with concept_id to guide you.
+#     Based on this information, you will need to generate {exercise_number} new {exercise_type} exercises and their answers in the format provided, ensuring that the knowledge concepts (concepts) in the exercises directly correspond to the provided concept_id values.
+#     The exercises must strictly adhere to the specified {exercise_type} format, as outlined below:
+#     {exercise_fmt}\n
+#     Focus on generating exercises related to the student's weak knowledge concepts:
+#     - Prioritize designing exercises targeting the student's weak aspects to strengthen their understanding and improve performance.
+#     - Create multiple exercises related to these weak knowledge concepts to reinforce the student's practice of these concepts.
+#     Ensure the knowledge concepts in the exercises meet the following criteria:
+#     - The knowledge concepts must be written in Chinese.
+#     - Each knowledge concept in the generated exercises must directly match a concept_id from the student's historical records.
+#     - Do not create new knowledge concept names or concept_ids.
+#     While focusing on weak knowledge concepts, ensure the generated exercises possess the following characteristics:
+#     - **Clarity**: Use precise language to avoid ambiguity.
+#     - **Relevance**: Directly test the knowledge concepts mentioned in the summary.
+#     - **Logicality**: For choice-based exercises, ensure that distractors (incorrect options) are relevant and reasonable, reducing the likelihood of random guessing.
+#     The generation process is as follows:
+#     1. Analyze the summary of knowledge states, including concept_id, to identify the student's weak knowledge concepts and make these the primary focus of the exercise design.
+#     2. Allocate most of the exercises to the weak knowledge concepts while including a few exercises to reinforce the mastered concepts.
+#     3. Ensure diversity in wording, difficulty levels, and scenarios to maintain the student’s engagement and provide an appropriate level of challenge.
+#     The generated exercises must strictly follow the {exercise_type} format, and all knowledge concepts must directly match those provided with concept_id. Your output should reflect a deep analysis of the student's learning needs and a targeted design approach. For example, if exercise_type = Multiple_Choice, you must generate ten multiple-choice exercises in the required format as outlined above.
+#     """,
+# )
 
 # 3个习题评判专家
 agent_exeGen_discriminator_1 = ConversableAgent(
@@ -235,9 +235,9 @@ agent_host = ConversableAgent(
          - Return  the summary of student’s knowledge states in the exact format, ensuring consistency with the example, so that it is actionable and precise for future steps.
          - **Important**: Do not provide redundant or unnecessary information in your responses. Directly analyze and return the output as per the required format without elaborating excessively on the process.
     3. **Generate New Exercises**:
-       - Provide the knowledge state from agent_kt to the **exercise generation expert (agent_exeGen_generator)**.
-       - Instruct agent_exeGen_generator to create ten new exercises, ensuring these exercises are specifically designed around the student’s weak knowledge concepts and adhere to the specified exercise type format.
-       - **Important**: Ensure that the instructions to agent_exeGen_generator are clear and to the point. Avoid excessive introductory or redundant statements.
+       - Create ten new exercises, ensuring these exercises are specifically designed around the student’s weak knowledge concepts and adhere to the specified exercise type format.
+        The exercises must strictly adhere to the specified {exercise_type} format, as outlined below:
+        {exercise_fmt}\n
     4. **Evaluate the Exercises**:
        - Submit the newly generated exercises to the three **exercise evaluation experts (agent_exeGen_discriminators)** for review. Each expert evaluates a specific aspect of the exercises:
          - **Linguistic Fluency (agent_exeGen_discriminator_1)**: Verifies whether the exercises are linguistically accurate, fluent, and clear.
@@ -246,7 +246,7 @@ agent_host = ConversableAgent(
          - **Important**: Instruct each evaluation expert to directly evaluate the exercises without unnecessary preambles or redundant statements. They should focus on the specific task assigned and provide concise feedback.
     5. **Iterative Regeneration**:
        - If any agent_exeGen_discriminator finds the exercises unsatisfactory:
-         - Return to agent_exeGen_generator and instruct them to regenerate the exercises based on the feedback provided.
+         - Regenerate the exercises based on the feedback provided.
          - Repeat this iterative process until all three agents agree that the exercises meet the required standards.
     6. **Final Output**:
        - Once all agents have approved the exercise, you need to edit the final version of the exercise list strictly in the format {o_fmt} and return it, then let the chat end.
@@ -260,7 +260,7 @@ agent_host = ConversableAgent(
 )
 
 out_groupchat = GroupChat(
-    agents=[agent_kt, agent_exeGen_generator, agent_exeGen_discriminator_1, agent_exeGen_discriminator_2,
+    agents=[agent_kt, agent_exeGen_discriminator_1, agent_exeGen_discriminator_2,
             agent_exeGen_discriminator_3, agent_host],
     messages=[],
     send_introductions=True,
@@ -272,7 +272,7 @@ out_groupchat_manager = GroupChatManager(
 )
 
 agent_kt.description = "a knowledge tracking expert"
-agent_exeGen_generator.description = "an exercise generation expert"
+# agent_exeGen_generator.description = "an exercise generation expert"
 agent_exeGen_discriminator_1.description = "exercise evaluation expert 1"
 agent_exeGen_discriminator_2.description = "exercise evaluation expert 2"
 agent_exeGen_discriminator_3.description = "exercise evaluation expert 3"
@@ -339,7 +339,7 @@ def extract_last_json(s):
     return None
 
 
-i = 32
+i = 13
 
 text = {
     "examples": [],
@@ -414,7 +414,7 @@ text = json.loads(text)
 text["result"] = res_exe
 text["cost"] = chat_cost
 text = json.dumps(text, ensure_ascii=False, indent=4)
-with open('txtfile/result_complete_4o_sin.txt', 'a', encoding='utf-8') as f:
+with open('txtfile/result_no_generator_4o.txt', 'a', encoding='utf-8') as f:
     f.write(text + ',\n')
 
 print(json.dumps(res_exe, ensure_ascii=False, indent=4))
