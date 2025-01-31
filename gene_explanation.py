@@ -2,15 +2,17 @@ import pandas
 from autogen import *
 import json
 
-examples_with_explanation = pandas.read_csv("subject_data(1)/examples_with_explanation.csv")
+examples_with_explanation = pandas.read_csv("subject_data(1)/examples_with_explanation_with_tokens.csv")
 
 llm_config = {
+    "cache_seed": None,
     "config_list": [{
         "model": "openai/gpt-4o",
         "base_url": "https://openrouter.ai/api/v1",
         "api_key": "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",
-        "price": [0.5, 1.5]
+        "price": [0, 0]
     }]
+
 }
 
 agent_explanation = ConversableAgent(
@@ -22,9 +24,10 @@ agent_explanation = ConversableAgent(
     human_input_mode="NEVER",
 )
 
+# examples_with_explanation["explanation"] = "No explanation provided."
 examples_with_explanation = examples_with_explanation[
     ["problem_id", "user_id", "content", "option", "right_answer", "concept_id", "course_name", "knowledge_chain",
-     "is_correct", "explanation"]]
+     "is_correct", "explanation", "tokens", "knowledge_evidence"]]
 examples_with_explanation = examples_with_explanation.drop_duplicates()
 
 for index, row in examples_with_explanation[
@@ -37,4 +40,4 @@ for index, row in examples_with_explanation[
     print(res)
     res = json.loads(res)
     examples_with_explanation.at[index, "explanation"] = res["explanation"]
-    examples_with_explanation.to_csv("subject_data(1)/examples_with_explanation.csv", index=False)
+    examples_with_explanation.to_csv("subject_data(1)/examples_with_explanation_with_tokens.csv", index=False)

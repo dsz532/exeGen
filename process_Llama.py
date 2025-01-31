@@ -34,7 +34,7 @@ concept_relation_filtered = pandas.read_csv("subject_data(1)/concept_relationshi
 llm_config = {
     "cache_seed": None,
     "config_list": [{
-        "model": "openai/gpt-4o",
+        "model": "meta-llama/llama-3.3-70b-instruct",
         "base_url": "https://openrouter.ai/api/v1",
         "api_key": "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",
         "price": [0, 0]
@@ -339,7 +339,7 @@ def extract_last_json(s):
     return None
 
 
-for i in range(14, 15):
+for i in range(0, 34):
 
     text = {
         "round": i,
@@ -415,7 +415,7 @@ for i in range(14, 15):
     text["result"] = res_exe
     text["cost"] = chat_cost
     text = json.dumps(text, ensure_ascii=False, indent=4)
-    with open('txtfile/result_complete_4o_ToF.txt', 'a', encoding='utf-8') as f:
+    with open('txtfile/result_Llama_ToF.txt', 'a', encoding='utf-8') as f:
         f.write(text + ',\n')
 
     print(json.dumps(res_exe, ensure_ascii=False, indent=4))

@@ -339,11 +339,8 @@ def extract_last_json(s):
     return None
 
 
-for i in range(14, 15):
-
+for i in range(23, 24):
     text = {
-        "round": i,
-        "examples": [],
         "tasks": []
     }
 
@@ -353,23 +350,23 @@ for i in range(14, 15):
     selected_columns1 = ['content', 'option', 'right_answer', 'knowledge_evidence', 'is_correct', 'explanation']
 
     # 硬匹配
-    hard_example, stuRec_1000_with_tokens = get_examples_by_concept(examples_with_explanation_with_tokens,
-                                                                    stuRec_1000_with_tokens)
-    hard_example = hard_example[selected_columns1]
+    # hard_example, stuRec_1000_with_tokens = get_examples_by_concept(examples_with_explanation_with_tokens,
+    #                                                                 stuRec_1000_with_tokens)
+    # hard_example = hard_example[selected_columns1]
 
-    text['examples'] += hard_example.to_dict(orient='records')
+    # text['examples'] += hard_example.to_dict(orient='records')
 
     # 软匹配
-    if not stuRec_1000_with_tokens.empty:
-        res = get_examples_by_similarity(examples_with_explanation_with_tokens, stuRec_1000_with_tokens)[
-            selected_columns1].to_dict(orient='records')
-
-        text["examples"] += res
+    # if not stuRec_1000_with_tokens.empty:
+    #     res = get_examples_by_similarity(examples_with_explanation_with_tokens, stuRec_1000_with_tokens)[
+    #         selected_columns1].to_dict(orient='records')
+    #
+    #     text["examples"] += res
 
     # 匹配完成后重新读取习题记录信息
     stuRec_1000_with_tokens = pandas.read_csv("subject_data(1)/stuRec_1000_with_tokens.csv")
     stuRec_1000_with_tokens = stuRec_1000_with_tokens.iloc[(i * 10):((i + 1) * 10)]
-    selected_columns2 = ['content', 'option', 'right_answer', 'knowledge_evidence', 'is_correct']
+    selected_columns2 = ['content', 'option', 'right_answer', 'is_correct']
     stuRec_1000_with_tokens = stuRec_1000_with_tokens[selected_columns2]
 
     # 计算习题记录的知识链
@@ -415,7 +412,7 @@ for i in range(14, 15):
     text["result"] = res_exe
     text["cost"] = chat_cost
     text = json.dumps(text, ensure_ascii=False, indent=4)
-    with open('txtfile/result_complete_4o_ToF.txt', 'a', encoding='utf-8') as f:
+    with open('txtfile/result_no_knowledgechain_4o.txt', 'a', encoding='utf-8') as f:
         f.write(text + ',\n')
 
     print(json.dumps(res_exe, ensure_ascii=False, indent=4))

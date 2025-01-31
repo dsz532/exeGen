@@ -123,82 +123,82 @@ agent_exeGen_generator = ConversableAgent(  # 习题生成代理
     1. Analyze the summary of knowledge states, including concept_id, to identify the student's weak knowledge concepts and make these the primary focus of the exercise design. 
     2. Allocate most of the exercises to the weak knowledge concepts while including a few exercises to reinforce the mastered concepts. 
     3. Ensure diversity in wording, difficulty levels, and scenarios to maintain the student’s engagement and provide an appropriate level of challenge. 
-    The generated exercises must strictly follow the {exercise_type} format, and all knowledge concepts must directly match those provided with concept_id. Your output should reflect a deep analysis of the student's learning needs and a targeted design approach.
+    The generated exercises must strictly follow the format, and all knowledge concepts must directly match those provided with concept_id. Your output should reflect a deep analysis of the student's learning needs and a targeted design approach.
     """,
 )
 
 # 3个习题评判专家
-agent_exeGen_discriminator_1 = ConversableAgent(
-    name="agent_exeGen_discriminator_1",
-    llm_config=llm_config,
-    system_message="""
-    You are an exercise evaluation expert specializing in assessing linguistic fluency.
-    You will receive a list of newly generated exercises and their answers created by the exercise generation expert. Your task is to determine whether the language used in these exercises is fluent and appropriate for effective communication.
-    **Evaluation Process**:
-    1. **Evaluate Sentence Structure**:
-       - Analyze the grammatical structure of each exercise to ensure it adheres to standard language conventions.
-       - Check for any grammatical errors, awkward phrasing, or incomplete sentences.
-    2. **Assess Word Choice**:
-       - Ensure the vocabulary used is suitable for the target audience.
-       - Identify and flag any ambiguous, overly complex, or contextually inappropriate words.
-    3. **Check Coherence and Clarity**:
-       - Confirm that the language in the exercises clearly conveys the intended meaning.
-       - Ensure the exercises and answers are logically structured and easy to understand.
-    4. **Provide Suggestions for Improvement**:
-       - Highlight specific aspects where linguistic fluency can be enhanced.
-       - Offer recommendations for rephrasing or simplifying content without altering its meaning.
-    Your evaluation should focus on ensuring that the exercises are free of language errors and effectively communicate the intended concepts.
-    """,
-)
-
-agent_exeGen_discriminator_2 = ConversableAgent(
-    name="agent_exeGen_discriminator_2",
-    llm_config=llm_config,
-    system_message="""
-    You are an exercise evaluation expert specializing in assessing the coverage of knowledge concepts.
-    You will receive:
-    1. A summary of the student’s knowledge state of knowledge concepts provided by the knowledge tracking expert.
-    2. A list of newly generated exercises and their answers created by the exercise generation expert.
-    Your task is to determine whether the newly generated exercises adequately address the student's weak knowledge concepts.
-    **Evaluation Process**:
-    1. **Analyze the Knowledge Concept Summary**:
-       - Identify the key knowledge concepts that the exercises should address.
-       - Pay special attention to the student’s weak aspects and error records.
-    2. **Match Exercises to Weak Knowledge concepts**:
-       - Review each exercise to determine if it targets the relevant weak knowledge concepts.
-       - Ensure all weak knowledge concepts are sufficiently practiced.
-    3. **Identify Missing or Repeated Knowledge Concepts**:
-       - Point out any weak knowledge concepts that are not addressed in the exercises.
-       - Mark exercises that repeat the same concepts unnecessarily, without providing additional learning value.
-    4. **Provide Feedback**:
-       - Summarize the strengths and weaknesses in covering weak knowledge concepts.
-       - Recommend adjustments to better target the student's learning needs.
-    Your evaluation should ensure that the exercises primarily focus on the student’s weak knowledge concepts, helping them improve understanding and performance.
-    """,
-)
-
-agent_exeGen_discriminator_3 = ConversableAgent(
-    name="agent_exeGen_discriminator_3",
-    llm_config=llm_config,
-    system_message="""
-    You are an exercise evaluation expert specializing in assessing the correctness and reasonableness of exercises.
-    You will receive a list of newly generated exercises and their answers created by the exercise generation expert. Your task is to evaluate whether the exercises and their answers are accurate, logical, and reasonable.
-    **Evaluation Process**:
-    1. **Check the Accuracy of Answers**:
-       - Verify whether the answers provided are correct and align with the knowledge concepts being tested.
-       - Flag any incorrect or incomplete answers.
-    2. **Evaluate the Logic of Exercises**:
-       - Ensure each exercise has a clear and logical structure.
-       - Confirm that the exercise aligns with the provided answer and the intended knowledge concept.
-    3. **Assess the Reasonableness of Exercises**:
-       - Determine whether the exercises are appropriate for the student's current learning level.
-       - Ensure the difficulty level is neither too high nor too low, making it suitable for practice or assessment.
-    4. **Provide Feedback**:
-       - Highlight specific issues with incorrect or unreasonable exercises.
-       - Recommend improvements to enhance clarity, accuracy, or alignment with learning goals.
-    Your evaluation should ensure that the exercises are accurate, logical, and effectively designed to meet the student’s learning needs.
-    """,
-)
+# agent_exeGen_discriminator_1 = ConversableAgent(
+#     name="agent_exeGen_discriminator_1",
+#     llm_config=llm_config,
+#     system_message="""
+#     You are an exercise evaluation expert specializing in assessing linguistic fluency.
+#     You will receive a list of newly generated exercises and their answers created by the exercise generation expert. Your task is to determine whether the language used in these exercises is fluent and appropriate for effective communication.
+#     **Evaluation Process**:
+#     1. **Evaluate Sentence Structure**:
+#        - Analyze the grammatical structure of each exercise to ensure it adheres to standard language conventions.
+#        - Check for any grammatical errors, awkward phrasing, or incomplete sentences.
+#     2. **Assess Word Choice**:
+#        - Ensure the vocabulary used is suitable for the target audience.
+#        - Identify and flag any ambiguous, overly complex, or contextually inappropriate words.
+#     3. **Check Coherence and Clarity**:
+#        - Confirm that the language in the exercises clearly conveys the intended meaning.
+#        - Ensure the exercises and answers are logically structured and easy to understand.
+#     4. **Provide Suggestions for Improvement**:
+#        - Highlight specific aspects where linguistic fluency can be enhanced.
+#        - Offer recommendations for rephrasing or simplifying content without altering its meaning.
+#     Your evaluation should focus on ensuring that the exercises are free of language errors and effectively communicate the intended concepts.
+#     """,
+# )
+#
+# agent_exeGen_discriminator_2 = ConversableAgent(
+#     name="agent_exeGen_discriminator_2",
+#     llm_config=llm_config,
+#     system_message="""
+#     You are an exercise evaluation expert specializing in assessing the coverage of knowledge concepts.
+#     You will receive:
+#     1. A summary of the student’s knowledge state of knowledge concepts provided by the knowledge tracking expert.
+#     2. A list of newly generated exercises and their answers created by the exercise generation expert.
+#     Your task is to determine whether the newly generated exercises adequately address the student's weak knowledge concepts.
+#     **Evaluation Process**:
+#     1. **Analyze the Knowledge Concept Summary**:
+#        - Identify the key knowledge concepts that the exercises should address.
+#        - Pay special attention to the student’s weak aspects and error records.
+#     2. **Match Exercises to Weak Knowledge concepts**:
+#        - Review each exercise to determine if it targets the relevant weak knowledge concepts.
+#        - Ensure all weak knowledge concepts are sufficiently practiced.
+#     3. **Identify Missing or Repeated Knowledge Concepts**:
+#        - Point out any weak knowledge concepts that are not addressed in the exercises.
+#        - Mark exercises that repeat the same concepts unnecessarily, without providing additional learning value.
+#     4. **Provide Feedback**:
+#        - Summarize the strengths and weaknesses in covering weak knowledge concepts.
+#        - Recommend adjustments to better target the student's learning needs.
+#     Your evaluation should ensure that the exercises primarily focus on the student’s weak knowledge concepts, helping them improve understanding and performance.
+#     """,
+# )
+#
+# agent_exeGen_discriminator_3 = ConversableAgent(
+#     name="agent_exeGen_discriminator_3",
+#     llm_config=llm_config,
+#     system_message="""
+#     You are an exercise evaluation expert specializing in assessing the correctness and reasonableness of exercises.
+#     You will receive a list of newly generated exercises and their answers created by the exercise generation expert. Your task is to evaluate whether the exercises and their answers are accurate, logical, and reasonable.
+#     **Evaluation Process**:
+#     1. **Check the Accuracy of Answers**:
+#        - Verify whether the answers provided are correct and align with the knowledge concepts being tested.
+#        - Flag any incorrect or incomplete answers.
+#     2. **Evaluate the Logic of Exercises**:
+#        - Ensure each exercise has a clear and logical structure.
+#        - Confirm that the exercise aligns with the provided answer and the intended knowledge concept.
+#     3. **Assess the Reasonableness of Exercises**:
+#        - Determine whether the exercises are appropriate for the student's current learning level.
+#        - Ensure the difficulty level is neither too high nor too low, making it suitable for practice or assessment.
+#     4. **Provide Feedback**:
+#        - Highlight specific issues with incorrect or unreasonable exercises.
+#        - Recommend improvements to enhance clarity, accuracy, or alignment with learning goals.
+#     Your evaluation should ensure that the exercises are accurate, logical, and effectively designed to meet the student’s learning needs.
+#     """,
+# )
 
 o_format = parser.parse_args().output_type
 if o_format == "natural_language":
@@ -238,18 +238,8 @@ agent_host = ConversableAgent(
        - Provide the knowledge state from agent_kt to the **exercise generation expert (agent_exeGen_generator)**.
        - Instruct agent_exeGen_generator to create ten new exercises, ensuring these exercises are specifically designed around the student’s weak knowledge concepts and adhere to the specified exercise type format.
        - **Important**: Ensure that the instructions to agent_exeGen_generator are clear and to the point. Avoid excessive introductory or redundant statements.
-    4. **Evaluate the Exercises**:
-       - Submit the newly generated exercises to the three **exercise evaluation experts (agent_exeGen_discriminators)** for review. Each expert evaluates a specific aspect of the exercises:
-         - **Linguistic Fluency (agent_exeGen_discriminator_1)**: Verifies whether the exercises are linguistically accurate, fluent, and clear.
-         - **Knowledge Concept Coverage (agent_exeGen_discriminator_2)**: Ensures that the exercises adequately cover the student’s weak knowledge concepts.
-         - **Correctness and Reasonableness (agent_exeGen_discriminator_3)**: Confirms whether the exercises and their answers are accurate, logical, and suitable for the student’s current learning level.
-         - **Important**: Instruct each evaluation expert to directly evaluate the exercises without unnecessary preambles or redundant statements. They should focus on the specific task assigned and provide concise feedback.
-    5. **Iterative Regeneration**:
-       - If any agent_exeGen_discriminator finds the exercises unsatisfactory:
-         - Return to agent_exeGen_generator and instruct them to regenerate the exercises based on the feedback provided.
-         - Repeat this iterative process until all three agents agree that the exercises meet the required standards.
-    6. **Final Output**:
-       - Once all agents have approved the exercise, you need to edit the final version of the exercise list strictly in the format {o_fmt} and return it, then let the chat end.
+    4. **Final Output**:
+       - You need to edit the final version of the exercise list strictly in the format {o_fmt} and return it, then let the chat end.
     **Key Guidelines**:
     - Prioritize the student’s weak knowledge concepts throughout the process to ensure targeted learning.
     - Ensure that all steps are completed efficiently and logically, with clear communication between agents.
@@ -260,8 +250,7 @@ agent_host = ConversableAgent(
 )
 
 out_groupchat = GroupChat(
-    agents=[agent_kt, agent_exeGen_generator, agent_exeGen_discriminator_1, agent_exeGen_discriminator_2,
-            agent_exeGen_discriminator_3, agent_host],
+    agents=[agent_kt, agent_exeGen_generator, agent_host],
     messages=[],
     send_introductions=True,
 )
@@ -273,9 +262,9 @@ out_groupchat_manager = GroupChatManager(
 
 agent_kt.description = "a knowledge tracking expert"
 agent_exeGen_generator.description = "an exercise generation expert"
-agent_exeGen_discriminator_1.description = "exercise evaluation expert 1"
-agent_exeGen_discriminator_2.description = "exercise evaluation expert 2"
-agent_exeGen_discriminator_3.description = "exercise evaluation expert 3"
+# agent_exeGen_discriminator_1.description = "exercise evaluation expert 1"
+# agent_exeGen_discriminator_2.description = "exercise evaluation expert 2"
+# agent_exeGen_discriminator_3.description = "exercise evaluation expert 3"
 agent_host.description = "host of the chat"
 
 
@@ -339,10 +328,8 @@ def extract_last_json(s):
     return None
 
 
-for i in range(14, 15):
-
+for i in range(33, 34):
     text = {
-        "round": i,
         "examples": [],
         "tasks": []
     }
@@ -415,7 +402,7 @@ for i in range(14, 15):
     text["result"] = res_exe
     text["cost"] = chat_cost
     text = json.dumps(text, ensure_ascii=False, indent=4)
-    with open('txtfile/result_complete_4o_ToF.txt', 'a', encoding='utf-8') as f:
+    with open('txtfile/result_no_discriminator_4o.txt', 'a', encoding='utf-8') as f:
         f.write(text + ',\n')
 
     print(json.dumps(res_exe, ensure_ascii=False, indent=4))
