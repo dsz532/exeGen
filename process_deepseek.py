@@ -35,7 +35,7 @@ concept_relation_filtered = pandas.read_csv("subject_data(1)/concept_relationshi
 llm_config = {
     "cache_seed": None,
     "config_list": [{
-        "model": "openai/gpt-4o",
+        "model": "deepseek/deepseek-chat",
         "base_url": "https://openrouter.ai/api/v1",
         "api_key": "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",
         "price": [0, 0]
@@ -359,7 +359,7 @@ def extract_last_json(s):
     return None
 
 
-for i in range(28, 29):
+for i in range(0, 1):
 
     text = {
         "round": i,
@@ -422,6 +422,7 @@ for i in range(28, 29):
         agent_kt,
         message=prompt,
         summary_method="reflection_with_llm",
+        max_turns=20
     )
 
     # 获取生成的新题目
@@ -433,7 +434,7 @@ for i in range(28, 29):
     text["result"] = res_exe
     text["cost"] = chat_cost
     text = json.dumps(text, ensure_ascii=False, indent=4)
-    with open('txtfile/case_study.txt', 'a', encoding='utf-8') as f:
+    with open('txtfile/result_deepseek_sin.txt', 'a', encoding='utf-8') as f:
         f.write(text + ',\n')
 
     print(json.dumps(res_exe, ensure_ascii=False, indent=4))

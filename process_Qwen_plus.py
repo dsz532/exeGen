@@ -35,7 +35,7 @@ concept_relation_filtered = pandas.read_csv("subject_data(1)/concept_relationshi
 llm_config = {
     "cache_seed": None,
     "config_list": [{
-        "model": "qwen-turbo-1101",
+        "model": "qwen-plus",
         "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
         "api_key": "sk-5a37c296e0324248bbe0a69b082c9b84",
         "price": [0, 0]
@@ -248,7 +248,7 @@ agent_host = ConversableAgent(
          - Return to agent_generator and instruct them to regenerate the exercises based on the feedback provided.
          - Repeat this iterative process until all three agents agree that the exercises meet the required standards.
     7. **Final Output**:
-       - Once all agents have approved the exercise, you need to edit the final version of the exercise list strictly in the format {o_fmt} and return it, then let the chat end.
+       - Once all agents have approved the exercise, you need to edit the final version of the exercise list strictly in the format {o_fmt} and return it, and say 'stopChat' to let the chat end.
     **Key Guidelines**:
     - Prioritize the student’s weak knowledge concepts throughout the process to ensure targeted learning.
     - Ensure that all steps are completed efficiently and logically, with clear communication between agents.
@@ -262,6 +262,8 @@ agent_host = ConversableAgent(
 def custom_speaker_selection_func(
         last_speaker: Agent, groupchat: GroupChat
 ) -> Union[Agent, str, None]:
+    if "stopChat" in groupchat.messages[-1]["content"]:
+        return None
     if last_speaker is agent_host:
         return "auto"
     else:
@@ -269,8 +271,8 @@ def custom_speaker_selection_func(
 
 
 out_groupchat = GroupChat(
-    agents=[agent_host, agent_kt, agent_generator, agent_discriminator_1, agent_discriminator_2,
-            agent_discriminator_3],
+    agents=[agent_kt, agent_generator, agent_discriminator_1, agent_discriminator_2,
+            agent_discriminator_3, agent_host],
     select_speaker_message_template="""
     Selects the next speaking agent based on what agent_host has said.
     End the chat when agent_host returns the final list of exercises.
@@ -279,8 +281,9 @@ out_groupchat = GroupChat(
     Select the next role from {agentlist} to speak. Only return the role.
     """,
     speaker_selection_method=custom_speaker_selection_func,
-    allow_repeat_speaker=[agent_kt, agent_host],
+    allow_repeat_speaker=[agent_kt],
     messages=[],
+    max_round=20,
 )
 
 out_groupchat_manager = GroupChatManager(
@@ -349,14 +352,14 @@ def extract_last_json(s):
     if matches:
         json_str = matches[-1]
         try:
-            json_obj = json.loads(json_str)
+            json_obj = json.loads(json_str, strict=False)
             return json_obj
         except json.JSONDecodeError as e:
             print(f"解析错误：{e}")
     return None
 
 
-for i in range(27, 28):
+for i in range(15, 34):
 
     text = {
         "round": i,
@@ -419,20 +422,19 @@ for i in range(27, 28):
         agent_kt,
         message=prompt,
         summary_method="reflection_with_llm",
+        max_turns=20
     )
 
     # 获取生成的新题目
     chat_cost = chat_res.cost
     chat_his = chat_res.chat_history
-    chat_his_str = ""
-    for sentence in chat_his:
-        chat_his_str += str(sentence['content']) + "\n"
+    chat_his_str = chat_his[-1]['content']
     res_exe = extract_last_json(chat_his_str)
     text = json.loads(text)
     text["result"] = res_exe
     text["cost"] = chat_cost
     text = json.dumps(text, ensure_ascii=False, indent=4)
-    with open('txtfile/case_study.txt', 'a', encoding='utf-8') as f:
+    with open('txtfile/result_Qwen_plus_mul.txt', 'a', encoding='utf-8') as f:
         f.write(text + ',\n')
 
     print(json.dumps(res_exe, ensure_ascii=False, indent=4))

@@ -35,9 +35,9 @@ concept_relation_filtered = pandas.read_csv("subject_data(1)/concept_relationshi
 llm_config = {
     "cache_seed": None,
     "config_list": [{
-        "model": "openai/gpt-4o",
-        "base_url": "https://openrouter.ai/api/v1",
-        "api_key": "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",
+        "model": "qwen-turbo-1101",
+        "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+        "api_key": "sk-5a37c296e0324248bbe0a69b082c9b84",
         "price": [0, 0]
     }]
 }
@@ -359,7 +359,7 @@ def extract_last_json(s):
     return None
 
 
-for i in range(28, 29):
+for i in range(27, 28):
 
     text = {
         "round": i,
