@@ -1,18 +1,30 @@
 import json
 import re
 
-def extract_last_json(s):
-    pattern = r'```json(.*?)```'
-    matches = re.findall(pattern, s, re.DOTALL)
-    if matches:
-        json_str = matches[-1]
-        try:
-            json_obj = json.loads(json_str, strict=False)
-            return json_obj
-        except json.JSONDecodeError as e:
-            print(f"解析错误：{e}")
-    return None
+from autogen import ConversableAgent
 
-with open("C:/code/exeGen/txtfile/test.txt", "r") as f:
-    s = f.read()
-    print(extract_last_json(s))
+llm_config = {
+    "cache_seed": None,
+    "config_list": [{
+        "model": "qwen-plus",
+        "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+        "api_key": "sk-8f73e51272114ecba3c6ce4059923625",
+        "price": [0, 0]
+    }]
+}
+
+examplar_gene = ConversableAgent(
+    name='agent',
+    llm_config=llm_config,
+    system_message="who are you",
+)
+
+examplar_gene2 = ConversableAgent(
+    name='agent',
+    llm_config=llm_config,
+    system_message="who are you",
+)
+
+chatres = examplar_gene.initiate_chat(examplar_gene2,max_turns=2)
+
+print(chatres)
