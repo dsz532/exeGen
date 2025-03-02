@@ -1,0 +1,585 @@
+{
+    "round": 0,
+    "examples": [
+        {
+            "content": "不同VLAN 间数据通信，需通过（ ）进行转发。",
+            "option": "{'A': 'HUB', 'B': '二层交换机', 'C': '路由器', 'D': '中继器'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_二层交换机_计算机科学与技术, K_二层交换机_计算机科学与技术对应的课程为网络综合布线, ",
+            "is_correct": 0,
+            "explanation": "The student answered incorrectly because they chose an option other than '路由器' (Router). In computer networks, communication between different VLANs requires routing, which is done by a router. The question asks for the device needed to forward data between different VLANs, and a router is specifically designed for this purpose. Options like 'HUB', '二层交换机' (Layer 2 Switch), and '中继器' (Repeater) do not provide the necessary inter-VLAN routing capability. Therefore, the correct answer is 'C', which is '路由器'."
+        },
+        {
+            "content": "为保证从分布式存储系统中读取的数据正确，需要采用哪种数据处理方式（  ）",
+            "option": "{'A': '压缩', 'B': '多份存储', 'C': 'Erasure coding编码', 'D': 'Checksum数据校验'}",
+            "right_answer": "[\"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_分布式存储系统_计算机科学与技术, K_分布式存储系统_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 0,
+            "explanation": "The student was asked to select the data processing method used to ensure the correctness of data read from a distributed storage system. The correct option is 'Checksum数据校验' (Checksum Data Verification), which is specifically designed to verify the integrity of data during storage and retrieval. This method ensures that data has not been altered or corrupted. The student did not choose this option, leading to an incorrect response."
+        },
+        {
+            "content": "为保证从分布式存储系统中读取的数据正确，需要采用哪种数据处理方式（  ）",
+            "option": "{'A': '压缩', 'B': '多份存储', 'C': 'Erasure coding编码', 'D': 'Checksum数据校验'}",
+            "right_answer": "[\"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_分布式存储系统_计算机科学与技术, K_分布式存储系统_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 1,
+            "explanation": "The student answered the question correctly. The question asked which method ensures data correctness when reading from a distributed storage system. The correct answer is 'Checksum数据校验' (Checksum data verification). Checksums are used to detect errors in data, ensuring the data read is the same as the data stored, thus maintaining data integrity in distributed systems."
+        },
+        {
+            "content": "对于数据复制中的两种技术Replication和Rebalance的异同点描述不正确的是（  ）",
+            "option": "{'A': 'Repication的主要目的是为了保证数据可靠，防止数据丢失', 'B': 'Rebalance的主要目的是为了清理系统中的多余数据，提高空间利用率', 'C': 'Replication和Rebalance都需要考虑到数据在数据中心中的存放位置，提高由于硬件失效带来的数据不可用', 'D': 'Replication和Rebalance需要有优先级控制，防止数据复制不及时造成数据丢失'}",
+            "right_answer": "[\"B\"]",
+            "knowledge_evidence": "题目对应知识点为K_级控_计算机科学与技术, K_级控_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 0,
+            "explanation": "The student answered incorrectly because they may have misunderstood the purpose of the 'Rebalance' technique. Option B, which was given as the choice, incorrectly states that 'Rebalance' is mainly for cleaning redundant data to improve space utilization. The correct perspective is that 'Rebalance' involves distributing existing data more evenly across available resources, which includes balancing data loads but not necessarily removing what's considered redundant. Thus, the correct answer is option B, which defines a purpose unaligned with the actual intended function of 'Rebalance'."
+        },
+        {
+            "content": "对于数据复制中的两种技术Replication和Rebalance的异同点描述不正确的是（  ）",
+            "option": "{'A': 'Repication的主要目的是为了保证数据可靠，防止数据丢失', 'B': 'Rebalance的主要目的是为了清理系统中的多余数据，提高空间利用率', 'C': 'Replication和Rebalance都需要考虑到数据在数据中心中的存放位置，提高由于硬件失效带来的数据不可用', 'D': 'Replication和Rebalance需要有优先级控制，防止数据复制不及时造成数据丢失'}",
+            "right_answer": "[\"B\"]",
+            "knowledge_evidence": "题目对应知识点为K_级控_计算机科学与技术, K_级控_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 1,
+            "explanation": "The student answered the question correctly by selecting option B. The prompt required choosing the incorrect statement about two technologies used in data duplication: Replication and Rebalance. Option B was identified as incorrect because Rebalance is typically about distributing data across nodes to ensure optimal utilization of resources and not about cleaning up excessive data and improving space utilization."
+        },
+        {
+            "content": "下面对于分布式存储系统中如何选取存储介质的描述错误的是（  ）",
+            "option": "{'A': '为了让程序实现简单高效，存储系统中应该选用单一的存储介质', 'B': '为了节省存储成本，通常在一个分布式存储系统中会使用多种存储介质来实现高性能和大容量的目的', 'C': '不同的使用场景下，应该采用灵活的混合存储方式来满足需求', 'D': '所有存储介质的存储寿命都是一样的，所以寿命不在选取介质类型的考虑范围内'}",
+            "right_answer": "[\"A\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_存储介质_计算机科学与技术, K_存储介质_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 0,
+            "explanation": "The question asked which option incorrectly describes the selection of storage mediums in distributed storage systems. The correct answers were 'A' and 'D'. The student answered incorrectly because they did not identify both of these as incorrect statements. \n\nOption 'A' is incorrect because using a single storage medium in a storage system does not necessarily make a program simple or efficient; distributed systems often require multiple types of storage to optimize performance and capacity.\n\nOption 'D' is also incorrect because the lifespan of storage media can vary significantly depending on the technology used (e.g., SSDs vs. HDDs), so storage lifespan should be considered when selecting storage types. \n\nThe student may have overlooked these explanations and selected the wrong answer(s), leading to the incorrect response."
+        },
+        {
+            "content": "下面对于分布式存储系统中如何选取存储介质的描述错误的是（  ）",
+            "option": "{'A': '为了让程序实现简单高效，存储系统中应该选用单一的存储介质', 'B': '为了节省存储成本，通常在一个分布式存储系统中会使用多种存储介质来实现高性能和大容量的目的', 'C': '不同的使用场景下，应该采用灵活的混合存储方式来满足需求', 'D': '所有存储介质的存储寿命都是一样的，所以寿命不在选取介质类型的考虑范围内'}",
+            "right_answer": "[\"A\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_存储介质_计算机科学与技术, K_存储介质_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 1,
+            "explanation": "The student correctly identified the options 'A' and 'D' as incorrect statements regarding storage media selection in distributed storage systems. Option 'A' is incorrect because using a single storage medium might simplify implementation but won't effectively address the diverse requirements of modern systems in terms of performance and capacity. Option 'D' is incorrect as different storage media have varying lifespans, and this factor should be considered when selecting the appropriate type for specific use cases. Recognizing these inaccuracies highlights a good understanding of the criteria for selecting storage media in distributed systems."
+        },
+        {
+            "content": "下面对分布式调度需要解决问题的说法正确的是？(  )",
+            "option": "{'A': '分布式调度主要解决任务调度的问题', 'B': '分布式调度主要解决资源如何分配的问题', 'C': '分布式调度既要解决任务调度也需要解决资源调度的问题', 'D': '以上说法都不对'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_任务调度_计算机科学与技术, K_任务调度_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 0,
+            "explanation": "The student selected an incorrect answer. The correct option is C: '分布式调度既要解决任务调度也需要解决资源调度的问题', which states that distributed scheduling needs to address both task scheduling and resource scheduling. The student either misunderstood the scope of distributed scheduling or overlooked the importance of the resource allocation aspect, choosing incorrectly among the options provided."
+        },
+        {
+            "content": "下面对分布式调度需要解决问题的说法正确的是？(  )",
+            "option": "{'A': '分布式调度主要解决任务调度的问题', 'B': '分布式调度主要解决资源如何分配的问题', 'C': '分布式调度既要解决任务调度也需要解决资源调度的问题', 'D': '以上说法都不对'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_任务调度_计算机科学与技术, K_任务调度_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 1,
+            "explanation": "The student answered the question correctly by selecting option 'C'. The question asked about which statement regarding distributed scheduling is correct. Option 'C' states that distributed scheduling needs to solve both task scheduling and resource scheduling issues. This is a correct understanding because distributed systems must efficiently manage both the distribution of tasks and the allocation of resources to achieve optimal performance and utilization."
+        },
+        {
+            "content": "伏羲资源调度支持抢占，下面说法错误的是？(  )",
+            "option": "{'A': 'FuxiMaster会从当前正在运行的任务中，从最低优先级任务开始强制收回资源', 'B': '最低优先级任务被抢占后，抢占过程即终止', 'C': '抢占会一直递归进行', 'D': '不能抢比自己优先级高的任务'}",
+            "right_answer": "[\"B\"]",
+            "knowledge_evidence": "题目对应知识点为K_资源调度_计算机科学与技术, K_资源调度_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 0,
+            "explanation": "The student selected option B, which states '最低优先级任务被抢占后，抢占过程即终止' as the incorrect statement. However, this is actually the correct statement that describes a common behavior in resource preemption where once the lowest priority task is preempted, the process stops. Therefore, the student's selection was incorrect because option B is not a false statement, whereas the problem asked for the false statement related to preemption. In resource preemption, lower priority tasks may be interrupted to allow higher priority tasks to use the resources."
+        },
+        {
+            "content": "伏羲分布式调度系统中负责资源调度的角色是？(  )",
+            "option": "{'A': 'FuxiMaster', 'B': 'Tubo', 'C': 'AppMaster', 'D': 'AppWorker'}",
+            "right_answer": "[\"A\"]",
+            "knowledge_evidence": "题目对应知识点为K_资源调度_计算机科学与技术, K_资源调度_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 1,
+            "explanation": "The student's answer is correct. In the context of the Fuxi distributed scheduling system, the 'FuxiMaster' is indeed the role responsible for resource scheduling. The student correctly chose option 'A', which is 'FuxiMaster', as their answer."
+        },
+        {
+            "content": "下列关于伏羲资源调度优先级策略的说法错误的是？(  )",
+            "option": "{'A': '每个job在提交时会带一个priority值，一个整数值，越大优先级越高', 'B': '相同优先级按提交时间，先提交的优先级高', 'C': '资源优先分配给高优先级的job，剩余的资源继续分配给次高优先级job', 'D': '允许有高优先级的紧急任务加入'}",
+            "right_answer": "[\"A\"]",
+            "knowledge_evidence": "题目对应知识点为K_高优先级_计算机科学与技术, K_高优先级_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 0,
+            "explanation": "The student answered the question incorrectly. The problem asks for the incorrect statement regarding '伏羲' resource scheduling priority strategy. The correct answer is 'A', which states that a job carries a priority value when submitted, and the larger the value, the higher the priority. This statement is incorrect in the context of this specific scheduling strategy. The student likely misunderstood the concept or remembered the principle incorrectly, leading to the wrong choice."
+        },
+        {
+            "content": "下列关于伏羲资源调度优先级策略的说法错误的是？(  )",
+            "option": "{'A': '每个job在提交时会带一个priority值，一个整数值，越大优先级越高', 'B': '相同优先级按提交时间，先提交的优先级高', 'C': '资源优先分配给高优先级的job，剩余的资源继续分配给次高优先级job', 'D': '允许有高优先级的紧急任务加入'}",
+            "right_answer": "[\"A\"]",
+            "knowledge_evidence": "题目对应知识点为K_高优先级_计算机科学与技术, K_高优先级_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 1,
+            "explanation": "The student correctly identified option 'A' as the incorrect statement. This is because in most priority scheduling systems, a smaller numerical value typically indicates a higher priority, contrary to the statement in option 'A' that suggests a larger priority value means a higher priority. Therefore, the student's understanding of priority values in job scheduling was correct, leading them to select the right answer."
+        },
+        {
+            "content": "伏羲资源调度支持抢占，下面说法错误的是？(  )",
+            "option": "{'A': 'FuxiMaster会从当前正在运行的任务中，从最低优先级任务开始强制收回资源', 'B': '最低优先级任务被抢占后，抢占过程即终止', 'C': '抢占会一直递归进行', 'D': '不能抢比自己优先级高的任务'}",
+            "right_answer": "[\"B\"]",
+            "knowledge_evidence": "题目对应知识点为K_资源调度_计算机科学与技术, K_资源调度_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 0,
+            "explanation": "The student selected option B, which states '最低优先级任务被抢占后，抢占过程即终止' as the incorrect statement. However, this is actually the correct statement that describes a common behavior in resource preemption where once the lowest priority task is preempted, the process stops. Therefore, the student's selection was incorrect because option B is not a false statement, whereas the problem asked for the false statement related to preemption. In resource preemption, lower priority tasks may be interrupted to allow higher priority tasks to use the resources."
+        },
+        {
+            "content": "伏羲分布式调度系统中负责资源调度的角色是？(  )",
+            "option": "{'A': 'FuxiMaster', 'B': 'Tubo', 'C': 'AppMaster', 'D': 'AppWorker'}",
+            "right_answer": "[\"A\"]",
+            "knowledge_evidence": "题目对应知识点为K_资源调度_计算机科学与技术, K_资源调度_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 1,
+            "explanation": "The student's answer is correct. In the context of the Fuxi distributed scheduling system, the 'FuxiMaster' is indeed the role responsible for resource scheduling. The student correctly chose option 'A', which is 'FuxiMaster', as their answer."
+        },
+        {
+            "content": "阿里云伏羲分布式调度系统与社区Hadoop MR最大的区别是？(  )",
+            "option": "{'A': 'Hadoop是一层架构集中资源和任务调度，而伏羲是两层架构独立的资源和任务调度', 'B': 'Hadoop存在规模瓶颈，而伏羲规模横向扩展性更好', 'C': 'Hadoop与伏羲的调度策略不同', 'D': 'Hadoop jobtracker没有failover，伏羲有完善的failover功能'}",
+            "right_answer": "[\"A\", \"B\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_调度策略_计算机科学与技术, K_调度策略_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 0,
+            "explanation": "The question asks about the main differences between Alibaba's Fuxi distributed scheduling system and Hadoop MR. The correct answers are A, B, and D. These options mention the architectural differences between the two systems (Fuxi having a more scalable architecture), scalability differences, and failover functionality, respectively. If the student's answer did not include these options, it would be considered incorrect. This indicates a possible misunderstanding of the critical differences in architecture and capabilities between Fuxi and Hadoop MR. Option C, while mentioning a difference in scheduling strategies, is not indicated as one of the main structural or capability differences expected in this question."
+        },
+        {
+            "content": "阿里云伏羲分布式调度系统与社区Hadoop MR最大的区别是？(  )",
+            "option": "{'A': 'Hadoop是一层架构集中资源和任务调度，而伏羲是两层架构独立的资源和任务调度', 'B': 'Hadoop存在规模瓶颈，而伏羲规模横向扩展性更好', 'C': 'Hadoop与伏羲的调度策略不同', 'D': 'Hadoop jobtracker没有failover，伏羲有完善的failover功能'}",
+            "right_answer": "[\"A\", \"B\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_调度策略_计算机科学与技术, K_调度策略_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 1,
+            "explanation": "The student correctly answered the question about the differences between the Aliyun Fuxi distributed scheduling system and community Hadoop MR. The correct answers are 'A', 'B', and 'D'. Option 'A' highlights the architectural differences where Hadoop has a single-layer architecture for resource and task scheduling, whereas Fuxi has a two-layer independent architecture for resource and task scheduling. Option 'B' addresses the scalability, pointing out Hadoop's scale limitation in contrast to Fuxi's better horizontal scalability. Option 'D' distinguishes their failover capabilities, noting that Hadoop's jobtracker does not have a failover mechanism while Fuxi provides a complete failover functionality. The student selected all these correct options, demonstrating an understanding of the key distinctions between these two systems as taught in the course '大数据平台核心技术' under the concept of scheduling strategies in computer science and technology."
+        },
+        {
+            "content": "虚拟局域网VLAN可根据以下哪些方式划分（）",
+            "option": "{'A': '根据端口划分VLAN', 'B': '根据MAC地址划分VLAN', 'C': '根据网络层（IP地址）划分VLAN', 'D': 'IP组播作为VLAN'}",
+            "right_answer": "[\"A\", \"B\", \"C\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_IP地址_信息与通信工程, K_IP地址_信息与通信工程对应的课程为网络综合布线, ",
+            "is_correct": 0,
+            "explanation": "The student answered incorrectly because they did not select all the correct options for ways to segment a virtual local area network (VLAN). According to the problem, VLAN can be divided based on port, MAC address, network layer (IP address), and IP multicast. The student may have missed or misunderstood one or more of these methods, which resulted in them not choosing all the correct options (A, B, C, D). It is important to recognize all possible ways to segment a VLAN to fully grasp this concept in network engineering."
+        }
+    ],
+    "tasks": [
+        {
+            "content": "不同VLAN 间数据通信，需通过（ ）进行转发。",
+            "option": "{'A': 'HUB', 'B': '二层交换机', 'C': '路由器', 'D': '中继器'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_二层交换机_计算机科学与技术, K_二层交换机_计算机科学与技术对应的课程为网络综合布线, ",
+            "is_correct": 0,
+            "explanation": ""
+        },
+        {
+            "content": "虚拟局域网VLAN可根据以下哪些方式划分（）",
+            "option": "{'A': '根据端口划分VLAN', 'B': '根据MAC地址划分VLAN', 'C': '根据网络层（IP地址）划分VLAN', 'D': 'IP组播作为VLAN'}",
+            "right_answer": "[\"A\", \"B\", \"C\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_IP地址信息与通信工程, K_IP地址信息与通信工程对应的课程为网络综合布线, ",
+            "is_correct": 0,
+            "explanation": ""
+        },
+        {
+            "content": "为保证从分布式存储系统中读取的数据正确，需要采用哪种数据处理方式（  ）",
+            "option": "{'A': '压缩', 'B': '多份存储', 'C': 'Erasure coding编码', 'D': 'Checksum数据校验'}",
+            "right_answer": "[\"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_分布式存储系统_计算机科学与技术, K_分布式存储系统_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "对于数据复制中的两种技术Replication和Rebalance的异同点描述不正确的是（  ）",
+            "option": "{'A': 'Repication的主要目的是为了保证数据可靠，防止数据丢失', 'B': 'Rebalance的主要目的是为了清理系统中的多余数据，提高空间利用率', 'C': 'Replication和Rebalance都需要考虑到数据在数据中心中的存放位置，提高由于硬件失效带来的数据不可用', 'D': 'Replication和Rebalance需要有优先级控制，防止数据复制不及时造成数据丢失'}",
+            "right_answer": "[\"B\"]",
+            "knowledge_evidence": "题目对应知识点为K_级控_计算机科学与技术, K_级控_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "下面对于分布式存储系统中如何选取存储介质的描述错误的是（  ）",
+            "option": "{'A': '为了让程序实现简单高效，存储系统中应该选用单一的存储介质', 'B': '为了节省存储成本，通常在一个分布式存储系统中会使用多种存储介质来实现高性能和大容量的目的', 'C': '不同的使用场景下，应该采用灵活的混合存储方式来满足需求', 'D': '所有存储介质的存储寿命都是一样的，所以寿命不在选取介质类型的考虑范围内'}",
+            "right_answer": "[\"A\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_存储介质_计算机科学与技术, K_存储介质_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "下面对分布式调度需要解决问题的说法正确的是？(  )",
+            "option": "{'A': '分布式调度主要解决任务调度的问题', 'B': '分布式调度主要解决资源如何分配的问题', 'C': '分布式调度既要解决任务调度也需要解决资源调度的问题', 'D': '以上说法都不对'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_任务调度_计算机科学与技术, K_任务调度_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "伏羲分布式调度系统中负责资源调度的角色是？(  )",
+            "option": "{'A': 'FuxiMaster', 'B': 'Tubo', 'C': 'AppMaster', 'D': 'AppWorker'}",
+            "right_answer": "[\"A\"]",
+            "knowledge_evidence": "题目对应知识点为K_资源调度_计算机科学与技术, K_资源调度_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "下列关于伏羲资源调度优先级策略的说法错误的是？(  )",
+            "option": "{'A': '每个job在提交时会带一个priority值，一个整数值，越大优先级越高', 'B': '相同优先级按提交时间，先提交的优先级高', 'C': '资源优先分配给高优先级的job，剩余的资源继续分配给次高优先级job', 'D': '允许有高优先级的紧急任务加入'}",
+            "right_answer": "[\"A\"]",
+            "knowledge_evidence": "题目对应知识点为K_高优先级_计算机科学与技术, K_高优先级_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "伏羲资源调度支持抢占，下面说法错误的是？(  )",
+            "option": "{'A': 'FuxiMaster会从当前正在运行的任务中，从最低优先级任务开始强制收回资源', 'B': '最低优先级任务被抢占后，抢占过程即终止', 'C': '抢占会一直递归进行', 'D': '不能抢比自己优先级高的任务'}",
+            "right_answer": "[\"B\"]",
+            "knowledge_evidence": "题目对应知识点为K_资源调度_计算机科学与技术, K_资源调度_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "阿里云伏羲分布式调度系统与社区Hadoop MR最大的区别是？(  )",
+            "option": "{'A': 'Hadoop是一层架构集中资源和任务调度，而伏羲是两层架构独立的资源和任务调度', 'B': 'Hadoop存在规模瓶颈，而伏羲规模横向扩展性更好', 'C': 'Hadoop与伏羲的调度策略不同', 'D': 'Hadoop jobtracker没有failover，伏羲有完善的failover功能'}",
+            "right_answer": "[\"A\", \"B\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_调度策略_计算机科学与技术, K_调度策略_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 1,
+            "explanation": ""
+        }
+    ],
+    "result": [
+        {
+            "content": "Which device is responsible for forwarding data between VLANs in a network?",
+            "option": "{'A': 'Hub', 'B': 'Layer 2 Switch', 'C': 'Router', 'D': 'Repeater'}",
+            "answer": "['C']",
+            "course_name": "网络综合布线",
+            "concept_id": "K_二层交换机_计算机科学与技术",
+            "explanation": "Routers are responsible for forwarding data between VLANs because they can route traffic based on IP addresses, unlike Layer 2 switches, hubs, or repeaters."
+        },
+        {
+            "content": "Why is a router necessary for inter-VLAN communication?",
+            "option": "{'A': 'It provides faster data transfer speeds', 'B': 'It operates at Layer 3 and can route traffic between VLANs', 'C': 'It eliminates the need for VLANs', 'D': 'It supports Layer 2 switching'}",
+            "answer": "['B']",
+            "course_name": "网络综合布线",
+            "concept_id": "K_二层交换机_计算机科学与技术",
+            "explanation": "Routers operate at Layer 3 (Network Layer) and can route traffic between VLANs, which is essential for inter-VLAN communication."
+        },
+        {
+            "content": "What happens if inter-VLAN communication is attempted without a router?",
+            "option": "{'A': 'Data is automatically forwarded between VLANs', 'B': 'Communication fails because VLANs are isolated at Layer 2', 'C': 'The network becomes faster', 'D': 'VLANs merge into a single network'}",
+            "answer": "['B']",
+            "course_name": "网络综合布线",
+            "concept_id": "K_二层交换机_计算机科学与技术",
+            "explanation": "Without a router, VLANs remain isolated at Layer 2, and communication between them is not possible."
+        },
+        {
+            "content": "Which of the following is NOT a valid method for VLAN segmentation?",
+            "option": "{'A': 'Based on MAC address', 'B': 'Based on IP address', 'C': 'Based on port number', 'D': 'Based on physical location'}",
+            "answer": "['D']",
+            "course_name": "网络综合布线",
+            "concept_id": "K_IP地址_信息与通信工程",
+            "explanation": "VLAN segmentation is typically based on MAC address, IP address, or port number, but not on physical location."
+        },
+        {
+            "content": "How does VLAN segmentation based on MAC addresses work?",
+            "option": "{'A': 'It groups devices based on their physical location', 'B': 'It assigns devices to VLANs based on their MAC addresses', 'C': 'It uses IP addresses to segment VLANs', 'D': 'It requires a router for segmentation'}",
+            "answer": "['B']",
+            "course_name": "网络综合布线",
+            "concept_id": "K_IP地址_信息与通信工程",
+            "explanation": "VLANs can be segmented by assigning devices to VLANs based on their MAC addresses, allowing for more dynamic grouping."
+        },
+        {
+            "content": "What is the primary purpose of VLAN segmentation based on IP addresses?",
+            "option": "{'A': 'To simplify network management', 'B': 'To isolate devices within the same subnet', 'C': 'To minimize broadcast domains', 'D': 'To prioritize traffic based on IP'}",
+            "answer": "['C']",
+            "course_name": "网络综合布线",
+            "concept_id": "K_IP地址_信息与通信工程",
+            "explanation": "VLAN segmentation based on IP addresses helps minimize broadcast domains and improve network efficiency."
+        },
+        {
+            "content": "What is the primary goal of preemption in resource scheduling?",
+            "option": "{'A': 'To prioritize low-priority tasks', 'B': 'To allocate resources to higher-priority tasks', 'C': 'To eliminate resource allocation', 'D': 'To increase the complexity of scheduling'}",
+            "answer": "['B']",
+            "course_name": "大数据平台核心技术",
+            "concept_id": "K_资源调度_计算机科学与技术",
+            "explanation": "Preemption ensures that higher-priority tasks receive resources by interrupting lower-priority tasks."
+        },
+        {
+            "content": "What happens when a low-priority task is preempted?",
+            "option": "{'A': 'The task is immediately terminated', 'B': 'The task is paused, and its resources are allocated to a higher-priority task', 'C': 'The task continues running without interruption', 'D': 'The task’s priority is automatically increased'}",
+            "answer": "['B']",
+            "course_name": "大数据平台核心技术",
+            "concept_id": "K_资源调度_计算机科学与技术",
+            "explanation": "When a low-priority task is preempted, it is paused, and its resources are reallocated to a higher-priority task."
+        },
+        {
+            "content": "Which of the following statements about preemption is incorrect?",
+            "option": "{'A': 'Preemption is used to prioritize higher-priority tasks', 'B': 'Preemption terminates after the lowest-priority task is preempted', 'C': 'Preemption continues recursively based on task priorities', 'D': 'Preemption cannot interrupt tasks with higher priority'}",
+            "answer": "['B']",
+            "course_name": "大数据平台核心技术",
+            "concept_id": "K_资源调度_计算机科学与技术",
+            "explanation": "Preemption does not necessarily terminate after preempting the lowest-priority task; it continues based on scheduling requirements."
+        },
+        {
+            "content": "In resource scheduling, what is the main reason for allowing preemption?",
+            "option": "{'A': 'To reduce the number of tasks in the system', 'B': 'To ensure fairness in resource allocation', 'C': 'To prioritize critical tasks over less important ones', 'D': 'To simplify the scheduling process'}",
+            "answer": "['C']",
+            "course_name": "大数据平台核心技术",
+            "concept_id": "K_资源调度_计算机科学与技术",
+            "explanation": "Preemption allows critical tasks to take priority over less important ones, ensuring efficient resource utilization."
+        }
+    ],
+    "cost": {
+        "usage_including_cached_inference": {
+            "total_cost": 0.079295,
+            "deepseek/deepseek-chat": {
+                "cost": 0.079295,
+                "prompt_tokens": 57381,
+                "completion_tokens": 6055,
+                "total_tokens": 63436
+            }
+        },
+        "usage_excluding_cached_inference": {
+            "total_cost": 0.079295,
+            "deepseek/deepseek-chat": {
+                "cost": 0.079295,
+                "prompt_tokens": 57381,
+                "completion_tokens": 6055,
+                "total_tokens": 63436
+            }
+        }
+    }
+},
+{
+    "round": 1,
+    "examples": [
+        {
+            "content": "伏羲资源调度支持抢占，下面说法错误的是？(  )",
+            "option": "{'A': 'FuxiMaster会从当前正在运行的任务中，从最低优先级任务开始强制收回资源', 'B': '最低优先级任务被抢占后，抢占过程即终止', 'C': '抢占会一直递归进行', 'D': '不能抢比自己优先级高的任务'}",
+            "right_answer": "[\"B\"]",
+            "knowledge_evidence": "题目对应知识点为K_资源调度_计算机科学与技术, K_资源调度_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 0,
+            "explanation": "The student selected option B, which states '最低优先级任务被抢占后，抢占过程即终止' as the incorrect statement. However, this is actually the correct statement that describes a common behavior in resource preemption where once the lowest priority task is preempted, the process stops. Therefore, the student's selection was incorrect because option B is not a false statement, whereas the problem asked for the false statement related to preemption. In resource preemption, lower priority tasks may be interrupted to allow higher priority tasks to use the resources."
+        },
+        {
+            "content": "伏羲分布式调度系统中负责资源调度的角色是？(  )",
+            "option": "{'A': 'FuxiMaster', 'B': 'Tubo', 'C': 'AppMaster', 'D': 'AppWorker'}",
+            "right_answer": "[\"A\"]",
+            "knowledge_evidence": "题目对应知识点为K_资源调度_计算机科学与技术, K_资源调度_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 1,
+            "explanation": "The student's answer is correct. In the context of the Fuxi distributed scheduling system, the 'FuxiMaster' is indeed the role responsible for resource scheduling. The student correctly chose option 'A', which is 'FuxiMaster', as their answer."
+        },
+        {
+            "content": "伏羲在支持大规模方面采用了哪些技术？(  )",
+            "option": "{'A': '多线程', 'B': '增量资源调度', 'C': '异步', 'D': '增加数据量'}",
+            "right_answer": "[\"A\", \"B\", \"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_加数_计算机科学与技术, K_加数_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 0,
+            "explanation": "The student answered incorrectly because they chose an option that was not part of the correct set of technologies Fuxi uses for supporting large-scale systems. The correct answers were 'A', 'B', and 'C' which are 'multithreading', 'incremental resource scheduling', and 'asynchronous'. These options are relevant to the context of supporting large-scale systems as they deal with effective resource management, parallel processing, and non-blocking operations. The option the student selected, 'D', 'increasing data volume', does not contribute to the technical scalability of large systems and was unnecessary for this question."
+        },
+        {
+            "content": "伏羲在支持大规模方面采用了哪些技术？(  )",
+            "option": "{'A': '多线程', 'B': '增量资源调度', 'C': '异步', 'D': '增加数据量'}",
+            "right_answer": "[\"A\", \"B\", \"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_加数_计算机科学与技术, K_加数_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 1,
+            "explanation": "The student correctly identified the technologies used by Fuxi to support large-scale operations, which were 'multi-threading', 'incremental resource scheduling', and 'asynchronous operations'. These options, corresponding to 'A', 'B', and 'C', are indeed the correct answer. The student demonstrated an understanding of the relevant technologies in the context of big data platform core technologies."
+        },
+        {
+            "content": "下面哪个阶段在BSP模型中可以独立并发执行的？（  ）",
+            "option": "{'A': '数据分片阶段', 'B': '本地计算阶段', 'C': '全局通信阶段', 'D': '栅栏同步阶段'}",
+            "right_answer": "[\"B\"]",
+            "knowledge_evidence": "题目对应知识点为K_BSP模型_计算机科学与技术, K_BSP模型_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 0,
+            "explanation": "学生在此题目中回答错误。题目询问的是在BSP（Bulk Synchronous Parallel）模型中哪个阶段可以独立并发执行。根据BSP模型的相关知识，本地计算阶段（选项B）是每个处理单元可以独立执行并与其他单元并行运作的阶段。在这阶段，各个处理单元执行自身的局部计算，没有与其他单元的直接通信。因此，正确答案是选择B，本地计算阶段。学生的答案未匹配该答案，因此标记为错误。"
+        },
+        {
+            "content": "下面哪个阶段在BSP模型中可以独立并发执行的？（  ）",
+            "option": "{'A': '数据分片阶段', 'B': '本地计算阶段', 'C': '全局通信阶段', 'D': '栅栏同步阶段'}",
+            "right_answer": "[\"B\"]",
+            "knowledge_evidence": "题目对应知识点为K_BSP模型_计算机科学与技术, K_BSP模型_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 1,
+            "explanation": "The question asks which phase in the BSP (Bulk Synchronous Parallel) model can be executed independently and concurrently. The correct answer, 'B', refers to the '本地计算阶段' or 'local computation phase'. In the BSP model, the local computation phase is the stage where each processor performs computations independently without requiring data from other processors, making it suitable for concurrent execution. The student answered this question correctly, identifying the right phase that can execute independently and concurrently."
+        },
+        {
+            "content": "下面哪个阶段在BSP模型中可以独立并发执行的？（  ）",
+            "option": "{'A': '数据分片阶段', 'B': '本地计算阶段', 'C': '全局通信阶段', 'D': '栅栏同步阶段'}",
+            "right_answer": "[\"B\"]",
+            "knowledge_evidence": "题目对应知识点为K_BSP模型_计算机科学与技术, K_BSP模型_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 0,
+            "explanation": "学生在此题目中回答错误。题目询问的是在BSP（Bulk Synchronous Parallel）模型中哪个阶段可以独立并发执行。根据BSP模型的相关知识，本地计算阶段（选项B）是每个处理单元可以独立执行并与其他单元并行运作的阶段。在这阶段，各个处理单元执行自身的局部计算，没有与其他单元的直接通信。因此，正确答案是选择B，本地计算阶段。学生的答案未匹配该答案，因此标记为错误。"
+        },
+        {
+            "content": "下面哪个阶段在BSP模型中可以独立并发执行的？（  ）",
+            "option": "{'A': '数据分片阶段', 'B': '本地计算阶段', 'C': '全局通信阶段', 'D': '栅栏同步阶段'}",
+            "right_answer": "[\"B\"]",
+            "knowledge_evidence": "题目对应知识点为K_BSP模型_计算机科学与技术, K_BSP模型_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 1,
+            "explanation": "The question asks which phase in the BSP (Bulk Synchronous Parallel) model can be executed independently and concurrently. The correct answer, 'B', refers to the '本地计算阶段' or 'local computation phase'. In the BSP model, the local computation phase is the stage where each processor performs computations independently without requiring data from other processors, making it suitable for concurrent execution. The student answered this question correctly, identifying the right phase that can execute independently and concurrently."
+        },
+        {
+            "content": "下面哪些是函数式编程语言有特点？（  ）",
+            "option": "{'A': '每个函数都有输出', 'B': '函数可以改变外部变量的状态', 'C': '函数的输出结果不依赖于外部变量', 'D': '函数的输入参数可能是另外一个函数'}",
+            "right_answer": "[\"A\", \"C\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_外部变量_计算机科学与技术, K_外部变量_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 0,
+            "explanation": "学生回答此题不正确。题目是关于函数式编程语言的特点，正确答案是选项 A、C 和 D。选项 A（每个函数都有输出）和选项 D（函数的输入参数可能是另外一个函数）都是函数式编程语言的特点，因为函数式编程强调函数的纯粹性和组成性。选项 C（函数的输出结果不依赖于外部变量）描述了函数式编程语言中的纯函数特性，即相同的输入总是产生相同的输出，不依赖于外部状态。而选项 B（函数可以改变外部变量的状态）通常不是函数式编程所鼓励的特性，因为函数式编程语言通常强调不变性和避免副作用。因此，学生可能错误地选择了选项 B，导致答案不正确。"
+        },
+        {
+            "content": "下面哪些是函数式编程语言有特点？（  ）",
+            "option": "{'A': '每个函数都有输出', 'B': '函数可以改变外部变量的状态', 'C': '函数的输出结果不依赖于外部变量', 'D': '函数的输入参数可能是另外一个函数'}",
+            "right_answer": "[\"A\", \"C\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_外部变量_计算机科学与技术, K_外部变量_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 1,
+            "explanation": "The student correctly identified the features of functional programming languages. In functional programming, each function has an output ('A'), the output does not depend on external variables making it purely functional ('C'), and functions can take other functions as arguments ('D'). The option 'B', 'functions can change the state of external variables,' is not characteristic of functional programming, where functions are usually pure and do not have side effects. This understanding aligns with the principles of functional programming, explaining the student's correct answer."
+        },
+        {
+            "content": "分布式计算过程中，以下哪种计算调度方式代价更小？(  )",
+            "option": "{'A': '将计算发送到数据所在机器运行', 'B': '将数据拷贝到计算所在机器运行', 'C': '将数据和计算拿到统一的节点上运行', 'D': '以上都不对'}",
+            "right_answer": "[\"A\"]",
+            "knowledge_evidence": "题目对应知识点为K_调度方式_计算机科学与技术, K_调度方式_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 1,
+            "explanation": "The student's answer is A, which is the correct answer. The question asks which scheduling method incurs the least cost during distributed computing. Sending computation to where the data is located (option A) is typically more cost-effective than moving data to the computation (option B) or having both data and computation converge on a single node (option C). This is because large datasets have significant overhead when transferred, so it is efficient to process them where they are stored. The student demonstrated understanding of this concept by choosing the correct option."
+        },
+        {
+            "content": "下面对流式描述正确的是（  ）",
+            "option": "{'A': '它是一种有状态计算，failover必须将数据从最源头重发。', 'B': '数据必须是有序进入，才能保证数据的正确性。', 'C': 'temporal SQL是适合流式计算的SQL语言。', 'D': '流式计算无法支持delete和update语义。'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_对流_计算机科学与技术, K_对流_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 0,
+            "explanation": "The student chose an incorrect answer for the question about stream processing. The correct answer was option 'C', which states 'temporal SQL is suitable for stream processing SQL language.' This option correctly reflects the adaptability of SQL for stream processing, specifically temporal SQL, which handles time-based streaming data efficiently. The student's answer perhaps did not match this correct assessment. Options 'A', 'B', and 'D' contain inaccuracies or misconceptions about stream processing; for example, 'A' misleadingly suggests a strict state retention requirement and data retransmission, and 'D' incorrectly claims limitations on stream processing capabilities regarding 'delete and update semantics'. Therefore, the attention should be on the temporal SQL's suitability for streaming to choose the correct option 'C'."
+        },
+        {
+            "content": "下面对流式描述正确的是（  ）",
+            "option": "{'A': '它是一种有状态计算，failover必须将数据从最源头重发。', 'B': '数据必须是有序进入，才能保证数据的正确性。', 'C': 'temporal SQL是适合流式计算的SQL语言。', 'D': '流式计算无法支持delete和update语义。'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_对流_计算机科学与技术, K_对流_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 1,
+            "explanation": "The student answered correctly with option 'C': 'temporal SQL is suitable for stream computing'. This choice was correct because temporal SQL is indeed designed to handle temporal data efficiently, which is crucial in stream computing where data is continuously generated and processed."
+        },
+        {
+            "content": "下面对系统雪崩准确的描述有（  ）",
+            "option": "{'A': '系统雪崩是由于oom，引起系统级联的宕机现象。', 'B': '系统雪崩是由于系统设计问题，由软硬件以及流量异常引发的由细微问题引发更大面积故障，直至系统当机的现象。', 'C': '系统雪崩一般不会因为硬件引发。而是由于流量激增，系统容量设计不足，造成后台系统，包括数据库系统的不正常工作。', 'D': '系统雪崩最初原因与触发宕机的故障可以相关，也有可能无关。'}",
+            "right_answer": "[\"B\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_宕机_计算机科学与技术, K_宕机_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 0,
+            "explanation": "The student was asked to accurately describe a 'system avalanche.' The correct options for the answer are B and D. Option B describes the 'system avalanche' as occurring due to system design issues and small problems leading to larger failures, eventually causing a system failure. This aligns with the cascading nature of a 'system avalanche.' Option D states that the initially triggering cause of a system failure may or may not be related, which reflects how varied causes can contribute to systemic failures. The student's answer did not include both B and D, leading to the incorrect answer. It's important to consider the broad and interconnected nature of system failures in such scenarios."
+        },
+        {
+            "content": "下面对系统雪崩准确的描述有（  ）",
+            "option": "{'A': '系统雪崩是由于oom，引起系统级联的宕机现象。', 'B': '系统雪崩是由于系统设计问题，由软硬件以及流量异常引发的由细微问题引发更大面积故障，直至系统当机的现象。', 'C': '系统雪崩一般不会因为硬件引发。而是由于流量激增，系统容量设计不足，造成后台系统，包括数据库系统的不正常工作。', 'D': '系统雪崩最初原因与触发宕机的故障可以相关，也有可能无关。'}",
+            "right_answer": "[\"B\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_宕机_计算机科学与技术, K_宕机_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 1,
+            "explanation": "The student's answer to the question about '系统雪崩' or 'system avalanche' was correct because they identified both statement B and D as accurate descriptions. Statement B correctly emphasizes that a system avalanche can be triggered by small design problems or anomalies in software, hardware, or traffic leading to widespread system failure. Statement D accurately acknowledges that the initial cause of a system avalanche can either be related or unrelated to the fault that triggers the crash. The student successfully discerned these nuanced descriptions, aligning their answer with the provided solution."
+        },
+        {
+            "content": "对于spark streaming不正确的描述有（  ）",
+            "option": "{'A': 'spark streaming的ack机制由一组分布式的系统维护，所以它是scale-out的。', 'B': 'spark streaming使用mini-batch的机制，dstream由多个rdd组成。', 'C': 'spark streaming支持滑动窗口，固定窗口和session窗口。', 'D': 'spark streaming是将流式计算切割成批量计算。但同时，批量计算也可以当作流式计算运行。'}",
+            "right_answer": "[\"A\", \"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_系统维护_计算机科学与技术, K_系统维护_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 0,
+            "explanation": "The student was tasked with identifying incorrect descriptions about Spark Streaming. The correct answers were \"A\" and \"C\". Option \"A\" was incorrect because Spark Streaming's ack mechanism is not inherently scale-out; it relies on Spark's distributed computation model rather than a specific mechanism for scaling acknowledgments independently. Option \"C\" was incorrect because while Spark Streaming does support sliding and fixed windows, it does not inherently support session windows, which require more complex state management that is not directly supported by the Spark Streaming API out of the box. The student did not choose both of these options, which is why the answer was marked as incorrect."
+        },
+        {
+            "content": "对于spark streaming不正确的描述有（  ）",
+            "option": "{'A': 'spark streaming的ack机制由一组分布式的系统维护，所以它是scale-out的。', 'B': 'spark streaming使用mini-batch的机制，dstream由多个rdd组成。', 'C': 'spark streaming支持滑动窗口，固定窗口和session窗口。', 'D': 'spark streaming是将流式计算切割成批量计算。但同时，批量计算也可以当作流式计算运行。'}",
+            "right_answer": "[\"A\", \"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_系统维护_计算机科学与技术, K_系统维护_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 1,
+            "explanation": "The student correctly identified the incorrect statements about spark streaming. Option A is incorrect because Spark Streaming's acknowledgment mechanism, while scalable, is not specifically detailed to be maintained by a separate set of distributed systems. Instead, it relies on strong integration with the overall Spark architecture. Option C is also incorrect because Spark Streaming primarily supports sliding and fixed windows, but session windows are typically associated with more advanced stream processing platforms and are not natively supported by Spark Streaming in its classic form. Therefore, the student's understanding and choices for this question were correct."
+        },
+        {
+            "content": "逻辑回归属于下列那一类机器学习算法：（  ）",
+            "option": "{'A': 'Supervised Learning 监督学习', 'B': 'Unsupervised Learning无监督学习', 'C': 'Reinforcement Learning 加强学习', 'D': '以上都不是'}",
+            "right_answer": "[\"A\"]",
+            "knowledge_evidence": "题目对应知识点为K_监督学习_计算机科学与技术, K_监督学习_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 1,
+            "explanation": "The student answered the question correctly by selecting option 'A', which is 'Supervised Learning 监督学习'. This is the correct answer because logistic regression is indeed a type of supervised learning algorithm. In supervised learning, models are trained using labeled data, and logistic regression is commonly used for classification tasks where the output variable is categorical."
+        }
+    ],
+    "tasks": [
+        {
+            "content": "伏羲资源调度的目标包括？(  )",
+            "option": "{'A': '集群资源利用率最大化', 'B': '每个任务的资源等待时间最小化', 'C': '能分组控制资源配额', 'D': '能支持临时紧急任务'}",
+            "right_answer": "[\"A\", \"B\", \"C\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_资源调度_计算机科学与技术, K_资源调度_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "伏羲在支持大规模方面采用了哪些技术？(  )",
+            "option": "{'A': '多线程', 'B': '增量资源调度', 'C': '异步', 'D': '增加数据量'}",
+            "right_answer": "[\"A\", \"B\", \"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_加数_计算机科学与技术, K_加数_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "下面哪个阶段在BSP模型中可以独立并发执行的？（  ）",
+            "option": "{'A': '数据分片阶段', 'B': '本地计算阶段', 'C': '全局通信阶段', 'D': '栅栏同步阶段'}",
+            "right_answer": "[\"B\"]",
+            "knowledge_evidence": "题目对应知识点为K_BSP模型_计算机科学与技术, K_BSP模型_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "下面哪些是BSP模型的缺点？（  ）",
+            "option": "{'A': '栅栏同步开销比较大', 'B': '可能产生死锁', 'C': '没有解决负载均衡问题', 'D': '被计算的数据可以保存在内存里'}",
+            "right_answer": "[\"A\"]",
+            "knowledge_evidence": "题目对应知识点为K_BSP模型_计算机科学与技术, K_BSP模型_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "下面哪些是函数式编程语言有特点？（  ）",
+            "option": "{'A': '每个函数都有输出', 'B': '函数可以改变外部变量的状态', 'C': '函数的输出结果不依赖于外部变量', 'D': '函数的输入参数可能是另外一个函数'}",
+            "right_answer": "[\"A\", \"C\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_外部变量_计算机科学与技术, K_外部变量_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "分布式计算过程中，以下哪种计算调度方式代价更小？(  )",
+            "option": "{'A': '将计算发送到数据所在机器运行', 'B': '将数据拷贝到计算所在机器运行', 'C': '将数据和计算拿到统一的节点上运行', 'D': '以上都不对'}",
+            "right_answer": "[\"A\"]",
+            "knowledge_evidence": "题目对应知识点为K_调度方式_计算机科学与技术, K_调度方式_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "下面对流式描述正确的是（  ）",
+            "option": "{'A': '它是一种有状态计算，failover必须将数据从最源头重发。', 'B': '数据必须是有序进入，才能保证数据的正确性。', 'C': 'temporal SQL是适合流式计算的SQL语言。', 'D': '流式计算无法支持delete和update语义。'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_对流_计算机科学与技术, K_对流_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "下面对系统雪崩准确的描述有（  ）",
+            "option": "{'A': '系统雪崩是由于oom，引起系统级联的宕机现象。', 'B': '系统雪崩是由于系统设计问题，由软硬件以及流量异常引发的由细微问题引发更大面积故障，直至系统当机的现象。', 'C': '系统雪崩一般不会因为硬件引发。而是由于流量激增，系统容量设计不足，造成后台系统，包括数据库系统的不正常工作。', 'D': '系统雪崩最初原因与触发宕机的故障可以相关，也有可能无关。'}",
+            "right_answer": "[\"B\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_宕机_计算机科学与技术, K_宕机_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "对于spark streaming不正确的描述有（  ）",
+            "option": "{'A': 'spark streaming的ack机制由一组分布式的系统维护，所以它是scale-out的。', 'B': 'spark streaming使用mini-batch的机制，dstream由多个rdd组成。', 'C': 'spark streaming支持滑动窗口，固定窗口和session窗口。', 'D': 'spark streaming是将流式计算切割成批量计算。但同时，批量计算也可以当作流式计算运行。'}",
+            "right_answer": "[\"A\", \"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_系统维护_计算机科学与技术, K_系统维护_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "逻辑回归属于下列那一类机器学习算法：（  ）",
+            "option": "{'A': 'Supervised Learning 监督学习', 'B': 'Unsupervised Learning无监督学习', 'C': 'Reinforcement Learning 加强学习', 'D': '以上都不是'}",
+            "right_answer": "[\"A\"]",
+            "knowledge_evidence": "题目对应知识点为K_监督学习_计算机科学与技术, K_监督学习_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 1,
+            "explanation": ""
+        }
+    ],
+    "result": null,
+    "cost": {
+        "usage_including_cached_inference": {
+            "total_cost": 0.0848375,
+            "deepseek/deepseek-chat": {
+                "cost": 0.0848375,
+                "prompt_tokens": 61864,
+                "completion_tokens": 6006,
+                "total_tokens": 67870
+            }
+        },
+        "usage_excluding_cached_inference": {
+            "total_cost": 0.0848375,
+            "deepseek/deepseek-chat": {
+                "cost": 0.0848375,
+                "prompt_tokens": 61864,
+                "completion_tokens": 6006,
+                "total_tokens": 67870
+            }
+        }
+    }
+},

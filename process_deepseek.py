@@ -38,7 +38,7 @@ llm_config = {
         "model": "deepseek/deepseek-chat",
         "base_url": "https://openrouter.ai/api/v1",
         "api_key": "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",
-        "price": [0, 0]
+        "price": [0.00125, 0.00125]
     }]
 }
 
@@ -359,7 +359,7 @@ def extract_last_json(s):
     return None
 
 
-for i in range(0, 34):
+for i in range(1, 34):
 
     text = {
         "round": i,
