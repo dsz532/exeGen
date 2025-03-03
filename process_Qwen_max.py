@@ -359,7 +359,7 @@ def extract_last_json(s):
     return None
 
 
-for i in range(33,34):
+for i in range(5,34):
 
     text = {
         "round": i,
@@ -434,7 +434,7 @@ for i in range(33,34):
     text["result"] = res_exe
     text["cost"] = chat_cost
     text = json.dumps(text, ensure_ascii=False, indent=4)
-    with open('txtfile/result_Qwen_max_sin.txt', 'a', encoding='utf-8') as f:
+    with open('txtfile/result_Qwen_max_mul.txt', 'a', encoding='utf-8') as f:
         f.write(text + ',\n')
 
     print(json.dumps(res_exe, ensure_ascii=False, indent=4))
