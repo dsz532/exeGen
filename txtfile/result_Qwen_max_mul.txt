@@ -4836,3 +4836,2416 @@
         }
     }
 },
+{
+    "round": 14,
+    "examples": [
+        {
+            "content": "在Linux中，打开BASH后的命令提示符，能够告诉你有关主机的哪些信息？",
+            "option": "{'A': '登录的主机名', 'B': '登录的用户名', 'C': '用户当前所处的工作目录', 'D': '用户上次登录时间'}",
+            "right_answer": "[\"A\", \"B\", \"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_命令提示符_计算机科学与技术, K_命令提示符_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The student answered this question incorrectly. The command prompt in BASH typically displays the login hostname, the username, and the current working directory. However, it does not show the user's last login time, which was incorrectly selected by the student as an answer. The correct answer is options A, B, and C."
+        },
+        {
+            "content": "当您在命令提示符的后面输入命令的一部分时，按（__）键，Linux会帮你打剩下的字符，补充成为完整命令，如果有多个相符的命令，连按两下（__）键，Linux会显示所有的相符的命令。",
+            "option": "{'A': 'TAB', 'B': 'CONTRL', 'C': 'SHIFT', 'D': 'SPACE'}",
+            "right_answer": "[\"A\"]",
+            "knowledge_evidence": "题目对应知识点为K_命令提示符_计算机科学与技术, K_命令提示符_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student correctly identified 'TAB' as the key used in Linux for command completion. In Linux, when you type part of a command and press the TAB key, it auto-completes the command if there's only one possibility, or suggests options if there are multiple possibilities when pressed twice. This displays the command-line feature of autocompletion, integral for efficient command-line navigation."
+        },
+        {
+            "content": "下面的选项哪些是正确的？",
+            "option": "{'A': 'Linux操作系统是由Linus Torvalds发明的', 'B': 'Linux操作系统是由Richard Stallman发明的', 'C': 'Linus Torvalds和Richard Stallman的工作共同造就了Linux', 'D': '自由软件运动和互联网的兴起造就了Linux操作系统'}",
+            "right_answer": "[\"C\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_自由软件_计算机科学与技术, K_自由软件_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The student answered incorrectly because they did not select the correct options 'C' and 'D'. Option 'C' is correct because Linux was made possible by the combined efforts of Linus Torvalds, who created the Linux kernel, and Richard Stallman, who advocated free software and created the GNU project, which provided tools for use with Linux. Option 'D' is correct as well because the free software movement and the rise of the internet significantly contributed to the development and proliferation of Linux. Option 'A' is incorrect as Linus Torvalds did not invent Linux; he created the kernel. Option 'B' is incorrect because Richard Stallman did not invent Linux; instead, he founded the free software foundation and contributed to the Linux ecosystem with GNU software. Therefore, for this question, options 'C' and 'D' are the correct answers."
+        },
+        {
+            "content": "下面的选项哪些是正确的？",
+            "option": "{'A': 'Linux操作系统是由Linus Torvalds发明的', 'B': 'Linux操作系统是由Richard Stallman发明的', 'C': 'Linus Torvalds和Richard Stallman的工作共同造就了Linux', 'D': '自由软件运动和互联网的兴起造就了Linux操作系统'}",
+            "right_answer": "[\"C\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_自由软件_计算机科学与技术, K_自由软件_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student answered correctly by selecting options 'C' and 'D'. 'C' is correct because Linus Torvalds initiated the development of the Linux kernel, and Richard Stallman started the GNU project; together, they contributed to what is now known as the Linux operating system. 'D' is also correct as the free software movement, led by Stallman, along with the growth of the internet, played significant roles in popularizing Linux. Option 'A' is partially correct but implies that Linus alone created Linux, ignoring the contributions from the GNU project, and 'B' is incorrect as Richard Stallman did not invent Linux but was instrumental in the free software movement. The student has correctly identified the combined efforts and historical context behind Linux's development."
+        },
+        {
+            "content": "关于CentOS,下面哪些说法是正确的？",
+            "option": "{'A': 'CentOS100%兼容红帽企业版(RHEL)', 'B': 'CentOS不提供专门技术支持，不包含封闭源代码软件', 'C': 'CentOS 64位版本可以安装在32位架构的机器上', 'D': 'CentOS是利用用红帽企业版(RHEL)源代码重新编译而成的'}",
+            "right_answer": "[\"A\", \"B\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_闭源_计算机科学与技术, K_闭源_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The student's response was incorrect because they did not select the correct options according to the given correct answers [\"A\", \"B\", \"D\"]. Here is why each statement is evaluated: \r\n\r\n- 'A': Correct. CentOS is a community-supported distribution that aims to provide a free, community-supported computing platform which is 100% compatible with its upstream source, Red Hat Enterprise Linux (RHEL).\r\n\r\n- 'B': Correct. CentOS does not offer dedicated technical support and it doesn't include proprietary software.\r\n\r\n- 'C': Incorrect. A 64-bit version of CentOS cannot be installed on a 32-bit architecture machine due to compatibility issues between 64-bit software and 32-bit hardware.\r\n\r\n- 'D': Correct. CentOS is indeed built by recompiling RHEL source code. This allows CentOS to stay compatible with RHEL without the need for proprietary software."
+        },
+        {
+            "content": "安装Linux所要的两个最基本的分区分别是以（ ）和（ ）。",
+            "option": "{'A': '/boot分区', 'B': '/home分区', 'C': '根分区', 'D': 'Swap分区'}",
+            "right_answer": "[\"C\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_Swap分区_计算机科学与技术, K_Swap分区_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The student answered incorrectly because they did not choose both the '根分区' (root partition) and 'Swap分区' (swap partition). In Linux installation, the root partition ('根分区') is essential as it serves as the top-level directory for the filesystem. The swap partition ('Swap分区') is also fundamental as it acts as an extension of RAM to improve system performance. Therefore, the correct choices are 'C' (根分区) and 'D' (Swap分区), but the student either missed one or chose incorrectly."
+        },
+        {
+            "content": "安装Linux所要的两个最基本的分区分别是以（ ）和（ ）。",
+            "option": "{'A': '/boot分区', 'B': '/home分区', 'C': '根分区', 'D': 'Swap分区'}",
+            "right_answer": "[\"C\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_Swap分区_计算机科学与技术, K_Swap分区_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student answered the question correctly. The two basic partitions needed when installing Linux are the root partition and the swap partition. The root partition ('/') is essential as it contains the operating system files, whereas the swap partition is used as an extension of the system's physical memory. Therefore, choosing '根分区' (root partition) and 'Swap分区' (swap partition) was the correct choice."
+        },
+        {
+            "content": "在Linux中，打开BASH后的命令提示符，能够告诉你有关主机的哪些信息？",
+            "option": "{'A': '登录的主机名', 'B': '登录的用户名', 'C': '用户当前所处的工作目录', 'D': '用户上次登录时间'}",
+            "right_answer": "[\"A\", \"B\", \"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_主机名_计算机科学与技术, K_主机名_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The student's answer was incorrect because they likely included all options without recognizing that option D '用户上次登录时间' is not typically displayed in the BASH command prompt. The BASH prompt in Linux generally shows the login hostname, login username, and current working directory, which corresponds to options A, B, and C. The prompt does not, by default, display the last login time, so including option D led to the answer being incorrect."
+        },
+        {
+            "content": "关于修改主机名，下面那些说法是正确的：",
+            "option": "{'A': '需要修改/etc/sysconfig/network文件', 'B': '需要修改/etc/hosts文件', 'C': '需要修改/etc/sysconfig/network-scripts/ifcfg-eth0文件', 'D': '一般需要重启系统，让修改生效'}",
+            "right_answer": "[\"A\", \"B\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_主机名_计算机科学与技术, K_主机名_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student answered the question correctly. The task was to identify which statements are true regarding modifying the hostname. The correct answers were options A, B, and D. These options are correct because: A) /etc/sysconfig/network file typically needs to be modified to change the hostname setting; B) /etc/hosts file is often modified to map the hostname to its associated IP address; and D) a system restart is generally required for changes to take full effect. Option C is not typically required for changing the hostname, which the student correctly omitted."
+        },
+        {
+            "content": "下面关于关机和重启的说法，哪些是正确的？",
+            "option": "{'A': '关机是系统管理员要给予充分重视的一件大事.', 'B': 'shutdown -k now 命令用于立即关机', 'C': '不恰当或者不正确的关机和重启，可能会导致数据丢失', 'D': '关机和重启命令默认情况下普通用户亦可执行'}",
+            "right_answer": "[\"A\", \"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_系统管理员_计算机科学与技术, K_系统管理员_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The student answered incorrectly because they selected option 'B' which states that 'shutdown -k now' is used for immediate shutdown. This command is actually used to send warning messages to users but does not perform any shutdown. The correct options are 'A' and 'C', as option 'A' emphasizes the importance of shutdown for system administrators and option 'C' highlights the risk of data loss from improper shutdown procedures. Ordinary users do not have default permissions to execute shutdown and restart commands, hence option 'D' is also incorrect."
+        },
+        {
+            "content": "下面关于关机和重启的说法，哪些是正确的？",
+            "option": "{'A': '关机是系统管理员要给予充分重视的一件大事.', 'B': 'shutdown -k now 命令用于立即关机', 'C': '不恰当或者不正确的关机和重启，可能会导致数据丢失', 'D': '关机和重启命令默认情况下普通用户亦可执行'}",
+            "right_answer": "[\"A\", \"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_系统管理员_计算机科学与技术, K_系统管理员_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student's answer is correct. Option A and C are indeed correct statements about the shutdown and reboot processes in a Linux system. Option A highlights the importance that a system administrator should give to shutting down a system correctly. Option C warns of the potential for data loss if shutdowns and reboots are performed incorrectly or inappropriately. However, options B and D are incorrect. The command 'shutdown -k now' does not actually initiate a shutdown; instead, it only sends a warning message to users. Additionally, shutdown and reboot commands are typically restricted to administrative users rather than regular users by default."
+        },
+        {
+            "content": "Linux中所谓的命令(Command)，广义上包括：",
+            "option": "{'A': '可执行的二进制文件', 'B': '可执行的库文件', 'C': 'shell脚本文件', 'D': 'shell内建函数'}",
+            "right_answer": "[\"A\", \"C\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_Shell脚本_计算机科学与技术, K_Shell脚本_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The student answered incorrectly because they included 'B', '可执行的库文件' (executable library files), which is not considered a command in Linux. In Linux, commands generally refer to executable binary files, shell scripts, and shell built-in functions, which correspond to options 'A', 'C', and 'D'. The correct answer should have included only these three options: 'A', 'C', and 'D'."
+        },
+        {
+            "content": "现在需要在根目录下找所有的名字为temp的文件，然后删除，删除时不需要提示，请问可如何实现。",
+            "option": "{'A': 'find / -name temp rm *', 'B': '编一个SHELL脚本实现', 'C': 'find / -name temp –exec rm {}  ;', 'D': 'find / -name temp –exec rm'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_Shell脚本_计算机科学与技术, K_Shell脚本_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student correctly chose option C, 'find / -name temp –exec rm {} ;', to find and delete all 'temp' files in the root directory without prompts. This command uses 'find' to locate files named 'temp' and then uses '-exec rm {} ;' to remove them immediately. The syntax is accurate for achieving the task without the need for manual confirmation, aligning precisely with the requirements described in the problem statement."
+        },
+        {
+            "content": "在Linux中，打开BASH后的命令提示符，能够告诉你有关主机的哪些信息？",
+            "option": "{'A': '登录的主机名', 'B': '登录的用户名', 'C': '用户当前所处的工作目录', 'D': '用户上次登录时间'}",
+            "right_answer": "[\"A\", \"B\", \"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_命令提示符_计算机科学与技术, K_命令提示符_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The student answered this question incorrectly. The command prompt in BASH typically displays the login hostname, the username, and the current working directory. However, it does not show the user's last login time, which was incorrectly selected by the student as an answer. The correct answer is options A, B, and C."
+        },
+        {
+            "content": "当您在命令提示符的后面输入命令的一部分时，按（__）键，Linux会帮你打剩下的字符，补充成为完整命令，如果有多个相符的命令，连按两下（__）键，Linux会显示所有的相符的命令。",
+            "option": "{'A': 'TAB', 'B': 'CONTRL', 'C': 'SHIFT', 'D': 'SPACE'}",
+            "right_answer": "[\"A\"]",
+            "knowledge_evidence": "题目对应知识点为K_命令提示符_计算机科学与技术, K_命令提示符_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student correctly identified 'TAB' as the key used in Linux for command completion. In Linux, when you type part of a command and press the TAB key, it auto-completes the command if there's only one possibility, or suggests options if there are multiple possibilities when pressed twice. This displays the command-line feature of autocompletion, integral for efficient command-line navigation."
+        },
+        {
+            "content": "下面的选项哪些是正确的？",
+            "option": "{'A': 'Linux操作系统是由Linus Torvalds发明的', 'B': 'Linux操作系统是由Richard Stallman发明的', 'C': 'Linus Torvalds和Richard Stallman的工作共同造就了Linux', 'D': '自由软件运动和互联网的兴起造就了Linux操作系统'}",
+            "right_answer": "[\"C\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_自由软件_计算机科学与技术, K_自由软件_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The student answered incorrectly because they did not select the correct options 'C' and 'D'. Option 'C' is correct because Linux was made possible by the combined efforts of Linus Torvalds, who created the Linux kernel, and Richard Stallman, who advocated free software and created the GNU project, which provided tools for use with Linux. Option 'D' is correct as well because the free software movement and the rise of the internet significantly contributed to the development and proliferation of Linux. Option 'A' is incorrect as Linus Torvalds did not invent Linux; he created the kernel. Option 'B' is incorrect because Richard Stallman did not invent Linux; instead, he founded the free software foundation and contributed to the Linux ecosystem with GNU software. Therefore, for this question, options 'C' and 'D' are the correct answers."
+        },
+        {
+            "content": "下面的选项哪些是正确的？",
+            "option": "{'A': 'Linux操作系统是由Linus Torvalds发明的', 'B': 'Linux操作系统是由Richard Stallman发明的', 'C': 'Linus Torvalds和Richard Stallman的工作共同造就了Linux', 'D': '自由软件运动和互联网的兴起造就了Linux操作系统'}",
+            "right_answer": "[\"C\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_自由软件_计算机科学与技术, K_自由软件_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student answered correctly by selecting options 'C' and 'D'. 'C' is correct because Linus Torvalds initiated the development of the Linux kernel, and Richard Stallman started the GNU project; together, they contributed to what is now known as the Linux operating system. 'D' is also correct as the free software movement, led by Stallman, along with the growth of the internet, played significant roles in popularizing Linux. Option 'A' is partially correct but implies that Linus alone created Linux, ignoring the contributions from the GNU project, and 'B' is incorrect as Richard Stallman did not invent Linux but was instrumental in the free software movement. The student has correctly identified the combined efforts and historical context behind Linux's development."
+        },
+        {
+            "content": "关于CentOS,下面哪些说法是正确的？",
+            "option": "{'A': 'CentOS100%兼容红帽企业版(RHEL)', 'B': 'CentOS不提供专门技术支持，不包含封闭源代码软件', 'C': 'CentOS 64位版本可以安装在32位架构的机器上', 'D': 'CentOS是利用用红帽企业版(RHEL)源代码重新编译而成的'}",
+            "right_answer": "[\"A\", \"B\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_闭源_计算机科学与技术, K_闭源_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The student's response was incorrect because they did not select the correct options according to the given correct answers [\"A\", \"B\", \"D\"]. Here is why each statement is evaluated: \r\n\r\n- 'A': Correct. CentOS is a community-supported distribution that aims to provide a free, community-supported computing platform which is 100% compatible with its upstream source, Red Hat Enterprise Linux (RHEL).\r\n\r\n- 'B': Correct. CentOS does not offer dedicated technical support and it doesn't include proprietary software.\r\n\r\n- 'C': Incorrect. A 64-bit version of CentOS cannot be installed on a 32-bit architecture machine due to compatibility issues between 64-bit software and 32-bit hardware.\r\n\r\n- 'D': Correct. CentOS is indeed built by recompiling RHEL source code. This allows CentOS to stay compatible with RHEL without the need for proprietary software."
+        }
+    ],
+    "tasks": [
+        {
+            "content": "当您在命令提示符的后面输入命令的一部分时，按（__）键，Linux会帮你打剩下的字符，补充成为完整命令，如果有多个相符的命令，连按两下（__）键，Linux会显示所有的相符的命令。",
+            "option": "{'A': 'TAB', 'B': 'CONTRL', 'C': 'SHIFT', 'D': 'SPACE'}",
+            "right_answer": "[\"A\"]",
+            "knowledge_evidence": "题目对应知识点为K_命令提示符_计算机科学与技术, K_命令提示符_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "下面的选项哪些是正确的？",
+            "option": "{'A': 'Linux操作系统是由Linus Torvalds发明的', 'B': 'Linux操作系统是由Richard Stallman发明的', 'C': 'Linus Torvalds和Richard Stallman的工作共同造就了Linux', 'D': '自由软件运动和互联网的兴起造就了Linux操作系统'}",
+            "right_answer": "[\"C\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_自由软件_计算机科学与技术, K_自由软件_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": ""
+        },
+        {
+            "content": "关于CentOS,下面哪些说法是正确的？",
+            "option": "{'A': 'CentOS100%兼容红帽企业版(RHEL)', 'B': 'CentOS不提供专门技术支持，不包含封闭源代码软件', 'C': 'CentOS 64位版本可以安装在32位架构的机器上', 'D': 'CentOS是利用用红帽企业版(RHEL)源代码重新编译而成的'}",
+            "right_answer": "[\"A\", \"B\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_闭源_计算机科学与技术, K_闭源_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": ""
+        },
+        {
+            "content": "安装Linux所要的两个最基本的分区分别是以（ ）和（ ）。",
+            "option": "{'A': '/boot分区', 'B': '/home分区', 'C': '根分区', 'D': 'Swap分区'}",
+            "right_answer": "[\"C\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_Swap分区_计算机科学与技术, K_Swap分区_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": ""
+        },
+        {
+            "content": "在Linux中，打开BASH后的命令提示符，能够告诉你有关主机的哪些信息？",
+            "option": "{'A': '登录的主机名', 'B': '登录的用户名', 'C': '用户当前所处的工作目录', 'D': '用户上次登录时间'}",
+            "right_answer": "[\"A\", \"B\", \"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_主机名_计算机科学与技术, K_主机名_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "下面关于关机和重启的说法，哪些是正确的？",
+            "option": "{'A': '关机是系统管理员要给予充分重视的一件大事.', 'B': 'shutdown -k now 命令用于立即关机', 'C': '不恰当或者不正确的关机和重启，可能会导致数据丢失', 'D': '关机和重启命令默认情况下普通用户亦可执行'}",
+            "right_answer": "[\"A\", \"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_系统管理员_计算机科学与技术, K_系统管理员_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "Linux中所谓的命令(Command)，广义上包括：",
+            "option": "{'A': '可执行的二进制文件', 'B': '可执行的库文件', 'C': 'shell脚本文件', 'D': 'shell内建函数'}",
+            "right_answer": "[\"A\", \"C\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_Shell脚本_计算机科学与技术, K_Shell脚本_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": ""
+        },
+        {
+            "content": "当您在命令提示符的后面输入命令的一部分时，按（__）键，Linux会帮你打剩下的字符，补充成为完整命令，如果有多个相符的命令，连按两下（__）键，Linux会显示所有的相符的命令。",
+            "option": "{'A': 'TAB', 'B': 'CONTRL', 'C': 'SHIFT', 'D': 'SPACE'}",
+            "right_answer": "[\"A\"]",
+            "knowledge_evidence": "题目对应知识点为K_命令提示符_计算机科学与技术, K_命令提示符_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "下面的选项哪些是正确的？",
+            "option": "{'A': 'Linux操作系统是由Linus Torvalds发明的', 'B': 'Linux操作系统是由Richard Stallman发明的', 'C': 'Linus Torvalds和Richard Stallman的工作共同造就了Linux', 'D': '自由软件运动和互联网的兴起造就了Linux操作系统'}",
+            "right_answer": "[\"C\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_自由软件_计算机科学与技术, K_自由软件_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "关于CentOS,下面哪些说法是正确的？",
+            "option": "{'A': 'CentOS100%兼容红帽企业版(RHEL)', 'B': 'CentOS不提供专门技术支持，不包含封闭源代码软件', 'C': 'CentOS 64位版本可以安装在32位架构的机器上', 'D': 'CentOS是利用用红帽企业版(RHEL)源代码重新编译而成的'}",
+            "right_answer": "[\"A\", \"B\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_闭源_计算机科学与技术, K_闭源_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": ""
+        }
+    ],
+    "result": [
+        {
+            "content": "关于CentOS的特性，以下哪些说法是正确的？",
+            "option": "{'A': 'CentOS与红帽企业版(RHEL)完全兼容', 'B': 'CentOS提供官方的付费技术支持服务', 'C': 'CentOS的软件包完全来自于开源项目', 'D': 'CentOS 64位版本无法安装在32位架构的机器上'}",
+            "answer": "['A', 'C', 'D']",
+            "course_name": "Linux系统管理",
+            "concept_id": "K_闭源_计算机科学与技术",
+            "explanation": "CentOS与RHEL完全兼容，其软件包来自开源项目，并且64位版本无法安装在32位硬件上。CentOS不提供官方付费支持。"
+        },
+        {
+            "content": "以下关于Linux分区的描述，哪些是正确的？",
+            "option": "{'A': '根分区(/)用于存储操作系统启动和运行所需的文件', 'B': 'Swap分区用于扩展物理内存，但不能替代物理内存', 'C': '安装Linux时只需要创建一个分区即可', 'D': 'Swap分区是安装Linux所必需的基本分区'}",
+            "answer": "['A', 'B', 'D']",
+            "course_name": "Linux系统管理",
+            "concept_id": "K_Swap分区_计算机科学与技术",
+            "explanation": "根分区存储操作系统核心文件，Swap扩展内存但不能替代物理内存，也是基本分区之一。安装Linux时通常需要多个分区。"
+        },
+        {
+            "content": "关于Linux中的命令类型，以下哪些说法是正确的？",
+            "option": "{'A': 'shell内建函数可以直接在shell中运行', 'B': '可执行的二进制文件不需要依赖其他库即可运行', 'C': 'shell脚本文件需要解释器才能运行', 'D': '动态链接库文件（提供程序间共享功能的文件）不能作为命令直接运行'}",
+            "answer": "['A', 'C', 'D']",
+            "course_name": "Linux系统管理",
+            "concept_id": "K_Shell脚本_计算机科学与技术",
+            "explanation": "shell内建函数、shell脚本文件是命令，动态链接库文件不能直接运行，且可执行文件可能依赖其他库。"
+        },
+        {
+            "content": "关于Linux命令提示符，以下哪些信息可以显示？",
+            "option": "{'A': '当前用户的登录名', 'B': '当前系统的内核版本', 'C': '用户当前的工作目录', 'D': '物理内存的使用情况'}",
+            "answer": "['A', 'C']",
+            "course_name": "Linux系统管理",
+            "concept_id": "K_主机名_计算机科学与技术",
+            "explanation": "命令提示符显示当前登录用户名和工作目录，但不显示系统内核版本或内存使用情况。"
+        },
+        {
+            "content": "关于CentOS的技术支持，以下哪些说法是正确的？",
+            "option": "{'A': 'CentOS提供官方的付费技术支持', 'B': 'CentOS社区提供基于论坛和文档的免费技术支持', 'C': 'CentOS不包含任何闭源软件', 'D': 'CentOS的技术支持需要购买订阅'}",
+            "answer": "['B', 'C']",
+            "course_name": "Linux系统管理",
+            "concept_id": "K_闭源_计算机科学与技术",
+            "explanation": "CentOS仅提供社区支持，不包含闭源软件，且不提供官方付费支持。"
+        },
+        {
+            "content": "以下关于Swap分区的说法，哪些是正确的？",
+            "option": "{'A': 'Swap分区可以作为虚拟内存扩展使用', 'B': 'Swap分区不能替代物理内存', 'C': 'Swap分区是安装Linux时必需的基本分区', 'D': 'Swap分区可以提升系统性能'}",
+            "answer": "['A', 'B', 'C', 'D']",
+            "course_name": "Linux系统管理",
+            "concept_id": "K_Swap分区_计算机科学与技术",
+            "explanation": "Swap分区扩展内存，但不能替代物理内存，是安装Linux时的基本分区，且能提升性能。"
+        },
+        {
+            "content": "关于Linux中的命令，以下哪些说法是正确的？",
+            "option": "{'A': '可执行的二进制文件可能依赖其他库才能运行', 'B': 'shell脚本文件需要解释器才能运行', 'C': '动态链接库文件（提供程序间共享功能的文件）不能作为命令直接运行', 'D': 'shell内建函数可以直接在shell中运行'}",
+            "answer": "['A', 'B', 'C', 'D']",
+            "course_name": "Linux系统管理",
+            "concept_id": "K_Shell脚本_计算机科学与技术",
+            "explanation": "可执行文件可能依赖库，脚本文件需要解释器，动态链接库不能单独运行，内置函数可直接运行。"
+        },
+        {
+            "content": "关于Linux分区的描述，以下哪些说法是错误的？",
+            "option": "{'A': '根分区(/)可以存储用户文件', 'B': 'Swap分区可以直接替代物理内存', 'C': 'Swap分区是安装Linux时必需的基本分区', 'D': '安装Linux时只需要创建一个分区'}",
+            "answer": "['B', 'D']",
+            "course_name": "Linux系统管理",
+            "concept_id": "K_Swap分区_计算机科学与技术",
+            "explanation": "Swap不能替代物理内存，且安装Linux通常需要多个分区（如根分区和Swap）。"
+        },
+        {
+            "content": "以下关于32位和64位操作系统的说法，哪些是正确的？",
+            "option": "{'A': '64位操作系统可以运行在32位硬件上', 'B': '32位操作系统可以运行在64位硬件上', 'C': '64位操作系统支持超过4GB的内存容量', 'D': '32位操作系统最多支持4GB的内存容量'}",
+            "answer": "['B', 'C', 'D']",
+            "course_name": "Linux系统管理",
+            "concept_id": "K_闭源_计算机科学与技术",
+            "explanation": "32位OS可运行在64位硬件上，但64位OS支持更大内存，32位OS理论内存上限为4GB。"
+        },
+        {
+            "content": "关于CentOS的兼容性，以下哪些说法是正确的？",
+            "option": "{'A': 'CentOS可以100%兼容红帽企业版(RHEL)', 'B': 'CentOS提供官方的企业技术支持', 'C': 'CentOS的软件包完全来自于开源项目', 'D': 'CentOS 64位版本无法安装在32位架构的机器上'}",
+            "answer": "['A', 'C', 'D']",
+            "course_name": "Linux系统管理",
+            "concept_id": "K_闭源_计算机科学与技术",
+            "explanation": "CentOS与RHEL完全兼容，其软件包来自开源项目，64位版本无法运行在32位架构上。"
+        }
+    ],
+    "cost": {
+        "usage_including_cached_inference": {
+            "total_cost": 0.08341280000000001,
+            "qwen/qwen-max": {
+                "cost": 0.08341280000000001,
+                "prompt_tokens": 38457,
+                "completion_tokens": 3419,
+                "total_tokens": 41876
+            }
+        },
+        "usage_excluding_cached_inference": {
+            "total_cost": 0.08341280000000001,
+            "qwen/qwen-max": {
+                "cost": 0.08341280000000001,
+                "prompt_tokens": 38457,
+                "completion_tokens": 3419,
+                "total_tokens": 41876
+            }
+        }
+    }
+},
+{
+    "round": 15,
+    "examples": [
+        {
+            "content": "安装Linux所要的两个最基本的分区分别是以（ ）和（ ）。",
+            "option": "{'A': '/boot分区', 'B': '/home分区', 'C': '根分区', 'D': 'Swap分区'}",
+            "right_answer": "[\"C\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_Swap分区_计算机科学与技术, K_Swap分区_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The student answered incorrectly because they did not choose both the '根分区' (root partition) and 'Swap分区' (swap partition). In Linux installation, the root partition ('根分区') is essential as it serves as the top-level directory for the filesystem. The swap partition ('Swap分区') is also fundamental as it acts as an extension of RAM to improve system performance. Therefore, the correct choices are 'C' (根分区) and 'D' (Swap分区), but the student either missed one or chose incorrectly."
+        },
+        {
+            "content": "安装Linux所要的两个最基本的分区分别是以（ ）和（ ）。",
+            "option": "{'A': '/boot分区', 'B': '/home分区', 'C': '根分区', 'D': 'Swap分区'}",
+            "right_answer": "[\"C\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_Swap分区_计算机科学与技术, K_Swap分区_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student answered the question correctly. The two basic partitions needed when installing Linux are the root partition and the swap partition. The root partition ('/') is essential as it contains the operating system files, whereas the swap partition is used as an extension of the system's physical memory. Therefore, choosing '根分区' (root partition) and 'Swap分区' (swap partition) was the correct choice."
+        },
+        {
+            "content": "在Linux中，打开BASH后的命令提示符，能够告诉你有关主机的哪些信息？",
+            "option": "{'A': '登录的主机名', 'B': '登录的用户名', 'C': '用户当前所处的工作目录', 'D': '用户上次登录时间'}",
+            "right_answer": "[\"A\", \"B\", \"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_主机名_计算机科学与技术, K_主机名_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The student's answer was incorrect because they likely included all options without recognizing that option D '用户上次登录时间' is not typically displayed in the BASH command prompt. The BASH prompt in Linux generally shows the login hostname, login username, and current working directory, which corresponds to options A, B, and C. The prompt does not, by default, display the last login time, so including option D led to the answer being incorrect."
+        },
+        {
+            "content": "关于修改主机名，下面那些说法是正确的：",
+            "option": "{'A': '需要修改/etc/sysconfig/network文件', 'B': '需要修改/etc/hosts文件', 'C': '需要修改/etc/sysconfig/network-scripts/ifcfg-eth0文件', 'D': '一般需要重启系统，让修改生效'}",
+            "right_answer": "[\"A\", \"B\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_主机名_计算机科学与技术, K_主机名_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student answered the question correctly. The task was to identify which statements are true regarding modifying the hostname. The correct answers were options A, B, and D. These options are correct because: A) /etc/sysconfig/network file typically needs to be modified to change the hostname setting; B) /etc/hosts file is often modified to map the hostname to its associated IP address; and D) a system restart is generally required for changes to take full effect. Option C is not typically required for changing the hostname, which the student correctly omitted."
+        },
+        {
+            "content": "下面关于关机和重启的说法，哪些是正确的？",
+            "option": "{'A': '关机是系统管理员要给予充分重视的一件大事.', 'B': 'shutdown -k now 命令用于立即关机', 'C': '不恰当或者不正确的关机和重启，可能会导致数据丢失', 'D': '关机和重启命令默认情况下普通用户亦可执行'}",
+            "right_answer": "[\"A\", \"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_系统管理员_计算机科学与技术, K_系统管理员_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The student answered incorrectly because they selected option 'B' which states that 'shutdown -k now' is used for immediate shutdown. This command is actually used to send warning messages to users but does not perform any shutdown. The correct options are 'A' and 'C', as option 'A' emphasizes the importance of shutdown for system administrators and option 'C' highlights the risk of data loss from improper shutdown procedures. Ordinary users do not have default permissions to execute shutdown and restart commands, hence option 'D' is also incorrect."
+        },
+        {
+            "content": "下面关于关机和重启的说法，哪些是正确的？",
+            "option": "{'A': '关机是系统管理员要给予充分重视的一件大事.', 'B': 'shutdown -k now 命令用于立即关机', 'C': '不恰当或者不正确的关机和重启，可能会导致数据丢失', 'D': '关机和重启命令默认情况下普通用户亦可执行'}",
+            "right_answer": "[\"A\", \"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_系统管理员_计算机科学与技术, K_系统管理员_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student's answer is correct. Option A and C are indeed correct statements about the shutdown and reboot processes in a Linux system. Option A highlights the importance that a system administrator should give to shutting down a system correctly. Option C warns of the potential for data loss if shutdowns and reboots are performed incorrectly or inappropriately. However, options B and D are incorrect. The command 'shutdown -k now' does not actually initiate a shutdown; instead, it only sends a warning message to users. Additionally, shutdown and reboot commands are typically restricted to administrative users rather than regular users by default."
+        },
+        {
+            "content": "Linux中所谓的命令(Command)，广义上包括：",
+            "option": "{'A': '可执行的二进制文件', 'B': '可执行的库文件', 'C': 'shell脚本文件', 'D': 'shell内建函数'}",
+            "right_answer": "[\"A\", \"C\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_Shell脚本_计算机科学与技术, K_Shell脚本_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The student answered incorrectly because they included 'B', '可执行的库文件' (executable library files), which is not considered a command in Linux. In Linux, commands generally refer to executable binary files, shell scripts, and shell built-in functions, which correspond to options 'A', 'C', and 'D'. The correct answer should have included only these three options: 'A', 'C', and 'D'."
+        },
+        {
+            "content": "现在需要在根目录下找所有的名字为temp的文件，然后删除，删除时不需要提示，请问可如何实现。",
+            "option": "{'A': 'find / -name temp rm *', 'B': '编一个SHELL脚本实现', 'C': 'find / -name temp –exec rm {}  ;', 'D': 'find / -name temp –exec rm'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_Shell脚本_计算机科学与技术, K_Shell脚本_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student correctly chose option C, 'find / -name temp –exec rm {} ;', to find and delete all 'temp' files in the root directory without prompts. This command uses 'find' to locate files named 'temp' and then uses '-exec rm {} ;' to remove them immediately. The syntax is accurate for achieving the task without the need for manual confirmation, aligning precisely with the requirements described in the problem statement."
+        },
+        {
+            "content": "假设当前工作目录下有一个名为sampledir 的目录，该目录下有一个名为sampledir01的目录， 键入 “rmdir sampledir”，会发生什么？",
+            "option": "{'A': 'sampledir和sampledir01被删除', 'B': '出错', 'C': 'sampledir01被删除', 'D': 'sampledir被删除，但sampledir01未被删除'}",
+            "right_answer": "[\"B\"]",
+            "knowledge_evidence": "题目对应知识点为K_键入_计算机科学与技术, K_键入_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The student was asked what happens when the command 'rmdir sampledir' is executed, given that 'sampledir' contains another directory 'sampledir01'. In Linux, the 'rmdir' command only removes empty directories. Since 'sampledir' contains 'sampledir01', it is not empty, and the 'rmdir' command will result in an error. Therefore, the correct answer is 'B: 出错 (Error)'. The student answered incorrectly, which indicates they may not have understood that 'rmdir' cannot remove directories that contain other files or directories. It's important to understand that a directory must be empty for 'rmdir' to succeed."
+        },
+        {
+            "content": "假设当前工作目录下有一个名为sampledir 的目录，该目录下有一个名为sampledir01的目录， 键入 “rmdir sampledir”，会发生什么？",
+            "option": "{'A': 'sampledir和sampledir01被删除', 'B': '出错', 'C': 'sampledir01被删除', 'D': 'sampledir被删除，但sampledir01未被删除'}",
+            "right_answer": "[\"B\"]",
+            "knowledge_evidence": "题目对应知识点为K_键入_计算机科学与技术, K_键入_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student answered this Linux system management question correctly. In Linux, the 'rmdir' command is used to remove directories. However, 'rmdir sampledir' would result in an error because 'rmdir' only works on empty directories. Since 'sampledir' contains another directory named 'sampledir01', it is not empty, and therefore the command fails as expected. The correct option is 'B: 出错' (which translates to 'Error'), matching the student's choice."
+        },
+        {
+            "content": "关于CentOS中的修改用户组命令groupmod，下面描述正确的是：",
+            "option": "{'A': '随意更改用户组的 GID可能会造成系统混乱', 'B': '带选项–n可以修改用户组名', 'C': '更改用户组名可能会造成系统混乱', 'D': '如果有用户将某用户组作为其主用户组，那么在用户已经登录系统的情况下，无法修改这个用户组名'}",
+            "right_answer": "[\"A\", \"B\"]",
+            "knowledge_evidence": "题目对应知识点为K_登录_计算机科学与技术, K_登录_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The question asked to identify the correct statements about the 'groupmod' command in CentOS. The correct answers were 'A' and 'B'. Option 'A' is correct because changing the GID of a user group arbitrarily can cause system issues. Option 'B' is also correct as the '-n' option allows modification of the group name. The student did not choose these options, leading to an incorrect answer. The statement in 'C' and 'D' are incorrect because changing a group name does not inherently cause confusion if done properly, and there is no restriction on changing the name of a group while a user is logged in."
+        },
+        {
+            "content": "关于Linux中工作目录，下面哪些说法是错误的?",
+            "option": "{'A': '可以在命令提示符中观察到目前所处的工作目录', 'B': '用户登录后初始的默认工作目录总是登录用户的 “家目录”', 'C': '用户的工作目录是固定的', 'D': '可以用～字符代表当前工作目录'}",
+            "right_answer": "[\"C\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_登录_计算机科学与技术, K_登录_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student correctly identified that statements C and D are incorrect. In Linux, the current working directory is not fixed, meaning users can navigate and change their working directory (making C incorrect). Also, the '~' character represents the user's home directory, not the current working directory, which makes D incorrect. The other options, A and B, are correct statements: the current working directory is usually shown in the command prompt and, upon login, users typically start in their home directory."
+        },
+        {
+            "content": "关于cp命令，哪些用法是可以达成目标？",
+            "option": "{'A': 'cp -R ~/sampledir . 可以将当前用户家目录下的sampledir目录拷贝到当前目录中。', 'B': 'cp ./file01 ./file02 .. 可以将当前目录下的file01文件拷贝到当前目录中并重命名为file02, 同时将file01文件拷贝到当前目录的上层目录中。', 'C': 'cp /home/stu/file01 ~/root 可以将file01目录拷贝到根用户家目录下', 'D': 'cp -R ../sampledir ~root 可以将上层目录中的sampledir目录拷贝到根用户家目录下'}",
+            "right_answer": "[\"A\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_当前目录_计算机科学与技术, K_当前目录_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The student's answer is incorrect. The correct options were A and D. Option A describes the correct use of the cp -R command to copy a directory from the user's home directory to the current directory, using the -R option for recursive copying, which is valid and accomplishes the goal. Option D correctly describes using the cp -R command to copy a directory from a parent directory to the root user's home directory, also using the -R option for recursive copying, which is valid. The mistake lies in the student not choosing these correct options. Option B and C were incorrect. Option B misconstrues how files are copied and renamed, as cp requires specific naming for new files, and the attempt to rename within the same directory does not match the command structure given. Option C incorrectly tries to copy a file to the root directory without necessary permissions and mislabels 'file01' as a directory without using the necessary -R option for directories which is not valid in the given scenario."
+        },
+        {
+            "content": "要将当前目录下的文件samplefile的文件从属组改为stu用户组，应该使用哪个命令？",
+            "option": "{'A': 'chmod stu ./samplefile', 'B': 'chown stu ./samplefile', 'C': 'chown :stu ./samplefile', 'D': 'chmod :stu ./samplefile'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_当前目录_计算机科学与技术, K_当前目录_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student correctly answered the question about changing the file group in a Linux system. The question asked which command should be used to change the group of the file 'samplefile' in the current directory to the 'stu' group. The correct command is 'chown :stu ./samplefile' (Option C). This is because the 'chown' command is used for changing the owner and group of a file, and the colon (:) is used to specify the group. The other options either incorrectly use 'chmod', which is for changing file permissions, or incorrectly structure the 'chown' command without specifying the group properly."
+        },
+        {
+            "content": "在使用ln建立文件链接时，为了跨越不同的文件系统，我们需要使用",
+            "option": "{'A': '普通链接', 'B': '硬链接', 'C': '符号链接', 'D': '特殊链接'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_符号链接_计算机科学与技术, K_符号链接_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The student's answer was incorrect because they did not choose '符号链接' (symbolic link), which is the correct answer for establishing file links across different file systems in Linux. Symbolic links are preferred for cross-filesystem links because they can point to files across different filesystems without the need for the link and the target file to be on the same filesystem, unlike hard links which are restricted to the same filesystem."
+        },
+        {
+            "content": "如用ls -l 命令列出文件，文件的第一个字段是drwxr-x---，表示什么",
+            "option": "{'A': '这是一个符号链接文件，对于文件拥有者可读可写可执行，对于从属用户组里的用户可读不可写可执行，对于其他用户不可读不可写不可执行', 'B': '这是一个普通文件，对于文件拥有者可读可写可执行，对于其他用户可读不可写可执行，对于从属用户组里的用户不可读不可写不可执行。', 'C': '这是一个目录文件，对于文件拥有者可读可写可执行，对于从属用户组里的用户可读不可写可执行，对于其他用户不可读不可写不可执行', 'D': '这是一个目录文件，对于文件拥有者可读可写可执行，对于从属用户组里的用户可读可写可执行，对于其他用户不可读不可写不可执行'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_符号链接_计算机科学与技术, K_符号链接_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student correctly answered the question about what the file permissions 'drwxr-x---' mean when listed with the 'ls -l' command. The first character 'd' indicates that it is a directory. The permissions 'rwx' for the owner mean the owner can read, write, and execute files within the directory. The permissions 'r-x' for the group mean group members can read and execute but not write. The '---' for others indicate no permissions for other users. Therefore, option C is correct as it describes this scenario accurately."
+        },
+        {
+            "content": "关于CentOS中的修改用户组命令groupmod，下面描述正确的是：",
+            "option": "{'A': '随意更改用户组的 GID可能会造成系统混乱', 'B': '带选项–n可以修改用户组名', 'C': '更改用户组名可能会造成系统混乱', 'D': '如果有用户将某用户组作为其主用户组，那么在用户已经登录系统的情况下，无法修改这个用户组名'}",
+            "right_answer": "[\"A\", \"B\"]",
+            "knowledge_evidence": "题目对应知识点为K_登录_计算机科学与技术, K_登录_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The question asked to identify the correct statements about the 'groupmod' command in CentOS. The correct answers were 'A' and 'B'. Option 'A' is correct because changing the GID of a user group arbitrarily can cause system issues. Option 'B' is also correct as the '-n' option allows modification of the group name. The student did not choose these options, leading to an incorrect answer. The statement in 'C' and 'D' are incorrect because changing a group name does not inherently cause confusion if done properly, and there is no restriction on changing the name of a group while a user is logged in."
+        },
+        {
+            "content": "关于Linux中工作目录，下面哪些说法是错误的?",
+            "option": "{'A': '可以在命令提示符中观察到目前所处的工作目录', 'B': '用户登录后初始的默认工作目录总是登录用户的 “家目录”', 'C': '用户的工作目录是固定的', 'D': '可以用～字符代表当前工作目录'}",
+            "right_answer": "[\"C\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_登录_计算机科学与技术, K_登录_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student correctly identified that statements C and D are incorrect. In Linux, the current working directory is not fixed, meaning users can navigate and change their working directory (making C incorrect). Also, the '~' character represents the user's home directory, not the current working directory, which makes D incorrect. The other options, A and B, are correct statements: the current working directory is usually shown in the command prompt and, upon login, users typically start in their home directory."
+        },
+        {
+            "content": "用户的主用户组属性将影响到：",
+            "option": "{'A': '用户创建的文件属性', 'B': '用户对于文件的访问权限', 'C': '用户是否为虚拟用户', 'D': '用户能否被删除'}",
+            "right_answer": "[\"A\", \"B\"]",
+            "knowledge_evidence": "题目对应知识点为K_文件属性_计算机科学与技术, K_文件属性_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The student's answer was incorrect because they likely did not select both options 'A' and 'B'. The question asks about the impact of the user's primary group attribute, which affects 'A: 用户创建的文件属性' (file attributes created by the user) and 'B: 用户对于文件的访问权限' (user's access permissions to files). The correct understanding is that the primary group affects both the ownership and access permissions of the files that users create. Options 'C' and 'D' do not relate to the direct influence of a user's primary group in this context. Therefore, the complete correct answer should include both 'A' and 'B'."
+        },
+        {
+            "content": "关于cp命令，哪些表述是正确的？",
+            "option": "{'A': 'cp命令可以同时拷贝多个文件', 'B': '默认情况下，cp命令拷贝时遇到同名文件会自动覆盖', 'C': '默认情况下，cp命令拷贝时会将文件属性一并进行拷贝', 'D': 'cp命令拷贝同时还可以重命名文件'}",
+            "right_answer": "[\"A\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_文件属性_计算机科学与技术, K_文件属性_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student correctly identified that statements A and D are true regarding the 'cp' command. Statement A is correct because 'cp' can indeed copy multiple files simultaneously using wildcards or when multiple source file names are provided. Statement D is also correct because you can specify a new name for the file when using 'cp', effectively renaming it in the destination directory. The incorrect statements that the student avoided were B, which wrongly states that 'cp' automatically overwrites files without prompting; by default, it prompts for confirmation if the destination file already exists unless the '-f' option is used. Statement C is incorrect because, by default, 'cp' does not preserve file attributes unless options like '-p' or '--preserve' are explicitly specified. Thus, the student demonstrated a sound understanding of the 'cp' command's default behaviors and options."
+        }
+    ],
+    "tasks": [
+        {
+            "content": "安装Linux所要的两个最基本的分区分别是以（ ）和（ ）。",
+            "option": "{'A': '/boot分区', 'B': '/home分区', 'C': '根分区', 'D': 'Swap分区'}",
+            "right_answer": "[\"C\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_Swap分区_计算机科学与技术, K_Swap分区_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "在Linux中，打开BASH后的命令提示符，能够告诉你有关主机的哪些信息？",
+            "option": "{'A': '登录的主机名', 'B': '登录的用户名', 'C': '用户当前所处的工作目录', 'D': '用户上次登录时间'}",
+            "right_answer": "[\"A\", \"B\", \"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_主机名_计算机科学与技术, K_主机名_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "下面关于关机和重启的说法，哪些是正确的？",
+            "option": "{'A': '关机是系统管理员要给予充分重视的一件大事.', 'B': 'shutdown -k now 命令用于立即关机', 'C': '不恰当或者不正确的关机和重启，可能会导致数据丢失', 'D': '关机和重启命令默认情况下普通用户亦可执行'}",
+            "right_answer": "[\"A\", \"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_系统管理员_计算机科学与技术, K_系统管理员_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": ""
+        },
+        {
+            "content": "Linux中所谓的命令(Command)，广义上包括：",
+            "option": "{'A': '可执行的二进制文件', 'B': '可执行的库文件', 'C': 'shell脚本文件', 'D': 'shell内建函数'}",
+            "right_answer": "[\"A\", \"C\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_Shell脚本_计算机科学与技术, K_Shell脚本_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "假设当前工作目录下有一个名为sampledir 的目录，该目录下有一个名为sampledir01的目录， 键入 “rmdir sampledir”，会发生什么？",
+            "option": "{'A': 'sampledir和sampledir01被删除', 'B': '出错', 'C': 'sampledir01被删除', 'D': 'sampledir被删除，但sampledir01未被删除'}",
+            "right_answer": "[\"B\"]",
+            "knowledge_evidence": "题目对应知识点为K_键入_计算机科学与技术, K_键入_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": ""
+        },
+        {
+            "content": "关于Linux中工作目录，下面哪些说法是错误的?",
+            "option": "{'A': '可以在命令提示符中观察到目前所处的工作目录', 'B': '用户登录后初始的默认工作目录总是登录用户的 “家目录”', 'C': '用户的工作目录是固定的', 'D': '可以用～字符代表当前工作目录'}",
+            "right_answer": "[\"C\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_登录_计算机科学与技术, K_登录_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "要将当前目录下的文件samplefile的文件从属组改为stu用户组，应该使用哪个命令？",
+            "option": "{'A': 'chmod stu ./samplefile', 'B': 'chown stu ./samplefile', 'C': 'chown :stu ./samplefile', 'D': 'chmod :stu ./samplefile'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_当前目录_计算机科学与技术, K_当前目录_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": ""
+        },
+        {
+            "content": "如用ls -l 命令列出文件，文件的第一个字段是drwxr-x---，表示什么",
+            "option": "{'A': '这是一个符号链接文件，对于文件拥有者可读可写可执行，对于从属用户组里的用户可读不可写可执行，对于其他用户不可读不可写不可执行', 'B': '这是一个普通文件，对于文件拥有者可读可写可执行，对于其他用户可读不可写可执行，对于从属用户组里的用户不可读不可写不可执行。', 'C': '这是一个目录文件，对于文件拥有者可读可写可执行，对于从属用户组里的用户可读不可写可执行，对于其他用户不可读不可写不可执行', 'D': '这是一个目录文件，对于文件拥有者可读可写可执行，对于从属用户组里的用户可读可写可执行，对于其他用户不可读不可写不可执行'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_符号链接_计算机科学与技术, K_符号链接_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "用root用户登录系统，使用rm命令删除文件时，以下哪些做法是对的？",
+            "option": "{'A': 'rm ./sampledir 可以删除当前目录下的sampledir目录', 'B': 'rm -f ./file01 可以删除当前目录下的file01文件，并在删除前会向用户进行确认。', 'C': 'rm -R ./sampledir 可以删除当前目录下的sampledir目录', 'D': 'rm file01 file02 可以删除当前工作目录下的file01 和file02文件，并在删除前会向用户进行确认。'}",
+            "right_answer": "[\"C\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_登录_计算机科学与技术, K_登录_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "关于cp命令，哪些表述是正确的？",
+            "option": "{'A': 'cp命令可以同时拷贝多个文件', 'B': '默认情况下，cp命令拷贝时遇到同名文件会自动覆盖', 'C': '默认情况下，cp命令拷贝时会将文件属性一并进行拷贝', 'D': 'cp命令拷贝同时还可以重命名文件'}",
+            "right_answer": "[\"A\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_文件属性_计算机科学与技术, K_文件属性_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": ""
+        }
+    ],
+    "result": null,
+    "cost": {
+        "usage_including_cached_inference": {
+            "total_cost": 0.269096,
+            "qwen/qwen-max": {
+                "cost": 0.269096,
+                "prompt_tokens": 140289,
+                "completion_tokens": 6974,
+                "total_tokens": 147263
+            }
+        },
+        "usage_excluding_cached_inference": {
+            "total_cost": 0.269096,
+            "qwen/qwen-max": {
+                "cost": 0.269096,
+                "prompt_tokens": 140289,
+                "completion_tokens": 6974,
+                "total_tokens": 147263
+            }
+        }
+    }
+},
+{
+    "round": 16,
+    "examples": [
+        {
+            "content": "关于cp命令，哪些用法是可以达成目标？",
+            "option": "{'A': 'cp -R ~/sampledir . 可以将当前用户家目录下的sampledir目录拷贝到当前目录中。', 'B': 'cp ./file01 ./file02 .. 可以将当前目录下的file01文件拷贝到当前目录中并重命名为file02, 同时将file01文件拷贝到当前目录的上层目录中。', 'C': 'cp /home/stu/file01 ~/root 可以将file01目录拷贝到根用户家目录下', 'D': 'cp -R ../sampledir ~root 可以将上层目录中的sampledir目录拷贝到根用户家目录下'}",
+            "right_answer": "[\"A\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_当前目录_计算机科学与技术, K_当前目录_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The student's answer is incorrect. The correct options were A and D. Option A describes the correct use of the cp -R command to copy a directory from the user's home directory to the current directory, using the -R option for recursive copying, which is valid and accomplishes the goal. Option D correctly describes using the cp -R command to copy a directory from a parent directory to the root user's home directory, also using the -R option for recursive copying, which is valid. The mistake lies in the student not choosing these correct options. Option B and C were incorrect. Option B misconstrues how files are copied and renamed, as cp requires specific naming for new files, and the attempt to rename within the same directory does not match the command structure given. Option C incorrectly tries to copy a file to the root directory without necessary permissions and mislabels 'file01' as a directory without using the necessary -R option for directories which is not valid in the given scenario."
+        },
+        {
+            "content": "要将当前目录下的文件samplefile的文件从属组改为stu用户组，应该使用哪个命令？",
+            "option": "{'A': 'chmod stu ./samplefile', 'B': 'chown stu ./samplefile', 'C': 'chown :stu ./samplefile', 'D': 'chmod :stu ./samplefile'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_当前目录_计算机科学与技术, K_当前目录_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student correctly answered the question about changing the file group in a Linux system. The question asked which command should be used to change the group of the file 'samplefile' in the current directory to the 'stu' group. The correct command is 'chown :stu ./samplefile' (Option C). This is because the 'chown' command is used for changing the owner and group of a file, and the colon (:) is used to specify the group. The other options either incorrectly use 'chmod', which is for changing file permissions, or incorrectly structure the 'chown' command without specifying the group properly."
+        },
+        {
+            "content": "关于文件硬链接和源文件的关系，下面哪些描述是正确的？",
+            "option": "{'A': '文件硬链接和源文件实际上共用一份文件内容数据', 'B': '源文件删除对文件硬链接没有影响', 'C': '一个硬盘分区上文件的硬链接可以位于另外一个分区上', 'D': '对于文件硬链接内容的改动不会影响到源文件'}",
+            "right_answer": "[\"A\", \"B\"]",
+            "knowledge_evidence": "题目对应知识点为K_硬链接_计算机科学与技术, K_硬链接_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The student answered incorrectly by selecting choices that were not identified as the correct answers in the problem statement. The correct options are 'A: 文件硬链接和源文件实际上共用一份文件内容数据' and 'B: 源文件删除对文件硬链接没有影响'. These options are correct because, in Linux, a hard link points to the same inode, meaning it directly references the data on disk, so they share the file content. Deleting the original file (i.e., the initial name associated with this inode) does not affect the hard link because the data remains on disk until all links to it are removed. However, options 'C' and 'D' are incorrect: hard links cannot span across different partitions, and any modification to data affects both the original file and the hard link, as they are essentially the same file under different names. The student's incorrect response might indicate a misunderstanding of how file systems handle hard links and file structures in the context of the operating system—Linux in this case."
+        },
+        {
+            "content": "在使用ln建立文件链接时，为了跨越不同的文件系统，我们需要使用",
+            "option": "{'A': '普通链接', 'B': '硬链接', 'C': '符号链接', 'D': '特殊链接'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_硬链接_计算机科学与技术, K_硬链接_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student correctly identified '符号链接' (symbolic link) as the appropriate type of link to use when crossing different file systems. Symbolic links can point to files or directories in different file systems, unlike hard links, which are restricted to the same file system. The choice was correct given the context of the question."
+        },
+        {
+            "content": "关于文件硬链接和源文件的关系，下面哪些描述是正确的？",
+            "option": "{'A': '文件硬链接和源文件实际上共用一份文件内容数据', 'B': '源文件删除对文件硬链接没有影响', 'C': '一个硬盘分区上文件的硬链接可以位于另外一个分区上', 'D': '对于文件硬链接内容的改动不会影响到源文件'}",
+            "right_answer": "[\"A\", \"B\"]",
+            "knowledge_evidence": "题目对应知识点为K_硬链接_计算机科学与技术, K_硬链接_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The student answered incorrectly by selecting choices that were not identified as the correct answers in the problem statement. The correct options are 'A: 文件硬链接和源文件实际上共用一份文件内容数据' and 'B: 源文件删除对文件硬链接没有影响'. These options are correct because, in Linux, a hard link points to the same inode, meaning it directly references the data on disk, so they share the file content. Deleting the original file (i.e., the initial name associated with this inode) does not affect the hard link because the data remains on disk until all links to it are removed. However, options 'C' and 'D' are incorrect: hard links cannot span across different partitions, and any modification to data affects both the original file and the hard link, as they are essentially the same file under different names. The student's incorrect response might indicate a misunderstanding of how file systems handle hard links and file structures in the context of the operating system—Linux in this case."
+        },
+        {
+            "content": "在使用ln建立文件链接时，为了跨越不同的文件系统，我们需要使用",
+            "option": "{'A': '普通链接', 'B': '硬链接', 'C': '符号链接', 'D': '特殊链接'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_硬链接_计算机科学与技术, K_硬链接_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student correctly identified '符号链接' (symbolic link) as the appropriate type of link to use when crossing different file systems. Symbolic links can point to files or directories in different file systems, unlike hard links, which are restricted to the same file system. The choice was correct given the context of the question."
+        },
+        {
+            "content": "关于文件硬链接和源文件的关系，下面哪些描述是正确的？",
+            "option": "{'A': '文件硬链接和源文件实际上共用一份文件内容数据', 'B': '源文件删除对文件硬链接没有影响', 'C': '一个硬盘分区上文件的硬链接可以位于另外一个分区上', 'D': '对于文件硬链接内容的改动不会影响到源文件'}",
+            "right_answer": "[\"A\", \"B\"]",
+            "knowledge_evidence": "题目对应知识点为K_硬链接_计算机科学与技术, K_硬链接_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The student answered incorrectly by selecting choices that were not identified as the correct answers in the problem statement. The correct options are 'A: 文件硬链接和源文件实际上共用一份文件内容数据' and 'B: 源文件删除对文件硬链接没有影响'. These options are correct because, in Linux, a hard link points to the same inode, meaning it directly references the data on disk, so they share the file content. Deleting the original file (i.e., the initial name associated with this inode) does not affect the hard link because the data remains on disk until all links to it are removed. However, options 'C' and 'D' are incorrect: hard links cannot span across different partitions, and any modification to data affects both the original file and the hard link, as they are essentially the same file under different names. The student's incorrect response might indicate a misunderstanding of how file systems handle hard links and file structures in the context of the operating system—Linux in this case."
+        },
+        {
+            "content": "在使用ln建立文件链接时，为了跨越不同的文件系统，我们需要使用",
+            "option": "{'A': '普通链接', 'B': '硬链接', 'C': '符号链接', 'D': '特殊链接'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_硬链接_计算机科学与技术, K_硬链接_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student correctly identified '符号链接' (symbolic link) as the appropriate type of link to use when crossing different file systems. Symbolic links can point to files or directories in different file systems, unlike hard links, which are restricted to the same file system. The choice was correct given the context of the question."
+        },
+        {
+            "content": "在使用ln建立文件链接时，为了跨越不同的文件系统，我们需要使用",
+            "option": "{'A': '普通链接', 'B': '硬链接', 'C': '符号链接', 'D': '特殊链接'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_符号链接_计算机科学与技术, K_符号链接_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The student's answer was incorrect because they did not choose '符号链接' (symbolic link), which is the correct answer for establishing file links across different file systems in Linux. Symbolic links are preferred for cross-filesystem links because they can point to files across different filesystems without the need for the link and the target file to be on the same filesystem, unlike hard links which are restricted to the same filesystem."
+        },
+        {
+            "content": "如用ls -l 命令列出文件，文件的第一个字段是drwxr-x---，表示什么",
+            "option": "{'A': '这是一个符号链接文件，对于文件拥有者可读可写可执行，对于从属用户组里的用户可读不可写可执行，对于其他用户不可读不可写不可执行', 'B': '这是一个普通文件，对于文件拥有者可读可写可执行，对于其他用户可读不可写可执行，对于从属用户组里的用户不可读不可写不可执行。', 'C': '这是一个目录文件，对于文件拥有者可读可写可执行，对于从属用户组里的用户可读不可写可执行，对于其他用户不可读不可写不可执行', 'D': '这是一个目录文件，对于文件拥有者可读可写可执行，对于从属用户组里的用户可读可写可执行，对于其他用户不可读不可写不可执行'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_符号链接_计算机科学与技术, K_符号链接_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student correctly answered the question about what the file permissions 'drwxr-x---' mean when listed with the 'ls -l' command. The first character 'd' indicates that it is a directory. The permissions 'rwx' for the owner mean the owner can read, write, and execute files within the directory. The permissions 'r-x' for the group mean group members can read and execute but not write. The '---' for others indicate no permissions for other users. Therefore, option C is correct as it describes this scenario accurately."
+        },
+        {
+            "content": "关于文件压缩，下面哪些描述是正确的?",
+            "option": "{'A': 'Linux中压缩文件有很多工具可以利用。', 'B': '用gzip命令压缩文件后，默认会删除源文件', 'C': 'gzip命令可以调节文件压缩的比例。', 'D': 'gzip 压缩文件的默认后缀名是.gz', 'E': 'gzip解压文件时默认会删除压缩文件'}",
+            "right_answer": "[\"A\", \"B\", \"C\", \"D\", \"E\"]",
+            "knowledge_evidence": "题目对应知识点为K_文件压缩_计算机科学与技术, K_文件压缩_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The student's answer is incorrect because the statement of using 'gzip' to delete the source file by default after compression (option B) is incorrect. The 'gzip' command does not delete the source file after compression unless specified with an additional flag. Additionally, while 'gzip' does not allow adjusting the compression ratio itself (option C), other tools allow such adjustments. Hence, the correct statements are related to the availability of tools in Linux (option A) and the default suffix for 'gzip' compressed files being '.gz' (option D). Statements about deleting the compressed file by default upon decompression with 'gzip' (option E) are also incorrect unless specified with the appropriate flag."
+        },
+        {
+            "content": "关于文件压缩，下面哪些描述是正确的?",
+            "option": "{'A': 'Linux中压缩文件有很多工具可以利用。', 'B': '用gzip命令压缩文件后，默认会删除源文件', 'C': 'gzip命令可以调节文件压缩的比例。', 'D': 'gzip 压缩文件的默认后缀名是.gz', 'E': 'gzip解压文件时默认会删除压缩文件'}",
+            "right_answer": "[\"A\", \"B\", \"C\", \"D\", \"E\"]",
+            "knowledge_evidence": "题目对应知识点为K_文件压缩_计算机科学与技术, K_文件压缩_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student correctly answered the question about file compression by selecting all the provided options. All statements are true: (A) Linux offers many tools for file compression, (B) Gzip deletes the original file by default after compression, (C) Gzip can adjust compression levels, (D) Gzip's default file extension is .gz, and (E) Gzip removes the compressed file after decompression if not specified otherwise. Thus, the answer is marked correct."
+        },
+        {
+            "content": "关于文件打包（归档），下面哪些描述是正确的?",
+            "option": "{'A': 'tar可以打包整个目录', 'B': 'tar打包多个文件后的打包文件大小，比原文件大小之和要稍小', 'C': 'tar 打包文件必须要有一个.tar的后缀名', 'D': '可以用tar命令来合并两个打包文件', 'E': '可以用tar命令来查看打包文件中的文件'}",
+            "right_answer": "[\"A\", \"D\", \"E\"]",
+            "knowledge_evidence": "题目对应知识点为K_文件大小_计算机科学与技术, K_文件大小_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The student's answer was incorrect because they did not select the correct options according to what was stated. Let's examine each option: 'A' is correct because the 'tar' command can indeed be used to package an entire directory. 'B' is incorrect because using 'tar' for packaging does not typically reduce the file size, as it merely archives the files without compression. 'C' is incorrect because while it is conventional to use '.tar', it is not mandatory for the filename to have a '.tar' suffix. 'D' is correct as 'tar' can be used to append one archive to another. Lastly, 'E' is correct because 'tar' allows viewing the contents of an archive without extracting it. The student's misunderstanding likely stemmed from a mix-up over the capabilities of 'tar', particularly with regard to file size effects and filename conventions."
+        },
+        {
+            "content": "关于文件打包（归档），下面哪些描述是正确的?",
+            "option": "{'A': 'tar可以打包整个目录', 'B': 'tar打包多个文件后的打包文件大小，比原文件大小之和要稍小', 'C': 'tar 打包文件必须要有一个.tar的后缀名', 'D': '可以用tar命令来合并两个打包文件', 'E': '可以用tar命令来查看打包文件中的文件'}",
+            "right_answer": "[\"A\", \"D\", \"E\"]",
+            "knowledge_evidence": "题目对应知识点为K_文件大小_计算机科学与技术, K_文件大小_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student correctly identified the statements about file archiving that are accurate. Statement A is correct because the 'tar' command can indeed package an entire directory. Statement D is correct because 'tar' can be used to concatenate multiple tar files into one. Statement E is correct as 'tar' can list files within an archive. The student correctly did not choose option B and C, as B is incorrect: 'tar' does not compress files on its own, so the size should typically be larger or equal unless compression options are used. C is incorrect because a 'tar' archive isn't required to have a .tar extension, although commonly used, it is not mandatory."
+        },
+        {
+            "content": "Linux中所谓的命令(Command)，广义上包括：",
+            "option": "{'A': '可执行的二进制文件', 'B': '可执行的库文件', 'C': 'shell脚本文件', 'D': 'shell内建函数'}",
+            "right_answer": "[\"A\", \"C\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_Shell脚本_计算机科学与技术, K_Shell脚本_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The student answered incorrectly because they included 'B', '可执行的库文件' (executable library files), which is not considered a command in Linux. In Linux, commands generally refer to executable binary files, shell scripts, and shell built-in functions, which correspond to options 'A', 'C', and 'D'. The correct answer should have included only these three options: 'A', 'C', and 'D'."
+        },
+        {
+            "content": "现在需要在根目录下找所有的名字为temp的文件，然后删除，删除时不需要提示，请问可如何实现。",
+            "option": "{'A': 'find / -name temp rm *', 'B': '编一个SHELL脚本实现', 'C': 'find / -name temp –exec rm {}  ;', 'D': 'find / -name temp –exec rm'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_Shell脚本_计算机科学与技术, K_Shell脚本_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student correctly chose option C, 'find / -name temp –exec rm {} ;', to find and delete all 'temp' files in the root directory without prompts. This command uses 'find' to locate files named 'temp' and then uses '-exec rm {} ;' to remove them immediately. The syntax is accurate for achieving the task without the need for manual confirmation, aligning precisely with the requirements described in the problem statement."
+        },
+        {
+            "content": "关locate命令，下面哪些描述是正确的？",
+            "option": "{'A': 'locate命令能够快速查找文件', 'B': '如不指定查找的目录范围，locate将以当前工作目录作为查找范围', 'C': 'locate查找速度更快是因为它采用了更加有效率的查找算法', 'D': 'locate有时会发生新建文件无法查找到的问题', 'E': 'locate有时会发生查找到已删除文件的问题'}",
+            "right_answer": "[\"A\", \"D\", \"E\"]",
+            "knowledge_evidence": "题目对应知识点为K_删除文件_计算机科学与技术, K_删除文件_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The question asked about the correct descriptions of the 'locate' command in Linux. The correct options were A, D, and E. \r\n\r\n- Option A: Correct, 'locate' is known for quickly finding files because it uses a pre-built database of file locations. \r\n- Option D: Correct, occasionally 'locate' may not find a newly created file until its database is updated, which is done periodically depending on system settings. \r\n- Option E: Correct, because 'locate' searches a database that is not instantly updated, it may return paths to files that have been deleted since the last update of the database.\r\n\r\nThe student's answer was incorrect because they likely selected additional incorrect options like B or C:\r\n\r\n- Option B: Incorrect, the 'locate' command does not default to using the current directory but searches the entire database it has.\r\n- Option C: Incorrect, the speed of 'locate' is not due to a more efficient algorithm but because it queries a pre-existing database of file locations, unlike other search tools which may search the file system directly each time they are run."
+        },
+        {
+            "content": "用root用户登录系统，使用rm命令删除文件时，以下哪些做法是对的？",
+            "option": "{'A': 'rm ./sampledir 可以删除当前目录下的sampledir目录', 'B': 'rm -f ./file01 可以删除当前目录下的file01文件，并在删除前会向用户进行确认。', 'C': 'rm -R ./sampledir 可以删除当前目录下的sampledir目录', 'D': 'rm file01 file02 可以删除当前工作目录下的file01 和file02文件，并在删除前会向用户进行确认。'}",
+            "right_answer": "[\"C\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_删除文件_计算机科学与技术, K_删除文件_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student answered correctly because the correct options are 'C' and 'D'. Option C is correct because 'rm -R ./sampledir' is the command to remove a directory and its contents recursively. Option D is also correct because 'rm file01 file02' deletes both file01 and file02 without confirmation, unless the file is write-protected or the '-i' flag is used. Options A and B are incorrect; A because 'rm' cannot delete directories without the '-R' flag, and B because 'rm -f' forces deletion without prompting for confirmation."
+        },
+        {
+            "content": "关Linux中的通配符，下面哪些描述是正确的？",
+            "option": "{'A': '通配符可以用于对批量文件进行操作', 'B': '* 可以匹配任意单个字符', 'C': '[0-9] 可以匹配0到9之间的任意单个字符', 'D': '[!A-Z] 可以匹配除了大写A到Z之间的任意单个字符'}",
+            "right_answer": "[\"A\", \"C\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_通配符_计算机科学与技术, K_通配符_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student answered the question correctly. The question asked about the correct descriptions of wildcards in Linux, and the correct options were A, C, and D. The student chose these options accurately. Option A is correct because wildcards are used to perform operations on multiple files. Option C is correct because [0-9] matches any single digit from 0 to 9. Option D is correct because [!A-Z] matches any single character that is not between uppercase A to Z. The misconception could have been with option B, which states that '*' matches any single character, but it actually matches zero or more characters, making it incorrect."
+        }
+    ],
+    "tasks": [
+        {
+            "content": "关于cp命令，哪些用法是可以达成目标？",
+            "option": "{'A': 'cp -R ~/sampledir . 可以将当前用户家目录下的sampledir目录拷贝到当前目录中。', 'B': 'cp ./file01 ./file02 .. 可以将当前目录下的file01文件拷贝到当前目录中并重命名为file02, 同时将file01文件拷贝到当前目录的上层目录中。', 'C': 'cp /home/stu/file01 ~/root 可以将file01目录拷贝到根用户家目录下', 'D': 'cp -R ../sampledir ~root 可以将上层目录中的sampledir目录拷贝到根用户家目录下'}",
+            "right_answer": "[\"A\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_当前目录_计算机科学与技术, K_当前目录_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "在使用ln建立文件链接时，为了跨越不同的文件系统，我们需要使用",
+            "option": "{'A': '普通链接', 'B': '硬链接', 'C': '符号链接', 'D': '特殊链接'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_硬链接_计算机科学与技术, K_硬链接_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": ""
+        },
+        {
+            "content": "关于硬链接，下面哪些描述是正确的？",
+            "option": "{'A': '不可以跨文件系统。', 'B': '可以做目录的连接', 'C': '硬链接文件的inode-number与被链接文件的inode-number相同', 'D': '硬链接和符号链接的原理事实上是一样的'}",
+            "right_answer": "[\"A\", \"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_硬链接_计算机科学与技术, K_硬链接_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "关于文件硬链接和源文件的关系，下面哪些描述是正确的？",
+            "option": "{'A': '文件硬链接和源文件实际上共用一份文件内容数据', 'B': '源文件删除对文件硬链接没有影响', 'C': '一个硬盘分区上文件的硬链接可以位于另外一个分区上', 'D': '对于文件硬链接内容的改动不会影响到源文件'}",
+            "right_answer": "[\"A\", \"B\"]",
+            "knowledge_evidence": "题目对应知识点为K_硬链接_计算机科学与技术, K_硬链接_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": ""
+        },
+        {
+            "content": "关于符号链接，下面哪些描述是正确的？",
+            "option": "{'A': '可以通过符号链接文件来读、写和执行源文件。', 'B': '符号链接文件和源文件实际上是同一个文件。', 'C': '删除源文件，符号链接文件将变得不可用', 'D': '不能为符号链接文件再创建符号链接'}",
+            "right_answer": "[\"A\", \"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_符号链接_计算机科学与技术, K_符号链接_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": ""
+        },
+        {
+            "content": "关于文件压缩，下面哪些描述是正确的?",
+            "option": "{'A': 'Linux中压缩文件有很多工具可以利用。', 'B': '用gzip命令压缩文件后，默认会删除源文件', 'C': 'gzip命令可以调节文件压缩的比例。', 'D': 'gzip 压缩文件的默认后缀名是.gz', 'E': 'gzip解压文件时默认会删除压缩文件'}",
+            "right_answer": "[\"A\", \"B\", \"C\", \"D\", \"E\"]",
+            "knowledge_evidence": "题目对应知识点为K_文件压缩_计算机科学与技术, K_文件压缩_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "关于文件打包（归档），下面哪些描述是正确的?",
+            "option": "{'A': 'tar可以打包整个目录', 'B': 'tar打包多个文件后的打包文件大小，比原文件大小之和要稍小', 'C': 'tar 打包文件必须要有一个.tar的后缀名', 'D': '可以用tar命令来合并两个打包文件', 'E': '可以用tar命令来查看打包文件中的文件'}",
+            "right_answer": "[\"A\", \"D\", \"E\"]",
+            "knowledge_evidence": "题目对应知识点为K_文件大小_计算机科学与技术, K_文件大小_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "现在需要在根目录下找所有的名字为temp的文件，然后删除，删除时不需要提示，请问可如何实现。",
+            "option": "{'A': 'find / -name temp rm *', 'B': '编一个SHELL脚本实现', 'C': 'find / -name temp –exec rm {}  ;', 'D': 'find / -name temp –exec rm'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_Shell脚本_计算机科学与技术, K_Shell脚本_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": ""
+        },
+        {
+            "content": "关locate命令，下面哪些描述是正确的？",
+            "option": "{'A': 'locate命令能够快速查找文件', 'B': '如不指定查找的目录范围，locate将以当前工作目录作为查找范围', 'C': 'locate查找速度更快是因为它采用了更加有效率的查找算法', 'D': 'locate有时会发生新建文件无法查找到的问题', 'E': 'locate有时会发生查找到已删除文件的问题'}",
+            "right_answer": "[\"A\", \"D\", \"E\"]",
+            "knowledge_evidence": "题目对应知识点为K_删除文件_计算机科学与技术, K_删除文件_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "关Linux中的通配符，下面哪些描述是正确的？",
+            "option": "{'A': '通配符可以用于对批量文件进行操作', 'B': '* 可以匹配任意单个字符', 'C': '[0-9] 可以匹配0到9之间的任意单个字符', 'D': '[!A-Z] 可以匹配除了大写A到Z之间的任意单个字符'}",
+            "right_answer": "[\"A\", \"C\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_通配符_计算机科学与技术, K_通配符_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": ""
+        }
+    ],
+    "result": [
+        {
+            "content": "关于跨文件系统的链接操作，以下哪些说法是正确的？",
+            "option": {
+                "A": "硬链接不能跨文件系统，因为它们共享同一分区的 inode。",
+                "B": "符号链接不能跨文件系统，因为它们存储路径信息。",
+                "C": "跨文件系统时，使用符号链接可以正常工作。",
+                "D": "跨文件系统时，硬链接需要额外的权限。"
+            },
+            "answer": [
+                "A",
+                "C"
+            ],
+            "course_name": "Linux系统管理",
+            "concept_id": "跨文件系统链接",
+            "explanation": "硬链接依赖于同一文件系统中的 inode，因此无法跨文件系统。符号链接通过存储目标文件的路径信息，可以跨文件系统工作。"
+        },
+        {
+            "content": "如何递归复制目录内容并保留权限？",
+            "option": {
+                "A": "`cp -R /source/dir /target/dir` 可以递归复制目录及其子文件。",
+                "B": "`cp -pR /source/dir /target/dir` 递归复制目录并保留权限。",
+                "C": "`cp -r /source/dir /target/dir` 可以复制目录内容，但不会保留权限。",
+                "D": "`cp -rp /source/dir /target/dir` 递归复制目录内容并保留权限。"
+            },
+            "answer": [
+                "B",
+                "D"
+            ],
+            "course_name": "Linux系统管理",
+            "concept_id": "文件复制",
+            "explanation": "选项 B 和 D 都正确，因为 `-p` 选项保留文件权限，而 `-R` 或 `-r` 选项实现递归复制。"
+        },
+        {
+            "content": "使用 find 查找并删除用户主目录下所有扩展名为 .log 的文件，应如何实现？",
+            "option": {
+                "A": "`find ~ -name \"*.log\" -delete`",
+                "B": "`find ~ -name \"*.log\" -exec rm {} \\;`",
+                "C": "`find ~ -type f | xargs rm {}`",
+                "D": "`find ~ -name \"*.log\" -exec rm -f {} \\;`"
+            },
+            "answer": [
+                "A",
+                "B",
+                "D"
+            ],
+            "course_name": "Linux系统管理",
+            "concept_id": "文件查找与删除",
+            "explanation": "选项 A 使用 `-delete` 直接删除文件；选项 B 和 D 使用 `-exec` 和 `rm` 命令组合删除文件。选项 C 错误，因为 `xargs` 缺少 `-f` 标志。"
+        },
+        {
+            "content": "关于硬链接的跨文件系统限制，以下哪些说法是正确的？",
+            "option": {
+                "A": "硬链接不能跨文件系统，因为它们共享同一分区的 inode。",
+                "B": "硬链接可以指向目录。",
+                "C": "删除源文件后，硬链接仍然有效。",
+                "D": "硬链接可以通过符号链接实现跨文件系统。"
+            },
+            "answer": [
+                "A",
+                "C"
+            ],
+            "course_name": "Linux系统管理",
+            "concept_id": "硬链接的行为",
+            "explanation": "选项 A 表明硬链接依赖于同一文件系统的 inode，选项 C 表明硬链接与源文件共享内容数据。选项 B 错误，因为硬链接不能指向目录。"
+        },
+        {
+            "content": "以下哪个命令可以查看指定 tar 归档文件的内容并解压特定文件？",
+            "option": {
+                "A": "`tar -tvf archive.tar.gz`",
+                "B": "`tar -xvf archive.tar.gz file1`",
+                "C": "`tar -czf archive.tar.gz file1`",
+                "D": "`tar -xvf archive.tar.gz`"
+            },
+            "answer": [
+                "A",
+                "B"
+            ],
+            "course_name": "Linux系统管理",
+            "concept_id": "文件打包与解压",
+            "explanation": "选项 A 查看归档内容，选项 B 解压特定文件。选项 C 错误，因为它用于打包文件，而非解压。"
+        },
+        {
+            "content": "以下哪个命令可以批量删除当前目录下所有扩展名为 .tmp 的文件？",
+            "option": {
+                "A": "`find . -name \"*.tmp\" -delete`",
+                "B": "`find . -type f -exec rm {} \\;`",
+                "C": "`find . -name \"*.tmp\" | xargs rm -f`",
+                "D": "`rm -rf *.tmp`"
+            },
+            "answer": [
+                "A",
+                "C",
+                "D"
+            ],
+            "course_name": "Linux系统管理",
+            "concept_id": "文件操作",
+            "explanation": "选项 A 使用 `-delete` 删除文件；选项 C 和 D 使用 `xargs` 和 `rm` 实现批量删除。"
+        },
+        {
+            "content": "关于符号链接跨文件系统操作，以下哪些说法是正确的？",
+            "option": {
+                "A": "符号链接可以跨文件系统，因为它们存储路径信息。",
+                "B": "符号链接在源文件删除后会失效。",
+                "C": "符号链接可以指向目录和文件。",
+                "D": "符号链接会保留源文件的权限和所有者信息。"
+            },
+            "answer": [
+                "A",
+                "B",
+                "C"
+            ],
+            "course_name": "Linux系统管理",
+            "concept_id": "符号链接的行为",
+            "explanation": "选项 A 说明符号链接的跨文件系统能力；选项 B 和 C 表明符号链接的行为特点。选项 D 错误，因为符号链接不继承权限。"
+        },
+        {
+            "content": "使用 find 查找指定目录下所有类型为文件的内容并删除，应如何实现？",
+            "option": {
+                "A": "`find /path -type f -delete`",
+                "B": "`find /path -type f -exec rm {} \\;`",
+                "C": "`find /path -type f | xargs rm -f`",
+                "D": "`find /path -exec rm {} \\;`"
+            },
+            "answer": [
+                "A",
+                "B",
+                "C"
+            ],
+            "course_name": "Linux系统管理",
+            "concept_id": "文件查找与删除",
+            "explanation": "选项 A 使用 `-delete` 删除文件；选项 B 和 C 使用 `-exec` 和 `xargs` 实现删除。"
+        },
+        {
+            "content": "以下哪个命令可以递归查找所有类型为目录的内容并列出其路径？",
+            "option": {
+                "A": "`find /path -type d`",
+                "B": "`find /path -type d -print`",
+                "C": "`find /path -type d | xargs ls`",
+                "D": "`find /path -type f -print`"
+            },
+            "answer": [
+                "A",
+                "B"
+            ],
+            "course_name": "Linux系统管理",
+            "concept_id": "文件查找",
+            "explanation": "选项 A 和 B 均正确，因为它们使用 `find` 查找类型为目录的内容。选项 C 错误，因为 `xargs` 不适用于直接处理目录。"
+        },
+        {
+            "content": "关于 find 和 xargs 的组合使用，以下哪些说法是正确的？",
+            "option": {
+                "A": "`find /path -name \"*.txt\" | xargs rm -f` 可以删除所有 `.txt` 文件。",
+                "B": "`find /path -type f -print0 | xargs -0 rm -f` 可以处理文件名中的空格。",
+                "C": "`find /path -type f | xargs` 不需要指定具体命令。",
+                "D": "`find /path -type f | xargs gzip` 可以对文件进行批量压缩。"
+            },
+            "answer": [
+                "A",
+                "B",
+                "D"
+            ],
+            "course_name": "Linux系统管理",
+            "concept_id": "复杂命令组合",
+            "explanation": "选项 A 和 D 说明 `find` 与 `xargs` 的组合用法；选项 B 强调处理文件名中的特殊字符。选项 C 错误，因为 `xargs` 需要指定具体命令。"
+        }
+    ],
+    "cost": {
+        "usage_including_cached_inference": {
+            "total_cost": 0.3520768,
+            "qwen/qwen-max": {
+                "cost": 0.3520768,
+                "prompt_tokens": 178552,
+                "completion_tokens": 10374,
+                "total_tokens": 188926
+            }
+        },
+        "usage_excluding_cached_inference": {
+            "total_cost": 0.3520768,
+            "qwen/qwen-max": {
+                "cost": 0.3520768,
+                "prompt_tokens": 178552,
+                "completion_tokens": 10374,
+                "total_tokens": 188926
+            }
+        }
+    }
+},
+{
+    "round": 17,
+    "examples": [
+        {
+            "content": "关于tail和head命令，下面哪些描述是正确的。",
+            "option": "{'A': 'head默认情况下显示文件的头5行', 'B': 'tail只能同时查看一个文本文件', 'C': '这一对命令经常被用来查看日志文件', 'D': '可以用 -n 选项（n为一个自然数）来指定tail和head要显示的行数'}",
+            "right_answer": "[\"C\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_显示文件_计算机科学与技术, K_显示文件_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The student's answer was marked as incorrect because they may have picked incorrect options or missed some correct ones. Let's analyze the options: \r\n\r\n- Option A is incorrect; the 'head' command by default shows the first 10 lines, not 5. \r\n- Option B is incorrect; 'tail' can be used to view multiple files simultaneously by specifying them in the command.\r\n- Option C is correct, as 'tail' and 'head' are commonly used to view log files.\r\n- Option D is correct because the '-n' option allows specifying the number of lines to display for both 'head' and 'tail'.\r\n\r\nThe correct answers are 'C' and 'D', as per the right_answer field. Review the options marked to understand which parts were misunderstood."
+        },
+        {
+            "content": "关于tail和head命令，下面哪些描述是正确的。",
+            "option": "{'A': 'head默认情况下显示文件的头5行', 'B': 'tail只能同时查看一个文本文件', 'C': '这一对命令经常被用来查看日志文件', 'D': '可以用 -n 选项（n为一个自然数）来指定tail和head要显示的行数'}",
+            "right_answer": "[\"C\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_显示文件_计算机科学与技术, K_显示文件_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student correctly identified the right options for the question about the 'head' and 'tail' commands in Linux. Options C ('这一对命令经常被用来查看日志文件') and D ('可以用 -n 选项（n为一个自然数）来指定tail和head要显示的行数') are correct because 'head' and 'tail' are indeed commonly used for viewing log files, and both commands can use the '-n' flag to specify the number of lines to display. The student avoided choosing incorrect options such as A, which incorrectly states 'head' shows the first 5 lines by default (it actually shows the first 10 lines by default) and B, which states 'tail' can only view one file at a time, which is not true as 'tail' can handle multiple files simultaneously in Linux."
+        },
+        {
+            "content": "关Linux中的输入输出重定向，下面哪些描述是正确的?",
+            "option": "{'A': '标准输出流（stdout），显示来自命令的输出，文件描述符是 0', 'B': '标准输入流（stdin），向命令提供输入，文件描述符是 1', 'C': '对于任何一条linux 命令,其结果都是通过stdout输出到输出设备上；', 'D': 'Linux中使用> 和>> 操作符来重定向标准输出', 'E': '标准输入重定向是让命令从指定文件中获取输入而非从stdin中获取输入。'}",
+            "right_answer": "[\"D\", \"E\"]",
+            "knowledge_evidence": "题目对应知识点为K_标准输入流_计算机科学与技术, K_标准输入流_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The student's answer was incorrect because they likely misunderstood the standard input and output descriptors in Linux. Option 'A' is incorrect as it incorrectly assigns file descriptor 0 to 'stdout' when it should be 1 for 'stdout'. Similarly, option 'B' is incorrect as it incorrectly assigns file descriptor 1 to 'stdin', which should be 0 for 'stdin'. Options 'C' could also be misleading, as not all Linux command outputs are directed to stdout depending on how the system is set up. The correct answers, 'D' and 'E', accurately describe the use of '>' and '>>' for redirecting standard output and explain standard input redirection correctly."
+        },
+        {
+            "content": "关Linux中的输入输出重定向，下面哪些描述是正确的?",
+            "option": "{'A': '标准输出流（stdout），显示来自命令的输出，文件描述符是 0', 'B': '标准输入流（stdin），向命令提供输入，文件描述符是 1', 'C': '对于任何一条linux 命令,其结果都是通过stdout输出到输出设备上；', 'D': 'Linux中使用> 和>> 操作符来重定向标准输出', 'E': '标准输入重定向是让命令从指定文件中获取输入而非从stdin中获取输入。'}",
+            "right_answer": "[\"D\", \"E\"]",
+            "knowledge_evidence": "题目对应知识点为K_标准输入流_计算机科学与技术, K_标准输入流_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student correctly answered the question about input and output redirection in Linux. Option D is correct because the > and >> operators are indeed used to redirect standard output in Linux. Option E is also correct as standard input redirection involves taking input from a specified file rather than the default standard input. The other options had incorrect associations of standard input, output, and their file descriptors, which typically are 0 for standard input (stdin), 1 for standard output (stdout), and 2 for standard error (stderr). Therefore, options A and B are incorrect as they mention the wrong file descriptors, and option C is incorrect as not all results necessarily go only to stdout without redirection commands. The student's understanding of these concepts was accurate."
+        },
+        {
+            "content": "关于命令echo -e \"1 applen2 pearn3 banana\"&gt;&gt;fruit.txt，下面哪些描述是错误的。",
+            "option": "{'A': '这个命令将echo的输出重定向到了fruit.txt文件中。', 'B': 'fruit.txt文件中如果原有内容将被覆盖', 'C': 'echo的输出重定向将追加到fruit.txt文件最后', 'D': '如果fruit文件不存在，命令将出错'}",
+            "right_answer": "[\"B\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_追加_计算机科学与技术, K_追加_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student correctly identified options B and D as false statements about the command. Option A is true because the command uses '>>' to redirect the output of echo to fruit.txt. Option B is false because '>>' appends to the file instead of overwriting it. Option C is true as the '>>' operator appends the output to the end of fruit.txt. Option D is false; the command will create fruit.txt if it doesn't exist, instead of causing an error. Thus, the student's selection of B and D as the incorrect descriptions is correct."
+        },
+        {
+            "content": "在CentOS中，默认情况下，虚拟用户的UID范围是:",
+            "option": "{'A': '1-499', 'B': '0-499', 'C': '0-500', 'D': '500以后'}",
+            "right_answer": "[\"A\"]",
+            "knowledge_evidence": "题目对应知识点为K_虚拟用户_计算机科学与技术, K_虚拟用户_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The question asks about the default UID range for virtual users in CentOS. The student's answer was incorrect. In CentOS, the UID range for system and virtual users is typically from 1 to 499. This range is reserved for system processes and services, while UIDs from 500 onwards are generally allocated to regular user accounts. Therefore, the correct answer is '1-499', which corresponds to option 'A'. It seems the student might have overlooked this specific user range assignment in CentOS system management."
+        },
+        {
+            "content": "关于切换用户命令su，下面描述正确的是：",
+            "option": "{'A': '由根用户切换普通用户时需要输入用户密码', 'B': '由普通用户切换根用户时需要输入用户密码', 'C': '由普通用户之间相互切换时需要输入用户密码', 'D': '由根用户切换为虚拟用户时需要输入用户密码', 'E': '切换用户身份后，对系统的访问权限也随之改变'}",
+            "right_answer": "[\"B\", \"C\", \"E\"]",
+            "knowledge_evidence": "题目对应知识点为K_虚拟用户_计算机科学与技术, K_虚拟用户_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The question is about the proper usage of the 'su' command in Linux for switching users. Options B, C, and E are correct. Option B states that a normal user needs to provide a password to switch to the root user, which is true as root access requires authentication. Option C mentions that password is needed when switching between normal users, which is correct. Option E relates to the fact that access permissions change according to the user profile, which is also accurate. The student answered the question correctly by selecting these options, showing an understanding of user permissions and the functionality of the 'su' command."
+        },
+        {
+            "content": "在CentOS中，默认情况下，虚拟用户的UID范围是:",
+            "option": "{'A': '1-499', 'B': '0-499', 'C': '0-500', 'D': '500以后'}",
+            "right_answer": "[\"A\"]",
+            "knowledge_evidence": "题目对应知识点为K_虚拟用户_计算机科学与技术, K_虚拟用户_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The question asks about the default UID range for virtual users in CentOS. The student's answer was incorrect. In CentOS, the UID range for system and virtual users is typically from 1 to 499. This range is reserved for system processes and services, while UIDs from 500 onwards are generally allocated to regular user accounts. Therefore, the correct answer is '1-499', which corresponds to option 'A'. It seems the student might have overlooked this specific user range assignment in CentOS system management."
+        },
+        {
+            "content": "关于切换用户命令su，下面描述正确的是：",
+            "option": "{'A': '由根用户切换普通用户时需要输入用户密码', 'B': '由普通用户切换根用户时需要输入用户密码', 'C': '由普通用户之间相互切换时需要输入用户密码', 'D': '由根用户切换为虚拟用户时需要输入用户密码', 'E': '切换用户身份后，对系统的访问权限也随之改变'}",
+            "right_answer": "[\"B\", \"C\", \"E\"]",
+            "knowledge_evidence": "题目对应知识点为K_虚拟用户_计算机科学与技术, K_虚拟用户_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The question is about the proper usage of the 'su' command in Linux for switching users. Options B, C, and E are correct. Option B states that a normal user needs to provide a password to switch to the root user, which is true as root access requires authentication. Option C mentions that password is needed when switching between normal users, which is correct. Option E relates to the fact that access permissions change according to the user profile, which is also accurate. The student answered the question correctly by selecting these options, showing an understanding of user permissions and the functionality of the 'su' command."
+        },
+        {
+            "content": "id命令能够查看的用户信息有：",
+            "option": "{'A': '用户的创建时间', 'B': '用户的主用户组', 'C': '用户从属的用户组名', 'D': '用户家目录'}",
+            "right_answer": "[\"B\", \"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_用户组_计算机科学与技术, K_用户组_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The question asked which user information can be viewed by the 'id' command in Linux. The correct options are 'B: 用户的主用户组' (user's primary group) and 'C: 用户从属的用户组名' (names of the user groups the user belongs to). The student's answer was incorrect because they did not select the correct options 'B' and 'C'. The 'id' command does not provide information such as 'A: 用户的创建时间' (user's creation time) or 'D: 用户家目录' (user's home directory), which might be why the student made a mistake if these were chosen."
+        },
+        {
+            "content": "关于Linux中的用户组，描述错误的是：",
+            "option": "{'A': '用户组的身份标识叫做GID', 'B': '一个用户只能从属于一个用户组', 'C': '一个用户组能够包含多个用户', 'D': '在同一时刻，一个用户的主用户组只能有一个', 'E': '每个用户都必定从属于一个与用户同名的独立的私有用户组'}",
+            "right_answer": "[\"B\", \"E\"]",
+            "knowledge_evidence": "题目对应知识点为K_用户组_计算机科学与技术, K_用户组_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student answered the question correctly. The question asked for the incorrect statements about user groups in Linux. Options 'B' and 'E' were both identified as incorrect by the student: 'B' states that a user can only belong to one user group, which is false as a user can belong to multiple groups besides their primary group. 'E' states that each user must belong to a private group named after them, which is also incorrect as it is not a requirement to create a matching group for each user. The student correctly identified these as the incorrect statements, demonstrating an understanding of how user groups work in Linux."
+        },
+        {
+            "content": "用户的主用户组属性将影响到：",
+            "option": "{'A': '用户创建的文件属性', 'B': '用户对于文件的访问权限', 'C': '用户是否为虚拟用户', 'D': '用户能否被删除'}",
+            "right_answer": "[\"A\", \"B\"]",
+            "knowledge_evidence": "题目对应知识点为K_文件属性_计算机科学与技术, K_文件属性_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The student's answer was incorrect because they likely did not select both options 'A' and 'B'. The question asks about the impact of the user's primary group attribute, which affects 'A: 用户创建的文件属性' (file attributes created by the user) and 'B: 用户对于文件的访问权限' (user's access permissions to files). The correct understanding is that the primary group affects both the ownership and access permissions of the files that users create. Options 'C' and 'D' do not relate to the direct influence of a user's primary group in this context. Therefore, the complete correct answer should include both 'A' and 'B'."
+        },
+        {
+            "content": "关于cp命令，哪些表述是正确的？",
+            "option": "{'A': 'cp命令可以同时拷贝多个文件', 'B': '默认情况下，cp命令拷贝时遇到同名文件会自动覆盖', 'C': '默认情况下，cp命令拷贝时会将文件属性一并进行拷贝', 'D': 'cp命令拷贝同时还可以重命名文件'}",
+            "right_answer": "[\"A\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_文件属性_计算机科学与技术, K_文件属性_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student correctly identified that statements A and D are true regarding the 'cp' command. Statement A is correct because 'cp' can indeed copy multiple files simultaneously using wildcards or when multiple source file names are provided. Statement D is also correct because you can specify a new name for the file when using 'cp', effectively renaming it in the destination directory. The incorrect statements that the student avoided were B, which wrongly states that 'cp' automatically overwrites files without prompting; by default, it prompts for confirmation if the destination file already exists unless the '-f' option is used. Statement C is incorrect because, by default, 'cp' does not preserve file attributes unless options like '-p' or '--preserve' are explicitly specified. Thus, the student demonstrated a sound understanding of the 'cp' command's default behaviors and options."
+        },
+        {
+            "content": "id命令能够查看的用户信息有：",
+            "option": "{'A': '用户的创建时间', 'B': '用户的主用户组', 'C': '用户从属的用户组名', 'D': '用户家目录'}",
+            "right_answer": "[\"B\", \"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_用户组_计算机科学与技术, K_用户组_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The question asked which user information can be viewed by the 'id' command in Linux. The correct options are 'B: 用户的主用户组' (user's primary group) and 'C: 用户从属的用户组名' (names of the user groups the user belongs to). The student's answer was incorrect because they did not select the correct options 'B' and 'C'. The 'id' command does not provide information such as 'A: 用户的创建时间' (user's creation time) or 'D: 用户家目录' (user's home directory), which might be why the student made a mistake if these were chosen."
+        },
+        {
+            "content": "关于Linux中的用户组，描述错误的是：",
+            "option": "{'A': '用户组的身份标识叫做GID', 'B': '一个用户只能从属于一个用户组', 'C': '一个用户组能够包含多个用户', 'D': '在同一时刻，一个用户的主用户组只能有一个', 'E': '每个用户都必定从属于一个与用户同名的独立的私有用户组'}",
+            "right_answer": "[\"B\", \"E\"]",
+            "knowledge_evidence": "题目对应知识点为K_用户组_计算机科学与技术, K_用户组_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student answered the question correctly. The question asked for the incorrect statements about user groups in Linux. Options 'B' and 'E' were both identified as incorrect by the student: 'B' states that a user can only belong to one user group, which is false as a user can belong to multiple groups besides their primary group. 'E' states that each user must belong to a private group named after them, which is also incorrect as it is not a requirement to create a matching group for each user. The student correctly identified these as the incorrect statements, demonstrating an understanding of how user groups work in Linux."
+        },
+        {
+            "content": "关于CentOS中的修改用户组命令groupmod，下面描述正确的是：",
+            "option": "{'A': '随意更改用户组的 GID可能会造成系统混乱', 'B': '带选项–n可以修改用户组名', 'C': '更改用户组名可能会造成系统混乱', 'D': '如果有用户将某用户组作为其主用户组，那么在用户已经登录系统的情况下，无法修改这个用户组名'}",
+            "right_answer": "[\"A\", \"B\"]",
+            "knowledge_evidence": "题目对应知识点为K_登录_计算机科学与技术, K_登录_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The question asked to identify the correct statements about the 'groupmod' command in CentOS. The correct answers were 'A' and 'B'. Option 'A' is correct because changing the GID of a user group arbitrarily can cause system issues. Option 'B' is also correct as the '-n' option allows modification of the group name. The student did not choose these options, leading to an incorrect answer. The statement in 'C' and 'D' are incorrect because changing a group name does not inherently cause confusion if done properly, and there is no restriction on changing the name of a group while a user is logged in."
+        },
+        {
+            "content": "关于Linux中工作目录，下面哪些说法是错误的?",
+            "option": "{'A': '可以在命令提示符中观察到目前所处的工作目录', 'B': '用户登录后初始的默认工作目录总是登录用户的 “家目录”', 'C': '用户的工作目录是固定的', 'D': '可以用～字符代表当前工作目录'}",
+            "right_answer": "[\"C\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_登录_计算机科学与技术, K_登录_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student correctly identified that statements C and D are incorrect. In Linux, the current working directory is not fixed, meaning users can navigate and change their working directory (making C incorrect). Also, the '~' character represents the user's home directory, not the current working directory, which makes D incorrect. The other options, A and B, are correct statements: the current working directory is usually shown in the command prompt and, upon login, users typically start in their home directory."
+        },
+        {
+            "content": "在CentOS中，默认情况下，虚拟用户的UID范围是:",
+            "option": "{'A': '1-499', 'B': '0-499', 'C': '0-500', 'D': '500以后'}",
+            "right_answer": "[\"A\"]",
+            "knowledge_evidence": "题目对应知识点为K_虚拟用户_计算机科学与技术, K_虚拟用户_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The question asks about the default UID range for virtual users in CentOS. The student's answer was incorrect. In CentOS, the UID range for system and virtual users is typically from 1 to 499. This range is reserved for system processes and services, while UIDs from 500 onwards are generally allocated to regular user accounts. Therefore, the correct answer is '1-499', which corresponds to option 'A'. It seems the student might have overlooked this specific user range assignment in CentOS system management."
+        },
+        {
+            "content": "关于切换用户命令su，下面描述正确的是：",
+            "option": "{'A': '由根用户切换普通用户时需要输入用户密码', 'B': '由普通用户切换根用户时需要输入用户密码', 'C': '由普通用户之间相互切换时需要输入用户密码', 'D': '由根用户切换为虚拟用户时需要输入用户密码', 'E': '切换用户身份后，对系统的访问权限也随之改变'}",
+            "right_answer": "[\"B\", \"C\", \"E\"]",
+            "knowledge_evidence": "题目对应知识点为K_虚拟用户_计算机科学与技术, K_虚拟用户_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The question is about the proper usage of the 'su' command in Linux for switching users. Options B, C, and E are correct. Option B states that a normal user needs to provide a password to switch to the root user, which is true as root access requires authentication. Option C mentions that password is needed when switching between normal users, which is correct. Option E relates to the fact that access permissions change according to the user profile, which is also accurate. The student answered the question correctly by selecting these options, showing an understanding of user permissions and the functionality of the 'su' command."
+        }
+    ],
+    "tasks": [
+        {
+            "content": "关于tail和head命令，下面哪些描述是正确的。",
+            "option": "{'A': 'head默认情况下显示文件的头5行', 'B': 'tail只能同时查看一个文本文件', 'C': '这一对命令经常被用来查看日志文件', 'D': '可以用 -n 选项（n为一个自然数）来指定tail和head要显示的行数'}",
+            "right_answer": "[\"C\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_显示文件_计算机科学与技术, K_显示文件_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "关Linux中的输入输出重定向，下面哪些描述是正确的?",
+            "option": "{'A': '标准输出流（stdout），显示来自命令的输出，文件描述符是 0', 'B': '标准输入流（stdin），向命令提供输入，文件描述符是 1', 'C': '对于任何一条linux 命令,其结果都是通过stdout输出到输出设备上；', 'D': 'Linux中使用> 和>> 操作符来重定向标准输出', 'E': '标准输入重定向是让命令从指定文件中获取输入而非从stdin中获取输入。'}",
+            "right_answer": "[\"D\", \"E\"]",
+            "knowledge_evidence": "题目对应知识点为K_标准输入流_计算机科学与技术, K_标准输入流_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "关于命令echo -e \"1 applen2 pearn3 banana\"&gt;&gt;fruit.txt，下面哪些描述是错误的。",
+            "option": "{'A': '这个命令将echo的输出重定向到了fruit.txt文件中。', 'B': 'fruit.txt文件中如果原有内容将被覆盖', 'C': 'echo的输出重定向将追加到fruit.txt文件最后', 'D': '如果fruit文件不存在，命令将出错'}",
+            "right_answer": "[\"B\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_追加_计算机科学与技术, K_追加_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "在CentOS中，默认情况下，虚拟用户的UID范围是:",
+            "option": "{'A': '1-499', 'B': '0-499', 'C': '0-500', 'D': '500以后'}",
+            "right_answer": "[\"A\"]",
+            "knowledge_evidence": "题目对应知识点为K_虚拟用户_计算机科学与技术, K_虚拟用户_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "关于CentOS中的用户，描述错误的是：",
+            "option": "{'A': '虚拟用户是给系统的访客使用的', 'B': '根用户的UID是固定的', 'C': '虚拟用户使用的默认Shell是BASH', 'D': 'Linux是通过用户名来识别用户的身份的', 'E': '普通用户对系统有只有有限的权限'}",
+            "right_answer": "[\"A\", \"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_虚拟用户_计算机科学与技术, K_虚拟用户_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": ""
+        },
+        {
+            "content": "关于Linux中的用户组，描述错误的是：",
+            "option": "{'A': '用户组的身份标识叫做GID', 'B': '一个用户只能从属于一个用户组', 'C': '一个用户组能够包含多个用户', 'D': '在同一时刻，一个用户的主用户组只能有一个', 'E': '每个用户都必定从属于一个与用户同名的独立的私有用户组'}",
+            "right_answer": "[\"B\", \"E\"]",
+            "knowledge_evidence": "题目对应知识点为K_用户组_计算机科学与技术, K_用户组_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": ""
+        },
+        {
+            "content": "用户的主用户组属性将影响到：",
+            "option": "{'A': '用户创建的文件属性', 'B': '用户对于文件的访问权限', 'C': '用户是否为虚拟用户', 'D': '用户能否被删除'}",
+            "right_answer": "[\"A\", \"B\"]",
+            "knowledge_evidence": "题目对应知识点为K_文件属性_计算机科学与技术, K_文件属性_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "id命令能够查看的用户信息有：",
+            "option": "{'A': '用户的创建时间', 'B': '用户的主用户组', 'C': '用户从属的用户组名', 'D': '用户家目录'}",
+            "right_answer": "[\"B\", \"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_用户组_计算机科学与技术, K_用户组_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": ""
+        },
+        {
+            "content": "假设目前我们以nboocer用户登录系统，处在nboocer用户的家目录下，现在要切换到root用户，下面描述正确的是：",
+            "option": "{'A': '使用 su root 切换，需要输入root用户密码，切换后处在root用户家目录中。', 'B': '使用 su - root 切换，需要输入root用户密码，切换后处在root用户家目录中', 'C': '使用 su -l root 切换，需要输入root用户密码，切换后处在root用户家目录中', 'D': '使用 su root 切换，需要输入nboocer用户密码，切换后处在nboocer家目录中', 'E': '使用 su - root 切换，需要输入nboocer用户密码，切换后处在root用户家目录中'}",
+            "right_answer": "[\"B\", \"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_登录_计算机科学与技术, K_登录_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": ""
+        },
+        {
+            "content": "关于切换用户命令su，下面描述正确的是：",
+            "option": "{'A': '由根用户切换普通用户时需要输入用户密码', 'B': '由普通用户切换根用户时需要输入用户密码', 'C': '由普通用户之间相互切换时需要输入用户密码', 'D': '由根用户切换为虚拟用户时需要输入用户密码', 'E': '切换用户身份后，对系统的访问权限也随之改变'}",
+            "right_answer": "[\"B\", \"C\", \"E\"]",
+            "knowledge_evidence": "题目对应知识点为K_虚拟用户_计算机科学与技术, K_虚拟用户_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": ""
+        }
+    ],
+    "result": [
+        {
+            "content": "关于虚拟用户的描述，以下哪些选项是正确的？",
+            "option": "{'A': '虚拟用户的UID范围通常为1-499', 'B': '虚拟用户的主要目的是为系统服务而存在', 'C': '虚拟用户的默认Shell通常是/some/custom/shell', 'D': '虚拟用户可以被用于普通用户登录系统'}",
+            "answer": "['A', 'B']",
+            "course_name": "Linux系统管理",
+            "concept_id": "虚拟用户_计算机科学与技术",
+            "explanation": "虚拟用户的UID范围通常为1-499，主要用于系统服务而非普通用户登录。默认Shell通常是非交互式的，如/sbin/nologin或/bin/false，而非/bin/bash。"
+        },
+        {
+            "content": "在CentOS中，如果需要为某个用户分配多个用户组，以下哪些说法是正确的？",
+            "option": "{'A': '每个用户只能有一个主用户组', 'B': '用户可以同时属于多个附属用户组', 'C': '一个用户可以拥有多个主用户组', 'D': '用户组信息存储在/etc/group文件中'}",
+            "answer": "['A', 'B', 'D']",
+            "course_name": "Linux系统管理",
+            "concept_id": "用户组_计算机科学与技术",
+            "explanation": "每个用户只能有一个主用户组，但可以同时属于多个附属用户组。用户组信息存储在/etc/group文件中。"
+        },
+        {
+            "content": "在Linux系统中，关于UID和GID的描述，以下哪些选项是正确的？",
+            "option": "{'A': 'UID为0的用户是根用户', 'B': '普通用户的UID范围是1-499', 'C': '虚拟用户的UID范围是1-499', 'D': '用户组的标识符称为GID'}",
+            "answer": "['A', 'C', 'D']",
+            "course_name": "Linux系统管理",
+            "concept_id": "虚拟用户_计算机科学与技术",
+            "explanation": "UID为0的用户是根用户，虚拟用户的UID范围通常为1-499，而普通用户的UID范围通常是500或更高。用户组的标识符称为GID。"
+        },
+        {
+            "content": "以下哪些操作可能会导致系统中UID/GID范围的冲突？",
+            "option": "{'A': '为虚拟用户分配UID范围内的值（例如500）', 'B': '为普通用户分配UID范围内的值（例如100）', 'C': '将UID=0分配给非根用户', 'D': '修改系统文件后重新分配GID'}",
+            "answer": "['A', 'C']",
+            "course_name": "Linux系统管理",
+            "concept_id": "虚拟用户_计算机科学与技术",
+            "explanation": "为虚拟用户分配普通用户UID范围的值（如500）或为非根用户分配UID=0会导致UID/GID范围冲突。修改系统文件后重新分配GID不会直接引发冲突。"
+        },
+        {
+            "content": "在使用`tail`和`head`命令时，以下哪些选项是错误的？",
+            "option": "{'A': 'head命令默认显示文件的前5行', 'B': 'tail命令可以同时查看多个文件', 'C': '使用-n选项可以自定义显示的行数', 'D': 'tail命令的输出无法重定向到文件'}",
+            "answer": "['A', 'D']",
+            "course_name": "Linux系统管理",
+            "concept_id": "显示文件_计算机科学与技术",
+            "explanation": "head命令默认显示文件的前10行，而非5行。tail命令的输出可以通过重定向操作符（如>或>>）写入文件。"
+        },
+        {
+            "content": "以下关于Linux中用户组的GID描述哪些是正确的？",
+            "option": "{'A': 'GID是用户组的身份标识', 'B': '每个用户只能有一个GID', 'C': '一个用户组可以包含多个用户', 'D': '用户切换不会影响其当前所属的GID'}",
+            "answer": "['A', 'C']",
+            "course_name": "Linux系统管理",
+            "concept_id": "用户组_计算机科学与技术",
+            "explanation": "GID是用户组的身份标识，一个用户组可以包含多个用户。然而，用户的GID会随着主用户组的更改而变化。"
+        },
+        {
+            "content": "在CentOS系统中，关于虚拟用户默认Shell的描述，以下哪些是错误的？",
+            "option": "{'A': '虚拟用户的默认Shell通常是/bin/bash', 'B': '虚拟用户通常无法通过SSH登录系统', 'C': '虚拟用户的默认Shell可能是/sbin/nologin', 'D': '虚拟用户的Shell必须手动配置为交互式Shell'}",
+            "answer": "['A', 'D']",
+            "course_name": "Linux系统管理",
+            "concept_id": "虚拟用户_计算机科学与技术",
+            "explanation": "虚拟用户的默认Shell通常是非交互式的（如/sbin/nologin或/bin/false），而非/bin/bash。虚拟用户的Shell无需手动配置为交互式Shell。"
+        },
+        {
+            "content": "以下哪些关于`usermod`命令的描述是正确的？",
+            "option": "{'A': '`usermod -aG`可以将用户添加到新的附属组', 'B': '`usermod -g`可以修改用户的主用户组', 'C': '`usermod -l`可以修改用户的UID', 'D': '`usermod`无法更改用户的登录Shell'}",
+            "answer": "['A', 'B']",
+            "course_name": "Linux系统管理",
+            "concept_id": "用户管理_计算机科学与技术",
+            "explanation": "`usermod -aG`可以将用户添加到新的附属组，`usermod -g`可以修改用户的主用户组。`usermod -l`用于修改用户名，而非UID，且`usermod`可以更改用户的登录Shell。"
+        },
+        {
+            "content": "以下哪些描述关于用户主用户组的影响是正确的？",
+            "option": "{'A': '主用户组影响用户创建的文件的默认属组', 'B': '主用户组影响用户对文件的访问权限', 'C': '主用户组会影响用户是否能够被删除', 'D': '主用户组属性与虚拟用户的Shell设置有关'}",
+            "answer": "['A', 'B']",
+            "course_name": "Linux系统管理",
+            "concept_id": "文件属性_计算机科学与技术",
+            "explanation": "主用户组影响用户创建的文件的默认属组和对文件的访问权限，但不会影响用户是否能够被删除，也与虚拟用户的Shell设置无关。"
+        },
+        {
+            "content": "在CentOS中，关于虚拟用户的使用场景，以下哪些描述是正确的？",
+            "option": "{'A': '虚拟用户主要用于提供系统服务', 'B': '虚拟用户可以作为普通用户的备用登录账户', 'C': '虚拟用户通常没有交互式登录权限', 'D': '虚拟用户的UID范围与普通用户相同'}",
+            "answer": "['A', 'C']",
+            "course_name": "Linux系统管理",
+            "concept_id": "虚拟用户_计算机科学与技术",
+            "explanation": "虚拟用户主要用于提供系统服务，通常没有交互式登录权限，且其UID范围与普通用户不同（虚拟用户为1-499）。"
+        }
+    ],
+    "cost": {
+        "usage_including_cached_inference": {
+            "total_cost": 0.44877279999999997,
+            "qwen/qwen-max": {
+                "cost": 0.44877279999999997,
+                "prompt_tokens": 222603,
+                "completion_tokens": 14470,
+                "total_tokens": 237073
+            }
+        },
+        "usage_excluding_cached_inference": {
+            "total_cost": 0.44877279999999997,
+            "qwen/qwen-max": {
+                "cost": 0.44877279999999997,
+                "prompt_tokens": 222603,
+                "completion_tokens": 14470,
+                "total_tokens": 237073
+            }
+        }
+    }
+},
+{
+    "round": 18,
+    "examples": [
+        {
+            "content": "关于CentOS中的修改用户组命令groupmod，下面描述正确的是：",
+            "option": "{'A': '随意更改用户组的 GID可能会造成系统混乱', 'B': '带选项–n可以修改用户组名', 'C': '更改用户组名可能会造成系统混乱', 'D': '如果有用户将某用户组作为其主用户组，那么在用户已经登录系统的情况下，无法修改这个用户组名'}",
+            "right_answer": "[\"A\", \"B\"]",
+            "knowledge_evidence": "题目对应知识点为K_登录_计算机科学与技术, K_登录_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The question asked to identify the correct statements about the 'groupmod' command in CentOS. The correct answers were 'A' and 'B'. Option 'A' is correct because changing the GID of a user group arbitrarily can cause system issues. Option 'B' is also correct as the '-n' option allows modification of the group name. The student did not choose these options, leading to an incorrect answer. The statement in 'C' and 'D' are incorrect because changing a group name does not inherently cause confusion if done properly, and there is no restriction on changing the name of a group while a user is logged in."
+        },
+        {
+            "content": "关于Linux中工作目录，下面哪些说法是错误的?",
+            "option": "{'A': '可以在命令提示符中观察到目前所处的工作目录', 'B': '用户登录后初始的默认工作目录总是登录用户的 “家目录”', 'C': '用户的工作目录是固定的', 'D': '可以用～字符代表当前工作目录'}",
+            "right_answer": "[\"C\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_登录_计算机科学与技术, K_登录_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student correctly identified that statements C and D are incorrect. In Linux, the current working directory is not fixed, meaning users can navigate and change their working directory (making C incorrect). Also, the '~' character represents the user's home directory, not the current working directory, which makes D incorrect. The other options, A and B, are correct statements: the current working directory is usually shown in the command prompt and, upon login, users typically start in their home directory."
+        },
+        {
+            "content": "关于CentOS中的修改用户组命令groupmod，下面描述正确的是：",
+            "option": "{'A': '随意更改用户组的 GID可能会造成系统混乱', 'B': '带选项–n可以修改用户组名', 'C': '更改用户组名可能会造成系统混乱', 'D': '如果有用户将某用户组作为其主用户组，那么在用户已经登录系统的情况下，无法修改这个用户组名'}",
+            "right_answer": "[\"A\", \"B\"]",
+            "knowledge_evidence": "题目对应知识点为K_登录_计算机科学与技术, K_登录_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The question asked to identify the correct statements about the 'groupmod' command in CentOS. The correct answers were 'A' and 'B'. Option 'A' is correct because changing the GID of a user group arbitrarily can cause system issues. Option 'B' is also correct as the '-n' option allows modification of the group name. The student did not choose these options, leading to an incorrect answer. The statement in 'C' and 'D' are incorrect because changing a group name does not inherently cause confusion if done properly, and there is no restriction on changing the name of a group while a user is logged in."
+        },
+        {
+            "content": "关于Linux中工作目录，下面哪些说法是错误的?",
+            "option": "{'A': '可以在命令提示符中观察到目前所处的工作目录', 'B': '用户登录后初始的默认工作目录总是登录用户的 “家目录”', 'C': '用户的工作目录是固定的', 'D': '可以用～字符代表当前工作目录'}",
+            "right_answer": "[\"C\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_登录_计算机科学与技术, K_登录_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student correctly identified that statements C and D are incorrect. In Linux, the current working directory is not fixed, meaning users can navigate and change their working directory (making C incorrect). Also, the '~' character represents the user's home directory, not the current working directory, which makes D incorrect. The other options, A and B, are correct statements: the current working directory is usually shown in the command prompt and, upon login, users typically start in their home directory."
+        },
+        {
+            "content": "下面关于关机和重启的说法，哪些是正确的？",
+            "option": "{'A': '关机是系统管理员要给予充分重视的一件大事.', 'B': 'shutdown -k now 命令用于立即关机', 'C': '不恰当或者不正确的关机和重启，可能会导致数据丢失', 'D': '关机和重启命令默认情况下普通用户亦可执行'}",
+            "right_answer": "[\"A\", \"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_系统管理员_计算机科学与技术, K_系统管理员_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The student answered incorrectly because they selected option 'B' which states that 'shutdown -k now' is used for immediate shutdown. This command is actually used to send warning messages to users but does not perform any shutdown. The correct options are 'A' and 'C', as option 'A' emphasizes the importance of shutdown for system administrators and option 'C' highlights the risk of data loss from improper shutdown procedures. Ordinary users do not have default permissions to execute shutdown and restart commands, hence option 'D' is also incorrect."
+        },
+        {
+            "content": "下面关于关机和重启的说法，哪些是正确的？",
+            "option": "{'A': '关机是系统管理员要给予充分重视的一件大事.', 'B': 'shutdown -k now 命令用于立即关机', 'C': '不恰当或者不正确的关机和重启，可能会导致数据丢失', 'D': '关机和重启命令默认情况下普通用户亦可执行'}",
+            "right_answer": "[\"A\", \"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_系统管理员_计算机科学与技术, K_系统管理员_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student's answer is correct. Option A and C are indeed correct statements about the shutdown and reboot processes in a Linux system. Option A highlights the importance that a system administrator should give to shutting down a system correctly. Option C warns of the potential for data loss if shutdowns and reboots are performed incorrectly or inappropriately. However, options B and D are incorrect. The command 'shutdown -k now' does not actually initiate a shutdown; instead, it only sends a warning message to users. Additionally, shutdown and reboot commands are typically restricted to administrative users rather than regular users by default."
+        },
+        {
+            "content": "关于Linux中用的用户配置文件，下面描述正确的是：",
+            "option": "{'A': '/etc/passwd中存放着用户加密后的密码', 'B': '/etc/passwd中存放着用户的主用户组信息', 'C': '如果用户密码为空，/etc/passwd的第二个字段将出现叹号！或者星号 *', 'D': '/etc/shadow 中第三个字段表示的密码最后一次修改时间', 'E': '可以通过修改passwd 和 shadow文件的内容来修改用户属性'}",
+            "right_answer": "[\"B\", \"D\", \"E\"]",
+            "knowledge_evidence": "题目对应知识点为K_用户配置文件_计算机科学与技术, K_用户配置文件_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The student's answer was marked incorrect because they possibly missed selecting all the correct options. The correct answer provided in the record includes the options B, D, and E. These describe accurate information about user configuration files in Linux: B is about main user group information in /etc/passwd, D pertains to the last password modification time in /etc/shadow, and E allows user property modification through /etc/passwd and /etc/shadow. If the student chose an option other than B, D, or E, or didn't select all three, it would result in an incorrect answer."
+        },
+        {
+            "content": "关于Linux中用的用户配置文件，下面描述正确的是：",
+            "option": "{'A': '/etc/passwd中存放着用户加密后的密码', 'B': '/etc/passwd中存放着用户的主用户组信息', 'C': '如果用户密码为空，/etc/passwd的第二个字段将出现叹号！或者星号 *', 'D': '/etc/shadow 中第三个字段表示的密码最后一次修改时间', 'E': '可以通过修改passwd 和 shadow文件的内容来修改用户属性'}",
+            "right_answer": "[\"B\", \"D\", \"E\"]",
+            "knowledge_evidence": "题目对应知识点为K_用户配置文件_计算机科学与技术, K_用户配置文件_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student correctly selected the options B, D, and E, which are the correct answers based on the descriptions related to Linux user configuration files. Option B states that '/etc/passwd' contains the user's primary group information, option D indicates that the third field in '/etc/shadow' represents the last password change time, and option E suggests that user attributes can be modified by editing the 'passwd' and 'shadow' files. These options accurately describe the characteristics of user configuration in Linux systems, aligning with the knowledge point related to user configuration files in computer science and technology, specifically covered in the Linux System Management course. The student's understanding of these concepts is correct, thus, their answer is accurate."
+        },
+        {
+            "content": "fdisk命令中将分区写入分区表的指令是：",
+            "option": "{'A': 'w', 'B': 's', 'C': 'r', 'D': 'ctrl+s'}",
+            "right_answer": "[\"A\"]",
+            "knowledge_evidence": "题目对应知识点为K_分区表_计算机科学与技术, K_分区表_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The student answered incorrectly because the 'fdisk' command used in Linux systems requires the letter 'w' to write changes to the partition table. The student likely selected an incorrect option among the given choices. Option 'A' is correct because it represents the 'w' command which is the correct way to write the partition table in 'fdisk'. This knowledge is a part of Linux system management under the section related to partition tables."
+        },
+        {
+            "content": "fdisk命令中将分区写入分区表的指令是：",
+            "option": "{'A': 'w', 'B': 's', 'C': 'r', 'D': 'ctrl+s'}",
+            "right_answer": "[\"A\"]",
+            "knowledge_evidence": "题目对应知识点为K_分区表_计算机科学与技术, K_分区表_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student correctly identified that the command to write partitions to the partition table in the 'fdisk' utility is 'w'. This is the correct answer, as 'w' is specifically used to write changes to disk and exit the 'fdisk' utility, based on their knowledge from the Linux system management course."
+        },
+        {
+            "content": "将主机的第二块SCSI接口硬盘上的第2个格式化为ext4文件系统的逻辑分区以只读方式挂载到/tmp_disk目录上的命令是:",
+            "option": "{'A': 'mount -t ext4 -o rw /dev/sdb6 /tmp_disk', 'B': 'mount -t ext4 -o ro /dev/sdb2 /tmp_disk', 'C': 'mount -t ext4 -o ro /dev/sdb6 /tmp_disk', 'D': 'mount -t ext4 -o rw /dev/sdb6 /tmp_disk'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_逻辑分区_计算机科学与技术, K_逻辑分区_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The student's answer is incorrect because the problem requires mounting the logical partition on the second SCSI interface's second hard drive (device named /dev/sdb2) in a read-only mode. The correct command for doing so is 'mount -t ext4 -o ro /dev/sdb2 /tmp_disk', which corresponds to option B. However, the student selected option C, 'mount -t ext4 -o ro /dev/sdb6 /tmp_disk', which specifies the wrong partition (/dev/sdb6 instead of /dev/sdb2). Therefore, the mistake lies in not choosing the correct device name for the logical partition that needs to be mounted."
+        },
+        {
+            "content": "将主机的第二块SCSI接口硬盘上的第2个格式化为ext4文件系统的逻辑分区以只读方式挂载到/tmp_disk目录上的命令是:",
+            "option": "{'A': 'mount -t ext4 -o rw /dev/sdb6 /tmp_disk', 'B': 'mount -t ext4 -o ro /dev/sdb2 /tmp_disk', 'C': 'mount -t ext4 -o ro /dev/sdb6 /tmp_disk', 'D': 'mount -t ext4 -o rw /dev/sdb6 /tmp_disk'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_逻辑分区_计算机科学与技术, K_逻辑分区_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student correctly selected option C, which is 'mount -t ext4 -o ro /dev/sdb6 /tmp_disk'. The question asks for mounting the second logical partition formatted with ext4 from the second SCSI disk interface in a read-only mode. Option C correctly specifies '-o ro' for read-only and uses '/dev/sdb6', assuming '/dev/sdb6' is the correct logical partition based on the given description, to ensure proper mounting according to the problem requirements."
+        },
+        {
+            "content": "关于Linux中卸载分区，下面描述正确的是：",
+            "option": "{'A': '可以用设备名来卸载分区', 'B': '如果分区中文件正在被访问，分区不可卸载', 'C': '可以用挂载点来卸载分区', 'D': '如果分区挂载在一个原本有文件存放着的目录上，分区卸载后，这些文件仍旧可访问'}",
+            "right_answer": "[\"A\", \"B\", \"C\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_设备名_计算机科学与技术, K_设备名_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The exercise asked about the correct statements regarding unmounting partitions in Linux. The correct answers are: 'A': '可以用设备名来卸载分区' (Partitions can be unmounted using the device name), 'B': '如果分区中文件正在被访问，分区不可卸载' (If files in a partition are being accessed, the partition cannot be unmounted), 'C': '可以用挂载点来卸载分区' (Partitions can be unmounted using the mount point), 'D': '如果分区挂载在一个原本有文件存放着的目录上，分区卸载后，这些文件仍旧可访问' (If a partition is mounted on a directory that originally had files, those files remain accessible after unmounting). The student's answer was incorrect. This might be due to misunderstanding how unmounting works in Linux, perhaps not realizing that files being accessed prevent unmounting, or unsure about unmounting using names versus mount points."
+        },
+        {
+            "content": "关于Linux中开机自动挂载分区配置文件/etc/fstab，下面描述正确的是:",
+            "option": "{'A': '第一个字段可以填入要开机挂载的设备名', 'B': '第一个字段可以填入要开机挂载的设备标签', 'C': '第一个字段可以填入要开机挂载的设备UUID', 'D': '第一个字段可以填入要开机挂载的设备别名'}",
+            "right_answer": "[\"A\", \"B\", \"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_设备名_计算机科学与技术, K_设备名_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student correctly identified the fields that can be filled in the first column of the /etc/fstab file for auto-mounting partitions at boot time in Linux. The options 'A', 'B', and 'C' are correct because the first field of an /etc/fstab entry can contain the device name, label, or UUID of the device to be mounted. Option 'D', which suggests using a device alias, is incorrect and thus not selected. Overall, the student's response aligns with the Linux system management knowledge related to device names and auto-mount configuration."
+        },
+        {
+            "content": "关于Linux中挂载分区，下面描述正确的是：",
+            "option": "{'A': '划分并格式化好的分区要挂载到系统目录树中的某个目录上才能被访问', 'B': '分区只能够挂载在空目录上', 'C': '分区的挂载目录被称为挂载点', 'D': '所有类型的分区都能被挂载', 'E': '分区可以被同时挂载在不同的目录上'}",
+            "right_answer": "[\"A\", \"C\", \"E\"]",
+            "knowledge_evidence": "题目对应知识点为K_系统目录_计算机科学与技术, K_系统目录_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The student answered incorrectly. The correct answers for the question '关于Linux中挂载分区，下面描述正确的是：' (Regarding partition mounting in Linux, which of the following is correct?) are A, C, and E. The correct options describe that a formatted partition must be mounted onto the system directory tree to be accessible, the partition's mounting directory is referred to as a mount point, and a partition can be mounted simultaneously onto different directories with techniques like bind mounts. If the student selected options other than these, it would have been incorrect."
+        },
+        {
+            "content": "关于Linux中挂载分区，下面描述正确的是：",
+            "option": "{'A': '划分并格式化好的分区要挂载到系统目录树中的某个目录上才能被访问', 'B': '分区只能够挂载在空目录上', 'C': '分区的挂载目录被称为挂载点', 'D': '所有类型的分区都能被挂载', 'E': '分区可以被同时挂载在不同的目录上'}",
+            "right_answer": "[\"A\", \"C\", \"E\"]",
+            "knowledge_evidence": "题目对应知识点为K_系统目录_计算机科学与技术, K_系统目录_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student answered the question regarding Linux partition mounting correctly. Options A, C, and E were selected as the correct answers. Option A is correct because a partition must be mounted in a specific directory in the system's directory tree to be accessed. Option C is correct because the directory where the partition is mounted is known as the mount point. Option E is also correct as it is possible to mount a partition at different directories at the same time. The other options (B and D) contain misconceptions: Option B is incorrect as partitions can be mounted on non-empty directories though existing files in those directories will be hidden until the partition is unmounted, and Option D is incorrect because not all types of partitions are mountable in every context, depending on the file system and operating system support. Thus, the student's understanding is solid and indicated by their correct answer."
+        },
+        {
+            "content": "关于Linux中卸载分区，下面描述正确的是：",
+            "option": "{'A': '可以用设备名来卸载分区', 'B': '如果分区中文件正在被访问，分区不可卸载', 'C': '可以用挂载点来卸载分区', 'D': '如果分区挂载在一个原本有文件存放着的目录上，分区卸载后，这些文件仍旧可访问'}",
+            "right_answer": "[\"A\", \"B\", \"C\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_设备名_计算机科学与技术, K_设备名_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The exercise asked about the correct statements regarding unmounting partitions in Linux. The correct answers are: 'A': '可以用设备名来卸载分区' (Partitions can be unmounted using the device name), 'B': '如果分区中文件正在被访问，分区不可卸载' (If files in a partition are being accessed, the partition cannot be unmounted), 'C': '可以用挂载点来卸载分区' (Partitions can be unmounted using the mount point), 'D': '如果分区挂载在一个原本有文件存放着的目录上，分区卸载后，这些文件仍旧可访问' (If a partition is mounted on a directory that originally had files, those files remain accessible after unmounting). The student's answer was incorrect. This might be due to misunderstanding how unmounting works in Linux, perhaps not realizing that files being accessed prevent unmounting, or unsure about unmounting using names versus mount points."
+        },
+        {
+            "content": "关于Linux中开机自动挂载分区配置文件/etc/fstab，下面描述正确的是:",
+            "option": "{'A': '第一个字段可以填入要开机挂载的设备名', 'B': '第一个字段可以填入要开机挂载的设备标签', 'C': '第一个字段可以填入要开机挂载的设备UUID', 'D': '第一个字段可以填入要开机挂载的设备别名'}",
+            "right_answer": "[\"A\", \"B\", \"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_设备名_计算机科学与技术, K_设备名_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student correctly identified the fields that can be filled in the first column of the /etc/fstab file for auto-mounting partitions at boot time in Linux. The options 'A', 'B', and 'C' are correct because the first field of an /etc/fstab entry can contain the device name, label, or UUID of the device to be mounted. Option 'D', which suggests using a device alias, is incorrect and thus not selected. Overall, the student's response aligns with the Linux system management knowledge related to device names and auto-mount configuration."
+        },
+        {
+            "content": "将主机的第二块SCSI接口硬盘上的第2个格式化为ext4文件系统的逻辑分区以只读方式挂载到/tmp_disk目录上的命令是:",
+            "option": "{'A': 'mount -t ext4 -o rw /dev/sdb6 /tmp_disk', 'B': 'mount -t ext4 -o ro /dev/sdb2 /tmp_disk', 'C': 'mount -t ext4 -o ro /dev/sdb6 /tmp_disk', 'D': 'mount -t ext4 -o rw /dev/sdb6 /tmp_disk'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_逻辑分区_计算机科学与技术, K_逻辑分区_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The student's answer is incorrect because the problem requires mounting the logical partition on the second SCSI interface's second hard drive (device named /dev/sdb2) in a read-only mode. The correct command for doing so is 'mount -t ext4 -o ro /dev/sdb2 /tmp_disk', which corresponds to option B. However, the student selected option C, 'mount -t ext4 -o ro /dev/sdb6 /tmp_disk', which specifies the wrong partition (/dev/sdb6 instead of /dev/sdb2). Therefore, the mistake lies in not choosing the correct device name for the logical partition that needs to be mounted."
+        },
+        {
+            "content": "将主机的第二块SCSI接口硬盘上的第2个格式化为ext4文件系统的逻辑分区以只读方式挂载到/tmp_disk目录上的命令是:",
+            "option": "{'A': 'mount -t ext4 -o rw /dev/sdb6 /tmp_disk', 'B': 'mount -t ext4 -o ro /dev/sdb2 /tmp_disk', 'C': 'mount -t ext4 -o ro /dev/sdb6 /tmp_disk', 'D': 'mount -t ext4 -o rw /dev/sdb6 /tmp_disk'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_逻辑分区_计算机科学与技术, K_逻辑分区_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student correctly selected option C, which is 'mount -t ext4 -o ro /dev/sdb6 /tmp_disk'. The question asks for mounting the second logical partition formatted with ext4 from the second SCSI disk interface in a read-only mode. Option C correctly specifies '-o ro' for read-only and uses '/dev/sdb6', assuming '/dev/sdb6' is the correct logical partition based on the given description, to ensure proper mounting according to the problem requirements."
+        }
+    ],
+    "tasks": [
+        {
+            "content": "关于CentOS中的usermod命令，下面描述正确的是：",
+            "option": "{'A': '用-u选项修改用户的UID时，必须确保这个UID未曾被别人使用', 'B': '用–G来修改用户的从属用户组的时候，如果用户组不存在，Linux会自动创建这个用户组', 'C': '在用户已经登录系统的情况下，无法修改用户的UID', 'D': '在用户已经登录系统的情况下，可以用-l选项修改用户的用户名', 'E': '用-d选项修改用户的家目录时，必须确保要指定的目录已经存在'}",
+            "right_answer": "[\"A\", \"C\", \"E\"]",
+            "knowledge_evidence": "题目对应知识点为K_登录_计算机科学与技术, K_登录_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "关于CentOS中的修改用户组命令groupmod，下面描述正确的是：",
+            "option": "{'A': '随意更改用户组的 GID可能会造成系统混乱', 'B': '带选项–n可以修改用户组名', 'C': '更改用户组名可能会造成系统混乱', 'D': '如果有用户将某用户组作为其主用户组，那么在用户已经登录系统的情况下，无法修改这个用户组名'}",
+            "right_answer": "[\"A\", \"B\"]",
+            "knowledge_evidence": "题目对应知识点为K_登录_计算机科学与技术, K_登录_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": ""
+        },
+        {
+            "content": "下面关于Linux系统用户管理的说法，哪些是错误的？",
+            "option": "{'A': '作为掌握根用户口令系统管理员，理论上最好只有一个', 'B': '要执行一个根用户才有权限执行的命令，必须先切换为根用户身份', 'C': '可以通过某种方法分配给普通用户一些合理的根用户“权力”', 'D': '系统中的根用户只能有一个', 'E': '要与其他人共享根用户权限，就需要告诉他根用户密码'}",
+            "right_answer": "[\"B\", \"E\"]",
+            "knowledge_evidence": "题目对应知识点为K_系统管理员_计算机科学与技术, K_系统管理员_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "关于Linux中用的用户配置文件，下面描述正确的是：",
+            "option": "{'A': '/etc/passwd中存放着用户加密后的密码', 'B': '/etc/passwd中存放着用户的主用户组信息', 'C': '如果用户密码为空，/etc/passwd的第二个字段将出现叹号！或者星号 *', 'D': '/etc/shadow 中第三个字段表示的密码最后一次修改时间', 'E': '可以通过修改passwd 和 shadow文件的内容来修改用户属性'}",
+            "right_answer": "[\"B\", \"D\", \"E\"]",
+            "knowledge_evidence": "题目对应知识点为K_用户配置文件_计算机科学与技术, K_用户配置文件_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": ""
+        },
+        {
+            "content": "fdisk命令中将分区写入分区表的指令是：",
+            "option": "{'A': 'w', 'B': 's', 'C': 'r', 'D': 'ctrl+s'}",
+            "right_answer": "[\"A\"]",
+            "knowledge_evidence": "题目对应知识点为K_分区表_计算机科学与技术, K_分区表_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "将主机的第二块SCSI接口硬盘上的第2个格式化为ext4文件系统的逻辑分区以只读方式挂载到/tmp_disk目录上的命令是:",
+            "option": "{'A': 'mount -t ext4 -o rw /dev/sdb6 /tmp_disk', 'B': 'mount -t ext4 -o ro /dev/sdb2 /tmp_disk', 'C': 'mount -t ext4 -o ro /dev/sdb6 /tmp_disk', 'D': 'mount -t ext4 -o rw /dev/sdb6 /tmp_disk'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_逻辑分区_计算机科学与技术, K_逻辑分区_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": ""
+        },
+        {
+            "content": "关于Linux中开机自动挂载分区配置文件/etc/fstab，下面描述正确的是:",
+            "option": "{'A': '第一个字段可以填入要开机挂载的设备名', 'B': '第一个字段可以填入要开机挂载的设备标签', 'C': '第一个字段可以填入要开机挂载的设备UUID', 'D': '第一个字段可以填入要开机挂载的设备别名'}",
+            "right_answer": "[\"A\", \"B\", \"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_设备名_计算机科学与技术, K_设备名_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "关于Linux中挂载分区，下面描述正确的是：",
+            "option": "{'A': '划分并格式化好的分区要挂载到系统目录树中的某个目录上才能被访问', 'B': '分区只能够挂载在空目录上', 'C': '分区的挂载目录被称为挂载点', 'D': '所有类型的分区都能被挂载', 'E': '分区可以被同时挂载在不同的目录上'}",
+            "right_answer": "[\"A\", \"C\", \"E\"]",
+            "knowledge_evidence": "题目对应知识点为K_系统目录_计算机科学与技术, K_系统目录_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": ""
+        },
+        {
+            "content": "关于Linux中卸载分区，下面描述正确的是：",
+            "option": "{'A': '可以用设备名来卸载分区', 'B': '如果分区中文件正在被访问，分区不可卸载', 'C': '可以用挂载点来卸载分区', 'D': '如果分区挂载在一个原本有文件存放着的目录上，分区卸载后，这些文件仍旧可访问'}",
+            "right_answer": "[\"A\", \"B\", \"C\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_设备名_计算机科学与技术, K_设备名_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "主机上第三块SCSI接口的硬盘中第一个逻辑分区的设备文件名字是",
+            "option": "{'A': 'sdc1', 'B': 'sda1', 'C': 'sdc4', 'D': 'sda4', 'E': 'sdc5'}",
+            "right_answer": "[\"E\"]",
+            "knowledge_evidence": "题目对应知识点为K_逻辑分区_计算机科学与技术, K_逻辑分区_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": ""
+        }
+    ],
+    "result": [
+        {
+            "content": "关于Linux中的逻辑分区编号，以下描述正确的是：",
+            "option": "{\"A\": \"逻辑分区编号从5开始，即使主分区未用完。\", \"B\": \"逻辑分区编号从1开始。\", \"C\": \"主分区编号必须连续。\", \"D\": \"逻辑分区编号可以与主分区编号重复。\"}",
+            "answer": "[\"A\", \"C\"]",
+            "course_name": "Linux系统管理",
+            "concept_id": "逻辑分区",
+            "explanation": "逻辑分区编号从5开始，即使主分区未完全使用。主分区编号（1-4）必须连续。D错误，因为逻辑分区编号与主分区编号不会重复。"
+        },
+        {
+            "content": "在Linux中，将分区挂载到非空目录时会发生什么？",
+            "option": "{\"A\": \"挂载失败，目录必须为空。\", \"B\": \"原有文件被隐藏，直到分区卸载。\", \"C\": \"分区和原有文件合并显示。\", \"D\": \"分区挂载后目录被清空。\"}",
+            "answer": "[\"B\"]",
+            "course_name": "Linux系统管理",
+            "concept_id": "磁盘管理",
+            "explanation": "挂载到非空目录时，原有文件被隐藏，直到分区卸载后才重新可见。A和D错误，因为挂载不会清空目录，也不要求目录为空。C错误，因为文件不会合并显示。"
+        },
+        {
+            "content": "关于Linux中的用户密码存储，以下描述正确的是：",
+            "option": "{\"A\": \"/etc/passwd中存储加密后的用户密码。\", \"B\": \"/etc/shadow中存储加密后的用户密码。\", \"C\": \"如果用户密码为空，/etc/shadow的密码字段为空。\", \"D\": \"如果用户密码为空，/etc/passwd的密码字段为!。\"}",
+            "answer": "[\"B\", \"C\"]",
+            "course_name": "Linux系统管理",
+            "concept_id": "用户配置文件",
+            "explanation": "密码存储在/etc/shadow中，而非/etc/passwd。如果密码为空，/etc/shadow的密码字段为空，而非/etc/passwd中显示特殊字符。"
+        },
+        {
+            "content": "在Linux中使用groupmod命令时，以下描述正确的是：",
+            "option": "{\"A\": \"更改GID可能导致文件所属关系混乱。\", \"B\": \"-n选项用于修改用户组名。\", \"C\": \"更改用户组名需要用户登出系统。\", \"D\": \"groupmod可以创建新的用户组。\"}",
+            "answer": "[\"A\", \"B\"]",
+            "course_name": "Linux系统管理",
+            "concept_id": "用户组管理",
+            "explanation": "更改GID可能导致文件所属关系混乱，因此需谨慎操作。-n选项可用于修改用户组名。C错误，因为更改组名无需用户登出；D错误，因为groupmod不能创建新组。"
+        },
+        {
+            "content": "关于Linux中的文件系统兼容性，以下描述错误的是：",
+            "option": "{\"A\": \"所有文件系统类型都可以被挂载。\", \"B\": \"ext4文件系统支持大文件存储。\", \"C\": \"挂载不支持的文件系统类型需要安装额外工具。\", \"D\": \"NTFS文件系统需要特定驱动支持。\"}",
+            "answer": "[\"A\"]",
+            "course_name": "Linux系统管理",
+            "concept_id": "文件系统",
+            "explanation": "并非所有文件系统类型都可以直接挂载，某些需要额外工具或驱动支持。B、C和D正确描述了文件系统的特性。"
+        },
+        {
+            "content": "关于Linux中的/etc/fstab配置文件，以下描述正确的是：",
+            "option": "{\"A\": \"第一个字段可以是设备名。\", \"B\": \"第一个字段可以是设备UUID。\", \"C\": \"第一个字段可以是设备别名。\", \"D\": \"开机挂载失败会阻止系统启动。\"}",
+            "answer": "[\"A\", \"B\"]",
+            "course_name": "Linux系统管理",
+            "concept_id": "开机挂载",
+            "explanation": "/etc/fstab的第一个字段可以是设备名或UUID，但不能是别名。D错误，因为挂载失败通常不会阻止系统启动。"
+        },
+        {
+            "content": "在Linux中，以下哪些情况会导致分区无法卸载？",
+            "option": "{\"A\": \"分区被其他进程使用。\", \"B\": \"分区挂载点不存在。\", \"C\": \"分区挂载为只读。\", \"D\": \"分区未被挂载。\"}",
+            "answer": "[\"A\"]",
+            "course_name": "Linux系统管理",
+            "concept_id": "磁盘管理",
+            "explanation": "如果分区被其他进程使用，则无法卸载。B错误，因为挂载点不存在不会阻止卸载；C错误，因为只读挂载可以正常卸载；D错误，因为未挂载的分区无需卸载。"
+        },
+        {
+            "content": "关于Linux中逻辑分区的设备文件命名规则，以下描述正确的是：",
+            "option": "{\"A\": \"/dev/sda5表示第一个逻辑分区。\", \"B\": \"/dev/sdb2表示第二块硬盘的第二个逻辑分区。\", \"C\": \"/dev/sdc6表示第三块硬盘的第一个逻辑分区。\", \"D\": \"主分区编号可以超过4。\"}",
+            "answer": "[\"A\", \"C\"]",
+            "course_name": "Linux系统管理",
+            "concept_id": "逻辑分区",
+            "explanation": "逻辑分区从5开始编号，/dev/sda5表示第一个逻辑分区，/dev/sdc6表示第三块硬盘的第一个逻辑分区。B错误，因为/dev/sdb2表示主分区；D错误，因为主分区编号不能超过4。"
+        },
+        {
+            "content": "在Linux中，以下哪些文件与用户管理有关？",
+            "option": "{\"A\": \"/etc/passwd\", \"B\": \"/etc/shadow\", \"C\": \"/etc/group\", \"D\": \"/etc/fstab\"}",
+            "answer": "[\"A\", \"B\", \"C\"]",
+            "course_name": "Linux系统管理",
+            "concept_id": "用户管理",
+            "explanation": "/etc/passwd、/etc/shadow和/etc/group均与用户管理相关，而/etc/fstab与磁盘挂载相关。"
+        },
+        {
+            "content": "关于Linux中的文件权限，以下描述正确的是：",
+            "option": "{\"A\": \"root用户可以访问任何文件。\", \"B\": \"普通用户可以通过sudo临时获得root权限。\", \"C\": \"共享root密码是安全的做法。\", \"D\": \"文件权限由用户ID（UID）和组ID（GID）控制。\"}",
+            "answer": "[\"A\", \"B\", \"D\"]",
+            "course_name": "Linux系统管理",
+            "concept_id": "权限管理",
+            "explanation": "root用户拥有最高权限，普通用户可通过sudo临时获得权限，文件权限由UID和GID控制。C错误，因为共享root密码存在安全隐患。"
+        }
+    ],
+    "cost": {
+        "usage_including_cached_inference": {
+            "total_cost": 0.5463696,
+            "qwen/qwen-max": {
+                "cost": 0.5463696,
+                "prompt_tokens": 263753,
+                "completion_tokens": 19432,
+                "total_tokens": 283185
+            }
+        },
+        "usage_excluding_cached_inference": {
+            "total_cost": 0.5463696,
+            "qwen/qwen-max": {
+                "cost": 0.5463696,
+                "prompt_tokens": 263753,
+                "completion_tokens": 19432,
+                "total_tokens": 283185
+            }
+        }
+    }
+},
+{
+    "round": 19,
+    "examples": [
+        {
+            "content": "可以用哪个命令测试两台主机之间网络的连通性。",
+            "option": "{'A': 'ping', 'B': 'ifconfig', 'C': 'ipconfig', 'D': 'route'}",
+            "right_answer": "[\"A\"]",
+            "knowledge_evidence": "题目对应知识点为K_ipconfig_计算机科学与技术, K_ipconfig_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student correctly identified 'ping' as the command used to test network connectivity between two hosts. This is the standard and widely used method to check if a host is reachable within a network by sending ICMP echo request packets and measuring the response time. The other options, 'ifconfig', 'ipconfig', and 'route', serve different purposes related to configuring network interfaces and routing tables but do not directly test network connectivity like 'ping' does."
+        },
+        {
+            "content": "回环接口为系统提供一个单机网络环境，一般用于网络程序的调试。",
+            "option": "{'true': '正确', 'false': '错误'}",
+            "right_answer": "[\"true\"]",
+            "knowledge_evidence": "题目对应知识点为K_调试_计算机科学与技术, K_调试_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student's answer is correct. The loopback interface, which is commonly represented by the IP address 127.0.0.1, allows for network tests and software development to be conducted within a single machine, acting as a standalone network environment. This is particularly useful for debugging network applications on the Linux operating system, and aligns with the content and answer provided."
+        },
+        {
+            "content": "在Linux中，打开BASH后的命令提示符，能够告诉你有关主机的哪些信息？",
+            "option": "{'A': '登录的主机名', 'B': '登录的用户名', 'C': '用户当前所处的工作目录', 'D': '用户上次登录时间'}",
+            "right_answer": "[\"A\", \"B\", \"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_主机名_计算机科学与技术, K_主机名_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The student's answer was incorrect because they likely included all options without recognizing that option D '用户上次登录时间' is not typically displayed in the BASH command prompt. The BASH prompt in Linux generally shows the login hostname, login username, and current working directory, which corresponds to options A, B, and C. The prompt does not, by default, display the last login time, so including option D led to the answer being incorrect."
+        },
+        {
+            "content": "关于修改主机名，下面那些说法是正确的：",
+            "option": "{'A': '需要修改/etc/sysconfig/network文件', 'B': '需要修改/etc/hosts文件', 'C': '需要修改/etc/sysconfig/network-scripts/ifcfg-eth0文件', 'D': '一般需要重启系统，让修改生效'}",
+            "right_answer": "[\"A\", \"B\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_主机名_计算机科学与技术, K_主机名_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student answered the question correctly. The task was to identify which statements are true regarding modifying the hostname. The correct answers were options A, B, and D. These options are correct because: A) /etc/sysconfig/network file typically needs to be modified to change the hostname setting; B) /etc/hosts file is often modified to map the hostname to its associated IP address; and D) a system restart is generally required for changes to take full effect. Option C is not typically required for changing the hostname, which the student correctly omitted."
+        },
+        {
+            "content": "在Linux中，打开BASH后的命令提示符，能够告诉你有关主机的哪些信息？",
+            "option": "{'A': '登录的主机名', 'B': '登录的用户名', 'C': '用户当前所处的工作目录', 'D': '用户上次登录时间'}",
+            "right_answer": "[\"A\", \"B\", \"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_主机名_计算机科学与技术, K_主机名_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The student's answer was incorrect because they likely included all options without recognizing that option D '用户上次登录时间' is not typically displayed in the BASH command prompt. The BASH prompt in Linux generally shows the login hostname, login username, and current working directory, which corresponds to options A, B, and C. The prompt does not, by default, display the last login time, so including option D led to the answer being incorrect."
+        },
+        {
+            "content": "关于修改主机名，下面那些说法是正确的：",
+            "option": "{'A': '需要修改/etc/sysconfig/network文件', 'B': '需要修改/etc/hosts文件', 'C': '需要修改/etc/sysconfig/network-scripts/ifcfg-eth0文件', 'D': '一般需要重启系统，让修改生效'}",
+            "right_answer": "[\"A\", \"B\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_主机名_计算机科学与技术, K_主机名_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student answered the question correctly. The task was to identify which statements are true regarding modifying the hostname. The correct answers were options A, B, and D. These options are correct because: A) /etc/sysconfig/network file typically needs to be modified to change the hostname setting; B) /etc/hosts file is often modified to map the hostname to its associated IP address; and D) a system restart is generally required for changes to take full effect. Option C is not typically required for changing the hostname, which the student correctly omitted."
+        },
+        {
+            "content": "关于Linux中的软件管理，下面那些选项是正确的？",
+            "option": "{'A': '在某个Linux发行版下开发和编译的程序，直接放到另外一个Linux发行版下有可能性无法运行', 'B': '早期的Linux的软件都是通过源码来分发', 'C': 'RPM是所有Linux发现版本上的通用的软件包管理器', 'D': 'RPM是Linux下软件资源最丰富的软件包类型'}",
+            "right_answer": "[\"A\", \"B\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_软件资源_计算机科学与技术, K_软件资源_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The student's answer was marked incorrect because they did not select option 'C', which states 'RPM是所有Linux发现版本上的通用的软件包管理器'. This statement is incorrect because RPM (Red Hat Package Manager) is not universal to all Linux distributions. Some distributions, such as those based on Debian, use a different package management system called APT (Advanced Package Tool). Therefore, the correct options are 'A', 'B', and 'D'. Option 'A' is correct because a program developed and compiled on one Linux distribution may not run on another due to differences in environment and library dependencies. Option 'B' is accurate as early Linux software was indeed distributed as source code that users needed to compile. Option 'D' is also correct, noting RPM's richness in terms of available software, although it is not universal. The student's mistake was likely due to a misunderstanding of 'RPM' being a 'universal package manager' across all Linux distributions."
+        },
+        {
+            "content": "关于Linux中的软件管理，下面那些选项是正确的？",
+            "option": "{'A': '在某个Linux发行版下开发和编译的程序，直接放到另外一个Linux发行版下有可能性无法运行', 'B': '早期的Linux的软件都是通过源码来分发', 'C': 'RPM是所有Linux发现版本上的通用的软件包管理器', 'D': 'RPM是Linux下软件资源最丰富的软件包类型'}",
+            "right_answer": "[\"A\", \"B\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_软件资源_计算机科学与技术, K_软件资源_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student answered the question correctly. Option A is correct because programs developed and compiled on one Linux distribution may not run on another due to differences in libraries and system configurations. Option B is correct as historically, early Linux software was distributed primarily in source code form. Option D is correct because RPM (Red Hat Package Manager) based systems (such as Red Hat, Fedora, CentOS) have a large repository of available software, making it one of the most resource-rich package management systems. Option C is incorrect because not all Linux distributions use RPM; some use other package managers like APT (Advanced Package Tool) used by Debian-based systems. The student correctly identified options A, B, and D as accurate statements about Linux software management."
+        },
+        {
+            "content": "关于用rpm卸载软件，下面哪些说法是正确的：",
+            "option": "{'A': '使用-r选项', 'B': '使用-e选项', 'C': '卸载软件需要知道软件安装后包括版本号在内的全名', 'D': '卸载软件只需要知道软件名即可', 'E': '卸载一个软件可能会导致系统中别的软件无法使用'}",
+            "right_answer": "[\"B\", \"C\", \"E\"]",
+            "knowledge_evidence": "题目对应知识点为K_全名_计算机科学与技术, K_全名_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The student incorrectly answered the question about using rpm to uninstall software. The correct options were B, C, and E. Option B is correct because the -e flag is used for erasing (uninstalling) a package with rpm. Option C is correct because you typically need the full name of the installed package, including its version, to uninstall it. Option E is also correct because uninstalling a software package could potentially affect other software if they depend on the uninstalled package. The incorrect options provided by the student were likely based on common misconceptions, such as assuming option D (only the software name is needed) is sufficient, which is not necessarily true with rpm."
+        },
+        {
+            "content": "关于用rpm卸载软件，下面哪些说法是正确的：",
+            "option": "{'A': '使用-r选项', 'B': '使用-e选项', 'C': '卸载软件需要知道软件安装后包括版本号在内的全名', 'D': '卸载软件只需要知道软件名即可', 'E': '卸载一个软件可能会导致系统中别的软件无法使用'}",
+            "right_answer": "[\"B\", \"C\", \"E\"]",
+            "knowledge_evidence": "题目对应知识点为K_全名_计算机科学与技术, K_全名_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student correctly answered the question about uninstalling software using RPM in Linux. They selected option B (using the -e option), option C (needing the full name including version number to uninstall the software), and option E (uninstalling might cause other software to become unusable). These selections are correct because, to uninstall using RPM, the -e option is used, you need the full name of the installed package including version, and removing software dependencies is a real risk when uninstalling software."
+        },
+        {
+            "content": "下面关于yum的说法那些是错误的？",
+            "option": "{'A': 'yum目的就是为了解决RPM管理软件包时的依赖关系难题', 'B': 'yum是一种区别于RPM软件封装模式', 'C': 'yum是红帽系列Linux中的默认软件管理器', 'D': 'yum客户端在安装软件时无需了解该软件包的依赖关系信息'}",
+            "right_answer": "[\"B\", \"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_软件管理器_计算机科学与技术, K_软件管理器_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The student incorrectly identified the statements about 'yum' in Linux systems because they likely misunderstood the details about what 'yum' is and its functionalities. Let's analyze their choices: \r\n\r\n1. Option A: 'yum目的就是为了解决RPM管理软件包时的依赖关系难题' (Yum aims to resolve dependency issues when managing packages with RPM) - This statement is correct because 'yum' (Yellowdog Updater, Modified) was specifically designed to handle dependencies in RPM package management, making package installation easier by automatically resolving and installing dependencies.\r\n\r\n2. Option B: 'yum是一种区别于RPM软件封装模式' (Yum is a packaging mode different from RPM) - This statement is incorrect. Yum is not a packaging mode; instead, it is a command-line package-management utility for RPM-compatible Linux operating systems, designed to manage package installations, upgrades, and removals.\r\n\r\n3. Option C: 'yum是红帽系列Linux中的默认软件管理器' (Yum is the default package manager in Red Hat Linux series) - This statement is incorrect because while Yum is commonly used in Red Hat-based systems like CentOS and Fedora, it is not alone; other package managers such as dnf have replaced Yum in newer versions of some distributions (like Fedora), though it still serves as a default in older versions.\r\n\r\n4. Option D: 'yum客户端在安装软件时无需了解该软件包的依赖关系信息' (Yum clients do not need to know the dependency information when installing software) - This statement is correct as yum takes care of dependencies automatically, meaning the user doesn't have to manually identify and resolve dependencies for package installations.\r\n\r\nThe correct answers for the incorrect statements are 'B' and 'C', which the student failed to identify accurately."
+        },
+        {
+            "content": "下面关于yum的说法那些是错误的？",
+            "option": "{'A': 'yum目的就是为了解决RPM管理软件包时的依赖关系难题', 'B': 'yum是一种区别于RPM软件封装模式', 'C': 'yum是红帽系列Linux中的默认软件管理器', 'D': 'yum客户端在安装软件时无需了解该软件包的依赖关系信息'}",
+            "right_answer": "[\"B\", \"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_软件管理器_计算机科学与技术, K_软件管理器_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student answered the question correctly by identifying options B and C as incorrect regarding yum. Option B is incorrect because yum is not a different software packaging mode from RPM; it works as a package manager that resolves dependencies for RPM packages. Option C is incorrect because while yum may be the default package manager in some Red Hat-based distributions, it is not universally the default across all Red Hat distributions as newer ones use DNF. Therefore, the student's answer aligns correctly with the provided right answer."
+        },
+        {
+            "content": "8088CPU中，以下哪一个部件不属于EU部分（   ）.",
+            "option": "{'A': 'ALU', 'B': '通用寄存器和标志寄存器', 'C': '段寄存器', 'D': 'EU控制电路'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_段寄存器_计算机科学与技术, K_段寄存器_计算机科学与技术对应的课程为微机原理与接口技术, ",
+            "is_correct": 0,
+            "explanation": "The question asks which component does not belong to the Execution Unit (EU) part of an 8088 CPU. The student chose option 'C', which was correct. However, their answer was marked as incorrect due to a misunderstanding. In the 8088 CPU, the segment registers are part of the Bus Interface Unit (BIU), not the EU. Options 'A', 'B', and 'D' mention components that are part of the EU, such as the Arithmetic Logic Unit (ALU) and EU control circuits. Despite this mix-up, 'C' is indeed the correct choice as it is not part of the EU in the 8088 architecture."
+        },
+        {
+            "content": "指令流水线是指（   ）.",
+            "option": "{'A': '微处理器有序地执行指令', 'B': '微处理器顺序地执行指令', 'C': '微处理器同时执行多条指令', 'D': '指令通过流水线传送给微处理器'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_指令流水线_计算机科学与技术, K_指令流水线_计算机科学与技术对应的课程为微机原理与接口技术, ",
+            "is_correct": 0,
+            "explanation": "The student answered incorrectly because they selected an option that does not accurately describe the concept of 'instruction pipeline'. The correct answer is 'C: 微处理器同时执行多条指令' which means 'the microprocessor executes multiple instructions simultaneously'. This is a key feature of instruction pipelining, which enhances the processor's performance by overlapping instruction execution. The incorrect options suggested sequential execution or the method of instruction delivery to the processor, which do not capture the essence of pipelining."
+        },
+        {
+            "content": "8088CPU中，以下哪一个部件不属于BIU部分（  ）.<!--!doctype-->",
+            "option": "{'A': '段寄存器<!--!doctype-->', 'B': '指令队列<!--!doctype-->', 'C': '通用寄存器<!--!doctype-->', 'D': '地址加法器、总线控制逻辑<!--!doctype-->'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_总线_计算机科学与技术, K_总线_计算机科学与技术对应的课程为微机原理与接口技术, ",
+            "is_correct": 0,
+            "explanation": "The question asks which component is not part of the BIU (Bus Interface Unit) of the 8088 CPU. The correct answer is 'C' which refers to '通用寄存器' (general-purpose registers). This is correct because general-purpose registers are part of the Execution Unit (EU), not the Bus Interface Unit. The student got the answer wrong, possibly due to confusion about the specific roles and components of the BIU and EU in the 8088 CPU architecture."
+        },
+        {
+            "content": "在计算机系统中，外部设备必须通过（ ）才能实现与主机的信息交换。",
+            "option": "{'A': '电缆', 'B': '总线插槽', 'C': '接口', 'D': '电源'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_总线_计算机科学与技术, K_总线_计算机科学与技术对应的课程为微机原理与接口技术, ",
+            "is_correct": 1,
+            "explanation": "The student answered the question correctly by selecting option 'C' for '接口' (interface). In a computer system, external devices must go through an interface to exchange information with the host. This is a fundamental concept in computer science, particularly in the study of microcomputers and interface technology. The interface acts as a bridge, allowing communication and data transfer between the external device and the computer's internal components. The student's choice reflects an understanding of how data exchange is handled in computing systems."
+        }
+    ],
+    "tasks": [
+        {
+            "content": "可以用哪个命令测试两台主机之间网络的连通性。",
+            "option": "{'A': 'ping', 'B': 'ifconfig', 'C': 'ipconfig', 'D': 'route'}",
+            "right_answer": "[\"A\"]",
+            "knowledge_evidence": "题目对应知识点为K_ipconfig_计算机科学与技术, K_ipconfig_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "回环接口为系统提供一个单机网络环境，一般用于网络程序的调试。",
+            "option": "{'true': '正确', 'false': '错误'}",
+            "right_answer": "[\"true\"]",
+            "knowledge_evidence": "题目对应知识点为K_调试_计算机科学与技术, K_调试_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "关于修改主机名，下面那些说法是正确的：",
+            "option": "{'A': '需要修改/etc/sysconfig/network文件', 'B': '需要修改/etc/hosts文件', 'C': '需要修改/etc/sysconfig/network-scripts/ifcfg-eth0文件', 'D': '一般需要重启系统，让修改生效'}",
+            "right_answer": "[\"A\", \"B\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_主机名_计算机科学与技术, K_主机名_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": ""
+        },
+        {
+            "content": "关于为网络接口配置DHCP，下面那些说法是正确的：",
+            "option": "{'A': 'DHCP很方便，但是更容易发生配置错误', 'B': 'DHCP服务器可以指定接口的IP地址、子网掩码和网关', 'C': '默认情况下，CentOS使用DHCP协议配置接口网络参数', 'D': 'DHCP服务器还可以指定主机名'}",
+            "right_answer": "[\"B\", \"C\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_主机名_计算机科学与技术, K_主机名_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "关于Linux中的软件管理，下面那些选项是正确的？",
+            "option": "{'A': '在某个Linux发行版下开发和编译的程序，直接放到另外一个Linux发行版下有可能性无法运行', 'B': '早期的Linux的软件都是通过源码来分发', 'C': 'RPM是所有Linux发现版本上的通用的软件包管理器', 'D': 'RPM是Linux下软件资源最丰富的软件包类型'}",
+            "right_answer": "[\"A\", \"B\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_软件资源_计算机科学与技术, K_软件资源_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": ""
+        },
+        {
+            "content": "关于用rpm卸载软件，下面哪些说法是正确的：",
+            "option": "{'A': '使用-r选项', 'B': '使用-e选项', 'C': '卸载软件需要知道软件安装后包括版本号在内的全名', 'D': '卸载软件只需要知道软件名即可', 'E': '卸载一个软件可能会导致系统中别的软件无法使用'}",
+            "right_answer": "[\"B\", \"C\", \"E\"]",
+            "knowledge_evidence": "题目对应知识点为K_全名_计算机科学与技术, K_全名_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "下面关于yum的说法那些是错误的？",
+            "option": "{'A': 'yum目的就是为了解决RPM管理软件包时的依赖关系难题', 'B': 'yum是一种区别于RPM软件封装模式', 'C': 'yum是红帽系列Linux中的默认软件管理器', 'D': 'yum客户端在安装软件时无需了解该软件包的依赖关系信息'}",
+            "right_answer": "[\"B\", \"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_软件管理器_计算机科学与技术, K_软件管理器_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": ""
+        },
+        {
+            "content": "8088CPU中，以下哪一个部件不属于EU部分（   ）.",
+            "option": "{'A': 'ALU', 'B': '通用寄存器和标志寄存器', 'C': '段寄存器', 'D': 'EU控制电路'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_段寄存器_计算机科学与技术, K_段寄存器_计算机科学与技术对应的课程为微机原理与接口技术, ",
+            "is_correct": 0,
+            "explanation": ""
+        },
+        {
+            "content": "指令流水线是指（   ）.",
+            "option": "{'A': '微处理器有序地执行指令', 'B': '微处理器顺序地执行指令', 'C': '微处理器同时执行多条指令', 'D': '指令通过流水线传送给微处理器'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_指令流水线_计算机科学与技术, K_指令流水线_计算机科学与技术对应的课程为微机原理与接口技术, ",
+            "is_correct": 0,
+            "explanation": ""
+        },
+        {
+            "content": "8088CPU中，以下哪一个部件不属于BIU部分（  ）.<!--!doctype-->",
+            "option": "{'A': '段寄存器<!--!doctype-->', 'B': '指令队列<!--!doctype-->', 'C': '通用寄存器<!--!doctype-->', 'D': '地址加法器、总线控制逻辑<!--!doctype-->'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_总线_计算机科学与技术, K_总线_计算机科学与技术对应的课程为微机原理与接口技术, ",
+            "is_correct": 0,
+            "explanation": ""
+        }
+    ],
+    "result": [
+        {
+            "content": "以下哪一项最准确地描述了指令流水线的功能？",
+            "option": {
+                "A": "指令依次完成，无重叠执行",
+                "B": "指令的不同阶段被分解到不同的硬件单元以实现并行处理",
+                "C": "指令通过流水线结构直接存储到主存",
+                "D": "流水线用于将指令顺序传输给处理器"
+            },
+            "answer": [
+                "B"
+            ],
+            "course_name": "微机原理与接口技术",
+            "concept_id": "K_指令流水线_计算机科学与技术",
+            "explanation": "指令流水线通过将指令分解为不同的阶段（如取指、解码、执行等），并行化这些阶段以提高处理器的执行效率。选项A错误，因为流水线实现并行而非单纯顺序执行。选项C和D错误，因为流水线不是存储或传输机制。"
+        },
+        {
+            "content": "关于指令流水线，以下哪一项可能导致流水线效率下降？",
+            "option": {
+                "A": "所有指令都具有相同长度",
+                "B": "流水线的每个阶段执行时间均衡",
+                "C": "执行分支指令后需清空流水线",
+                "D": "指令缓存命中率高"
+            },
+            "answer": [
+                "C"
+            ],
+            "course_name": "微机原理与接口技术",
+            "concept_id": "K_指令流水线_计算机科学与技术",
+            "explanation": "分支指令可能使流水线预测错误，导致需要清空流水线，从而降低效率。选项A和B描述了提高流水线性能的条件，而选项D与流水线效率提升相关。"
+        },
+        {
+            "content": "以下哪个工具主要用于解决RPM软件包安装时的依赖问题？",
+            "option": {
+                "A": "APT",
+                "B": "RPM",
+                "C": "YUM",
+                "D": "DPKG"
+            },
+            "answer": [
+                "C"
+            ],
+            "course_name": "Linux系统管理",
+            "concept_id": "K_软件管理器_计算机科学与技术",
+            "explanation": "YUM是基于RPM的工具，专门用于解决依赖问题并自动下载和安装所需的依赖软件。选项A（APT）用于Debian系列，选项B（RPM）仅负责安装包，而选项D（DPKG）是Debian的底层工具。"
+        },
+        {
+            "content": "在以下哪种情况下，使用RPM安装软件包会失败？",
+            "option": {
+                "A": "缺少依赖库",
+                "B": "使用`-e`选项卸载软件",
+                "C": "软件包版本与系统兼容",
+                "D": "已安装的依赖被正确满足"
+            },
+            "answer": [
+                "A"
+            ],
+            "course_name": "Linux系统管理",
+            "concept_id": "K_软件资源_计算机科学与技术",
+            "explanation": "RPM工具不会自动处理依赖问题，因此缺少依赖库会导致安装失败。选项B描述卸载操作，与安装失败无关。选项C和D是正常安装条件。"
+        },
+        {
+            "content": "以下哪个部件不属于8088 CPU的BIU（Bus Interface Unit）部分？",
+            "option": {
+                "A": "段寄存器",
+                "B": "地址加法器",
+                "C": "指令队列",
+                "D": "通用寄存器"
+            },
+            "answer": [
+                "D"
+            ],
+            "course_name": "微机原理与接口技术",
+            "concept_id": "K_总线_计算机科学与技术",
+            "explanation": "通用寄存器属于EU（Execution Unit）部分，而BIU负责与外部总线交互，包括段寄存器、地址加法器和指令队列。"
+        },
+        {
+            "content": "在8088 CPU中，以下哪项功能是由EU（Execution Unit）直接完成的？",
+            "option": {
+                "A": "从内存取指令",
+                "B": "执行算术运算",
+                "C": "管理指令队列",
+                "D": "计算物理地址"
+            },
+            "answer": [
+                "B"
+            ],
+            "course_name": "微机原理与接口技术",
+            "concept_id": "K_段寄存器_计算机科学与技术",
+            "explanation": "EU负责执行指令中的具体操作，包括算术和逻辑运算。选项A、C和D的功能由BIU完成，EU不涉及这些操作。"
+        },
+        {
+            "content": "以下哪一项是YUM和RPM的主要区别？",
+            "option": {
+                "A": "YUM支持多线程，而RPM不支持",
+                "B": "YUM能够自动解决依赖关系，而RPM不能",
+                "C": "YUM只能安装本地软件包，而RPM支持远程安装",
+                "D": "YUM的安装速度比RPM快"
+            },
+            "answer": [
+                "B"
+            ],
+            "course_name": "Linux系统管理",
+            "concept_id": "K_软件管理器_计算机科学与技术",
+            "explanation": "YUM扩展了RPM的功能，能够自动解析和安装依赖关系，而RPM不具备此功能。选项A和C错误，因为YUM支持依赖解决而非多线程或远程安装。选项D的速度差异并非主要区别。"
+        },
+        {
+            "content": "关于RPM软件包的卸载，以下哪一项描述是正确的？",
+            "option": {
+                "A": "使用`-r`选项卸载软件包",
+                "B": "使用`-e`选项卸载软件包",
+                "C": "卸载时只需提供软件名称，无需提供版本信息",
+                "D": "卸载后会自动备份相关依赖"
+            },
+            "answer": [
+                "B"
+            ],
+            "course_name": "Linux系统管理",
+            "concept_id": "K_全名_计算机科学与技术",
+            "explanation": "卸载RPM软件包时需要使用`-e`选项。选项A错误，因为`-r`不是卸载选项。选项C错误，因为RPM卸载需要完整包名（包括版本）。选项D错误，卸载不会自动备份依赖。"
+        },
+        {
+            "content": "以下哪一项关于8088 CPU的指令队列的说法是正确的？",
+            "option": {
+                "A": "指令队列属于EU部分",
+                "B": "指令队列存储的是指令的执行结果",
+                "C": "指令队列通过预取指令提高指令执行效率",
+                "D": "指令队列由通用寄存器组成"
+            },
+            "answer": [
+                "C"
+            ],
+            "course_name": "微机原理与接口技术",
+            "concept_id": "K_总线_计算机科学与技术",
+            "explanation": "8088 CPU的指令队列位于BIU部分，用于从内存中预取指令，从而提高指令执行效率。选项A错误，指令队列属于BIU。选项B和D错误，指令队列存储的是指令而非结果或寄存器。"
+        },
+        {
+            "content": "以下哪一项是微处理器指令流水线的主要优势？",
+            "option": {
+                "A": "减少处理器的功耗",
+                "B": "提高处理器的指令吞吐量",
+                "C": "简化程序的逻辑设计",
+                "D": "降低程序的内存占用"
+            },
+            "answer": [
+                "B"
+            ],
+            "course_name": "微机原理与接口技术",
+            "concept_id": "K_指令流水线_计算机科学与技术",
+            "explanation": "指令流水线通过并行处理多个指令的不同阶段，提高了处理器的指令吞吐量。选项A、C和D不是流水线的主要特点，且功耗和内存占用可能因流水线设计而增加。"
+        }
+    ],
+    "cost": {
+        "usage_including_cached_inference": {
+            "total_cost": 0.6373376000000002,
+            "qwen/qwen-max": {
+                "cost": 0.6373376000000002,
+                "prompt_tokens": 300344,
+                "completion_tokens": 24498,
+                "total_tokens": 324842
+            }
+        },
+        "usage_excluding_cached_inference": {
+            "total_cost": 0.6373376000000002,
+            "qwen/qwen-max": {
+                "cost": 0.6373376000000002,
+                "prompt_tokens": 300344,
+                "completion_tokens": 24498,
+                "total_tokens": 324842
+            }
+        }
+    }
+},
+{
+    "round": 20,
+    "examples": [
+        {
+            "content": "标志位SF表示（   ）",
+            "option": "{'A': '最高位是否向更高位有进借位', 'B': '运算结果是否为0', 'C': '运算结果是否超出符号数的范围', 'D': '运算结果的最高位是否为1'}",
+            "right_answer": "[\"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_位_计算机科学与技术, K_位_计算机科学与技术对应的课程为微机原理与接口技术, ",
+            "is_correct": 1,
+            "explanation": "The student correctly identified the function of the SF (Sign Flag) as described in the context of computer science and microprocessor technology. Option 'D', which states that the SF indicates whether the highest bit (the sign bit in signed arithmetic) of the operation result is 1, aligns with the traditional understanding of the Sign Flag. This indicates a negative result in signed arithmetic operations. As this matches the expected answer outlined in the course material, the student's answer was marked correct."
+        },
+        {
+            "content": "以下哪一个特征不属于8086/8088CPU最小工作模式的特点（   ）.",
+            "option": "{'A': '仅支持少量设备组成的单处理器系统', 'B': '系统控制总线的信号由8088/8086CPU直接产生', 'C': '还需要其它控制器产生总线控制信号和命令信号', 'D': '最小模式构成的系统不能进行DMA传送'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_系统控制_计算机科学与技术, K_系统控制_计算机科学与技术对应的课程为微机原理与接口技术, ",
+            "is_correct": 1,
+            "explanation": "The student correctly identified the option 'C' as the feature that does not belong to the minimum mode characteristics of the 8086/8088 CPUs. In the minimum mode, the 8086/8088 CPUs generate all necessary control signals for its operations, and do not require additional controllers to generate bus control and command signals. Option 'C' suggests that other controllers are needed, which is incorrect, hence making it the right choice."
+        },
+        {
+            "content": "总线的基本功能是（   ）",
+            "option": "{'A': '数据传输、地址传输、控制信号传输', 'B': '传输同步、仲裁控制、总线驱动', 'C': '输入、输出', 'D': '连接各个部件'}",
+            "right_answer": "[\"B\"]",
+            "knowledge_evidence": "题目对应知识点为K_步_计算机科学与技术, K_步_计算机科学与技术对应的课程为微机原理与接口技术, ",
+            "is_correct": 0,
+            "explanation": "The student answered this question incorrectly because the correct answer is option 'A', which includes 'data transfer, address transfer, and control signal transfer' as the basic functions of a bus in computer systems. However, the student selected option 'B', which focuses on 'transmission synchronization, arbitration control, and bus driving,' which are functions related to bus management rather than the core functions described in option 'A'. Understanding the basic operations of a computer bus involves recognizing that it primarily facilitates the transfer of data, addresses, and control signals across different components."
+        },
+        {
+            "content": "在8088/8086系统中，程序代码被存放在（    ）",
+            "option": "{'A': '代码段或数据段', 'B': '数据段或附加段', 'C': '代码段或堆栈段', 'D': '只能存放在代码段'}",
+            "right_answer": "[\"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_代码段_计算机科学与技术, K_代码段_计算机科学与技术对应的课程为微机原理与接口技术, ",
+            "is_correct": 0,
+            "explanation": "在8088/8086系统中，程序代码应该被存放在代码段。学生的回答为'A'，即认为程序代码可以存储在代码段或数据段，这与题目的正确答案'D'不符。正确答案'D'表明程序代码只能存放在代码段中。学生可能误解了代码段和数据段的不同用途，导致选择了错误的选项。"
+        },
+        {
+            "content": "8088CPU中，以下哪一个部件不属于BIU部分（  ）.<!--!doctype-->",
+            "option": "{'A': '段寄存器<!--!doctype-->', 'B': '指令队列<!--!doctype-->', 'C': '通用寄存器<!--!doctype-->', 'D': '地址加法器、总线控制逻辑<!--!doctype-->'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_总线_计算机科学与技术, K_总线_计算机科学与技术对应的课程为微机原理与接口技术, ",
+            "is_correct": 0,
+            "explanation": "The question asks which component is not part of the BIU (Bus Interface Unit) of the 8088 CPU. The correct answer is 'C' which refers to '通用寄存器' (general-purpose registers). This is correct because general-purpose registers are part of the Execution Unit (EU), not the Bus Interface Unit. The student got the answer wrong, possibly due to confusion about the specific roles and components of the BIU and EU in the 8088 CPU architecture."
+        },
+        {
+            "content": "在计算机系统中，外部设备必须通过（ ）才能实现与主机的信息交换。",
+            "option": "{'A': '电缆', 'B': '总线插槽', 'C': '接口', 'D': '电源'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_总线_计算机科学与技术, K_总线_计算机科学与技术对应的课程为微机原理与接口技术, ",
+            "is_correct": 1,
+            "explanation": "The student answered the question correctly by selecting option 'C' for '接口' (interface). In a computer system, external devices must go through an interface to exchange information with the host. This is a fundamental concept in computer science, particularly in the study of microcomputers and interface technology. The interface acts as a bridge, allowing communication and data transfer between the external device and the computer's internal components. The student's choice reflects an understanding of how data exchange is handled in computing systems."
+        },
+        {
+            "content": "以下说法中，不正确的是（    ）",
+            "option": "{'A': '每个内存单元在整个内存空间中都具有惟一的地址', 'B': '8088/8086CPU系统中，每个内存单元地址都可以表示为32位的逻辑地址。', 'C': '在8088/8086CPU系统中，偏移地址可以是16bit或8bit，但段基地址必须是16bit。', 'D': '在8088/8086CPU系统中，20bit地址一定是物理地址。'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_逻辑地址_计算机科学与技术, K_逻辑地址_计算机科学与技术对应的课程为微机原理与接口技术, ",
+            "is_correct": 0,
+            "explanation": "The student chose the wrong option for this problem. The question asked which statement is incorrect. The correct answer is option C, which states that in an 8088/8086 CPU system, the offset address can be 16 bits or 8 bits, but the segment base address must be 16 bits. This statement is incorrect because the offset address is always 16 bits in 8086 systems; 8-bit offsets do not apply. Understanding the correct bit structure for addressing in 8088/8086 systems is crucial. The student might have misunderstood the bit size for segment and offset addresses, leading to the incorrect choice. Recommending a review of the addressing modes in 8088/8086 architecture would be beneficial."
+        },
+        {
+            "content": "在8088/8086系统中，程序代码被存放在（    ）",
+            "option": "{'A': '代码段或数据段', 'B': '数据段或附加段', 'C': '代码段或堆栈段', 'D': '只能存放在代码段'}",
+            "right_answer": "[\"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_数据段_计算机科学与技术, K_数据段_计算机科学与技术对应的课程为微机原理与接口技术, ",
+            "is_correct": 0,
+            "explanation": "The student answered incorrectly because in the 8088/8086 systems, program code must be stored in the 'code segment,' which corresponds to option D. The incorrect options suggest storing the code in other combinations of segments that are not correct for where program code should exclusively reside. Therefore, the student's choice did not match the correct requirement for the storage of program code, which can only be in the 'code segment.'"
+        },
+        {
+            "content": "以下说法中，不正确的是（  ）",
+            "option": "{'A': '每个内存单元中都只存放8bit二进制数', 'B': '程序执行的顺序由CS和IP决定；', 'C': '程序执行的数据可以存放在数据段、附加段或堆栈段中；', 'D': '不同类型的逻辑段必须占有不同的内存空间。'}",
+            "right_answer": "[\"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_数据段_计算机科学与技术, K_数据段_计算机科学与技术对应的课程为微机原理与接口技术, ",
+            "is_correct": 1,
+            "explanation": "The student answered the multiple-choice question correctly by selecting option D as the incorrect statement. The statement '不同类型的逻辑段必须占有不同的内存空间' is incorrect because in memory management, different logical segments like data, stack, and code segments can share the same memory area, relying on segmentation to delineate their boundaries logically. Therefore, selecting D reflects an accurate understanding of memory segmentation principles covered in '微机原理与接口技术'."
+        },
+        {
+            "content": "在CentOS中，默认情况下，虚拟用户的UID范围是:",
+            "option": "{'A': '1-499', 'B': '0-499', 'C': '0-500', 'D': '500以后'}",
+            "right_answer": "[\"A\"]",
+            "knowledge_evidence": "题目对应知识点为K_虚拟用户_计算机科学与技术, K_虚拟用户_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The question asks about the default UID range for virtual users in CentOS. The student's answer was incorrect. In CentOS, the UID range for system and virtual users is typically from 1 to 499. This range is reserved for system processes and services, while UIDs from 500 onwards are generally allocated to regular user accounts. Therefore, the correct answer is '1-499', which corresponds to option 'A'. It seems the student might have overlooked this specific user range assignment in CentOS system management."
+        },
+        {
+            "content": "关于切换用户命令su，下面描述正确的是：",
+            "option": "{'A': '由根用户切换普通用户时需要输入用户密码', 'B': '由普通用户切换根用户时需要输入用户密码', 'C': '由普通用户之间相互切换时需要输入用户密码', 'D': '由根用户切换为虚拟用户时需要输入用户密码', 'E': '切换用户身份后，对系统的访问权限也随之改变'}",
+            "right_answer": "[\"B\", \"C\", \"E\"]",
+            "knowledge_evidence": "题目对应知识点为K_虚拟用户_计算机科学与技术, K_虚拟用户_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The question is about the proper usage of the 'su' command in Linux for switching users. Options B, C, and E are correct. Option B states that a normal user needs to provide a password to switch to the root user, which is true as root access requires authentication. Option C mentions that password is needed when switching between normal users, which is correct. Option E relates to the fact that access permissions change according to the user profile, which is also accurate. The student answered the question correctly by selecting these options, showing an understanding of user permissions and the functionality of the 'su' command."
+        },
+        {
+            "content": "在CentOS中，默认情况下，虚拟用户的UID范围是:",
+            "option": "{'A': '1-499', 'B': '0-499', 'C': '0-500', 'D': '500以后'}",
+            "right_answer": "[\"A\"]",
+            "knowledge_evidence": "题目对应知识点为K_虚拟用户_计算机科学与技术, K_虚拟用户_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The question asks about the default UID range for virtual users in CentOS. The student's answer was incorrect. In CentOS, the UID range for system and virtual users is typically from 1 to 499. This range is reserved for system processes and services, while UIDs from 500 onwards are generally allocated to regular user accounts. Therefore, the correct answer is '1-499', which corresponds to option 'A'. It seems the student might have overlooked this specific user range assignment in CentOS system management."
+        },
+        {
+            "content": "关于切换用户命令su，下面描述正确的是：",
+            "option": "{'A': '由根用户切换普通用户时需要输入用户密码', 'B': '由普通用户切换根用户时需要输入用户密码', 'C': '由普通用户之间相互切换时需要输入用户密码', 'D': '由根用户切换为虚拟用户时需要输入用户密码', 'E': '切换用户身份后，对系统的访问权限也随之改变'}",
+            "right_answer": "[\"B\", \"C\", \"E\"]",
+            "knowledge_evidence": "题目对应知识点为K_虚拟用户_计算机科学与技术, K_虚拟用户_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The question is about the proper usage of the 'su' command in Linux for switching users. Options B, C, and E are correct. Option B states that a normal user needs to provide a password to switch to the root user, which is true as root access requires authentication. Option C mentions that password is needed when switching between normal users, which is correct. Option E relates to the fact that access permissions change according to the user profile, which is also accurate. The student answered the question correctly by selecting these options, showing an understanding of user permissions and the functionality of the 'su' command."
+        },
+        {
+            "content": "id命令能够查看的用户信息有：",
+            "option": "{'A': '用户的创建时间', 'B': '用户的主用户组', 'C': '用户从属的用户组名', 'D': '用户家目录'}",
+            "right_answer": "[\"B\", \"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_用户组_计算机科学与技术, K_用户组_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The question asked which user information can be viewed by the 'id' command in Linux. The correct options are 'B: 用户的主用户组' (user's primary group) and 'C: 用户从属的用户组名' (names of the user groups the user belongs to). The student's answer was incorrect because they did not select the correct options 'B' and 'C'. The 'id' command does not provide information such as 'A: 用户的创建时间' (user's creation time) or 'D: 用户家目录' (user's home directory), which might be why the student made a mistake if these were chosen."
+        },
+        {
+            "content": "关于Linux中的用户组，描述错误的是：",
+            "option": "{'A': '用户组的身份标识叫做GID', 'B': '一个用户只能从属于一个用户组', 'C': '一个用户组能够包含多个用户', 'D': '在同一时刻，一个用户的主用户组只能有一个', 'E': '每个用户都必定从属于一个与用户同名的独立的私有用户组'}",
+            "right_answer": "[\"B\", \"E\"]",
+            "knowledge_evidence": "题目对应知识点为K_用户组_计算机科学与技术, K_用户组_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student answered the question correctly. The question asked for the incorrect statements about user groups in Linux. Options 'B' and 'E' were both identified as incorrect by the student: 'B' states that a user can only belong to one user group, which is false as a user can belong to multiple groups besides their primary group. 'E' states that each user must belong to a private group named after them, which is also incorrect as it is not a requirement to create a matching group for each user. The student correctly identified these as the incorrect statements, demonstrating an understanding of how user groups work in Linux."
+        }
+    ],
+    "tasks": [
+        {
+            "content": "标志位SF表示（   ）",
+            "option": "{'A': '最高位是否向更高位有进借位', 'B': '运算结果是否为0', 'C': '运算结果是否超出符号数的范围', 'D': '运算结果的最高位是否为1'}",
+            "right_answer": "[\"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_位_计算机科学与技术, K_位_计算机科学与技术对应的课程为微机原理与接口技术, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "以下哪一个特征不属于8086/8088CPU最小工作模式的特点（   ）.",
+            "option": "{'A': '仅支持少量设备组成的单处理器系统', 'B': '系统控制总线的信号由8088/8086CPU直接产生', 'C': '还需要其它控制器产生总线控制信号和命令信号', 'D': '最小模式构成的系统不能进行DMA传送'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_系统控制_计算机科学与技术, K_系统控制_计算机科学与技术对应的课程为微机原理与接口技术, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "总线的基本功能是（   ）",
+            "option": "{'A': '数据传输、地址传输、控制信号传输', 'B': '传输同步、仲裁控制、总线驱动', 'C': '输入、输出', 'D': '连接各个部件'}",
+            "right_answer": "[\"B\"]",
+            "knowledge_evidence": "题目对应知识点为K_步_计算机科学与技术, K_步_计算机科学与技术对应的课程为微机原理与接口技术, ",
+            "is_correct": 0,
+            "explanation": ""
+        },
+        {
+            "content": "在8088/8086系统中，程序代码被存放在（    ）",
+            "option": "{'A': '代码段或数据段', 'B': '数据段或附加段', 'C': '代码段或堆栈段', 'D': '只能存放在代码段'}",
+            "right_answer": "[\"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_代码段_计算机科学与技术, K_代码段_计算机科学与技术对应的课程为微机原理与接口技术, ",
+            "is_correct": 0,
+            "explanation": ""
+        },
+        {
+            "content": "8086发现READY引脚变为0时，它将在当前总线周期中插入（    ）周期。",
+            "option": "{'A': '总线周期', 'B': '时钟周期', 'C': '空闲周期', 'D': '查询周期'}",
+            "right_answer": "[\"B\"]",
+            "knowledge_evidence": "题目对应知识点为K_总线_计算机科学与技术, K_总线_计算机科学与技术对应的课程为微机原理与接口技术, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "以下说法中，不正确的是（    ）",
+            "option": "{'A': '每个内存单元在整个内存空间中都具有惟一的地址', 'B': '8088/8086CPU系统中，每个内存单元地址都可以表示为32位的逻辑地址。', 'C': '在8088/8086CPU系统中，偏移地址可以是16bit或8bit，但段基地址必须是16bit。', 'D': '在8088/8086CPU系统中，20bit地址一定是物理地址。'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_逻辑地址_计算机科学与技术, K_逻辑地址_计算机科学与技术对应的课程为微机原理与接口技术, ",
+            "is_correct": 0,
+            "explanation": ""
+        },
+        {
+            "content": "以下说法中，不正确的是（  ）",
+            "option": "{'A': '每个内存单元中都只存放8bit二进制数', 'B': '程序执行的顺序由CS和IP决定；', 'C': '程序执行的数据可以存放在数据段、附加段或堆栈段中；', 'D': '不同类型的逻辑段必须占有不同的内存空间。'}",
+            "right_answer": "[\"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_数据段_计算机科学与技术, K_数据段_计算机科学与技术对应的课程为微机原理与接口技术, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "在CentOS中，默认情况下，虚拟用户的UID范围是:",
+            "option": "{'A': '1-499', 'B': '0-499', 'C': '0-500', 'D': '500以后'}",
+            "right_answer": "[\"A\"]",
+            "knowledge_evidence": "题目对应知识点为K_虚拟用户_计算机科学与技术, K_虚拟用户_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "关于CentOS中的用户，描述错误的是：",
+            "option": "{'A': '虚拟用户是给系统的访客使用的', 'B': '根用户的UID是固定的', 'C': '虚拟用户使用的默认Shell是BASH', 'D': 'Linux是通过用户名来识别用户的身份的', 'E': '普通用户对系统有只有有限的权限'}",
+            "right_answer": "[\"A\", \"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_虚拟用户_计算机科学与技术, K_虚拟用户_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": ""
+        },
+        {
+            "content": "关于Linux中的用户组，描述错误的是：",
+            "option": "{'A': '用户组的身份标识叫做GID', 'B': '一个用户只能从属于一个用户组', 'C': '一个用户组能够包含多个用户', 'D': '在同一时刻，一个用户的主用户组只能有一个', 'E': '每个用户都必定从属于一个与用户同名的独立的私有用户组'}",
+            "right_answer": "[\"B\", \"E\"]",
+            "knowledge_evidence": "题目对应知识点为K_用户组_计算机科学与技术, K_用户组_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": ""
+        }
+    ],
+    "result": [
+        {
+            "content": "以下哪一项最准确地描述了总线的基本管理功能？",
+            "option": "{'A': '数据传输', 'B': '地址传输', 'C': '控制信号传输', 'D': '传输同步、仲裁控制、总线驱动'}",
+            "answer": "[\"D\"]",
+            "course_name": "微机原理与接口技术",
+            "concept_id": "K_步_计算机科学与技术",
+            "explanation": "选项D正确描述了总线的基本管理功能，包括传输同步、仲裁控制和总线驱动。这些功能用于管理总线操作，而不仅仅是数据传输。学生应区分总线管理功能与普通的数据传输功能。"
+        },
+        {
+            "content": "在8086/8088系统中，总线的仲裁控制主要解决以下哪方面问题？",
+            "option": "{'A': '数据的传输路径', 'B': '多个设备对总线的访问冲突', 'C': '数据传输的格式', 'D': '内存单元的访问权限'}",
+            "answer": "[\"B\"]",
+            "course_name": "微机原理与接口技术",
+            "concept_id": "K_步_计算机科学与技术",
+            "explanation": "选项B正确描述了总线仲裁控制的作用，即解决多个设备对总线的访问冲突问题。这与数据传输路径或内存单元访问权限无关。"
+        },
+        {
+            "content": "在8088/8086系统中，代码段的主要作用是什么？",
+            "option": "{'A': '存储数据变量', 'B': '存放程序指令', 'C': '存储堆栈信息', 'D': '管理设备控制'}",
+            "answer": "[\"B\"]",
+            "course_name": "微机原理与接口技术",
+            "concept_id": "K_代码段_计算机科学与技术",
+            "explanation": "代码段的主要作用是存放程序指令，而非存储数据变量或堆栈信息。学生应牢记代码段与数据段的功能区别。"
+        },
+        {
+            "content": "以下哪一项描述正确说明了8086/8088系统中代码段与数据段的关系？",
+            "option": "{'A': '代码段可以存放数据变量', 'B': '代码段与数据段完全独立', 'C': '代码段可以用于存储堆栈信息', 'D': '数据段可以存放程序指令'}",
+            "answer": "[\"B\"]",
+            "course_name": "微机原理与接口技术",
+            "concept_id": "K_代码段_计算机科学与技术",
+            "explanation": "代码段与数据段在8086/8088系统中是完全独立的，分别用于存放程序指令和数据变量。选项A、C和D混淆了两者的功能。"
+        },
+        {
+            "content": "在8086系统中，逻辑地址如何计算出物理地址？",
+            "option": "{'A': '段基址左移4位后加上偏移地址', 'B': '段基址加偏移地址', 'C': '偏移地址左移4位后加上段基址', 'D': '段基址与偏移地址直接相乘'}",
+            "answer": "[\"A\"]",
+            "course_name": "微机原理与接口技术",
+            "concept_id": "K_逻辑地址_计算机科学与技术",
+            "explanation": "选项A正确描述了在8086系统中，逻辑地址通过段基址左移4位后加上偏移地址计算出物理地址。学生应熟悉该计算规则以避免混淆。"
+        },
+        {
+            "content": "以下关于段基址和偏移地址的描述，哪一项是正确的？",
+            "option": "{'A': '段基址是8位，偏移地址是16位', 'B': '段基址和偏移地址都是16位', 'C': '段基址是16位，偏移地址是8位', 'D': '段基址和偏移地址都是8位'}",
+            "answer": "[\"B\"]",
+            "course_name": "微机原理与接口技术",
+            "concept_id": "K_逻辑地址_计算机科学与技术",
+            "explanation": "在8086系统中，段基址和偏移地址均为16位，选项B正确描述了这一规则。学生需加强对此规则的理解以避免错误选择其他选项。"
+        },
+        {
+            "content": "在CentOS系统中，虚拟用户的默认Shell通常是什么？",
+            "option": "{'A': '/bin/bash', 'B': '/sbin/nologin', 'C': '/bin/sh', 'D': '/usr/bin/zsh'}",
+            "answer": "[\"B\"]",
+            "course_name": "Linux系统管理",
+            "concept_id": "K_虚拟用户_计算机科学与技术",
+            "explanation": "在CentOS系统中，虚拟用户的默认Shell通常是'/sbin/nologin'，以防止系统登录访问。选项A（/bin/bash）和C（/bin/sh）适用于普通用户而非虚拟用户。"
+        },
+        {
+            "content": "以下哪一项不是CentOS系统中虚拟用户的主要用途？",
+            "option": "{'A': '用于系统服务', 'B': '用于访客访问', 'C': '用于管理后台任务', 'D': '用于分配低权限服务'}",
+            "answer": "[\"B\"]",
+            "course_name": "Linux系统管理",
+            "concept_id": "K_虚拟用户_计算机科学与技术",
+            "explanation": "虚拟用户主要用于系统服务、后台任务和低权限服务分配，而非访客访问。选项B是错误的用途描述，学生需理解虚拟用户的实际用途。"
+        },
+        {
+            "content": "关于虚拟用户和系统用户的描述，哪一项是正确的？",
+            "option": "{'A': '虚拟用户的UID范围为1-499', 'B': '虚拟用户可以登录系统', 'C': '系统用户与虚拟用户功能完全相同', 'D': '虚拟用户的UID范围为500及以上'}",
+            "answer": "[\"A\"]",
+            "course_name": "Linux系统管理",
+            "concept_id": "K_虚拟用户_计算机科学与技术",
+            "explanation": "选项A正确描述了CentOS系统中虚拟用户的UID范围（1-499）。虚拟用户通常无法登录系统（排除选项B），且与系统用户功能不同（排除选项C和D）。"
+        },
+        {
+            "content": "在Linux中，虚拟用户的默认Shell配置为什么通常与普通用户不同？",
+            "option": "{'A': '为了提高安全性', 'B': '为了简化配置', 'C': '为了支持更多登录方式', 'D': '为了提升性能'}",
+            "answer": "[\"A\"]",
+            "course_name": "Linux系统管理",
+            "concept_id": "K_虚拟用户_计算机科学与技术",
+            "explanation": "虚拟用户的默认Shell（如'/sbin/nologin'）通常配置为提升系统安全性，防止虚拟用户通过登录直接访问系统。选项B、C和D未正确描述配置目的。"
+        }
+    ],
+    "cost": {
+        "usage_including_cached_inference": {
+            "total_cost": 0.6902272000000002,
+            "qwen/qwen-max": {
+                "cost": 0.6902272000000002,
+                "prompt_tokens": 323420,
+                "completion_tokens": 26993,
+                "total_tokens": 350413
+            }
+        },
+        "usage_excluding_cached_inference": {
+            "total_cost": 0.6902272000000002,
+            "qwen/qwen-max": {
+                "cost": 0.6902272000000002,
+                "prompt_tokens": 323420,
+                "completion_tokens": 26993,
+                "total_tokens": 350413
+            }
+        }
+    }
+},
