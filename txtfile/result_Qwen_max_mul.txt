@@ -11667,3 +11667,328 @@
         }
     }
 },
+{
+    "round": 27,
+    "examples": [
+        {
+            "content": "可以用哪个命令测试两台主机之间网络的连通性。",
+            "option": "{'A': 'ping', 'B': 'ifconfig', 'C': 'ipconfig', 'D': 'route'}",
+            "right_answer": "[\"A\"]",
+            "knowledge_evidence": "题目对应知识点为K_ipconfig_计算机科学与技术, K_ipconfig_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student correctly identified 'ping' as the command used to test network connectivity between two hosts. This is the standard and widely used method to check if a host is reachable within a network by sending ICMP echo request packets and measuring the response time. The other options, 'ifconfig', 'ipconfig', and 'route', serve different purposes related to configuring network interfaces and routing tables but do not directly test network connectivity like 'ping' does."
+        },
+        {
+            "content": "回环接口为系统提供一个单机网络环境，一般用于网络程序的调试。",
+            "option": "{'true': '正确', 'false': '错误'}",
+            "right_answer": "[\"true\"]",
+            "knowledge_evidence": "题目对应知识点为K_调试_计算机科学与技术, K_调试_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student's answer is correct. The loopback interface, which is commonly represented by the IP address 127.0.0.1, allows for network tests and software development to be conducted within a single machine, acting as a standalone network environment. This is particularly useful for debugging network applications on the Linux operating system, and aligns with the content and answer provided."
+        },
+        {
+            "content": "在Linux中，打开BASH后的命令提示符，能够告诉你有关主机的哪些信息？",
+            "option": "{'A': '登录的主机名', 'B': '登录的用户名', 'C': '用户当前所处的工作目录', 'D': '用户上次登录时间'}",
+            "right_answer": "[\"A\", \"B\", \"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_主机名_计算机科学与技术, K_主机名_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The student's answer was incorrect because they likely included all options without recognizing that option D '用户上次登录时间' is not typically displayed in the BASH command prompt. The BASH prompt in Linux generally shows the login hostname, login username, and current working directory, which corresponds to options A, B, and C. The prompt does not, by default, display the last login time, so including option D led to the answer being incorrect."
+        },
+        {
+            "content": "关于修改主机名，下面那些说法是正确的：",
+            "option": "{'A': '需要修改/etc/sysconfig/network文件', 'B': '需要修改/etc/hosts文件', 'C': '需要修改/etc/sysconfig/network-scripts/ifcfg-eth0文件', 'D': '一般需要重启系统，让修改生效'}",
+            "right_answer": "[\"A\", \"B\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_主机名_计算机科学与技术, K_主机名_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student answered the question correctly. The task was to identify which statements are true regarding modifying the hostname. The correct answers were options A, B, and D. These options are correct because: A) /etc/sysconfig/network file typically needs to be modified to change the hostname setting; B) /etc/hosts file is often modified to map the hostname to its associated IP address; and D) a system restart is generally required for changes to take full effect. Option C is not typically required for changing the hostname, which the student correctly omitted."
+        },
+        {
+            "content": "在Linux中，打开BASH后的命令提示符，能够告诉你有关主机的哪些信息？",
+            "option": "{'A': '登录的主机名', 'B': '登录的用户名', 'C': '用户当前所处的工作目录', 'D': '用户上次登录时间'}",
+            "right_answer": "[\"A\", \"B\", \"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_主机名_计算机科学与技术, K_主机名_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The student's answer was incorrect because they likely included all options without recognizing that option D '用户上次登录时间' is not typically displayed in the BASH command prompt. The BASH prompt in Linux generally shows the login hostname, login username, and current working directory, which corresponds to options A, B, and C. The prompt does not, by default, display the last login time, so including option D led to the answer being incorrect."
+        },
+        {
+            "content": "关于修改主机名，下面那些说法是正确的：",
+            "option": "{'A': '需要修改/etc/sysconfig/network文件', 'B': '需要修改/etc/hosts文件', 'C': '需要修改/etc/sysconfig/network-scripts/ifcfg-eth0文件', 'D': '一般需要重启系统，让修改生效'}",
+            "right_answer": "[\"A\", \"B\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_主机名_计算机科学与技术, K_主机名_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student answered the question correctly. The task was to identify which statements are true regarding modifying the hostname. The correct answers were options A, B, and D. These options are correct because: A) /etc/sysconfig/network file typically needs to be modified to change the hostname setting; B) /etc/hosts file is often modified to map the hostname to its associated IP address; and D) a system restart is generally required for changes to take full effect. Option C is not typically required for changing the hostname, which the student correctly omitted."
+        },
+        {
+            "content": "关于Linux中的软件管理，下面那些选项是正确的？",
+            "option": "{'A': '在某个Linux发行版下开发和编译的程序，直接放到另外一个Linux发行版下有可能性无法运行', 'B': '早期的Linux的软件都是通过源码来分发', 'C': 'RPM是所有Linux发现版本上的通用的软件包管理器', 'D': 'RPM是Linux下软件资源最丰富的软件包类型'}",
+            "right_answer": "[\"A\", \"B\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_软件资源_计算机科学与技术, K_软件资源_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The student's answer was marked incorrect because they did not select option 'C', which states 'RPM是所有Linux发现版本上的通用的软件包管理器'. This statement is incorrect because RPM (Red Hat Package Manager) is not universal to all Linux distributions. Some distributions, such as those based on Debian, use a different package management system called APT (Advanced Package Tool). Therefore, the correct options are 'A', 'B', and 'D'. Option 'A' is correct because a program developed and compiled on one Linux distribution may not run on another due to differences in environment and library dependencies. Option 'B' is accurate as early Linux software was indeed distributed as source code that users needed to compile. Option 'D' is also correct, noting RPM's richness in terms of available software, although it is not universal. The student's mistake was likely due to a misunderstanding of 'RPM' being a 'universal package manager' across all Linux distributions."
+        },
+        {
+            "content": "关于Linux中的软件管理，下面那些选项是正确的？",
+            "option": "{'A': '在某个Linux发行版下开发和编译的程序，直接放到另外一个Linux发行版下有可能性无法运行', 'B': '早期的Linux的软件都是通过源码来分发', 'C': 'RPM是所有Linux发现版本上的通用的软件包管理器', 'D': 'RPM是Linux下软件资源最丰富的软件包类型'}",
+            "right_answer": "[\"A\", \"B\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_软件资源_计算机科学与技术, K_软件资源_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student answered the question correctly. Option A is correct because programs developed and compiled on one Linux distribution may not run on another due to differences in libraries and system configurations. Option B is correct as historically, early Linux software was distributed primarily in source code form. Option D is correct because RPM (Red Hat Package Manager) based systems (such as Red Hat, Fedora, CentOS) have a large repository of available software, making it one of the most resource-rich package management systems. Option C is incorrect because not all Linux distributions use RPM; some use other package managers like APT (Advanced Package Tool) used by Debian-based systems. The student correctly identified options A, B, and D as accurate statements about Linux software management."
+        },
+        {
+            "content": "关于用rpm卸载软件，下面哪些说法是正确的：",
+            "option": "{'A': '使用-r选项', 'B': '使用-e选项', 'C': '卸载软件需要知道软件安装后包括版本号在内的全名', 'D': '卸载软件只需要知道软件名即可', 'E': '卸载一个软件可能会导致系统中别的软件无法使用'}",
+            "right_answer": "[\"B\", \"C\", \"E\"]",
+            "knowledge_evidence": "题目对应知识点为K_全名_计算机科学与技术, K_全名_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The student incorrectly answered the question about using rpm to uninstall software. The correct options were B, C, and E. Option B is correct because the -e flag is used for erasing (uninstalling) a package with rpm. Option C is correct because you typically need the full name of the installed package, including its version, to uninstall it. Option E is also correct because uninstalling a software package could potentially affect other software if they depend on the uninstalled package. The incorrect options provided by the student were likely based on common misconceptions, such as assuming option D (only the software name is needed) is sufficient, which is not necessarily true with rpm."
+        },
+        {
+            "content": "关于用rpm卸载软件，下面哪些说法是正确的：",
+            "option": "{'A': '使用-r选项', 'B': '使用-e选项', 'C': '卸载软件需要知道软件安装后包括版本号在内的全名', 'D': '卸载软件只需要知道软件名即可', 'E': '卸载一个软件可能会导致系统中别的软件无法使用'}",
+            "right_answer": "[\"B\", \"C\", \"E\"]",
+            "knowledge_evidence": "题目对应知识点为K_全名_计算机科学与技术, K_全名_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student correctly answered the question about uninstalling software using RPM in Linux. They selected option B (using the -e option), option C (needing the full name including version number to uninstall the software), and option E (uninstalling might cause other software to become unusable). These selections are correct because, to uninstall using RPM, the -e option is used, you need the full name of the installed package including version, and removing software dependencies is a real risk when uninstalling software."
+        },
+        {
+            "content": "下面关于yum的说法那些是错误的？",
+            "option": "{'A': 'yum目的就是为了解决RPM管理软件包时的依赖关系难题', 'B': 'yum是一种区别于RPM软件封装模式', 'C': 'yum是红帽系列Linux中的默认软件管理器', 'D': 'yum客户端在安装软件时无需了解该软件包的依赖关系信息'}",
+            "right_answer": "[\"B\", \"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_软件管理器_计算机科学与技术, K_软件管理器_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The student incorrectly identified the statements about 'yum' in Linux systems because they likely misunderstood the details about what 'yum' is and its functionalities. Let's analyze their choices: \n\n1. Option A: 'yum目的就是为了解决RPM管理软件包时的依赖关系难题' (Yum aims to resolve dependency issues when managing packages with RPM) - This statement is correct because 'yum' (Yellowdog Updater, Modified) was specifically designed to handle dependencies in RPM package management, making package installation easier by automatically resolving and installing dependencies.\n\n2. Option B: 'yum是一种区别于RPM软件封装模式' (Yum is a packaging mode different from RPM) - This statement is incorrect. Yum is not a packaging mode; instead, it is a command-line package-management utility for RPM-compatible Linux operating systems, designed to manage package installations, upgrades, and removals.\n\n3. Option C: 'yum是红帽系列Linux中的默认软件管理器' (Yum is the default package manager in Red Hat Linux series) - This statement is incorrect because while Yum is commonly used in Red Hat-based systems like CentOS and Fedora, it is not alone; other package managers such as dnf have replaced Yum in newer versions of some distributions (like Fedora), though it still serves as a default in older versions.\n\n4. Option D: 'yum客户端在安装软件时无需了解该软件包的依赖关系信息' (Yum clients do not need to know the dependency information when installing software) - This statement is correct as yum takes care of dependencies automatically, meaning the user doesn't have to manually identify and resolve dependencies for package installations.\n\nThe correct answers for the incorrect statements are 'B' and 'C', which the student failed to identify accurately."
+        },
+        {
+            "content": "下面关于yum的说法那些是错误的？",
+            "option": "{'A': 'yum目的就是为了解决RPM管理软件包时的依赖关系难题', 'B': 'yum是一种区别于RPM软件封装模式', 'C': 'yum是红帽系列Linux中的默认软件管理器', 'D': 'yum客户端在安装软件时无需了解该软件包的依赖关系信息'}",
+            "right_answer": "[\"B\", \"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_软件管理器_计算机科学与技术, K_软件管理器_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student answered the question correctly by identifying options B and C as incorrect regarding yum. Option B is incorrect because yum is not a different software packaging mode from RPM; it works as a package manager that resolves dependencies for RPM packages. Option C is incorrect because while yum may be the default package manager in some Red Hat-based distributions, it is not universally the default across all Red Hat distributions as newer ones use DNF. Therefore, the student's answer aligns correctly with the provided right answer."
+        },
+        {
+            "content": "在Linux中，打开BASH后的命令提示符，能够告诉你有关主机的哪些信息？",
+            "option": "{'A': '登录的主机名', 'B': '登录的用户名', 'C': '用户当前所处的工作目录', 'D': '用户上次登录时间'}",
+            "right_answer": "[\"A\", \"B\", \"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_命令提示符_计算机科学与技术, K_命令提示符_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The student answered this question incorrectly. The command prompt in BASH typically displays the login hostname, the username, and the current working directory. However, it does not show the user's last login time, which was incorrectly selected by the student as an answer. The correct answer is options A, B, and C."
+        },
+        {
+            "content": "当您在命令提示符的后面输入命令的一部分时，按（__）键，Linux会帮你打剩下的字符，补充成为完整命令，如果有多个相符的命令，连按两下（__）键，Linux会显示所有的相符的命令。",
+            "option": "{'A': 'TAB', 'B': 'CONTRL', 'C': 'SHIFT', 'D': 'SPACE'}",
+            "right_answer": "[\"A\"]",
+            "knowledge_evidence": "题目对应知识点为K_命令提示符_计算机科学与技术, K_命令提示符_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student correctly identified 'TAB' as the key used in Linux for command completion. In Linux, when you type part of a command and press the TAB key, it auto-completes the command if there's only one possibility, or suggests options if there are multiple possibilities when pressed twice. This displays the command-line feature of autocompletion, integral for efficient command-line navigation."
+        },
+        {
+            "content": "下面的选项哪些是正确的？",
+            "option": "{'A': 'Linux操作系统是由Linus Torvalds发明的', 'B': 'Linux操作系统是由Richard Stallman发明的', 'C': 'Linus Torvalds和Richard Stallman的工作共同造就了Linux', 'D': '自由软件运动和互联网的兴起造就了Linux操作系统'}",
+            "right_answer": "[\"C\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_自由软件_计算机科学与技术, K_自由软件_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The student answered incorrectly because they did not select the correct options 'C' and 'D'. Option 'C' is correct because Linux was made possible by the combined efforts of Linus Torvalds, who created the Linux kernel, and Richard Stallman, who advocated free software and created the GNU project, which provided tools for use with Linux. Option 'D' is correct as well because the free software movement and the rise of the internet significantly contributed to the development and proliferation of Linux. Option 'A' is incorrect as Linus Torvalds did not invent Linux; he created the kernel. Option 'B' is incorrect because Richard Stallman did not invent Linux; instead, he founded the free software foundation and contributed to the Linux ecosystem with GNU software. Therefore, for this question, options 'C' and 'D' are the correct answers."
+        },
+        {
+            "content": "下面的选项哪些是正确的？",
+            "option": "{'A': 'Linux操作系统是由Linus Torvalds发明的', 'B': 'Linux操作系统是由Richard Stallman发明的', 'C': 'Linus Torvalds和Richard Stallman的工作共同造就了Linux', 'D': '自由软件运动和互联网的兴起造就了Linux操作系统'}",
+            "right_answer": "[\"C\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_自由软件_计算机科学与技术, K_自由软件_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student answered correctly by selecting options 'C' and 'D'. 'C' is correct because Linus Torvalds initiated the development of the Linux kernel, and Richard Stallman started the GNU project; together, they contributed to what is now known as the Linux operating system. 'D' is also correct as the free software movement, led by Stallman, along with the growth of the internet, played significant roles in popularizing Linux. Option 'A' is partially correct but implies that Linus alone created Linux, ignoring the contributions from the GNU project, and 'B' is incorrect as Richard Stallman did not invent Linux but was instrumental in the free software movement. The student has correctly identified the combined efforts and historical context behind Linux's development."
+        },
+        {
+            "content": "关于CentOS,下面哪些说法是正确的？",
+            "option": "{'A': 'CentOS100%兼容红帽企业版(RHEL)', 'B': 'CentOS不提供专门技术支持，不包含封闭源代码软件', 'C': 'CentOS 64位版本可以安装在32位架构的机器上', 'D': 'CentOS是利用用红帽企业版(RHEL)源代码重新编译而成的'}",
+            "right_answer": "[\"A\", \"B\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_闭源_计算机科学与技术, K_闭源_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The student's response was incorrect because they did not select the correct options according to the given correct answers [\"A\", \"B\", \"D\"]. Here is why each statement is evaluated: \n\n- 'A': Correct. CentOS is a community-supported distribution that aims to provide a free, community-supported computing platform which is 100% compatible with its upstream source, Red Hat Enterprise Linux (RHEL).\n\n- 'B': Correct. CentOS does not offer dedicated technical support and it doesn't include proprietary software.\n\n- 'C': Incorrect. A 64-bit version of CentOS cannot be installed on a 32-bit architecture machine due to compatibility issues between 64-bit software and 32-bit hardware.\n\n- 'D': Correct. CentOS is indeed built by recompiling RHEL source code. This allows CentOS to stay compatible with RHEL without the need for proprietary software."
+        }
+    ],
+    "tasks": [
+        {
+            "content": "可以用哪个命令测试两台主机之间网络的连通性。",
+            "option": "{'A': 'ping', 'B': 'ifconfig', 'C': 'ipconfig', 'D': 'route'}",
+            "right_answer": "[\"A\"]",
+            "knowledge_evidence": "题目对应知识点为K_ipconfig_计算机科学与技术, K_ipconfig_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "回环接口为系统提供一个单机网络环境，一般用于网络程序的调试。",
+            "option": "{'true': '正确', 'false': '错误'}",
+            "right_answer": "[\"true\"]",
+            "knowledge_evidence": "题目对应知识点为K_调试_计算机科学与技术, K_调试_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "关于修改主机名，下面那些说法是正确的：",
+            "option": "{'A': '需要修改/etc/sysconfig/network文件', 'B': '需要修改/etc/hosts文件', 'C': '需要修改/etc/sysconfig/network-scripts/ifcfg-eth0文件', 'D': '一般需要重启系统，让修改生效'}",
+            "right_answer": "[\"A\", \"B\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_主机名_计算机科学与技术, K_主机名_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": ""
+        },
+        {
+            "content": "关于为网络接口配置DHCP，下面那些说法是正确的：",
+            "option": "{'A': 'DHCP很方便，但是更容易发生配置错误', 'B': 'DHCP服务器可以指定接口的IP地址、子网掩码和网关', 'C': '默认情况下，CentOS使用DHCP协议配置接口网络参数', 'D': 'DHCP服务器还可以指定主机名'}",
+            "right_answer": "[\"B\", \"C\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_主机名_计算机科学与技术, K_主机名_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "关于Linux中的软件管理，下面那些选项是正确的？",
+            "option": "{'A': '在某个Linux发行版下开发和编译的程序，直接放到另外一个Linux发行版下有可能性无法运行', 'B': '早期的Linux的软件都是通过源码来分发', 'C': 'RPM是所有Linux发现版本上的通用的软件包管理器', 'D': 'RPM是Linux下软件资源最丰富的软件包类型'}",
+            "right_answer": "[\"A\", \"B\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_软件资源_计算机科学与技术, K_软件资源_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "关于用rpm卸载软件，下面哪些说法是正确的：",
+            "option": "{'A': '使用-r选项', 'B': '使用-e选项', 'C': '卸载软件需要知道软件安装后包括版本号在内的全名', 'D': '卸载软件只需要知道软件名即可', 'E': '卸载一个软件可能会导致系统中别的软件无法使用'}",
+            "right_answer": "[\"B\", \"C\", \"E\"]",
+            "knowledge_evidence": "题目对应知识点为K_全名_计算机科学与技术, K_全名_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "下面关于yum的说法那些是错误的？",
+            "option": "{'A': 'yum目的就是为了解决RPM管理软件包时的依赖关系难题', 'B': 'yum是一种区别于RPM软件封装模式', 'C': 'yum是红帽系列Linux中的默认软件管理器', 'D': 'yum客户端在安装软件时无需了解该软件包的依赖关系信息'}",
+            "right_answer": "[\"B\", \"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_软件管理器_计算机科学与技术, K_软件管理器_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "当您在命令提示符的后面输入命令的一部分时，按（__）键，Linux会帮你打剩下的字符，补充成为完整命令，如果有多个相符的命令，连按两下（__）键，Linux会显示所有的相符的命令。",
+            "option": "{'A': 'TAB', 'B': 'CONTRL', 'C': 'SHIFT', 'D': 'SPACE'}",
+            "right_answer": "[\"A\"]",
+            "knowledge_evidence": "题目对应知识点为K_命令提示符_计算机科学与技术, K_命令提示符_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "下面的选项哪些是正确的？",
+            "option": "{'A': 'Linux操作系统是由Linus Torvalds发明的', 'B': 'Linux操作系统是由Richard Stallman发明的', 'C': 'Linus Torvalds和Richard Stallman的工作共同造就了Linux', 'D': '自由软件运动和互联网的兴起造就了Linux操作系统'}",
+            "right_answer": "[\"C\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_自由软件_计算机科学与技术, K_自由软件_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": ""
+        },
+        {
+            "content": "关于CentOS,下面哪些说法是正确的？",
+            "option": "{'A': 'CentOS100%兼容红帽企业版(RHEL)', 'B': 'CentOS不提供专门技术支持，不包含封闭源代码软件', 'C': 'CentOS 64位版本可以安装在32位架构的机器上', 'D': 'CentOS是利用用红帽企业版(RHEL)源代码重新编译而成的'}",
+            "right_answer": "[\"A\", \"B\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_闭源_计算机科学与技术, K_闭源_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": ""
+        }
+    ],
+    "result": [
+        {
+            "content": "在修改主机名时，为什么需要编辑`/etc/hosts`文件？",
+            "option": "{'A': '将主机名与本地IP地址绑定', 'B': '指定主机的主DNS服务器', 'C': '配置静态路由表', 'D': '修改默认网关'}",
+            "answer": "['A']",
+            "course_name": "Linux系统管理",
+            "concept_id": "K_主机名_计算机科学与技术",
+            "explanation": "编辑`/etc/hosts`文件是为了将新主机名与本地IP地址（通常是127.0.0.1）绑定，以便系统能够正确解析主机名。"
+        },
+        {
+            "content": "以下关于CentOS的描述哪些是正确的？",
+            "option": "{'A': 'CentOS可以运行在32位架构的机器上', 'B': 'CentOS不包含任何闭源软件', 'C': 'CentOS基于RHEL源代码重新编译', 'D': 'CentOS提供官方技术支持'}",
+            "answer": "['B', 'C']",
+            "course_name": "Linux系统管理",
+            "concept_id": "K_闭源_计算机科学与技术",
+            "explanation": "CentOS是基于RHEL源代码重新编译的，通常不包含闭源软件，也不提供官方技术支持。"
+        },
+        {
+            "content": "Linus Torvalds和Richard Stallman在Linux的发展中分别贡献了什么？",
+            "option": "{'A': 'Linus编写了内核，Richard创建了自由软件基金会', 'B': 'Linus创建了自由软件基金会，Richard编写了内核', 'C': '两者共同创建了Linux内核', 'D': '两者都未参与Linux内核的开发'}",
+            "answer": "['A']",
+            "course_name": "Linux系统管理",
+            "concept_id": "K_自由软件_计算机科学与技术",
+            "explanation": "Linus Torvalds开发了Linux内核，而Richard Stallman创立了自由软件基金会（FSF），推动了自由软件运动。"
+        },
+        {
+            "content": "修改主机名后，为什么通常需要重启系统使改动生效？",
+            "option": "{'A': '重启会更新网络接口的配置', 'B': '重启会更新系统的全局配置', 'C': '重启会清除临时文件', 'D': '重启会重新生成路由表'}",
+            "answer": "['B']",
+            "course_name": "Linux系统管理",
+            "concept_id": "K_主机名_计算机科学与技术",
+            "explanation": "重启系统是为了确保所有进程和服务都识别新的主机名，作为系统全局配置的一部分。"
+        },
+        {
+            "content": "以下哪个命令可以用来测试网络连通性？",
+            "option": "{'A': 'ping', 'B': 'ifconfig', 'C': 'traceroute', 'D': 'netstat'}",
+            "answer": "['A']",
+            "course_name": "Linux系统管理",
+            "concept_id": "K_ipconfig_计算机科学与技术",
+            "explanation": "`ping`命令通过发送ICMP回显请求来测试目标主机是否可达，是网络连通性测试的标准工具。"
+        },
+        {
+            "content": "关于Linux命令行自动补全功能，以下哪些描述是正确的？",
+            "option": "{'A': '可以通过按TAB键实现', 'B': '只能补全文件名，不能补全命令', 'C': '按两次TAB键可以显示所有匹配选项', 'D': '需要手动启用该功能'}",
+            "answer": "['A', 'C']",
+            "course_name": "Linux系统管理",
+            "concept_id": "K_命令提示符_计算机科学与技术",
+            "explanation": "命令行自动补全通过TAB键实现，按两次TAB键可以显示所有可能的匹配选项。该功能通常默认启用。"
+        },
+        {
+            "content": "以下关于自由软件运动的描述哪些是正确的？",
+            "option": "{'A': '自由软件强调用户自由，而非价格免费', 'B': '自由软件不允许用于商业用途', 'C': '自由软件运动由Linus Torvalds发起', 'D': 'GNU项目是自由软件运动的一部分'}",
+            "answer": "['A', 'D']",
+            "course_name": "Linux系统管理",
+            "concept_id": "K_自由软件_计算机科学与技术",
+            "explanation": "自由软件强调用户的自由权利，而非免费价格，GNU项目是自由软件运动的重要组成部分，而Linus Torvalds并未发起该运动。"
+        },
+        {
+            "content": "为什么CentOS被认为与RHEL 100%兼容？",
+            "option": "{'A': '因为CentOS使用了RHEL的源代码重新编译', 'B': '因为CentOS使用了RHEL的二进制文件', 'C': '因为CentOS与RHEL共享相同的开发者', 'D': '因为CentOS提供了与RHEL相同的硬件支持'}",
+            "answer": "['A']",
+            "course_name": "Linux系统管理",
+            "concept_id": "K_闭源_计算机科学与技术",
+            "explanation": "CentOS通过重新编译RHEL的源代码，实现了与RHEL的100%兼容性。"
+        },
+        {
+            "content": "修改主机名时，以下哪些文件通常需要被编辑？",
+            "option": "{'A': '/etc/sysconfig/network', 'B': '/etc/hosts', 'C': '/etc/resolv.conf', 'D': '/etc/fstab'}",
+            "answer": "['A', 'B']",
+            "course_name": "Linux系统管理",
+            "concept_id": "K_主机名_计算机科学与技术",
+            "explanation": "修改主机名通常需要编辑`/etc/sysconfig/network`和`/etc/hosts`文件，以确保主机名更改生效并能正确解析。"
+        },
+        {
+            "content": "以下哪些操作可能导致Linux系统无法正常工作？",
+            "option": "{'A': '卸载一个关键的系统软件包', 'B': '修改主机名但未重启系统', 'C': '清空所有的日志文件', 'D': '禁用默认的网络接口'}",
+            "answer": "['A', 'D']",
+            "course_name": "Linux系统管理",
+            "concept_id": "K_全名_计算机科学与技术",
+            "explanation": "卸载关键系统软件包会破坏依赖关系，禁用默认网络接口会导致网络连接中断，而修改主机名未重启或清空日志文件不会直接影响系统功能。"
+        }
+    ],
+    "cost": {
+        "usage_including_cached_inference": {
+            "total_cost": 0.0581392,
+            "qwen/qwen-max": {
+                "cost": 0.0581392,
+                "prompt_tokens": 24145,
+                "completion_tokens": 3048,
+                "total_tokens": 27193
+            }
+        },
+        "usage_excluding_cached_inference": {
+            "total_cost": 0.0581392,
+            "qwen/qwen-max": {
+                "cost": 0.0581392,
+                "prompt_tokens": 24145,
+                "completion_tokens": 3048,
+                "total_tokens": 27193
+            }
+        }
+    }
+},
