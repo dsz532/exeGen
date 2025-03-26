@@ -35,9 +35,9 @@ concept_relation_filtered = pandas.read_csv("subject_data(1)/concept_relationshi
 llm_config = {
     "cache_seed": None,
     "config_list": [{
-        "model": "qwen/qwen-plus",
-        "base_url": "https://openrouter.ai/api/v1",
-        "api_key": "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",
+        "model": "qwen-plus",
+        "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+        "api_key": "sk-bdcb2c3dc326473cb15ebb03ce2008bb",
         "price": [0.0004, 0.0012]
     }]
 }
@@ -359,82 +359,83 @@ def extract_last_json(s):
     return None
 
 
-for i in range(26, 27):
+# for i in range(3, 14):
 
-    text = {
-        "round": i,
-        "examples": [],
-        "tasks": []
-    }
 
-    # 获取task数组
-    stuRec_1000_with_tokens = pandas.read_csv("subject_data(1)/stuRec_1000_with_tokens.csv")
-    stuRec_1000_with_tokens = stuRec_1000_with_tokens.iloc[(i * 10):((i + 1) * 10)]
-    selected_columns1 = ['content', 'option', 'right_answer', 'knowledge_evidence', 'is_correct', 'explanation']
+text = {
+    # "round": i,
+    "examples": [],
+    "tasks": []
+}
 
-    # 硬匹配
-    hard_example, stuRec_1000_with_tokens = get_examples_by_concept(examples_with_explanation_with_tokens,
-                                                                    stuRec_1000_with_tokens)
-    hard_example = hard_example[selected_columns1]
+# 获取task数组
+stuRec_1000_with_tokens = pandas.read_csv("subject_data(1)/stuRec_1000_with_tokens.csv")
+stuRec_1000_with_tokens = stuRec_1000_with_tokens.iloc[15:22]
+selected_columns1 = ['content', 'option', 'right_answer', 'knowledge_evidence', 'is_correct', 'explanation']
 
-    text['examples'] += hard_example.to_dict(orient='records')
+# 硬匹配
+hard_example, stuRec_1000_with_tokens = get_examples_by_concept(examples_with_explanation_with_tokens,
+                                                                stuRec_1000_with_tokens)
+hard_example = hard_example[selected_columns1]
 
-    # 软匹配
-    if not stuRec_1000_with_tokens.empty:
-        res = get_examples_by_similarity(examples_with_explanation_with_tokens, stuRec_1000_with_tokens)[
-            selected_columns1].to_dict(orient='records')
+text['examples'] += hard_example.to_dict(orient='records')
 
-        text["examples"] += res
+# 软匹配
+if not stuRec_1000_with_tokens.empty:
+    res = get_examples_by_similarity(examples_with_explanation_with_tokens, stuRec_1000_with_tokens)[
+        selected_columns1].to_dict(orient='records')
 
-    # 匹配完成后重新读取习题记录信息
-    stuRec_1000_with_tokens = pandas.read_csv("subject_data(1)/stuRec_1000_with_tokens.csv")
-    stuRec_1000_with_tokens = stuRec_1000_with_tokens.iloc[(i * 10):((i + 1) * 10)]
-    selected_columns2 = ['content', 'option', 'right_answer', 'knowledge_evidence', 'is_correct']
-    stuRec_1000_with_tokens = stuRec_1000_with_tokens[selected_columns2]
+    text["examples"] += res
 
-    # 计算习题记录的知识链
-    # stuRec_1000_with_tokens["knowledge_chain"] = ""
-    # for index, row in stuRec_1000_with_tokens.iterrows():
-    #     chain = get_chain(row['concept_id'], row['concept_id'])
-    #     stuRec_1000_with_tokens.at[index, 'knowledge_chain'] = chain
+# 匹配完成后重新读取习题记录信息
+stuRec_1000_with_tokens = pandas.read_csv("subject_data(1)/stuRec_1000_with_tokens.csv")
+stuRec_1000_with_tokens = stuRec_1000_with_tokens.iloc[15:22]
+selected_columns2 = ['content', 'option', 'right_answer', 'knowledge_evidence', 'is_correct']
+stuRec_1000_with_tokens = stuRec_1000_with_tokens[selected_columns2]
 
-    # 将新题目explanation置空
-    stuRec_1000_with_tokens["explanation"] = ""
-    stuRec_1000_with_tokens = stuRec_1000_with_tokens.to_dict(orient='records')
-    text["tasks"] = stuRec_1000_with_tokens
+# 计算习题记录的知识链
+# stuRec_1000_with_tokens["knowledge_chain"] = ""
+# for index, row in stuRec_1000_with_tokens.iterrows():
+#     chain = get_chain(row['concept_id'], row['concept_id'])
+#     stuRec_1000_with_tokens.at[index, 'knowledge_chain'] = chain
 
-    text = json.dumps(text, ensure_ascii=False, indent=4)
+# 将新题目explanation置空
+stuRec_1000_with_tokens["explanation"] = ""
+stuRec_1000_with_tokens = stuRec_1000_with_tokens.to_dict(orient='records')
+text["tasks"] = stuRec_1000_with_tokens
 
-    # 将提示词文本转换为自然语言形式
-    n_text = json.loads(text)
+text = json.dumps(text, ensure_ascii=False, indent=4)
 
-    # n_text = convert_to_natural_language(n_text)
+# 将提示词文本转换为自然语言形式
+n_text = json.loads(text)
 
-    type = parser.parse_args().type_of_prompt
-    if type == "natural_language_text":
-        prompt = n_text
-    elif type == "json_text":
-        prompt = text
-    else:
-        prompt = text
+# n_text = convert_to_natural_language(n_text)
 
-    chat_res = out_groupchat_manager.initiate_chat(
-        agent_kt,
-        message=prompt,
-        summary_method="reflection_with_llm",
-        max_turns=20
-    )
+type = parser.parse_args().type_of_prompt
+if type == "natural_language_text":
+    prompt = n_text
+elif type == "json_text":
+    prompt = text
+else:
+    prompt = text
 
-    # 获取生成的新题目
-    chat_cost = chat_res.cost
-    chat_his = chat_res.chat_history
-    chat_his_str = chat_his[-1]['content']
-    res_exe = extract_last_json(chat_his_str)
-    text = json.loads(text)
-    text["result"] = res_exe
-    text["cost"] = chat_cost
-    text = json.dumps(text, ensure_ascii=False, indent=4)
-    with open('txtfile/result_Qwen_plus_ToF.txt', 'a', encoding='utf-8') as f:
-        f.write(text + ',\n')
+chat_res = out_groupchat_manager.initiate_chat(
+    agent_kt,
+    message=prompt,
+    summary_method="reflection_with_llm",
+    max_turns=20
+)
 
-    print(json.dumps(res_exe, ensure_ascii=False, indent=4))
+# 获取生成的新题目
+chat_cost = chat_res.cost
+chat_his = chat_res.chat_history
+chat_his_str = chat_his[-1]['content']
+res_exe = extract_last_json(chat_his_str)
+text = json.loads(text)
+text["result"] = res_exe
+text["cost"] = chat_cost
+text = json.dumps(text, ensure_ascii=False, indent=4)
+with open('txtfile/case_study_stu.txt', 'a', encoding='utf-8') as f:
+    f.write(text + ',\n')
+
+print(json.dumps(res_exe, ensure_ascii=False, indent=4))

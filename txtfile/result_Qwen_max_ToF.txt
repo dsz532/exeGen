@@ -2422,266 +2422,6 @@
     }
 },
 {
-    "round": 9,
-    "examples": [
-        {
-            "content": "阿里云伏羲分布式调度系统与社区Hadoop MR最大的区别是？(  )",
-            "option": "{'A': 'Hadoop是一层架构集中资源和任务调度，而伏羲是两层架构独立的资源和任务调度', 'B': 'Hadoop存在规模瓶颈，而伏羲规模横向扩展性更好', 'C': 'Hadoop与伏羲的调度策略不同', 'D': 'Hadoop jobtracker没有failover，伏羲有完善的failover功能'}",
-            "right_answer": "[\"A\", \"B\", \"D\"]",
-            "knowledge_evidence": "题目对应知识点为K_调度策略_计算机科学与技术, K_调度策略_计算机科学与技术对应的课程为大数据平台核心技术, ",
-            "is_correct": 0,
-            "explanation": "The question asks about the main differences between Alibaba's Fuxi distributed scheduling system and Hadoop MR. The correct answers are A, B, and D. These options mention the architectural differences between the two systems (Fuxi having a more scalable architecture), scalability differences, and failover functionality, respectively. If the student's answer did not include these options, it would be considered incorrect. This indicates a possible misunderstanding of the critical differences in architecture and capabilities between Fuxi and Hadoop MR. Option C, while mentioning a difference in scheduling strategies, is not indicated as one of the main structural or capability differences expected in this question."
-        },
-        {
-            "content": "阿里云伏羲分布式调度系统与社区Hadoop MR最大的区别是？(  )",
-            "option": "{'A': 'Hadoop是一层架构集中资源和任务调度，而伏羲是两层架构独立的资源和任务调度', 'B': 'Hadoop存在规模瓶颈，而伏羲规模横向扩展性更好', 'C': 'Hadoop与伏羲的调度策略不同', 'D': 'Hadoop jobtracker没有failover，伏羲有完善的failover功能'}",
-            "right_answer": "[\"A\", \"B\", \"D\"]",
-            "knowledge_evidence": "题目对应知识点为K_调度策略_计算机科学与技术, K_调度策略_计算机科学与技术对应的课程为大数据平台核心技术, ",
-            "is_correct": 1,
-            "explanation": "The student correctly answered the question about the differences between the Aliyun Fuxi distributed scheduling system and community Hadoop MR. The correct answers are 'A', 'B', and 'D'. Option 'A' highlights the architectural differences where Hadoop has a single-layer architecture for resource and task scheduling, whereas Fuxi has a two-layer independent architecture for resource and task scheduling. Option 'B' addresses the scalability, pointing out Hadoop's scale limitation in contrast to Fuxi's better horizontal scalability. Option 'D' distinguishes their failover capabilities, noting that Hadoop's jobtracker does not have a failover mechanism while Fuxi provides a complete failover functionality. The student selected all these correct options, demonstrating an understanding of the key distinctions between these two systems as taught in the course '大数据平台核心技术' under the concept of scheduling strategies in computer science and technology."
-        },
-        {
-            "content": "伏羲资源调度支持抢占，下面说法错误的是？(  )",
-            "option": "{'A': 'FuxiMaster会从当前正在运行的任务中，从最低优先级任务开始强制收回资源', 'B': '最低优先级任务被抢占后，抢占过程即终止', 'C': '抢占会一直递归进行', 'D': '不能抢比自己优先级高的任务'}",
-            "right_answer": "[\"B\"]",
-            "knowledge_evidence": "题目对应知识点为K_资源调度_计算机科学与技术, K_资源调度_计算机科学与技术对应的课程为大数据平台核心技术, ",
-            "is_correct": 0,
-            "explanation": "The student selected option B, which states '最低优先级任务被抢占后，抢占过程即终止' as the incorrect statement. However, this is actually the correct statement that describes a common behavior in resource preemption where once the lowest priority task is preempted, the process stops. Therefore, the student's selection was incorrect because option B is not a false statement, whereas the problem asked for the false statement related to preemption. In resource preemption, lower priority tasks may be interrupted to allow higher priority tasks to use the resources."
-        },
-        {
-            "content": "伏羲分布式调度系统中负责资源调度的角色是？(  )",
-            "option": "{'A': 'FuxiMaster', 'B': 'Tubo', 'C': 'AppMaster', 'D': 'AppWorker'}",
-            "right_answer": "[\"A\"]",
-            "knowledge_evidence": "题目对应知识点为K_资源调度_计算机科学与技术, K_资源调度_计算机科学与技术对应的课程为大数据平台核心技术, ",
-            "is_correct": 1,
-            "explanation": "The student's answer is correct. In the context of the Fuxi distributed scheduling system, the 'FuxiMaster' is indeed the role responsible for resource scheduling. The student correctly chose option 'A', which is 'FuxiMaster', as their answer."
-        },
-        {
-            "content": "伏羲在支持大规模方面采用了哪些技术？(  )",
-            "option": "{'A': '多线程', 'B': '增量资源调度', 'C': '异步', 'D': '增加数据量'}",
-            "right_answer": "[\"A\", \"B\", \"C\"]",
-            "knowledge_evidence": "题目对应知识点为K_加数_计算机科学与技术, K_加数_计算机科学与技术对应的课程为大数据平台核心技术, ",
-            "is_correct": 0,
-            "explanation": "The student answered incorrectly because they chose an option that was not part of the correct set of technologies Fuxi uses for supporting large-scale systems. The correct answers were 'A', 'B', and 'C' which are 'multithreading', 'incremental resource scheduling', and 'asynchronous'. These options are relevant to the context of supporting large-scale systems as they deal with effective resource management, parallel processing, and non-blocking operations. The option the student selected, 'D', 'increasing data volume', does not contribute to the technical scalability of large systems and was unnecessary for this question."
-        },
-        {
-            "content": "伏羲在支持大规模方面采用了哪些技术？(  )",
-            "option": "{'A': '多线程', 'B': '增量资源调度', 'C': '异步', 'D': '增加数据量'}",
-            "right_answer": "[\"A\", \"B\", \"C\"]",
-            "knowledge_evidence": "题目对应知识点为K_加数_计算机科学与技术, K_加数_计算机科学与技术对应的课程为大数据平台核心技术, ",
-            "is_correct": 1,
-            "explanation": "The student correctly identified the technologies used by Fuxi to support large-scale operations, which were 'multi-threading', 'incremental resource scheduling', and 'asynchronous operations'. These options, corresponding to 'A', 'B', and 'C', are indeed the correct answer. The student demonstrated an understanding of the relevant technologies in the context of big data platform core technologies."
-        },
-        {
-            "content": "下面哪个阶段在BSP模型中可以独立并发执行的？（  ）",
-            "option": "{'A': '数据分片阶段', 'B': '本地计算阶段', 'C': '全局通信阶段', 'D': '栅栏同步阶段'}",
-            "right_answer": "[\"B\"]",
-            "knowledge_evidence": "题目对应知识点为K_BSP模型_计算机科学与技术, K_BSP模型_计算机科学与技术对应的课程为大数据平台核心技术, ",
-            "is_correct": 0,
-            "explanation": "学生在此题目中回答错误。题目询问的是在BSP（Bulk Synchronous Parallel）模型中哪个阶段可以独立并发执行。根据BSP模型的相关知识，本地计算阶段（选项B）是每个处理单元可以独立执行并与其他单元并行运作的阶段。在这阶段，各个处理单元执行自身的局部计算，没有与其他单元的直接通信。因此，正确答案是选择B，本地计算阶段。学生的答案未匹配该答案，因此标记为错误。"
-        },
-        {
-            "content": "下面哪个阶段在BSP模型中可以独立并发执行的？（  ）",
-            "option": "{'A': '数据分片阶段', 'B': '本地计算阶段', 'C': '全局通信阶段', 'D': '栅栏同步阶段'}",
-            "right_answer": "[\"B\"]",
-            "knowledge_evidence": "题目对应知识点为K_BSP模型_计算机科学与技术, K_BSP模型_计算机科学与技术对应的课程为大数据平台核心技术, ",
-            "is_correct": 1,
-            "explanation": "The question asks which phase in the BSP (Bulk Synchronous Parallel) model can be executed independently and concurrently. The correct answer, 'B', refers to the '本地计算阶段' or 'local computation phase'. In the BSP model, the local computation phase is the stage where each processor performs computations independently without requiring data from other processors, making it suitable for concurrent execution. The student answered this question correctly, identifying the right phase that can execute independently and concurrently."
-        },
-        {
-            "content": "下面哪个阶段在BSP模型中可以独立并发执行的？（  ）",
-            "option": "{'A': '数据分片阶段', 'B': '本地计算阶段', 'C': '全局通信阶段', 'D': '栅栏同步阶段'}",
-            "right_answer": "[\"B\"]",
-            "knowledge_evidence": "题目对应知识点为K_BSP模型_计算机科学与技术, K_BSP模型_计算机科学与技术对应的课程为大数据平台核心技术, ",
-            "is_correct": 0,
-            "explanation": "学生在此题目中回答错误。题目询问的是在BSP（Bulk Synchronous Parallel）模型中哪个阶段可以独立并发执行。根据BSP模型的相关知识，本地计算阶段（选项B）是每个处理单元可以独立执行并与其他单元并行运作的阶段。在这阶段，各个处理单元执行自身的局部计算，没有与其他单元的直接通信。因此，正确答案是选择B，本地计算阶段。学生的答案未匹配该答案，因此标记为错误。"
-        },
-        {
-            "content": "下面哪个阶段在BSP模型中可以独立并发执行的？（  ）",
-            "option": "{'A': '数据分片阶段', 'B': '本地计算阶段', 'C': '全局通信阶段', 'D': '栅栏同步阶段'}",
-            "right_answer": "[\"B\"]",
-            "knowledge_evidence": "题目对应知识点为K_BSP模型_计算机科学与技术, K_BSP模型_计算机科学与技术对应的课程为大数据平台核心技术, ",
-            "is_correct": 1,
-            "explanation": "The question asks which phase in the BSP (Bulk Synchronous Parallel) model can be executed independently and concurrently. The correct answer, 'B', refers to the '本地计算阶段' or 'local computation phase'. In the BSP model, the local computation phase is the stage where each processor performs computations independently without requiring data from other processors, making it suitable for concurrent execution. The student answered this question correctly, identifying the right phase that can execute independently and concurrently."
-        },
-        {
-            "content": "下面哪些是函数式编程语言有特点？（  ）",
-            "option": "{'A': '每个函数都有输出', 'B': '函数可以改变外部变量的状态', 'C': '函数的输出结果不依赖于外部变量', 'D': '函数的输入参数可能是另外一个函数'}",
-            "right_answer": "[\"A\", \"C\", \"D\"]",
-            "knowledge_evidence": "题目对应知识点为K_外部变量_计算机科学与技术, K_外部变量_计算机科学与技术对应的课程为大数据平台核心技术, ",
-            "is_correct": 0,
-            "explanation": "学生回答此题不正确。题目是关于函数式编程语言的特点，正确答案是选项 A、C 和 D。选项 A（每个函数都有输出）和选项 D（函数的输入参数可能是另外一个函数）都是函数式编程语言的特点，因为函数式编程强调函数的纯粹性和组成性。选项 C（函数的输出结果不依赖于外部变量）描述了函数式编程语言中的纯函数特性，即相同的输入总是产生相同的输出，不依赖于外部状态。而选项 B（函数可以改变外部变量的状态）通常不是函数式编程所鼓励的特性，因为函数式编程语言通常强调不变性和避免副作用。因此，学生可能错误地选择了选项 B，导致答案不正确。"
-        },
-        {
-            "content": "下面哪些是函数式编程语言有特点？（  ）",
-            "option": "{'A': '每个函数都有输出', 'B': '函数可以改变外部变量的状态', 'C': '函数的输出结果不依赖于外部变量', 'D': '函数的输入参数可能是另外一个函数'}",
-            "right_answer": "[\"A\", \"C\", \"D\"]",
-            "knowledge_evidence": "题目对应知识点为K_外部变量_计算机科学与技术, K_外部变量_计算机科学与技术对应的课程为大数据平台核心技术, ",
-            "is_correct": 1,
-            "explanation": "The student correctly identified the features of functional programming languages. In functional programming, each function has an output ('A'), the output does not depend on external variables making it purely functional ('C'), and functions can take other functions as arguments ('D'). The option 'B', 'functions can change the state of external variables,' is not characteristic of functional programming, where functions are usually pure and do not have side effects. This understanding aligns with the principles of functional programming, explaining the student's correct answer."
-        },
-        {
-            "content": "分布式计算过程中，以下哪种计算调度方式代价更小？(  )",
-            "option": "{'A': '将计算发送到数据所在机器运行', 'B': '将数据拷贝到计算所在机器运行', 'C': '将数据和计算拿到统一的节点上运行', 'D': '以上都不对'}",
-            "right_answer": "[\"A\"]",
-            "knowledge_evidence": "题目对应知识点为K_调度方式_计算机科学与技术, K_调度方式_计算机科学与技术对应的课程为大数据平台核心技术, ",
-            "is_correct": 1,
-            "explanation": "The student's answer is A, which is the correct answer. The question asks which scheduling method incurs the least cost during distributed computing. Sending computation to where the data is located (option A) is typically more cost-effective than moving data to the computation (option B) or having both data and computation converge on a single node (option C). This is because large datasets have significant overhead when transferred, so it is efficient to process them where they are stored. The student demonstrated understanding of this concept by choosing the correct option."
-        },
-        {
-            "content": "下面对流式描述正确的是（  ）",
-            "option": "{'A': '它是一种有状态计算，failover必须将数据从最源头重发。', 'B': '数据必须是有序进入，才能保证数据的正确性。', 'C': 'temporal SQL是适合流式计算的SQL语言。', 'D': '流式计算无法支持delete和update语义。'}",
-            "right_answer": "[\"C\"]",
-            "knowledge_evidence": "题目对应知识点为K_对流_计算机科学与技术, K_对流_计算机科学与技术对应的课程为大数据平台核心技术, ",
-            "is_correct": 0,
-            "explanation": "The student chose an incorrect answer for the question about stream processing. The correct answer was option 'C', which states 'temporal SQL is suitable for stream processing SQL language.' This option correctly reflects the adaptability of SQL for stream processing, specifically temporal SQL, which handles time-based streaming data efficiently. The student's answer perhaps did not match this correct assessment. Options 'A', 'B', and 'D' contain inaccuracies or misconceptions about stream processing; for example, 'A' misleadingly suggests a strict state retention requirement and data retransmission, and 'D' incorrectly claims limitations on stream processing capabilities regarding 'delete and update semantics'. Therefore, the attention should be on the temporal SQL's suitability for streaming to choose the correct option 'C'."
-        },
-        {
-            "content": "下面对流式描述正确的是（  ）",
-            "option": "{'A': '它是一种有状态计算，failover必须将数据从最源头重发。', 'B': '数据必须是有序进入，才能保证数据的正确性。', 'C': 'temporal SQL是适合流式计算的SQL语言。', 'D': '流式计算无法支持delete和update语义。'}",
-            "right_answer": "[\"C\"]",
-            "knowledge_evidence": "题目对应知识点为K_对流_计算机科学与技术, K_对流_计算机科学与技术对应的课程为大数据平台核心技术, ",
-            "is_correct": 1,
-            "explanation": "The student answered correctly with option 'C': 'temporal SQL is suitable for stream computing'. This choice was correct because temporal SQL is indeed designed to handle temporal data efficiently, which is crucial in stream computing where data is continuously generated and processed."
-        },
-        {
-            "content": "下面对系统雪崩准确的描述有（  ）",
-            "option": "{'A': '系统雪崩是由于oom，引起系统级联的宕机现象。', 'B': '系统雪崩是由于系统设计问题，由软硬件以及流量异常引发的由细微问题引发更大面积故障，直至系统当机的现象。', 'C': '系统雪崩一般不会因为硬件引发。而是由于流量激增，系统容量设计不足，造成后台系统，包括数据库系统的不正常工作。', 'D': '系统雪崩最初原因与触发宕机的故障可以相关，也有可能无关。'}",
-            "right_answer": "[\"B\", \"D\"]",
-            "knowledge_evidence": "题目对应知识点为K_宕机_计算机科学与技术, K_宕机_计算机科学与技术对应的课程为大数据平台核心技术, ",
-            "is_correct": 0,
-            "explanation": "The student was asked to accurately describe a 'system avalanche.' The correct options for the answer are B and D. Option B describes the 'system avalanche' as occurring due to system design issues and small problems leading to larger failures, eventually causing a system failure. This aligns with the cascading nature of a 'system avalanche.' Option D states that the initially triggering cause of a system failure may or may not be related, which reflects how varied causes can contribute to systemic failures. The student's answer did not include both B and D, leading to the incorrect answer. It's important to consider the broad and interconnected nature of system failures in such scenarios."
-        },
-        {
-            "content": "下面对系统雪崩准确的描述有（  ）",
-            "option": "{'A': '系统雪崩是由于oom，引起系统级联的宕机现象。', 'B': '系统雪崩是由于系统设计问题，由软硬件以及流量异常引发的由细微问题引发更大面积故障，直至系统当机的现象。', 'C': '系统雪崩一般不会因为硬件引发。而是由于流量激增，系统容量设计不足，造成后台系统，包括数据库系统的不正常工作。', 'D': '系统雪崩最初原因与触发宕机的故障可以相关，也有可能无关。'}",
-            "right_answer": "[\"B\", \"D\"]",
-            "knowledge_evidence": "题目对应知识点为K_宕机_计算机科学与技术, K_宕机_计算机科学与技术对应的课程为大数据平台核心技术, ",
-            "is_correct": 1,
-            "explanation": "The student's answer to the question about '系统雪崩' or 'system avalanche' was correct because they identified both statement B and D as accurate descriptions. Statement B correctly emphasizes that a system avalanche can be triggered by small design problems or anomalies in software, hardware, or traffic leading to widespread system failure. Statement D accurately acknowledges that the initial cause of a system avalanche can either be related or unrelated to the fault that triggers the crash. The student successfully discerned these nuanced descriptions, aligning their answer with the provided solution."
-        },
-        {
-            "content": "对于spark streaming不正确的描述有（  ）",
-            "option": "{'A': 'spark streaming的ack机制由一组分布式的系统维护，所以它是scale-out的。', 'B': 'spark streaming使用mini-batch的机制，dstream由多个rdd组成。', 'C': 'spark streaming支持滑动窗口，固定窗口和session窗口。', 'D': 'spark streaming是将流式计算切割成批量计算。但同时，批量计算也可以当作流式计算运行。'}",
-            "right_answer": "[\"A\", \"C\"]",
-            "knowledge_evidence": "题目对应知识点为K_系统维护_计算机科学与技术, K_系统维护_计算机科学与技术对应的课程为大数据平台核心技术, ",
-            "is_correct": 0,
-            "explanation": "The student was tasked with identifying incorrect descriptions about Spark Streaming. The correct answers were \"A\" and \"C\". Option \"A\" was incorrect because Spark Streaming's ack mechanism is not inherently scale-out; it relies on Spark's distributed computation model rather than a specific mechanism for scaling acknowledgments independently. Option \"C\" was incorrect because while Spark Streaming does support sliding and fixed windows, it does not inherently support session windows, which require more complex state management that is not directly supported by the Spark Streaming API out of the box. The student did not choose both of these options, which is why the answer was marked as incorrect."
-        },
-        {
-            "content": "对于spark streaming不正确的描述有（  ）",
-            "option": "{'A': 'spark streaming的ack机制由一组分布式的系统维护，所以它是scale-out的。', 'B': 'spark streaming使用mini-batch的机制，dstream由多个rdd组成。', 'C': 'spark streaming支持滑动窗口，固定窗口和session窗口。', 'D': 'spark streaming是将流式计算切割成批量计算。但同时，批量计算也可以当作流式计算运行。'}",
-            "right_answer": "[\"A\", \"C\"]",
-            "knowledge_evidence": "题目对应知识点为K_系统维护_计算机科学与技术, K_系统维护_计算机科学与技术对应的课程为大数据平台核心技术, ",
-            "is_correct": 1,
-            "explanation": "The student correctly identified the incorrect statements about spark streaming. Option A is incorrect because Spark Streaming's acknowledgment mechanism, while scalable, is not specifically detailed to be maintained by a separate set of distributed systems. Instead, it relies on strong integration with the overall Spark architecture. Option C is also incorrect because Spark Streaming primarily supports sliding and fixed windows, but session windows are typically associated with more advanced stream processing platforms and are not natively supported by Spark Streaming in its classic form. Therefore, the student's understanding and choices for this question were correct."
-        }
-    ],
-    "tasks": [
-        {
-            "content": "阿里云伏羲分布式调度系统与社区Hadoop MR最大的区别是？(  )",
-            "option": "{'A': 'Hadoop是一层架构集中资源和任务调度，而伏羲是两层架构独立的资源和任务调度', 'B': 'Hadoop存在规模瓶颈，而伏羲规模横向扩展性更好', 'C': 'Hadoop与伏羲的调度策略不同', 'D': 'Hadoop jobtracker没有failover，伏羲有完善的failover功能'}",
-            "right_answer": "[\"A\", \"B\", \"D\"]",
-            "knowledge_evidence": "题目对应知识点为K_调度策略_计算机科学与技术, K_调度策略_计算机科学与技术对应的课程为大数据平台核心技术, ",
-            "is_correct": 0,
-            "explanation": ""
-        },
-        {
-            "content": "伏羲资源调度的目标包括？(  )",
-            "option": "{'A': '集群资源利用率最大化', 'B': '每个任务的资源等待时间最小化', 'C': '能分组控制资源配额', 'D': '能支持临时紧急任务'}",
-            "right_answer": "[\"A\", \"B\", \"C\", \"D\"]",
-            "knowledge_evidence": "题目对应知识点为K_资源调度_计算机科学与技术, K_资源调度_计算机科学与技术对应的课程为大数据平台核心技术, ",
-            "is_correct": 0,
-            "explanation": ""
-        },
-        {
-            "content": "伏羲在支持大规模方面采用了哪些技术？(  )",
-            "option": "{'A': '多线程', 'B': '增量资源调度', 'C': '异步', 'D': '增加数据量'}",
-            "right_answer": "[\"A\", \"B\", \"C\"]",
-            "knowledge_evidence": "题目对应知识点为K_加数_计算机科学与技术, K_加数_计算机科学与技术对应的课程为大数据平台核心技术, ",
-            "is_correct": 0,
-            "explanation": ""
-        },
-        {
-            "content": "下面哪个阶段在BSP模型中可以独立并发执行的？（  ）",
-            "option": "{'A': '数据分片阶段', 'B': '本地计算阶段', 'C': '全局通信阶段', 'D': '栅栏同步阶段'}",
-            "right_answer": "[\"B\"]",
-            "knowledge_evidence": "题目对应知识点为K_BSP模型_计算机科学与技术, K_BSP模型_计算机科学与技术对应的课程为大数据平台核心技术, ",
-            "is_correct": 0,
-            "explanation": ""
-        },
-        {
-            "content": "下面哪些是BSP模型的缺点？（  ）",
-            "option": "{'A': '栅栏同步开销比较大', 'B': '可能产生死锁', 'C': '没有解决负载均衡问题', 'D': '被计算的数据可以保存在内存里'}",
-            "right_answer": "[\"A\"]",
-            "knowledge_evidence": "题目对应知识点为K_BSP模型_计算机科学与技术, K_BSP模型_计算机科学与技术对应的课程为大数据平台核心技术, ",
-            "is_correct": 1,
-            "explanation": ""
-        },
-        {
-            "content": "下面哪些是函数式编程语言有特点？（  ）",
-            "option": "{'A': '每个函数都有输出', 'B': '函数可以改变外部变量的状态', 'C': '函数的输出结果不依赖于外部变量', 'D': '函数的输入参数可能是另外一个函数'}",
-            "right_answer": "[\"A\", \"C\", \"D\"]",
-            "knowledge_evidence": "题目对应知识点为K_外部变量_计算机科学与技术, K_外部变量_计算机科学与技术对应的课程为大数据平台核心技术, ",
-            "is_correct": 0,
-            "explanation": ""
-        },
-        {
-            "content": "分布式计算过程中，以下哪种计算调度方式代价更小？(  )",
-            "option": "{'A': '将计算发送到数据所在机器运行', 'B': '将数据拷贝到计算所在机器运行', 'C': '将数据和计算拿到统一的节点上运行', 'D': '以上都不对'}",
-            "right_answer": "[\"A\"]",
-            "knowledge_evidence": "题目对应知识点为K_调度方式_计算机科学与技术, K_调度方式_计算机科学与技术对应的课程为大数据平台核心技术, ",
-            "is_correct": 1,
-            "explanation": ""
-        },
-        {
-            "content": "下面对流式描述正确的是（  ）",
-            "option": "{'A': '它是一种有状态计算，failover必须将数据从最源头重发。', 'B': '数据必须是有序进入，才能保证数据的正确性。', 'C': 'temporal SQL是适合流式计算的SQL语言。', 'D': '流式计算无法支持delete和update语义。'}",
-            "right_answer": "[\"C\"]",
-            "knowledge_evidence": "题目对应知识点为K_对流_计算机科学与技术, K_对流_计算机科学与技术对应的课程为大数据平台核心技术, ",
-            "is_correct": 0,
-            "explanation": ""
-        },
-        {
-            "content": "下面对系统雪崩准确的描述有（  ）",
-            "option": "{'A': '系统雪崩是由于oom，引起系统级联的宕机现象。', 'B': '系统雪崩是由于系统设计问题，由软硬件以及流量异常引发的由细微问题引发更大面积故障，直至系统当机的现象。', 'C': '系统雪崩一般不会因为硬件引发。而是由于流量激增，系统容量设计不足，造成后台系统，包括数据库系统的不正常工作。', 'D': '系统雪崩最初原因与触发宕机的故障可以相关，也有可能无关。'}",
-            "right_answer": "[\"B\", \"D\"]",
-            "knowledge_evidence": "题目对应知识点为K_宕机_计算机科学与技术, K_宕机_计算机科学与技术对应的课程为大数据平台核心技术, ",
-            "is_correct": 0,
-            "explanation": ""
-        },
-        {
-            "content": "对于spark streaming不正确的描述有（  ）",
-            "option": "{'A': 'spark streaming的ack机制由一组分布式的系统维护，所以它是scale-out的。', 'B': 'spark streaming使用mini-batch的机制，dstream由多个rdd组成。', 'C': 'spark streaming支持滑动窗口，固定窗口和session窗口。', 'D': 'spark streaming是将流式计算切割成批量计算。但同时，批量计算也可以当作流式计算运行。'}",
-            "right_answer": "[\"A\", \"C\"]",
-            "knowledge_evidence": "题目对应知识点为K_系统维护_计算机科学与技术, K_系统维护_计算机科学与技术对应的课程为大数据平台核心技术, ",
-            "is_correct": 0,
-            "explanation": ""
-        }
-    ],
-    "result": null,
-    "cost": {
-        "usage_including_cached_inference": {
-            "total_cost": 0.1543072,
-            "qwen/qwen-max": {
-                "cost": 0.1543072,
-                "prompt_tokens": 57942,
-                "completion_tokens": 9625,
-                "total_tokens": 67567
-            }
-        },
-        "usage_excluding_cached_inference": {
-            "total_cost": 0.1543072,
-            "qwen/qwen-max": {
-                "cost": 0.1543072,
-                "prompt_tokens": 57942,
-                "completion_tokens": 9625,
-                "total_tokens": 67567
-            }
-        }
-    }
-},
-{
     "round": 10,
     "examples": [
         {
@@ -2954,210 +2694,6 @@
                 "prompt_tokens": 87001,
                 "completion_tokens": 13881,
                 "total_tokens": 100882
-            }
-        }
-    }
-},
-{
-    "round": 11,
-    "examples": [
-        {
-            "content": "综合布线要求设计一个结构合理、技术先进、满足需求的综合布线系统方案，下列哪项不属于综合布线系统的设计原则。(  )",
-            "option": "{'A': '综合考虑用户需求、建筑物功能、经济发展水平等因素', 'B': '长远规划思想、保持一定的先进性', 'C': '不必将综合布线系统纳入建筑物整体规划、设计和建设中', 'D': '扩展性、标准化、灵活的管理方式'}",
-            "right_answer": "[\"C\"]",
-            "knowledge_evidence": "题目对应知识点为K_设计原则_计算机科学与技术, K_设计原则_计算机科学与技术对应的课程为网络综合布线, ",
-            "is_correct": 1,
-            "explanation": "The student's answer was correct. The question asked which option does not belong to the design principles of a comprehensive wiring system. Option 'C' states 'it is not necessary to include the comprehensive wiring system in the overall planning, design, and construction of the building', which indeed does not belong to the typical design principles. Including wiring in the overall planning ensures technical feasibility and efficiency, making this option the correct answer as it does not align with standard practices."
-        },
-        {
-            "content": "工作区子系统又称（ ）子系统。",
-            "option": "{'A': '工作站', 'B': '服务群', 'C': '服务区', 'D': '信息站'}",
-            "right_answer": "[\"C\"]",
-            "knowledge_evidence": "题目对应知识点为K_服务区_计算机科学与技术, K_服务区_计算机科学与技术对应的课程为网络综合布线, ",
-            "is_correct": 0,
-            "explanation": "The student answered the question incorrectly because they likely misunderstood the term '工作区子系统' as something related to options like '工作站' or '信息站'. The correct answer is '服务区' (Option C), which is aligned with the concept of 'workspace subsystem' often referred to as 'service area' in the context of network structured cabling, as indicated by the knowledge evidence for this course. The student may need to review the distinctions between terminologies used in network comprehensive cabling to improve understanding."
-        },
-        {
-            "content": "工作区子系统又称（ ）子系统。",
-            "option": "{'A': '工作站', 'B': '服务群', 'C': '服务区', 'D': '信息站'}",
-            "right_answer": "[\"C\"]",
-            "knowledge_evidence": "题目对应知识点为K_服务区_计算机科学与技术, K_服务区_计算机科学与技术对应的课程为网络综合布线, ",
-            "is_correct": 1,
-            "explanation": "The student correctly identified that the '工作区子系统' is also known as the '服务区' subsystem. The concept '服务区' is specific to the field of computer science and technology, and it is relevant to the course '网络综合布线'. The correct answer was option 'C', and the student selected this, reflecting their understanding of the subject matter."
-        },
-        {
-            "content": "垂直干线子系统也称（）子系统。",
-            "option": "{'A': '骨干', 'B': '综合', 'C': '干线', 'D': '连接'}",
-            "right_answer": "[\"C\"]",
-            "knowledge_evidence": "题目对应知识点为K_综合_计算机科学与技术, K_综合_计算机科学与技术对应的课程为网络综合布线, ",
-            "is_correct": 0,
-            "explanation": "The student answered incorrectly by choosing an option other than 'C'. The question asks for the term that describes a '垂直干线子系统' (vertical trunk subsystem), which is typically referred to as '干线' (backbone). The correct answer is 'C', which means 'trunk' or 'backbone'. This terminology is standard in network cabling courses, aligning with the knowledge evidence provided. The student should review the concepts and definitions related to network subsystems to ensure they understand the correct terms and their applications."
-        },
-        {
-            "content": "综合布线要求设计一个结构合理、技术先进、满足需求的综合布线系统方案，下列哪项不属于综合布线系统的设计原则。(  )",
-            "option": "{'A': '综合考虑用户需求、建筑物功能、经济发展水平等因素', 'B': '长远规划思想、保持一定的先进性', 'C': '不必将综合布线系统纳入建筑物整体规划、设计和建设中', 'D': '扩展性、标准化、灵活的管理方式'}",
-            "right_answer": "[\"C\"]",
-            "knowledge_evidence": "题目对应知识点为K_综合_计算机科学与技术, K_综合_计算机科学与技术对应的课程为网络综合布线, ",
-            "is_correct": 1,
-            "explanation": "The student correctly identified option 'C' as not belonging to the design principles of integrated cabling systems. In integrated cabling system design, incorporation into the overall building planning, design, and construction is crucial. Option 'C' suggests that it's not necessary to include the cabling system in the broader building plan, which contradicts the standard design principles focused on coherence and integration with the overall structure. Hence, the student's choice aligns with understanding the importance of integrating various technological and architectural aspects to ensure a feasible and advanced cabling solution."
-        },
-        {
-            "content": "水平干线子系统是指从楼层配线架到工作区的传输线路。",
-            "option": "{'true': '正确', 'false': '错误'}",
-            "right_answer": "[\"true\"]",
-            "knowledge_evidence": "题目对应知识点为K_传输线路_计算机科学与技术, K_传输线路_计算机科学与技术对应的课程为网络综合布线, ",
-            "is_correct": 1,
-            "explanation": "The student correctly identified the definition of '水平干线子系统' as 'the transmission line from the floor distribution frame to the work area.' The description provided matches the concept correctly, indicating that the student has a good understanding of the network cabling subsystem in a building's structured cabling system according to the course '网络综合布线.'"
-        },
-        {
-            "content": "水平子系统的设计需要认真阅读建筑物设计图纸，确定工作区子系统信息点的位置和数量完成点数表",
-            "option": "{'true': '正确', 'false': '错误'}",
-            "right_answer": "[\"true\"]",
-            "knowledge_evidence": "题目对应知识点为K_点数_信息与通信工程, K_点数_信息与通信工程对应的课程为网络综合布线, ",
-            "is_correct": 1,
-            "explanation": "The student's answer was marked as correct ('true'), indicating they understood that the design of the horizontal subsystem requires a careful review of building blueprints to determine the location and quantity of information points in the work area. This answer aligns with the principles of structured cabling systems, as accurate planning and mapping are crucial for effective network cabling installations."
-        },
-        {
-            "content": "水平子系统属于配线子系统对应缆线长度规定，配线子系统信道的最大长度不应大于一百米新造总长度不应大于2000米。",
-            "option": "{'true': '正确', 'false': '错误'}",
-            "right_answer": "[\"true\"]",
-            "knowledge_evidence": "题目对应知识点为K_系统对_计算机科学与技术, K_系统对_计算机科学与技术对应的课程为网络综合布线, ",
-            "is_correct": 0,
-            "explanation": "The problem is about the maximum length requirements for a wiring channel in the wiring subsystem, stating that the maximum length should not exceed 100 meters, and the total new length should not exceed 2000 meters. The student answered 'true', indicating they thought the statement was correct, but the answer is marked incorrect. This suggests that either the statement contains incorrect values according to the official standards of network cabling lengths, or there is a misunderstanding about what the statement is referring to. The standard maximum length for Ethernet cabling, commonly used in network cabling, is indeed 100 meters for a single run. However, the context of 2000 meters total or specific application scenarios could have additional details that were misinterpreted, leading to an incorrect answer."
-        },
-        {
-            "content": "水平插头子系统从工作区的信息插座开始到管理间子系统的（）。",
-            "option": "{'A': 'RJ-45', 'B': '信息终端', 'C': '信息插座', 'D': '配线架'}",
-            "right_answer": "[\"D\"]",
-            "knowledge_evidence": "题目对应知识点为K_配线架_计算机科学与技术, K_配线架_计算机科学与技术对应的课程为网络综合布线, ",
-            "is_correct": 1,
-            "explanation": "The question is about the end point of the horizontal cabling subsystem, which starts at the information socket in the work area and extends to a component in the management subsystem. The correct answer is '配线架' (D), which translates to 'patch panel' in English. Patch panels are used to organize and manage network cables, making them the correct choice for this answer. The student's answer was correct because they selected option D, recognizing that a patch panel is the standard termination point in this type of network setup."
-        },
-        {
-            "content": "吊顶上加工线槽布线由楼层管理间引出来的线缆先走吊顶内线槽道个房间后经分支线槽从桥梁时电缆管道分叉后将电缆穿过一段支管引向墙壁沿墙而下到墙内信息插座的布线方式",
-            "option": "{'true': '正确', 'false': '错误'}",
-            "right_answer": "[\"true\"]",
-            "knowledge_evidence": "题目对应知识点为K_线缆_计算机科学与技术, K_线缆_计算机科学与技术对应的课程为网络综合布线, ",
-            "is_correct": 1,
-            "explanation": "The student provided a correct answer to the question about the cabling approach. The rule mentioned in the question discusses a typical method for routing cables through a ceiling track, then branching through ducts, and finally reaching wall sockets—aligning with standard network cabling principles taught in the '网络综合布线' (Comprehensive Network Cabling) course. The correct identification of this method demonstrates the student's understanding of the theoretical knowledge tied to cabling in computer science and technology, specifically regarding cable management within building structures."
-        },
-        {
-            "content": "路由的选择主要依据建筑物的结构以及建筑物内预埋管道而定。",
-            "option": "{'true': '正确', 'false': '错误'}",
-            "right_answer": "[\"true\"]",
-            "knowledge_evidence": "题目对应知识点为K_路由_计算机科学与技术, K_路由_计算机科学与技术对应的课程为网络综合布线, ",
-            "is_correct": 1,
-            "explanation": "The student answered the question correctly. The exercise was about choosing routes for network cabling, which primarily depends on the structure of the building and the pre-built conduits within it. This understanding aligns with the principles taught in the course on integrated network cabling, where consideration of existing infrastructure is crucial for effective routing decisions."
-        },
-        {
-            "content": "跳线架的作用是上级程控交换机过来的接线与到桌面终端的语音信息点连接线之间的连接和跳接部分，便于管理，维护测试。",
-            "option": "{'true': '正确', 'false': '错误'}",
-            "right_answer": "[\"true\"]",
-            "knowledge_evidence": "题目对应知识点为K_接线_计算机科学与技术, K_接线_计算机科学与技术对应的课程为网络综合布线, ",
-            "is_correct": 1,
-            "explanation": "The student correctly identified the true statement about the function of patch panels. Patch panels are used to connect and facilitate the management of cables between a central, usually larger, telecommunication or computer network switch and individual workstation connections. This role is crucial for the organization and maintenance of network connections as described in the exercise, which aligns with the knowledge from '网络综合布线' (Network Integrated Cabling) course. The student demonstrated an understanding of the concept and used the knowledge correctly, therefore, the answer was marked as correct."
-        }
-    ],
-    "tasks": [
-        {
-            "content": "综合布线要求设计一个结构合理、技术先进、满足需求的综合布线系统方案，下列哪项不属于综合布线系统的设计原则。(  )",
-            "option": "{'A': '综合考虑用户需求、建筑物功能、经济发展水平等因素', 'B': '长远规划思想、保持一定的先进性', 'C': '不必将综合布线系统纳入建筑物整体规划、设计和建设中', 'D': '扩展性、标准化、灵活的管理方式'}",
-            "right_answer": "[\"C\"]",
-            "knowledge_evidence": "题目对应知识点为K_设计原则_计算机科学与技术, K_设计原则_计算机科学与技术对应的课程为网络综合布线, ",
-            "is_correct": 1,
-            "explanation": ""
-        },
-        {
-            "content": "工作区子系统又称（ ）子系统。",
-            "option": "{'A': '工作站', 'B': '服务群', 'C': '服务区', 'D': '信息站'}",
-            "right_answer": "[\"C\"]",
-            "knowledge_evidence": "题目对应知识点为K_服务区_计算机科学与技术, K_服务区_计算机科学与技术对应的课程为网络综合布线, ",
-            "is_correct": 1,
-            "explanation": ""
-        },
-        {
-            "content": "垂直干线子系统也称（）子系统。",
-            "option": "{'A': '骨干', 'B': '综合', 'C': '干线', 'D': '连接'}",
-            "right_answer": "[\"C\"]",
-            "knowledge_evidence": "题目对应知识点为K_综合_计算机科学与技术, K_综合_计算机科学与技术对应的课程为网络综合布线, ",
-            "is_correct": 1,
-            "explanation": ""
-        },
-        {
-            "content": "水平干线子系统是指从楼层配线架到工作区的传输线路。",
-            "option": "{'true': '正确', 'false': '错误'}",
-            "right_answer": "[\"true\"]",
-            "knowledge_evidence": "题目对应知识点为K_传输线路_计算机科学与技术, K_传输线路_计算机科学与技术对应的课程为网络综合布线, ",
-            "is_correct": 1,
-            "explanation": ""
-        },
-        {
-            "content": "水平子系统的设计需要认真阅读建筑物设计图纸，确定工作区子系统信息点的位置和数量完成点数表",
-            "option": "{'true': '正确', 'false': '错误'}",
-            "right_answer": "[\"true\"]",
-            "knowledge_evidence": "题目对应知识点为K_点数_信息与通信工程, K_点数_信息与通信工程对应的课程为网络综合布线, ",
-            "is_correct": 1,
-            "explanation": ""
-        },
-        {
-            "content": "水平子系统属于配线子系统对应缆线长度规定，配线子系统信道的最大长度不应大于一百米新造总长度不应大于2000米。",
-            "option": "{'true': '正确', 'false': '错误'}",
-            "right_answer": "[\"true\"]",
-            "knowledge_evidence": "题目对应知识点为K_系统对_计算机科学与技术, K_系统对_计算机科学与技术对应的课程为网络综合布线, ",
-            "is_correct": 0,
-            "explanation": ""
-        },
-        {
-            "content": "水平插头子系统从工作区的信息插座开始到管理间子系统的（）。",
-            "option": "{'A': 'RJ-45', 'B': '信息终端', 'C': '信息插座', 'D': '配线架'}",
-            "right_answer": "[\"D\"]",
-            "knowledge_evidence": "题目对应知识点为K_配线架_计算机科学与技术, K_配线架_计算机科学与技术对应的课程为网络综合布线, ",
-            "is_correct": 1,
-            "explanation": ""
-        },
-        {
-            "content": "吊顶上加工线槽布线由楼层管理间引出来的线缆先走吊顶内线槽道个房间后经分支线槽从桥梁时电缆管道分叉后将电缆穿过一段支管引向墙壁沿墙而下到墙内信息插座的布线方式",
-            "option": "{'true': '正确', 'false': '错误'}",
-            "right_answer": "[\"true\"]",
-            "knowledge_evidence": "题目对应知识点为K_线缆_计算机科学与技术, K_线缆_计算机科学与技术对应的课程为网络综合布线, ",
-            "is_correct": 1,
-            "explanation": ""
-        },
-        {
-            "content": "路由的选择主要依据建筑物的结构以及建筑物内预埋管道而定。",
-            "option": "{'true': '正确', 'false': '错误'}",
-            "right_answer": "[\"true\"]",
-            "knowledge_evidence": "题目对应知识点为K_路由_计算机科学与技术, K_路由_计算机科学与技术对应的课程为网络综合布线, ",
-            "is_correct": 1,
-            "explanation": ""
-        },
-        {
-            "content": "跳线架的作用是上级程控交换机过来的接线与到桌面终端的语音信息点连接线之间的连接和跳接部分，便于管理，维护测试。",
-            "option": "{'true': '正确', 'false': '错误'}",
-            "right_answer": "[\"true\"]",
-            "knowledge_evidence": "题目对应知识点为K_接线_计算机科学与技术, K_接线_计算机科学与技术对应的课程为网络综合布线, ",
-            "is_correct": 1,
-            "explanation": ""
-        }
-    ],
-    "result": null,
-    "cost": {
-        "usage_including_cached_inference": {
-            "total_cost": 0.0916032,
-            "qwen/qwen-max": {
-                "cost": 0.0916032,
-                "prompt_tokens": 35744,
-                "completion_tokens": 5377,
-                "total_tokens": 41121
-            }
-        },
-        "usage_excluding_cached_inference": {
-            "total_cost": 0.0916032,
-            "qwen/qwen-max": {
-                "cost": 0.0916032,
-                "prompt_tokens": 35744,
-                "completion_tokens": 5377,
-                "total_tokens": 41121
             }
         }
     }
@@ -8323,470 +7859,6 @@
     }
 },
 {
-    "round": 19,
-    "examples": [
-        {
-            "content": "可以用哪个命令测试两台主机之间网络的连通性。",
-            "option": "{'A': 'ping', 'B': 'ifconfig', 'C': 'ipconfig', 'D': 'route'}",
-            "right_answer": "[\"A\"]",
-            "knowledge_evidence": "题目对应知识点为K_ipconfig_计算机科学与技术, K_ipconfig_计算机科学与技术对应的课程为Linux系统管理, ",
-            "is_correct": 1,
-            "explanation": "The student correctly identified 'ping' as the command used to test network connectivity between two hosts. This is the standard and widely used method to check if a host is reachable within a network by sending ICMP echo request packets and measuring the response time. The other options, 'ifconfig', 'ipconfig', and 'route', serve different purposes related to configuring network interfaces and routing tables but do not directly test network connectivity like 'ping' does."
-        },
-        {
-            "content": "回环接口为系统提供一个单机网络环境，一般用于网络程序的调试。",
-            "option": "{'true': '正确', 'false': '错误'}",
-            "right_answer": "[\"true\"]",
-            "knowledge_evidence": "题目对应知识点为K_调试_计算机科学与技术, K_调试_计算机科学与技术对应的课程为Linux系统管理, ",
-            "is_correct": 1,
-            "explanation": "The student's answer is correct. The loopback interface, which is commonly represented by the IP address 127.0.0.1, allows for network tests and software development to be conducted within a single machine, acting as a standalone network environment. This is particularly useful for debugging network applications on the Linux operating system, and aligns with the content and answer provided."
-        },
-        {
-            "content": "在Linux中，打开BASH后的命令提示符，能够告诉你有关主机的哪些信息？",
-            "option": "{'A': '登录的主机名', 'B': '登录的用户名', 'C': '用户当前所处的工作目录', 'D': '用户上次登录时间'}",
-            "right_answer": "[\"A\", \"B\", \"C\"]",
-            "knowledge_evidence": "题目对应知识点为K_主机名_计算机科学与技术, K_主机名_计算机科学与技术对应的课程为Linux系统管理, ",
-            "is_correct": 0,
-            "explanation": "The student's answer was incorrect because they likely included all options without recognizing that option D '用户上次登录时间' is not typically displayed in the BASH command prompt. The BASH prompt in Linux generally shows the login hostname, login username, and current working directory, which corresponds to options A, B, and C. The prompt does not, by default, display the last login time, so including option D led to the answer being incorrect."
-        },
-        {
-            "content": "关于修改主机名，下面那些说法是正确的：",
-            "option": "{'A': '需要修改/etc/sysconfig/network文件', 'B': '需要修改/etc/hosts文件', 'C': '需要修改/etc/sysconfig/network-scripts/ifcfg-eth0文件', 'D': '一般需要重启系统，让修改生效'}",
-            "right_answer": "[\"A\", \"B\", \"D\"]",
-            "knowledge_evidence": "题目对应知识点为K_主机名_计算机科学与技术, K_主机名_计算机科学与技术对应的课程为Linux系统管理, ",
-            "is_correct": 1,
-            "explanation": "The student answered the question correctly. The task was to identify which statements are true regarding modifying the hostname. The correct answers were options A, B, and D. These options are correct because: A) /etc/sysconfig/network file typically needs to be modified to change the hostname setting; B) /etc/hosts file is often modified to map the hostname to its associated IP address; and D) a system restart is generally required for changes to take full effect. Option C is not typically required for changing the hostname, which the student correctly omitted."
-        },
-        {
-            "content": "在Linux中，打开BASH后的命令提示符，能够告诉你有关主机的哪些信息？",
-            "option": "{'A': '登录的主机名', 'B': '登录的用户名', 'C': '用户当前所处的工作目录', 'D': '用户上次登录时间'}",
-            "right_answer": "[\"A\", \"B\", \"C\"]",
-            "knowledge_evidence": "题目对应知识点为K_主机名_计算机科学与技术, K_主机名_计算机科学与技术对应的课程为Linux系统管理, ",
-            "is_correct": 0,
-            "explanation": "The student's answer was incorrect because they likely included all options without recognizing that option D '用户上次登录时间' is not typically displayed in the BASH command prompt. The BASH prompt in Linux generally shows the login hostname, login username, and current working directory, which corresponds to options A, B, and C. The prompt does not, by default, display the last login time, so including option D led to the answer being incorrect."
-        },
-        {
-            "content": "关于修改主机名，下面那些说法是正确的：",
-            "option": "{'A': '需要修改/etc/sysconfig/network文件', 'B': '需要修改/etc/hosts文件', 'C': '需要修改/etc/sysconfig/network-scripts/ifcfg-eth0文件', 'D': '一般需要重启系统，让修改生效'}",
-            "right_answer": "[\"A\", \"B\", \"D\"]",
-            "knowledge_evidence": "题目对应知识点为K_主机名_计算机科学与技术, K_主机名_计算机科学与技术对应的课程为Linux系统管理, ",
-            "is_correct": 1,
-            "explanation": "The student answered the question correctly. The task was to identify which statements are true regarding modifying the hostname. The correct answers were options A, B, and D. These options are correct because: A) /etc/sysconfig/network file typically needs to be modified to change the hostname setting; B) /etc/hosts file is often modified to map the hostname to its associated IP address; and D) a system restart is generally required for changes to take full effect. Option C is not typically required for changing the hostname, which the student correctly omitted."
-        },
-        {
-            "content": "关于Linux中的软件管理，下面那些选项是正确的？",
-            "option": "{'A': '在某个Linux发行版下开发和编译的程序，直接放到另外一个Linux发行版下有可能性无法运行', 'B': '早期的Linux的软件都是通过源码来分发', 'C': 'RPM是所有Linux发现版本上的通用的软件包管理器', 'D': 'RPM是Linux下软件资源最丰富的软件包类型'}",
-            "right_answer": "[\"A\", \"B\", \"D\"]",
-            "knowledge_evidence": "题目对应知识点为K_软件资源_计算机科学与技术, K_软件资源_计算机科学与技术对应的课程为Linux系统管理, ",
-            "is_correct": 0,
-            "explanation": "The student's answer was marked incorrect because they did not select option 'C', which states 'RPM是所有Linux发现版本上的通用的软件包管理器'. This statement is incorrect because RPM (Red Hat Package Manager) is not universal to all Linux distributions. Some distributions, such as those based on Debian, use a different package management system called APT (Advanced Package Tool). Therefore, the correct options are 'A', 'B', and 'D'. Option 'A' is correct because a program developed and compiled on one Linux distribution may not run on another due to differences in environment and library dependencies. Option 'B' is accurate as early Linux software was indeed distributed as source code that users needed to compile. Option 'D' is also correct, noting RPM's richness in terms of available software, although it is not universal. The student's mistake was likely due to a misunderstanding of 'RPM' being a 'universal package manager' across all Linux distributions."
-        },
-        {
-            "content": "关于Linux中的软件管理，下面那些选项是正确的？",
-            "option": "{'A': '在某个Linux发行版下开发和编译的程序，直接放到另外一个Linux发行版下有可能性无法运行', 'B': '早期的Linux的软件都是通过源码来分发', 'C': 'RPM是所有Linux发现版本上的通用的软件包管理器', 'D': 'RPM是Linux下软件资源最丰富的软件包类型'}",
-            "right_answer": "[\"A\", \"B\", \"D\"]",
-            "knowledge_evidence": "题目对应知识点为K_软件资源_计算机科学与技术, K_软件资源_计算机科学与技术对应的课程为Linux系统管理, ",
-            "is_correct": 1,
-            "explanation": "The student answered the question correctly. Option A is correct because programs developed and compiled on one Linux distribution may not run on another due to differences in libraries and system configurations. Option B is correct as historically, early Linux software was distributed primarily in source code form. Option D is correct because RPM (Red Hat Package Manager) based systems (such as Red Hat, Fedora, CentOS) have a large repository of available software, making it one of the most resource-rich package management systems. Option C is incorrect because not all Linux distributions use RPM; some use other package managers like APT (Advanced Package Tool) used by Debian-based systems. The student correctly identified options A, B, and D as accurate statements about Linux software management."
-        },
-        {
-            "content": "关于用rpm卸载软件，下面哪些说法是正确的：",
-            "option": "{'A': '使用-r选项', 'B': '使用-e选项', 'C': '卸载软件需要知道软件安装后包括版本号在内的全名', 'D': '卸载软件只需要知道软件名即可', 'E': '卸载一个软件可能会导致系统中别的软件无法使用'}",
-            "right_answer": "[\"B\", \"C\", \"E\"]",
-            "knowledge_evidence": "题目对应知识点为K_全名_计算机科学与技术, K_全名_计算机科学与技术对应的课程为Linux系统管理, ",
-            "is_correct": 0,
-            "explanation": "The student incorrectly answered the question about using rpm to uninstall software. The correct options were B, C, and E. Option B is correct because the -e flag is used for erasing (uninstalling) a package with rpm. Option C is correct because you typically need the full name of the installed package, including its version, to uninstall it. Option E is also correct because uninstalling a software package could potentially affect other software if they depend on the uninstalled package. The incorrect options provided by the student were likely based on common misconceptions, such as assuming option D (only the software name is needed) is sufficient, which is not necessarily true with rpm."
-        },
-        {
-            "content": "关于用rpm卸载软件，下面哪些说法是正确的：",
-            "option": "{'A': '使用-r选项', 'B': '使用-e选项', 'C': '卸载软件需要知道软件安装后包括版本号在内的全名', 'D': '卸载软件只需要知道软件名即可', 'E': '卸载一个软件可能会导致系统中别的软件无法使用'}",
-            "right_answer": "[\"B\", \"C\", \"E\"]",
-            "knowledge_evidence": "题目对应知识点为K_全名_计算机科学与技术, K_全名_计算机科学与技术对应的课程为Linux系统管理, ",
-            "is_correct": 1,
-            "explanation": "The student correctly answered the question about uninstalling software using RPM in Linux. They selected option B (using the -e option), option C (needing the full name including version number to uninstall the software), and option E (uninstalling might cause other software to become unusable). These selections are correct because, to uninstall using RPM, the -e option is used, you need the full name of the installed package including version, and removing software dependencies is a real risk when uninstalling software."
-        },
-        {
-            "content": "下面关于yum的说法那些是错误的？",
-            "option": "{'A': 'yum目的就是为了解决RPM管理软件包时的依赖关系难题', 'B': 'yum是一种区别于RPM软件封装模式', 'C': 'yum是红帽系列Linux中的默认软件管理器', 'D': 'yum客户端在安装软件时无需了解该软件包的依赖关系信息'}",
-            "right_answer": "[\"B\", \"C\"]",
-            "knowledge_evidence": "题目对应知识点为K_软件管理器_计算机科学与技术, K_软件管理器_计算机科学与技术对应的课程为Linux系统管理, ",
-            "is_correct": 0,
-            "explanation": "The student incorrectly identified the statements about 'yum' in Linux systems because they likely misunderstood the details about what 'yum' is and its functionalities. Let's analyze their choices: \n\n1. Option A: 'yum目的就是为了解决RPM管理软件包时的依赖关系难题' (Yum aims to resolve dependency issues when managing packages with RPM) - This statement is correct because 'yum' (Yellowdog Updater, Modified) was specifically designed to handle dependencies in RPM package management, making package installation easier by automatically resolving and installing dependencies.\n\n2. Option B: 'yum是一种区别于RPM软件封装模式' (Yum is a packaging mode different from RPM) - This statement is incorrect. Yum is not a packaging mode; instead, it is a command-line package-management utility for RPM-compatible Linux operating systems, designed to manage package installations, upgrades, and removals.\n\n3. Option C: 'yum是红帽系列Linux中的默认软件管理器' (Yum is the default package manager in Red Hat Linux series) - This statement is incorrect because while Yum is commonly used in Red Hat-based systems like CentOS and Fedora, it is not alone; other package managers such as dnf have replaced Yum in newer versions of some distributions (like Fedora), though it still serves as a default in older versions.\n\n4. Option D: 'yum客户端在安装软件时无需了解该软件包的依赖关系信息' (Yum clients do not need to know the dependency information when installing software) - This statement is correct as yum takes care of dependencies automatically, meaning the user doesn't have to manually identify and resolve dependencies for package installations.\n\nThe correct answers for the incorrect statements are 'B' and 'C', which the student failed to identify accurately."
-        },
-        {
-            "content": "下面关于yum的说法那些是错误的？",
-            "option": "{'A': 'yum目的就是为了解决RPM管理软件包时的依赖关系难题', 'B': 'yum是一种区别于RPM软件封装模式', 'C': 'yum是红帽系列Linux中的默认软件管理器', 'D': 'yum客户端在安装软件时无需了解该软件包的依赖关系信息'}",
-            "right_answer": "[\"B\", \"C\"]",
-            "knowledge_evidence": "题目对应知识点为K_软件管理器_计算机科学与技术, K_软件管理器_计算机科学与技术对应的课程为Linux系统管理, ",
-            "is_correct": 1,
-            "explanation": "The student answered the question correctly by identifying options B and C as incorrect regarding yum. Option B is incorrect because yum is not a different software packaging mode from RPM; it works as a package manager that resolves dependencies for RPM packages. Option C is incorrect because while yum may be the default package manager in some Red Hat-based distributions, it is not universally the default across all Red Hat distributions as newer ones use DNF. Therefore, the student's answer aligns correctly with the provided right answer."
-        },
-        {
-            "content": "8088CPU中，以下哪一个部件不属于EU部分（   ）.",
-            "option": "{'A': 'ALU', 'B': '通用寄存器和标志寄存器', 'C': '段寄存器', 'D': 'EU控制电路'}",
-            "right_answer": "[\"C\"]",
-            "knowledge_evidence": "题目对应知识点为K_段寄存器_计算机科学与技术, K_段寄存器_计算机科学与技术对应的课程为微机原理与接口技术, ",
-            "is_correct": 0,
-            "explanation": "The question asks which component does not belong to the Execution Unit (EU) part of an 8088 CPU. The student chose option 'C', which was correct. However, their answer was marked as incorrect due to a misunderstanding. In the 8088 CPU, the segment registers are part of the Bus Interface Unit (BIU), not the EU. Options 'A', 'B', and 'D' mention components that are part of the EU, such as the Arithmetic Logic Unit (ALU) and EU control circuits. Despite this mix-up, 'C' is indeed the correct choice as it is not part of the EU in the 8088 architecture."
-        },
-        {
-            "content": "指令流水线是指（   ）.",
-            "option": "{'A': '微处理器有序地执行指令', 'B': '微处理器顺序地执行指令', 'C': '微处理器同时执行多条指令', 'D': '指令通过流水线传送给微处理器'}",
-            "right_answer": "[\"C\"]",
-            "knowledge_evidence": "题目对应知识点为K_指令流水线_计算机科学与技术, K_指令流水线_计算机科学与技术对应的课程为微机原理与接口技术, ",
-            "is_correct": 0,
-            "explanation": "The student answered incorrectly because they selected an option that does not accurately describe the concept of 'instruction pipeline'. The correct answer is 'C: 微处理器同时执行多条指令' which means 'the microprocessor executes multiple instructions simultaneously'. This is a key feature of instruction pipelining, which enhances the processor's performance by overlapping instruction execution. The incorrect options suggested sequential execution or the method of instruction delivery to the processor, which do not capture the essence of pipelining."
-        },
-        {
-            "content": "8088CPU中，以下哪一个部件不属于BIU部分（  ）.<!--!doctype-->",
-            "option": "{'A': '段寄存器<!--!doctype-->', 'B': '指令队列<!--!doctype-->', 'C': '通用寄存器<!--!doctype-->', 'D': '地址加法器、总线控制逻辑<!--!doctype-->'}",
-            "right_answer": "[\"C\"]",
-            "knowledge_evidence": "题目对应知识点为K_总线_计算机科学与技术, K_总线_计算机科学与技术对应的课程为微机原理与接口技术, ",
-            "is_correct": 0,
-            "explanation": "The question asks which component is not part of the BIU (Bus Interface Unit) of the 8088 CPU. The correct answer is 'C' which refers to '通用寄存器' (general-purpose registers). This is correct because general-purpose registers are part of the Execution Unit (EU), not the Bus Interface Unit. The student got the answer wrong, possibly due to confusion about the specific roles and components of the BIU and EU in the 8088 CPU architecture."
-        },
-        {
-            "content": "在计算机系统中，外部设备必须通过（ ）才能实现与主机的信息交换。",
-            "option": "{'A': '电缆', 'B': '总线插槽', 'C': '接口', 'D': '电源'}",
-            "right_answer": "[\"C\"]",
-            "knowledge_evidence": "题目对应知识点为K_总线_计算机科学与技术, K_总线_计算机科学与技术对应的课程为微机原理与接口技术, ",
-            "is_correct": 1,
-            "explanation": "The student answered the question correctly by selecting option 'C' for '接口' (interface). In a computer system, external devices must go through an interface to exchange information with the host. This is a fundamental concept in computer science, particularly in the study of microcomputers and interface technology. The interface acts as a bridge, allowing communication and data transfer between the external device and the computer's internal components. The student's choice reflects an understanding of how data exchange is handled in computing systems."
-        }
-    ],
-    "tasks": [
-        {
-            "content": "可以用哪个命令测试两台主机之间网络的连通性。",
-            "option": "{'A': 'ping', 'B': 'ifconfig', 'C': 'ipconfig', 'D': 'route'}",
-            "right_answer": "[\"A\"]",
-            "knowledge_evidence": "题目对应知识点为K_ipconfig_计算机科学与技术, K_ipconfig_计算机科学与技术对应的课程为Linux系统管理, ",
-            "is_correct": 1,
-            "explanation": ""
-        },
-        {
-            "content": "回环接口为系统提供一个单机网络环境，一般用于网络程序的调试。",
-            "option": "{'true': '正确', 'false': '错误'}",
-            "right_answer": "[\"true\"]",
-            "knowledge_evidence": "题目对应知识点为K_调试_计算机科学与技术, K_调试_计算机科学与技术对应的课程为Linux系统管理, ",
-            "is_correct": 1,
-            "explanation": ""
-        },
-        {
-            "content": "关于修改主机名，下面那些说法是正确的：",
-            "option": "{'A': '需要修改/etc/sysconfig/network文件', 'B': '需要修改/etc/hosts文件', 'C': '需要修改/etc/sysconfig/network-scripts/ifcfg-eth0文件', 'D': '一般需要重启系统，让修改生效'}",
-            "right_answer": "[\"A\", \"B\", \"D\"]",
-            "knowledge_evidence": "题目对应知识点为K_主机名_计算机科学与技术, K_主机名_计算机科学与技术对应的课程为Linux系统管理, ",
-            "is_correct": 0,
-            "explanation": ""
-        },
-        {
-            "content": "关于为网络接口配置DHCP，下面那些说法是正确的：",
-            "option": "{'A': 'DHCP很方便，但是更容易发生配置错误', 'B': 'DHCP服务器可以指定接口的IP地址、子网掩码和网关', 'C': '默认情况下，CentOS使用DHCP协议配置接口网络参数', 'D': 'DHCP服务器还可以指定主机名'}",
-            "right_answer": "[\"B\", \"C\", \"D\"]",
-            "knowledge_evidence": "题目对应知识点为K_主机名_计算机科学与技术, K_主机名_计算机科学与技术对应的课程为Linux系统管理, ",
-            "is_correct": 1,
-            "explanation": ""
-        },
-        {
-            "content": "关于Linux中的软件管理，下面那些选项是正确的？",
-            "option": "{'A': '在某个Linux发行版下开发和编译的程序，直接放到另外一个Linux发行版下有可能性无法运行', 'B': '早期的Linux的软件都是通过源码来分发', 'C': 'RPM是所有Linux发现版本上的通用的软件包管理器', 'D': 'RPM是Linux下软件资源最丰富的软件包类型'}",
-            "right_answer": "[\"A\", \"B\", \"D\"]",
-            "knowledge_evidence": "题目对应知识点为K_软件资源_计算机科学与技术, K_软件资源_计算机科学与技术对应的课程为Linux系统管理, ",
-            "is_correct": 0,
-            "explanation": ""
-        },
-        {
-            "content": "关于用rpm卸载软件，下面哪些说法是正确的：",
-            "option": "{'A': '使用-r选项', 'B': '使用-e选项', 'C': '卸载软件需要知道软件安装后包括版本号在内的全名', 'D': '卸载软件只需要知道软件名即可', 'E': '卸载一个软件可能会导致系统中别的软件无法使用'}",
-            "right_answer": "[\"B\", \"C\", \"E\"]",
-            "knowledge_evidence": "题目对应知识点为K_全名_计算机科学与技术, K_全名_计算机科学与技术对应的课程为Linux系统管理, ",
-            "is_correct": 1,
-            "explanation": ""
-        },
-        {
-            "content": "下面关于yum的说法那些是错误的？",
-            "option": "{'A': 'yum目的就是为了解决RPM管理软件包时的依赖关系难题', 'B': 'yum是一种区别于RPM软件封装模式', 'C': 'yum是红帽系列Linux中的默认软件管理器', 'D': 'yum客户端在安装软件时无需了解该软件包的依赖关系信息'}",
-            "right_answer": "[\"B\", \"C\"]",
-            "knowledge_evidence": "题目对应知识点为K_软件管理器_计算机科学与技术, K_软件管理器_计算机科学与技术对应的课程为Linux系统管理, ",
-            "is_correct": 0,
-            "explanation": ""
-        },
-        {
-            "content": "8088CPU中，以下哪一个部件不属于EU部分（   ）.",
-            "option": "{'A': 'ALU', 'B': '通用寄存器和标志寄存器', 'C': '段寄存器', 'D': 'EU控制电路'}",
-            "right_answer": "[\"C\"]",
-            "knowledge_evidence": "题目对应知识点为K_段寄存器_计算机科学与技术, K_段寄存器_计算机科学与技术对应的课程为微机原理与接口技术, ",
-            "is_correct": 0,
-            "explanation": ""
-        },
-        {
-            "content": "指令流水线是指（   ）.",
-            "option": "{'A': '微处理器有序地执行指令', 'B': '微处理器顺序地执行指令', 'C': '微处理器同时执行多条指令', 'D': '指令通过流水线传送给微处理器'}",
-            "right_answer": "[\"C\"]",
-            "knowledge_evidence": "题目对应知识点为K_指令流水线_计算机科学与技术, K_指令流水线_计算机科学与技术对应的课程为微机原理与接口技术, ",
-            "is_correct": 0,
-            "explanation": ""
-        },
-        {
-            "content": "8088CPU中，以下哪一个部件不属于BIU部分（  ）.<!--!doctype-->",
-            "option": "{'A': '段寄存器<!--!doctype-->', 'B': '指令队列<!--!doctype-->', 'C': '通用寄存器<!--!doctype-->', 'D': '地址加法器、总线控制逻辑<!--!doctype-->'}",
-            "right_answer": "[\"C\"]",
-            "knowledge_evidence": "题目对应知识点为K_总线_计算机科学与技术, K_总线_计算机科学与技术对应的课程为微机原理与接口技术, ",
-            "is_correct": 0,
-            "explanation": ""
-        }
-    ],
-    "result": null,
-    "cost": {
-        "usage_including_cached_inference": {
-            "total_cost": 0.37301280000000003,
-            "qwen-max-latest": {
-                "cost": 0.37301280000000003,
-                "prompt_tokens": 150561,
-                "completion_tokens": 20643,
-                "total_tokens": 171204
-            }
-        },
-        "usage_excluding_cached_inference": {
-            "total_cost": 0.37301280000000003,
-            "qwen-max-latest": {
-                "cost": 0.37301280000000003,
-                "prompt_tokens": 150561,
-                "completion_tokens": 20643,
-                "total_tokens": 171204
-            }
-        }
-    }
-},
-{
-    "round": 20,
-    "examples": [
-        {
-            "content": "标志位SF表示（   ）",
-            "option": "{'A': '最高位是否向更高位有进借位', 'B': '运算结果是否为0', 'C': '运算结果是否超出符号数的范围', 'D': '运算结果的最高位是否为1'}",
-            "right_answer": "[\"D\"]",
-            "knowledge_evidence": "题目对应知识点为K_位_计算机科学与技术, K_位_计算机科学与技术对应的课程为微机原理与接口技术, ",
-            "is_correct": 1,
-            "explanation": "The student correctly identified the function of the SF (Sign Flag) as described in the context of computer science and microprocessor technology. Option 'D', which states that the SF indicates whether the highest bit (the sign bit in signed arithmetic) of the operation result is 1, aligns with the traditional understanding of the Sign Flag. This indicates a negative result in signed arithmetic operations. As this matches the expected answer outlined in the course material, the student's answer was marked correct."
-        },
-        {
-            "content": "以下哪一个特征不属于8086/8088CPU最小工作模式的特点（   ）.",
-            "option": "{'A': '仅支持少量设备组成的单处理器系统', 'B': '系统控制总线的信号由8088/8086CPU直接产生', 'C': '还需要其它控制器产生总线控制信号和命令信号', 'D': '最小模式构成的系统不能进行DMA传送'}",
-            "right_answer": "[\"C\"]",
-            "knowledge_evidence": "题目对应知识点为K_系统控制_计算机科学与技术, K_系统控制_计算机科学与技术对应的课程为微机原理与接口技术, ",
-            "is_correct": 1,
-            "explanation": "The student correctly identified the option 'C' as the feature that does not belong to the minimum mode characteristics of the 8086/8088 CPUs. In the minimum mode, the 8086/8088 CPUs generate all necessary control signals for its operations, and do not require additional controllers to generate bus control and command signals. Option 'C' suggests that other controllers are needed, which is incorrect, hence making it the right choice."
-        },
-        {
-            "content": "总线的基本功能是（   ）",
-            "option": "{'A': '数据传输、地址传输、控制信号传输', 'B': '传输同步、仲裁控制、总线驱动', 'C': '输入、输出', 'D': '连接各个部件'}",
-            "right_answer": "[\"B\"]",
-            "knowledge_evidence": "题目对应知识点为K_步_计算机科学与技术, K_步_计算机科学与技术对应的课程为微机原理与接口技术, ",
-            "is_correct": 0,
-            "explanation": "The student answered this question incorrectly because the correct answer is option 'A', which includes 'data transfer, address transfer, and control signal transfer' as the basic functions of a bus in computer systems. However, the student selected option 'B', which focuses on 'transmission synchronization, arbitration control, and bus driving,' which are functions related to bus management rather than the core functions described in option 'A'. Understanding the basic operations of a computer bus involves recognizing that it primarily facilitates the transfer of data, addresses, and control signals across different components."
-        },
-        {
-            "content": "在8088/8086系统中，程序代码被存放在（    ）",
-            "option": "{'A': '代码段或数据段', 'B': '数据段或附加段', 'C': '代码段或堆栈段', 'D': '只能存放在代码段'}",
-            "right_answer": "[\"D\"]",
-            "knowledge_evidence": "题目对应知识点为K_代码段_计算机科学与技术, K_代码段_计算机科学与技术对应的课程为微机原理与接口技术, ",
-            "is_correct": 0,
-            "explanation": "在8088/8086系统中，程序代码应该被存放在代码段。学生的回答为'A'，即认为程序代码可以存储在代码段或数据段，这与题目的正确答案'D'不符。正确答案'D'表明程序代码只能存放在代码段中。学生可能误解了代码段和数据段的不同用途，导致选择了错误的选项。"
-        },
-        {
-            "content": "8088CPU中，以下哪一个部件不属于BIU部分（  ）.<!--!doctype-->",
-            "option": "{'A': '段寄存器<!--!doctype-->', 'B': '指令队列<!--!doctype-->', 'C': '通用寄存器<!--!doctype-->', 'D': '地址加法器、总线控制逻辑<!--!doctype-->'}",
-            "right_answer": "[\"C\"]",
-            "knowledge_evidence": "题目对应知识点为K_总线_计算机科学与技术, K_总线_计算机科学与技术对应的课程为微机原理与接口技术, ",
-            "is_correct": 0,
-            "explanation": "The question asks which component is not part of the BIU (Bus Interface Unit) of the 8088 CPU. The correct answer is 'C' which refers to '通用寄存器' (general-purpose registers). This is correct because general-purpose registers are part of the Execution Unit (EU), not the Bus Interface Unit. The student got the answer wrong, possibly due to confusion about the specific roles and components of the BIU and EU in the 8088 CPU architecture."
-        },
-        {
-            "content": "在计算机系统中，外部设备必须通过（ ）才能实现与主机的信息交换。",
-            "option": "{'A': '电缆', 'B': '总线插槽', 'C': '接口', 'D': '电源'}",
-            "right_answer": "[\"C\"]",
-            "knowledge_evidence": "题目对应知识点为K_总线_计算机科学与技术, K_总线_计算机科学与技术对应的课程为微机原理与接口技术, ",
-            "is_correct": 1,
-            "explanation": "The student answered the question correctly by selecting option 'C' for '接口' (interface). In a computer system, external devices must go through an interface to exchange information with the host. This is a fundamental concept in computer science, particularly in the study of microcomputers and interface technology. The interface acts as a bridge, allowing communication and data transfer between the external device and the computer's internal components. The student's choice reflects an understanding of how data exchange is handled in computing systems."
-        },
-        {
-            "content": "以下说法中，不正确的是（    ）",
-            "option": "{'A': '每个内存单元在整个内存空间中都具有惟一的地址', 'B': '8088/8086CPU系统中，每个内存单元地址都可以表示为32位的逻辑地址。', 'C': '在8088/8086CPU系统中，偏移地址可以是16bit或8bit，但段基地址必须是16bit。', 'D': '在8088/8086CPU系统中，20bit地址一定是物理地址。'}",
-            "right_answer": "[\"C\"]",
-            "knowledge_evidence": "题目对应知识点为K_逻辑地址_计算机科学与技术, K_逻辑地址_计算机科学与技术对应的课程为微机原理与接口技术, ",
-            "is_correct": 0,
-            "explanation": "The student chose the wrong option for this problem. The question asked which statement is incorrect. The correct answer is option C, which states that in an 8088/8086 CPU system, the offset address can be 16 bits or 8 bits, but the segment base address must be 16 bits. This statement is incorrect because the offset address is always 16 bits in 8086 systems; 8-bit offsets do not apply. Understanding the correct bit structure for addressing in 8088/8086 systems is crucial. The student might have misunderstood the bit size for segment and offset addresses, leading to the incorrect choice. Recommending a review of the addressing modes in 8088/8086 architecture would be beneficial."
-        },
-        {
-            "content": "在8088/8086系统中，程序代码被存放在（    ）",
-            "option": "{'A': '代码段或数据段', 'B': '数据段或附加段', 'C': '代码段或堆栈段', 'D': '只能存放在代码段'}",
-            "right_answer": "[\"D\"]",
-            "knowledge_evidence": "题目对应知识点为K_数据段_计算机科学与技术, K_数据段_计算机科学与技术对应的课程为微机原理与接口技术, ",
-            "is_correct": 0,
-            "explanation": "The student answered incorrectly because in the 8088/8086 systems, program code must be stored in the 'code segment,' which corresponds to option D. The incorrect options suggest storing the code in other combinations of segments that are not correct for where program code should exclusively reside. Therefore, the student's choice did not match the correct requirement for the storage of program code, which can only be in the 'code segment.'"
-        },
-        {
-            "content": "以下说法中，不正确的是（  ）",
-            "option": "{'A': '每个内存单元中都只存放8bit二进制数', 'B': '程序执行的顺序由CS和IP决定；', 'C': '程序执行的数据可以存放在数据段、附加段或堆栈段中；', 'D': '不同类型的逻辑段必须占有不同的内存空间。'}",
-            "right_answer": "[\"D\"]",
-            "knowledge_evidence": "题目对应知识点为K_数据段_计算机科学与技术, K_数据段_计算机科学与技术对应的课程为微机原理与接口技术, ",
-            "is_correct": 1,
-            "explanation": "The student answered the multiple-choice question correctly by selecting option D as the incorrect statement. The statement '不同类型的逻辑段必须占有不同的内存空间' is incorrect because in memory management, different logical segments like data, stack, and code segments can share the same memory area, relying on segmentation to delineate their boundaries logically. Therefore, selecting D reflects an accurate understanding of memory segmentation principles covered in '微机原理与接口技术'."
-        },
-        {
-            "content": "在CentOS中，默认情况下，虚拟用户的UID范围是:",
-            "option": "{'A': '1-499', 'B': '0-499', 'C': '0-500', 'D': '500以后'}",
-            "right_answer": "[\"A\"]",
-            "knowledge_evidence": "题目对应知识点为K_虚拟用户_计算机科学与技术, K_虚拟用户_计算机科学与技术对应的课程为Linux系统管理, ",
-            "is_correct": 0,
-            "explanation": "The question asks about the default UID range for virtual users in CentOS. The student's answer was incorrect. In CentOS, the UID range for system and virtual users is typically from 1 to 499. This range is reserved for system processes and services, while UIDs from 500 onwards are generally allocated to regular user accounts. Therefore, the correct answer is '1-499', which corresponds to option 'A'. It seems the student might have overlooked this specific user range assignment in CentOS system management."
-        },
-        {
-            "content": "关于切换用户命令su，下面描述正确的是：",
-            "option": "{'A': '由根用户切换普通用户时需要输入用户密码', 'B': '由普通用户切换根用户时需要输入用户密码', 'C': '由普通用户之间相互切换时需要输入用户密码', 'D': '由根用户切换为虚拟用户时需要输入用户密码', 'E': '切换用户身份后，对系统的访问权限也随之改变'}",
-            "right_answer": "[\"B\", \"C\", \"E\"]",
-            "knowledge_evidence": "题目对应知识点为K_虚拟用户_计算机科学与技术, K_虚拟用户_计算机科学与技术对应的课程为Linux系统管理, ",
-            "is_correct": 1,
-            "explanation": "The question is about the proper usage of the 'su' command in Linux for switching users. Options B, C, and E are correct. Option B states that a normal user needs to provide a password to switch to the root user, which is true as root access requires authentication. Option C mentions that password is needed when switching between normal users, which is correct. Option E relates to the fact that access permissions change according to the user profile, which is also accurate. The student answered the question correctly by selecting these options, showing an understanding of user permissions and the functionality of the 'su' command."
-        },
-        {
-            "content": "在CentOS中，默认情况下，虚拟用户的UID范围是:",
-            "option": "{'A': '1-499', 'B': '0-499', 'C': '0-500', 'D': '500以后'}",
-            "right_answer": "[\"A\"]",
-            "knowledge_evidence": "题目对应知识点为K_虚拟用户_计算机科学与技术, K_虚拟用户_计算机科学与技术对应的课程为Linux系统管理, ",
-            "is_correct": 0,
-            "explanation": "The question asks about the default UID range for virtual users in CentOS. The student's answer was incorrect. In CentOS, the UID range for system and virtual users is typically from 1 to 499. This range is reserved for system processes and services, while UIDs from 500 onwards are generally allocated to regular user accounts. Therefore, the correct answer is '1-499', which corresponds to option 'A'. It seems the student might have overlooked this specific user range assignment in CentOS system management."
-        },
-        {
-            "content": "关于切换用户命令su，下面描述正确的是：",
-            "option": "{'A': '由根用户切换普通用户时需要输入用户密码', 'B': '由普通用户切换根用户时需要输入用户密码', 'C': '由普通用户之间相互切换时需要输入用户密码', 'D': '由根用户切换为虚拟用户时需要输入用户密码', 'E': '切换用户身份后，对系统的访问权限也随之改变'}",
-            "right_answer": "[\"B\", \"C\", \"E\"]",
-            "knowledge_evidence": "题目对应知识点为K_虚拟用户_计算机科学与技术, K_虚拟用户_计算机科学与技术对应的课程为Linux系统管理, ",
-            "is_correct": 1,
-            "explanation": "The question is about the proper usage of the 'su' command in Linux for switching users. Options B, C, and E are correct. Option B states that a normal user needs to provide a password to switch to the root user, which is true as root access requires authentication. Option C mentions that password is needed when switching between normal users, which is correct. Option E relates to the fact that access permissions change according to the user profile, which is also accurate. The student answered the question correctly by selecting these options, showing an understanding of user permissions and the functionality of the 'su' command."
-        },
-        {
-            "content": "id命令能够查看的用户信息有：",
-            "option": "{'A': '用户的创建时间', 'B': '用户的主用户组', 'C': '用户从属的用户组名', 'D': '用户家目录'}",
-            "right_answer": "[\"B\", \"C\"]",
-            "knowledge_evidence": "题目对应知识点为K_用户组_计算机科学与技术, K_用户组_计算机科学与技术对应的课程为Linux系统管理, ",
-            "is_correct": 0,
-            "explanation": "The question asked which user information can be viewed by the 'id' command in Linux. The correct options are 'B: 用户的主用户组' (user's primary group) and 'C: 用户从属的用户组名' (names of the user groups the user belongs to). The student's answer was incorrect because they did not select the correct options 'B' and 'C'. The 'id' command does not provide information such as 'A: 用户的创建时间' (user's creation time) or 'D: 用户家目录' (user's home directory), which might be why the student made a mistake if these were chosen."
-        },
-        {
-            "content": "关于Linux中的用户组，描述错误的是：",
-            "option": "{'A': '用户组的身份标识叫做GID', 'B': '一个用户只能从属于一个用户组', 'C': '一个用户组能够包含多个用户', 'D': '在同一时刻，一个用户的主用户组只能有一个', 'E': '每个用户都必定从属于一个与用户同名的独立的私有用户组'}",
-            "right_answer": "[\"B\", \"E\"]",
-            "knowledge_evidence": "题目对应知识点为K_用户组_计算机科学与技术, K_用户组_计算机科学与技术对应的课程为Linux系统管理, ",
-            "is_correct": 1,
-            "explanation": "The student answered the question correctly. The question asked for the incorrect statements about user groups in Linux. Options 'B' and 'E' were both identified as incorrect by the student: 'B' states that a user can only belong to one user group, which is false as a user can belong to multiple groups besides their primary group. 'E' states that each user must belong to a private group named after them, which is also incorrect as it is not a requirement to create a matching group for each user. The student correctly identified these as the incorrect statements, demonstrating an understanding of how user groups work in Linux."
-        }
-    ],
-    "tasks": [
-        {
-            "content": "标志位SF表示（   ）",
-            "option": "{'A': '最高位是否向更高位有进借位', 'B': '运算结果是否为0', 'C': '运算结果是否超出符号数的范围', 'D': '运算结果的最高位是否为1'}",
-            "right_answer": "[\"D\"]",
-            "knowledge_evidence": "题目对应知识点为K_位_计算机科学与技术, K_位_计算机科学与技术对应的课程为微机原理与接口技术, ",
-            "is_correct": 1,
-            "explanation": ""
-        },
-        {
-            "content": "以下哪一个特征不属于8086/8088CPU最小工作模式的特点（   ）.",
-            "option": "{'A': '仅支持少量设备组成的单处理器系统', 'B': '系统控制总线的信号由8088/8086CPU直接产生', 'C': '还需要其它控制器产生总线控制信号和命令信号', 'D': '最小模式构成的系统不能进行DMA传送'}",
-            "right_answer": "[\"C\"]",
-            "knowledge_evidence": "题目对应知识点为K_系统控制_计算机科学与技术, K_系统控制_计算机科学与技术对应的课程为微机原理与接口技术, ",
-            "is_correct": 1,
-            "explanation": ""
-        },
-        {
-            "content": "总线的基本功能是（   ）",
-            "option": "{'A': '数据传输、地址传输、控制信号传输', 'B': '传输同步、仲裁控制、总线驱动', 'C': '输入、输出', 'D': '连接各个部件'}",
-            "right_answer": "[\"B\"]",
-            "knowledge_evidence": "题目对应知识点为K_步_计算机科学与技术, K_步_计算机科学与技术对应的课程为微机原理与接口技术, ",
-            "is_correct": 0,
-            "explanation": ""
-        },
-        {
-            "content": "在8088/8086系统中，程序代码被存放在（    ）",
-            "option": "{'A': '代码段或数据段', 'B': '数据段或附加段', 'C': '代码段或堆栈段', 'D': '只能存放在代码段'}",
-            "right_answer": "[\"D\"]",
-            "knowledge_evidence": "题目对应知识点为K_代码段_计算机科学与技术, K_代码段_计算机科学与技术对应的课程为微机原理与接口技术, ",
-            "is_correct": 0,
-            "explanation": ""
-        },
-        {
-            "content": "8086发现READY引脚变为0时，它将在当前总线周期中插入（    ）周期。",
-            "option": "{'A': '总线周期', 'B': '时钟周期', 'C': '空闲周期', 'D': '查询周期'}",
-            "right_answer": "[\"B\"]",
-            "knowledge_evidence": "题目对应知识点为K_总线_计算机科学与技术, K_总线_计算机科学与技术对应的课程为微机原理与接口技术, ",
-            "is_correct": 1,
-            "explanation": ""
-        },
-        {
-            "content": "以下说法中，不正确的是（    ）",
-            "option": "{'A': '每个内存单元在整个内存空间中都具有惟一的地址', 'B': '8088/8086CPU系统中，每个内存单元地址都可以表示为32位的逻辑地址。', 'C': '在8088/8086CPU系统中，偏移地址可以是16bit或8bit，但段基地址必须是16bit。', 'D': '在8088/8086CPU系统中，20bit地址一定是物理地址。'}",
-            "right_answer": "[\"C\"]",
-            "knowledge_evidence": "题目对应知识点为K_逻辑地址_计算机科学与技术, K_逻辑地址_计算机科学与技术对应的课程为微机原理与接口技术, ",
-            "is_correct": 0,
-            "explanation": ""
-        },
-        {
-            "content": "以下说法中，不正确的是（  ）",
-            "option": "{'A': '每个内存单元中都只存放8bit二进制数', 'B': '程序执行的顺序由CS和IP决定；', 'C': '程序执行的数据可以存放在数据段、附加段或堆栈段中；', 'D': '不同类型的逻辑段必须占有不同的内存空间。'}",
-            "right_answer": "[\"D\"]",
-            "knowledge_evidence": "题目对应知识点为K_数据段_计算机科学与技术, K_数据段_计算机科学与技术对应的课程为微机原理与接口技术, ",
-            "is_correct": 1,
-            "explanation": ""
-        },
-        {
-            "content": "在CentOS中，默认情况下，虚拟用户的UID范围是:",
-            "option": "{'A': '1-499', 'B': '0-499', 'C': '0-500', 'D': '500以后'}",
-            "right_answer": "[\"A\"]",
-            "knowledge_evidence": "题目对应知识点为K_虚拟用户_计算机科学与技术, K_虚拟用户_计算机科学与技术对应的课程为Linux系统管理, ",
-            "is_correct": 1,
-            "explanation": ""
-        },
-        {
-            "content": "关于CentOS中的用户，描述错误的是：",
-            "option": "{'A': '虚拟用户是给系统的访客使用的', 'B': '根用户的UID是固定的', 'C': '虚拟用户使用的默认Shell是BASH', 'D': 'Linux是通过用户名来识别用户的身份的', 'E': '普通用户对系统有只有有限的权限'}",
-            "right_answer": "[\"A\", \"C\"]",
-            "knowledge_evidence": "题目对应知识点为K_虚拟用户_计算机科学与技术, K_虚拟用户_计算机科学与技术对应的课程为Linux系统管理, ",
-            "is_correct": 0,
-            "explanation": ""
-        },
-        {
-            "content": "关于Linux中的用户组，描述错误的是：",
-            "option": "{'A': '用户组的身份标识叫做GID', 'B': '一个用户只能从属于一个用户组', 'C': '一个用户组能够包含多个用户', 'D': '在同一时刻，一个用户的主用户组只能有一个', 'E': '每个用户都必定从属于一个与用户同名的独立的私有用户组'}",
-            "right_answer": "[\"B\", \"E\"]",
-            "knowledge_evidence": "题目对应知识点为K_用户组_计算机科学与技术, K_用户组_计算机科学与技术对应的课程为Linux系统管理, ",
-            "is_correct": 1,
-            "explanation": ""
-        }
-    ],
-    "result": null,
-    "cost": {
-        "usage_including_cached_inference": {
-            "total_cost": 0.4606944,
-            "qwen-max-latest": {
-                "cost": 0.4606944,
-                "prompt_tokens": 184754,
-                "completion_tokens": 25795,
-                "total_tokens": 210549
-            }
-        },
-        "usage_excluding_cached_inference": {
-            "total_cost": 0.4606944,
-            "qwen-max-latest": {
-                "cost": 0.4606944,
-                "prompt_tokens": 184754,
-                "completion_tokens": 25795,
-                "total_tokens": 210549
-            }
-        }
-    }
-},
-{
     "round": 21,
     "examples": [
         {
@@ -13597,6 +12669,1258 @@
                 "prompt_tokens": 39503,
                 "completion_tokens": 6581,
                 "total_tokens": 46084
+            }
+        }
+    }
+},
+{
+    "round": 9,
+    "examples": [
+        {
+            "content": "阿里云伏羲分布式调度系统与社区Hadoop MR最大的区别是？(  )",
+            "option": "{'A': 'Hadoop是一层架构集中资源和任务调度，而伏羲是两层架构独立的资源和任务调度', 'B': 'Hadoop存在规模瓶颈，而伏羲规模横向扩展性更好', 'C': 'Hadoop与伏羲的调度策略不同', 'D': 'Hadoop jobtracker没有failover，伏羲有完善的failover功能'}",
+            "right_answer": "[\"A\", \"B\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_调度策略_计算机科学与技术, K_调度策略_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 0,
+            "explanation": "The question asks about the main differences between Alibaba's Fuxi distributed scheduling system and Hadoop MR. The correct answers are A, B, and D. These options mention the architectural differences between the two systems (Fuxi having a more scalable architecture), scalability differences, and failover functionality, respectively. If the student's answer did not include these options, it would be considered incorrect. This indicates a possible misunderstanding of the critical differences in architecture and capabilities between Fuxi and Hadoop MR. Option C, while mentioning a difference in scheduling strategies, is not indicated as one of the main structural or capability differences expected in this question."
+        },
+        {
+            "content": "阿里云伏羲分布式调度系统与社区Hadoop MR最大的区别是？(  )",
+            "option": "{'A': 'Hadoop是一层架构集中资源和任务调度，而伏羲是两层架构独立的资源和任务调度', 'B': 'Hadoop存在规模瓶颈，而伏羲规模横向扩展性更好', 'C': 'Hadoop与伏羲的调度策略不同', 'D': 'Hadoop jobtracker没有failover，伏羲有完善的failover功能'}",
+            "right_answer": "[\"A\", \"B\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_调度策略_计算机科学与技术, K_调度策略_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 1,
+            "explanation": "The student correctly answered the question about the differences between the Aliyun Fuxi distributed scheduling system and community Hadoop MR. The correct answers are 'A', 'B', and 'D'. Option 'A' highlights the architectural differences where Hadoop has a single-layer architecture for resource and task scheduling, whereas Fuxi has a two-layer independent architecture for resource and task scheduling. Option 'B' addresses the scalability, pointing out Hadoop's scale limitation in contrast to Fuxi's better horizontal scalability. Option 'D' distinguishes their failover capabilities, noting that Hadoop's jobtracker does not have a failover mechanism while Fuxi provides a complete failover functionality. The student selected all these correct options, demonstrating an understanding of the key distinctions between these two systems as taught in the course '大数据平台核心技术' under the concept of scheduling strategies in computer science and technology."
+        },
+        {
+            "content": "伏羲资源调度支持抢占，下面说法错误的是？(  )",
+            "option": "{'A': 'FuxiMaster会从当前正在运行的任务中，从最低优先级任务开始强制收回资源', 'B': '最低优先级任务被抢占后，抢占过程即终止', 'C': '抢占会一直递归进行', 'D': '不能抢比自己优先级高的任务'}",
+            "right_answer": "[\"B\"]",
+            "knowledge_evidence": "题目对应知识点为K_资源调度_计算机科学与技术, K_资源调度_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 0,
+            "explanation": "The student selected option B, which states '最低优先级任务被抢占后，抢占过程即终止' as the incorrect statement. However, this is actually the correct statement that describes a common behavior in resource preemption where once the lowest priority task is preempted, the process stops. Therefore, the student's selection was incorrect because option B is not a false statement, whereas the problem asked for the false statement related to preemption. In resource preemption, lower priority tasks may be interrupted to allow higher priority tasks to use the resources."
+        },
+        {
+            "content": "伏羲分布式调度系统中负责资源调度的角色是？(  )",
+            "option": "{'A': 'FuxiMaster', 'B': 'Tubo', 'C': 'AppMaster', 'D': 'AppWorker'}",
+            "right_answer": "[\"A\"]",
+            "knowledge_evidence": "题目对应知识点为K_资源调度_计算机科学与技术, K_资源调度_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 1,
+            "explanation": "The student's answer is correct. In the context of the Fuxi distributed scheduling system, the 'FuxiMaster' is indeed the role responsible for resource scheduling. The student correctly chose option 'A', which is 'FuxiMaster', as their answer."
+        },
+        {
+            "content": "伏羲在支持大规模方面采用了哪些技术？(  )",
+            "option": "{'A': '多线程', 'B': '增量资源调度', 'C': '异步', 'D': '增加数据量'}",
+            "right_answer": "[\"A\", \"B\", \"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_加数_计算机科学与技术, K_加数_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 0,
+            "explanation": "The student answered incorrectly because they chose an option that was not part of the correct set of technologies Fuxi uses for supporting large-scale systems. The correct answers were 'A', 'B', and 'C' which are 'multithreading', 'incremental resource scheduling', and 'asynchronous'. These options are relevant to the context of supporting large-scale systems as they deal with effective resource management, parallel processing, and non-blocking operations. The option the student selected, 'D', 'increasing data volume', does not contribute to the technical scalability of large systems and was unnecessary for this question."
+        },
+        {
+            "content": "伏羲在支持大规模方面采用了哪些技术？(  )",
+            "option": "{'A': '多线程', 'B': '增量资源调度', 'C': '异步', 'D': '增加数据量'}",
+            "right_answer": "[\"A\", \"B\", \"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_加数_计算机科学与技术, K_加数_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 1,
+            "explanation": "The student correctly identified the technologies used by Fuxi to support large-scale operations, which were 'multi-threading', 'incremental resource scheduling', and 'asynchronous operations'. These options, corresponding to 'A', 'B', and 'C', are indeed the correct answer. The student demonstrated an understanding of the relevant technologies in the context of big data platform core technologies."
+        },
+        {
+            "content": "下面哪个阶段在BSP模型中可以独立并发执行的？（  ）",
+            "option": "{'A': '数据分片阶段', 'B': '本地计算阶段', 'C': '全局通信阶段', 'D': '栅栏同步阶段'}",
+            "right_answer": "[\"B\"]",
+            "knowledge_evidence": "题目对应知识点为K_BSP模型_计算机科学与技术, K_BSP模型_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 0,
+            "explanation": "学生在此题目中回答错误。题目询问的是在BSP（Bulk Synchronous Parallel）模型中哪个阶段可以独立并发执行。根据BSP模型的相关知识，本地计算阶段（选项B）是每个处理单元可以独立执行并与其他单元并行运作的阶段。在这阶段，各个处理单元执行自身的局部计算，没有与其他单元的直接通信。因此，正确答案是选择B，本地计算阶段。学生的答案未匹配该答案，因此标记为错误。"
+        },
+        {
+            "content": "下面哪个阶段在BSP模型中可以独立并发执行的？（  ）",
+            "option": "{'A': '数据分片阶段', 'B': '本地计算阶段', 'C': '全局通信阶段', 'D': '栅栏同步阶段'}",
+            "right_answer": "[\"B\"]",
+            "knowledge_evidence": "题目对应知识点为K_BSP模型_计算机科学与技术, K_BSP模型_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 1,
+            "explanation": "The question asks which phase in the BSP (Bulk Synchronous Parallel) model can be executed independently and concurrently. The correct answer, 'B', refers to the '本地计算阶段' or 'local computation phase'. In the BSP model, the local computation phase is the stage where each processor performs computations independently without requiring data from other processors, making it suitable for concurrent execution. The student answered this question correctly, identifying the right phase that can execute independently and concurrently."
+        },
+        {
+            "content": "下面哪个阶段在BSP模型中可以独立并发执行的？（  ）",
+            "option": "{'A': '数据分片阶段', 'B': '本地计算阶段', 'C': '全局通信阶段', 'D': '栅栏同步阶段'}",
+            "right_answer": "[\"B\"]",
+            "knowledge_evidence": "题目对应知识点为K_BSP模型_计算机科学与技术, K_BSP模型_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 0,
+            "explanation": "学生在此题目中回答错误。题目询问的是在BSP（Bulk Synchronous Parallel）模型中哪个阶段可以独立并发执行。根据BSP模型的相关知识，本地计算阶段（选项B）是每个处理单元可以独立执行并与其他单元并行运作的阶段。在这阶段，各个处理单元执行自身的局部计算，没有与其他单元的直接通信。因此，正确答案是选择B，本地计算阶段。学生的答案未匹配该答案，因此标记为错误。"
+        },
+        {
+            "content": "下面哪个阶段在BSP模型中可以独立并发执行的？（  ）",
+            "option": "{'A': '数据分片阶段', 'B': '本地计算阶段', 'C': '全局通信阶段', 'D': '栅栏同步阶段'}",
+            "right_answer": "[\"B\"]",
+            "knowledge_evidence": "题目对应知识点为K_BSP模型_计算机科学与技术, K_BSP模型_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 1,
+            "explanation": "The question asks which phase in the BSP (Bulk Synchronous Parallel) model can be executed independently and concurrently. The correct answer, 'B', refers to the '本地计算阶段' or 'local computation phase'. In the BSP model, the local computation phase is the stage where each processor performs computations independently without requiring data from other processors, making it suitable for concurrent execution. The student answered this question correctly, identifying the right phase that can execute independently and concurrently."
+        },
+        {
+            "content": "下面哪些是函数式编程语言有特点？（  ）",
+            "option": "{'A': '每个函数都有输出', 'B': '函数可以改变外部变量的状态', 'C': '函数的输出结果不依赖于外部变量', 'D': '函数的输入参数可能是另外一个函数'}",
+            "right_answer": "[\"A\", \"C\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_外部变量_计算机科学与技术, K_外部变量_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 0,
+            "explanation": "学生回答此题不正确。题目是关于函数式编程语言的特点，正确答案是选项 A、C 和 D。选项 A（每个函数都有输出）和选项 D（函数的输入参数可能是另外一个函数）都是函数式编程语言的特点，因为函数式编程强调函数的纯粹性和组成性。选项 C（函数的输出结果不依赖于外部变量）描述了函数式编程语言中的纯函数特性，即相同的输入总是产生相同的输出，不依赖于外部状态。而选项 B（函数可以改变外部变量的状态）通常不是函数式编程所鼓励的特性，因为函数式编程语言通常强调不变性和避免副作用。因此，学生可能错误地选择了选项 B，导致答案不正确。"
+        },
+        {
+            "content": "下面哪些是函数式编程语言有特点？（  ）",
+            "option": "{'A': '每个函数都有输出', 'B': '函数可以改变外部变量的状态', 'C': '函数的输出结果不依赖于外部变量', 'D': '函数的输入参数可能是另外一个函数'}",
+            "right_answer": "[\"A\", \"C\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_外部变量_计算机科学与技术, K_外部变量_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 1,
+            "explanation": "The student correctly identified the features of functional programming languages. In functional programming, each function has an output ('A'), the output does not depend on external variables making it purely functional ('C'), and functions can take other functions as arguments ('D'). The option 'B', 'functions can change the state of external variables,' is not characteristic of functional programming, where functions are usually pure and do not have side effects. This understanding aligns with the principles of functional programming, explaining the student's correct answer."
+        },
+        {
+            "content": "分布式计算过程中，以下哪种计算调度方式代价更小？(  )",
+            "option": "{'A': '将计算发送到数据所在机器运行', 'B': '将数据拷贝到计算所在机器运行', 'C': '将数据和计算拿到统一的节点上运行', 'D': '以上都不对'}",
+            "right_answer": "[\"A\"]",
+            "knowledge_evidence": "题目对应知识点为K_调度方式_计算机科学与技术, K_调度方式_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 1,
+            "explanation": "The student's answer is A, which is the correct answer. The question asks which scheduling method incurs the least cost during distributed computing. Sending computation to where the data is located (option A) is typically more cost-effective than moving data to the computation (option B) or having both data and computation converge on a single node (option C). This is because large datasets have significant overhead when transferred, so it is efficient to process them where they are stored. The student demonstrated understanding of this concept by choosing the correct option."
+        },
+        {
+            "content": "下面对流式描述正确的是（  ）",
+            "option": "{'A': '它是一种有状态计算，failover必须将数据从最源头重发。', 'B': '数据必须是有序进入，才能保证数据的正确性。', 'C': 'temporal SQL是适合流式计算的SQL语言。', 'D': '流式计算无法支持delete和update语义。'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_对流_计算机科学与技术, K_对流_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 0,
+            "explanation": "The student chose an incorrect answer for the question about stream processing. The correct answer was option 'C', which states 'temporal SQL is suitable for stream processing SQL language.' This option correctly reflects the adaptability of SQL for stream processing, specifically temporal SQL, which handles time-based streaming data efficiently. The student's answer perhaps did not match this correct assessment. Options 'A', 'B', and 'D' contain inaccuracies or misconceptions about stream processing; for example, 'A' misleadingly suggests a strict state retention requirement and data retransmission, and 'D' incorrectly claims limitations on stream processing capabilities regarding 'delete and update semantics'. Therefore, the attention should be on the temporal SQL's suitability for streaming to choose the correct option 'C'."
+        },
+        {
+            "content": "下面对流式描述正确的是（  ）",
+            "option": "{'A': '它是一种有状态计算，failover必须将数据从最源头重发。', 'B': '数据必须是有序进入，才能保证数据的正确性。', 'C': 'temporal SQL是适合流式计算的SQL语言。', 'D': '流式计算无法支持delete和update语义。'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_对流_计算机科学与技术, K_对流_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 1,
+            "explanation": "The student answered correctly with option 'C': 'temporal SQL is suitable for stream computing'. This choice was correct because temporal SQL is indeed designed to handle temporal data efficiently, which is crucial in stream computing where data is continuously generated and processed."
+        },
+        {
+            "content": "下面对系统雪崩准确的描述有（  ）",
+            "option": "{'A': '系统雪崩是由于oom，引起系统级联的宕机现象。', 'B': '系统雪崩是由于系统设计问题，由软硬件以及流量异常引发的由细微问题引发更大面积故障，直至系统当机的现象。', 'C': '系统雪崩一般不会因为硬件引发。而是由于流量激增，系统容量设计不足，造成后台系统，包括数据库系统的不正常工作。', 'D': '系统雪崩最初原因与触发宕机的故障可以相关，也有可能无关。'}",
+            "right_answer": "[\"B\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_宕机_计算机科学与技术, K_宕机_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 0,
+            "explanation": "The student was asked to accurately describe a 'system avalanche.' The correct options for the answer are B and D. Option B describes the 'system avalanche' as occurring due to system design issues and small problems leading to larger failures, eventually causing a system failure. This aligns with the cascading nature of a 'system avalanche.' Option D states that the initially triggering cause of a system failure may or may not be related, which reflects how varied causes can contribute to systemic failures. The student's answer did not include both B and D, leading to the incorrect answer. It's important to consider the broad and interconnected nature of system failures in such scenarios."
+        },
+        {
+            "content": "下面对系统雪崩准确的描述有（  ）",
+            "option": "{'A': '系统雪崩是由于oom，引起系统级联的宕机现象。', 'B': '系统雪崩是由于系统设计问题，由软硬件以及流量异常引发的由细微问题引发更大面积故障，直至系统当机的现象。', 'C': '系统雪崩一般不会因为硬件引发。而是由于流量激增，系统容量设计不足，造成后台系统，包括数据库系统的不正常工作。', 'D': '系统雪崩最初原因与触发宕机的故障可以相关，也有可能无关。'}",
+            "right_answer": "[\"B\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_宕机_计算机科学与技术, K_宕机_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 1,
+            "explanation": "The student's answer to the question about '系统雪崩' or 'system avalanche' was correct because they identified both statement B and D as accurate descriptions. Statement B correctly emphasizes that a system avalanche can be triggered by small design problems or anomalies in software, hardware, or traffic leading to widespread system failure. Statement D accurately acknowledges that the initial cause of a system avalanche can either be related or unrelated to the fault that triggers the crash. The student successfully discerned these nuanced descriptions, aligning their answer with the provided solution."
+        },
+        {
+            "content": "对于spark streaming不正确的描述有（  ）",
+            "option": "{'A': 'spark streaming的ack机制由一组分布式的系统维护，所以它是scale-out的。', 'B': 'spark streaming使用mini-batch的机制，dstream由多个rdd组成。', 'C': 'spark streaming支持滑动窗口，固定窗口和session窗口。', 'D': 'spark streaming是将流式计算切割成批量计算。但同时，批量计算也可以当作流式计算运行。'}",
+            "right_answer": "[\"A\", \"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_系统维护_计算机科学与技术, K_系统维护_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 0,
+            "explanation": "The student was tasked with identifying incorrect descriptions about Spark Streaming. The correct answers were \"A\" and \"C\". Option \"A\" was incorrect because Spark Streaming's ack mechanism is not inherently scale-out; it relies on Spark's distributed computation model rather than a specific mechanism for scaling acknowledgments independently. Option \"C\" was incorrect because while Spark Streaming does support sliding and fixed windows, it does not inherently support session windows, which require more complex state management that is not directly supported by the Spark Streaming API out of the box. The student did not choose both of these options, which is why the answer was marked as incorrect."
+        },
+        {
+            "content": "对于spark streaming不正确的描述有（  ）",
+            "option": "{'A': 'spark streaming的ack机制由一组分布式的系统维护，所以它是scale-out的。', 'B': 'spark streaming使用mini-batch的机制，dstream由多个rdd组成。', 'C': 'spark streaming支持滑动窗口，固定窗口和session窗口。', 'D': 'spark streaming是将流式计算切割成批量计算。但同时，批量计算也可以当作流式计算运行。'}",
+            "right_answer": "[\"A\", \"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_系统维护_计算机科学与技术, K_系统维护_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 1,
+            "explanation": "The student correctly identified the incorrect statements about spark streaming. Option A is incorrect because Spark Streaming's acknowledgment mechanism, while scalable, is not specifically detailed to be maintained by a separate set of distributed systems. Instead, it relies on strong integration with the overall Spark architecture. Option C is also incorrect because Spark Streaming primarily supports sliding and fixed windows, but session windows are typically associated with more advanced stream processing platforms and are not natively supported by Spark Streaming in its classic form. Therefore, the student's understanding and choices for this question were correct."
+        }
+    ],
+    "tasks": [
+        {
+            "content": "阿里云伏羲分布式调度系统与社区Hadoop MR最大的区别是？(  )",
+            "option": "{'A': 'Hadoop是一层架构集中资源和任务调度，而伏羲是两层架构独立的资源和任务调度', 'B': 'Hadoop存在规模瓶颈，而伏羲规模横向扩展性更好', 'C': 'Hadoop与伏羲的调度策略不同', 'D': 'Hadoop jobtracker没有failover，伏羲有完善的failover功能'}",
+            "right_answer": "[\"A\", \"B\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_调度策略_计算机科学与技术, K_调度策略_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 0,
+            "explanation": ""
+        },
+        {
+            "content": "伏羲资源调度的目标包括？(  )",
+            "option": "{'A': '集群资源利用率最大化', 'B': '每个任务的资源等待时间最小化', 'C': '能分组控制资源配额', 'D': '能支持临时紧急任务'}",
+            "right_answer": "[\"A\", \"B\", \"C\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_资源调度_计算机科学与技术, K_资源调度_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 0,
+            "explanation": ""
+        },
+        {
+            "content": "伏羲在支持大规模方面采用了哪些技术？(  )",
+            "option": "{'A': '多线程', 'B': '增量资源调度', 'C': '异步', 'D': '增加数据量'}",
+            "right_answer": "[\"A\", \"B\", \"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_加数_计算机科学与技术, K_加数_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 0,
+            "explanation": ""
+        },
+        {
+            "content": "下面哪个阶段在BSP模型中可以独立并发执行的？（  ）",
+            "option": "{'A': '数据分片阶段', 'B': '本地计算阶段', 'C': '全局通信阶段', 'D': '栅栏同步阶段'}",
+            "right_answer": "[\"B\"]",
+            "knowledge_evidence": "题目对应知识点为K_BSP模型_计算机科学与技术, K_BSP模型_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 0,
+            "explanation": ""
+        },
+        {
+            "content": "下面哪些是BSP模型的缺点？（  ）",
+            "option": "{'A': '栅栏同步开销比较大', 'B': '可能产生死锁', 'C': '没有解决负载均衡问题', 'D': '被计算的数据可以保存在内存里'}",
+            "right_answer": "[\"A\"]",
+            "knowledge_evidence": "题目对应知识点为K_BSP模型_计算机科学与技术, K_BSP模型_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "下面哪些是函数式编程语言有特点？（  ）",
+            "option": "{'A': '每个函数都有输出', 'B': '函数可以改变外部变量的状态', 'C': '函数的输出结果不依赖于外部变量', 'D': '函数的输入参数可能是另外一个函数'}",
+            "right_answer": "[\"A\", \"C\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_外部变量_计算机科学与技术, K_外部变量_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 0,
+            "explanation": ""
+        },
+        {
+            "content": "分布式计算过程中，以下哪种计算调度方式代价更小？(  )",
+            "option": "{'A': '将计算发送到数据所在机器运行', 'B': '将数据拷贝到计算所在机器运行', 'C': '将数据和计算拿到统一的节点上运行', 'D': '以上都不对'}",
+            "right_answer": "[\"A\"]",
+            "knowledge_evidence": "题目对应知识点为K_调度方式_计算机科学与技术, K_调度方式_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "下面对流式描述正确的是（  ）",
+            "option": "{'A': '它是一种有状态计算，failover必须将数据从最源头重发。', 'B': '数据必须是有序进入，才能保证数据的正确性。', 'C': 'temporal SQL是适合流式计算的SQL语言。', 'D': '流式计算无法支持delete和update语义。'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_对流_计算机科学与技术, K_对流_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 0,
+            "explanation": ""
+        },
+        {
+            "content": "下面对系统雪崩准确的描述有（  ）",
+            "option": "{'A': '系统雪崩是由于oom，引起系统级联的宕机现象。', 'B': '系统雪崩是由于系统设计问题，由软硬件以及流量异常引发的由细微问题引发更大面积故障，直至系统当机的现象。', 'C': '系统雪崩一般不会因为硬件引发。而是由于流量激增，系统容量设计不足，造成后台系统，包括数据库系统的不正常工作。', 'D': '系统雪崩最初原因与触发宕机的故障可以相关，也有可能无关。'}",
+            "right_answer": "[\"B\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_宕机_计算机科学与技术, K_宕机_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 0,
+            "explanation": ""
+        },
+        {
+            "content": "对于spark streaming不正确的描述有（  ）",
+            "option": "{'A': 'spark streaming的ack机制由一组分布式的系统维护，所以它是scale-out的。', 'B': 'spark streaming使用mini-batch的机制，dstream由多个rdd组成。', 'C': 'spark streaming支持滑动窗口，固定窗口和session窗口。', 'D': 'spark streaming是将流式计算切割成批量计算。但同时，批量计算也可以当作流式计算运行。'}",
+            "right_answer": "[\"A\", \"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_系统维护_计算机科学与技术, K_系统维护_计算机科学与技术对应的课程为大数据平台核心技术, ",
+            "is_correct": 0,
+            "explanation": ""
+        }
+    ],
+    "result": [
+        {
+            "content": "在分布式调度系统中，伏羲的两层架构设计相比Hadoop的一层架构，是否能够更好地实现资源和任务的独立调度？",
+            "option": "{}",
+            "answer": "['True']",
+            "course_name": "大数据平台核心技术",
+            "concept_id": "K_调度策略_计算机科学与技术",
+            "explanation": "伏羲采用两层架构，将资源调度和任务调度分离，从而提高了系统的灵活性和扩展性。这一特性是其与Hadoop的主要区别之一。"
+        },
+        {
+            "content": "资源调度的目标是否包括最大化集群资源利用率和最小化任务等待时间？",
+            "option": "{}",
+            "answer": "['True']",
+            "course_name": "大数据平台核心技术",
+            "concept_id": "K_资源调度_计算机科学与技术",
+            "explanation": "资源调度的核心目标之一是通过优化资源分配来提高集群资源利用率，同时减少任务的等待时间，从而提升整体效率。"
+        },
+        {
+            "content": "在支持大规模系统时，增量资源调度和异步操作是否是关键技术手段？",
+            "option": "{}",
+            "answer": "['True']",
+            "course_name": "大数据平台核心技术",
+            "concept_id": "K_加数_计算机科学与技术",
+            "explanation": "增量资源调度和异步操作能够显著提升系统的并发性和扩展性，是支持大规模系统的关键技术。"
+        },
+        {
+            "content": "在BSP模型中，全局通信阶段是否可以独立并发执行？",
+            "option": "{}",
+            "answer": "['False']",
+            "course_name": "大数据平台核心技术",
+            "concept_id": "K_BSP模型_计算机科学与技术",
+            "explanation": "全局通信阶段需要协调多个处理器之间的数据交换，因此无法独立并发执行，而本地计算阶段则具备独立并发能力。"
+        },
+        {
+            "content": "函数式编程语言是否允许函数改变外部变量的状态？",
+            "option": "{}",
+            "answer": "['False']",
+            "course_name": "大数据平台核心技术",
+            "concept_id": "K_外部变量_计算机科学与技术",
+            "explanation": "函数式编程语言强调不可变性和无副作用，因此函数不应改变外部变量的状态。"
+        },
+        {
+            "content": "temporal SQL是否是一种适合流式计算的SQL语言？",
+            "option": "{}",
+            "answer": "['True']",
+            "course_name": "大数据平台核心技术",
+            "concept_id": "K_对流_计算机科学与技术",
+            "explanation": "temporal SQL专为处理基于时间的流式数据设计，能够高效支持流式计算中的时间窗口操作。"
+        },
+        {
+            "content": "系统雪崩是否可能由于硬件故障引发？",
+            "option": "{}",
+            "answer": "['False']",
+            "course_name": "大数据平台核心技术",
+            "concept_id": "K_宕机_计算机科学与技术",
+            "explanation": "虽然硬件故障可能导致系统问题，但系统雪崩通常是由流量激增、容量设计不足或软件设计缺陷引发的连锁反应。"
+        },
+        {
+            "content": "Spark Streaming的ack机制是否由一组独立的分布式系统维护？",
+            "option": "{}",
+            "answer": "['False']",
+            "course_name": "大数据平台核心技术",
+            "concept_id": "K_系统维护_计算机科学与技术",
+            "explanation": "Spark Streaming的ack机制依赖于Spark的整体架构，而非独立的分布式系统。"
+        },
+        {
+            "content": "Spark Streaming是否支持session窗口操作？",
+            "option": "{}",
+            "answer": "['False']",
+            "course_name": "大数据平台核心技术",
+            "concept_id": "K_系统维护_计算机科学与技术",
+            "explanation": "Spark Streaming本身不支持session窗口操作，这种功能通常需要借助其他框架（如Flink）实现。"
+        },
+        {
+            "content": "资源调度是否可以通过分组控制资源配额来满足不同业务的需求？",
+            "option": "{}",
+            "answer": "['True']",
+            "course_name": "大数据平台核心技术",
+            "concept_id": "K_资源调度_计算机科学与技术",
+            "explanation": "分组控制资源配额是资源调度的重要功能之一，能够根据不同业务需求合理分配资源，提升系统整体效率。"
+        }
+    ],
+    "cost": {
+        "usage_including_cached_inference": {
+            "total_cost": 0.1272528,
+            "qwen-max-latest": {
+                "cost": 0.1272528,
+                "prompt_tokens": 34494,
+                "completion_tokens": 4632,
+                "total_tokens": 39126
+            }
+        },
+        "usage_excluding_cached_inference": {
+            "total_cost": 0.1272528,
+            "qwen-max-latest": {
+                "cost": 0.1272528,
+                "prompt_tokens": 34494,
+                "completion_tokens": 4632,
+                "total_tokens": 39126
+            }
+        }
+    }
+},
+{
+    "round": 11,
+    "examples": [
+        {
+            "content": "综合布线要求设计一个结构合理、技术先进、满足需求的综合布线系统方案，下列哪项不属于综合布线系统的设计原则。(  )",
+            "option": "{'A': '综合考虑用户需求、建筑物功能、经济发展水平等因素', 'B': '长远规划思想、保持一定的先进性', 'C': '不必将综合布线系统纳入建筑物整体规划、设计和建设中', 'D': '扩展性、标准化、灵活的管理方式'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_设计原则_计算机科学与技术, K_设计原则_计算机科学与技术对应的课程为网络综合布线, ",
+            "is_correct": 1,
+            "explanation": "The student's answer was correct. The question asked which option does not belong to the design principles of a comprehensive wiring system. Option 'C' states 'it is not necessary to include the comprehensive wiring system in the overall planning, design, and construction of the building', which indeed does not belong to the typical design principles. Including wiring in the overall planning ensures technical feasibility and efficiency, making this option the correct answer as it does not align with standard practices."
+        },
+        {
+            "content": "工作区子系统又称（ ）子系统。",
+            "option": "{'A': '工作站', 'B': '服务群', 'C': '服务区', 'D': '信息站'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_服务区_计算机科学与技术, K_服务区_计算机科学与技术对应的课程为网络综合布线, ",
+            "is_correct": 0,
+            "explanation": "The student answered the question incorrectly because they likely misunderstood the term '工作区子系统' as something related to options like '工作站' or '信息站'. The correct answer is '服务区' (Option C), which is aligned with the concept of 'workspace subsystem' often referred to as 'service area' in the context of network structured cabling, as indicated by the knowledge evidence for this course. The student may need to review the distinctions between terminologies used in network comprehensive cabling to improve understanding."
+        },
+        {
+            "content": "工作区子系统又称（ ）子系统。",
+            "option": "{'A': '工作站', 'B': '服务群', 'C': '服务区', 'D': '信息站'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_服务区_计算机科学与技术, K_服务区_计算机科学与技术对应的课程为网络综合布线, ",
+            "is_correct": 1,
+            "explanation": "The student correctly identified that the '工作区子系统' is also known as the '服务区' subsystem. The concept '服务区' is specific to the field of computer science and technology, and it is relevant to the course '网络综合布线'. The correct answer was option 'C', and the student selected this, reflecting their understanding of the subject matter."
+        },
+        {
+            "content": "垂直干线子系统也称（）子系统。",
+            "option": "{'A': '骨干', 'B': '综合', 'C': '干线', 'D': '连接'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_综合_计算机科学与技术, K_综合_计算机科学与技术对应的课程为网络综合布线, ",
+            "is_correct": 0,
+            "explanation": "The student answered incorrectly by choosing an option other than 'C'. The question asks for the term that describes a '垂直干线子系统' (vertical trunk subsystem), which is typically referred to as '干线' (backbone). The correct answer is 'C', which means 'trunk' or 'backbone'. This terminology is standard in network cabling courses, aligning with the knowledge evidence provided. The student should review the concepts and definitions related to network subsystems to ensure they understand the correct terms and their applications."
+        },
+        {
+            "content": "综合布线要求设计一个结构合理、技术先进、满足需求的综合布线系统方案，下列哪项不属于综合布线系统的设计原则。(  )",
+            "option": "{'A': '综合考虑用户需求、建筑物功能、经济发展水平等因素', 'B': '长远规划思想、保持一定的先进性', 'C': '不必将综合布线系统纳入建筑物整体规划、设计和建设中', 'D': '扩展性、标准化、灵活的管理方式'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_综合_计算机科学与技术, K_综合_计算机科学与技术对应的课程为网络综合布线, ",
+            "is_correct": 1,
+            "explanation": "The student correctly identified option 'C' as not belonging to the design principles of integrated cabling systems. In integrated cabling system design, incorporation into the overall building planning, design, and construction is crucial. Option 'C' suggests that it's not necessary to include the cabling system in the broader building plan, which contradicts the standard design principles focused on coherence and integration with the overall structure. Hence, the student's choice aligns with understanding the importance of integrating various technological and architectural aspects to ensure a feasible and advanced cabling solution."
+        },
+        {
+            "content": "水平干线子系统是指从楼层配线架到工作区的传输线路。",
+            "option": "{'true': '正确', 'false': '错误'}",
+            "right_answer": "[\"true\"]",
+            "knowledge_evidence": "题目对应知识点为K_传输线路_计算机科学与技术, K_传输线路_计算机科学与技术对应的课程为网络综合布线, ",
+            "is_correct": 1,
+            "explanation": "The student correctly identified the definition of '水平干线子系统' as 'the transmission line from the floor distribution frame to the work area.' The description provided matches the concept correctly, indicating that the student has a good understanding of the network cabling subsystem in a building's structured cabling system according to the course '网络综合布线.'"
+        },
+        {
+            "content": "水平子系统的设计需要认真阅读建筑物设计图纸，确定工作区子系统信息点的位置和数量完成点数表",
+            "option": "{'true': '正确', 'false': '错误'}",
+            "right_answer": "[\"true\"]",
+            "knowledge_evidence": "题目对应知识点为K_点数_信息与通信工程, K_点数_信息与通信工程对应的课程为网络综合布线, ",
+            "is_correct": 1,
+            "explanation": "The student's answer was marked as correct ('true'), indicating they understood that the design of the horizontal subsystem requires a careful review of building blueprints to determine the location and quantity of information points in the work area. This answer aligns with the principles of structured cabling systems, as accurate planning and mapping are crucial for effective network cabling installations."
+        },
+        {
+            "content": "水平子系统属于配线子系统对应缆线长度规定，配线子系统信道的最大长度不应大于一百米新造总长度不应大于2000米。",
+            "option": "{'true': '正确', 'false': '错误'}",
+            "right_answer": "[\"true\"]",
+            "knowledge_evidence": "题目对应知识点为K_系统对_计算机科学与技术, K_系统对_计算机科学与技术对应的课程为网络综合布线, ",
+            "is_correct": 0,
+            "explanation": "The problem is about the maximum length requirements for a wiring channel in the wiring subsystem, stating that the maximum length should not exceed 100 meters, and the total new length should not exceed 2000 meters. The student answered 'true', indicating they thought the statement was correct, but the answer is marked incorrect. This suggests that either the statement contains incorrect values according to the official standards of network cabling lengths, or there is a misunderstanding about what the statement is referring to. The standard maximum length for Ethernet cabling, commonly used in network cabling, is indeed 100 meters for a single run. However, the context of 2000 meters total or specific application scenarios could have additional details that were misinterpreted, leading to an incorrect answer."
+        },
+        {
+            "content": "水平插头子系统从工作区的信息插座开始到管理间子系统的（）。",
+            "option": "{'A': 'RJ-45', 'B': '信息终端', 'C': '信息插座', 'D': '配线架'}",
+            "right_answer": "[\"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_配线架_计算机科学与技术, K_配线架_计算机科学与技术对应的课程为网络综合布线, ",
+            "is_correct": 1,
+            "explanation": "The question is about the end point of the horizontal cabling subsystem, which starts at the information socket in the work area and extends to a component in the management subsystem. The correct answer is '配线架' (D), which translates to 'patch panel' in English. Patch panels are used to organize and manage network cables, making them the correct choice for this answer. The student's answer was correct because they selected option D, recognizing that a patch panel is the standard termination point in this type of network setup."
+        },
+        {
+            "content": "吊顶上加工线槽布线由楼层管理间引出来的线缆先走吊顶内线槽道个房间后经分支线槽从桥梁时电缆管道分叉后将电缆穿过一段支管引向墙壁沿墙而下到墙内信息插座的布线方式",
+            "option": "{'true': '正确', 'false': '错误'}",
+            "right_answer": "[\"true\"]",
+            "knowledge_evidence": "题目对应知识点为K_线缆_计算机科学与技术, K_线缆_计算机科学与技术对应的课程为网络综合布线, ",
+            "is_correct": 1,
+            "explanation": "The student provided a correct answer to the question about the cabling approach. The rule mentioned in the question discusses a typical method for routing cables through a ceiling track, then branching through ducts, and finally reaching wall sockets—aligning with standard network cabling principles taught in the '网络综合布线' (Comprehensive Network Cabling) course. The correct identification of this method demonstrates the student's understanding of the theoretical knowledge tied to cabling in computer science and technology, specifically regarding cable management within building structures."
+        },
+        {
+            "content": "路由的选择主要依据建筑物的结构以及建筑物内预埋管道而定。",
+            "option": "{'true': '正确', 'false': '错误'}",
+            "right_answer": "[\"true\"]",
+            "knowledge_evidence": "题目对应知识点为K_路由_计算机科学与技术, K_路由_计算机科学与技术对应的课程为网络综合布线, ",
+            "is_correct": 1,
+            "explanation": "The student answered the question correctly. The exercise was about choosing routes for network cabling, which primarily depends on the structure of the building and the pre-built conduits within it. This understanding aligns with the principles taught in the course on integrated network cabling, where consideration of existing infrastructure is crucial for effective routing decisions."
+        },
+        {
+            "content": "跳线架的作用是上级程控交换机过来的接线与到桌面终端的语音信息点连接线之间的连接和跳接部分，便于管理，维护测试。",
+            "option": "{'true': '正确', 'false': '错误'}",
+            "right_answer": "[\"true\"]",
+            "knowledge_evidence": "题目对应知识点为K_接线_计算机科学与技术, K_接线_计算机科学与技术对应的课程为网络综合布线, ",
+            "is_correct": 1,
+            "explanation": "The student correctly identified the true statement about the function of patch panels. Patch panels are used to connect and facilitate the management of cables between a central, usually larger, telecommunication or computer network switch and individual workstation connections. This role is crucial for the organization and maintenance of network connections as described in the exercise, which aligns with the knowledge from '网络综合布线' (Network Integrated Cabling) course. The student demonstrated an understanding of the concept and used the knowledge correctly, therefore, the answer was marked as correct."
+        }
+    ],
+    "tasks": [
+        {
+            "content": "综合布线要求设计一个结构合理、技术先进、满足需求的综合布线系统方案，下列哪项不属于综合布线系统的设计原则。(  )",
+            "option": "{'A': '综合考虑用户需求、建筑物功能、经济发展水平等因素', 'B': '长远规划思想、保持一定的先进性', 'C': '不必将综合布线系统纳入建筑物整体规划、设计和建设中', 'D': '扩展性、标准化、灵活的管理方式'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_设计原则_计算机科学与技术, K_设计原则_计算机科学与技术对应的课程为网络综合布线, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "工作区子系统又称（ ）子系统。",
+            "option": "{'A': '工作站', 'B': '服务群', 'C': '服务区', 'D': '信息站'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_服务区_计算机科学与技术, K_服务区_计算机科学与技术对应的课程为网络综合布线, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "垂直干线子系统也称（）子系统。",
+            "option": "{'A': '骨干', 'B': '综合', 'C': '干线', 'D': '连接'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_综合_计算机科学与技术, K_综合_计算机科学与技术对应的课程为网络综合布线, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "水平干线子系统是指从楼层配线架到工作区的传输线路。",
+            "option": "{'true': '正确', 'false': '错误'}",
+            "right_answer": "[\"true\"]",
+            "knowledge_evidence": "题目对应知识点为K_传输线路_计算机科学与技术, K_传输线路_计算机科学与技术对应的课程为网络综合布线, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "水平子系统的设计需要认真阅读建筑物设计图纸，确定工作区子系统信息点的位置和数量完成点数表",
+            "option": "{'true': '正确', 'false': '错误'}",
+            "right_answer": "[\"true\"]",
+            "knowledge_evidence": "题目对应知识点为K_点数_信息与通信工程, K_点数_信息与通信工程对应的课程为网络综合布线, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "水平子系统属于配线子系统对应缆线长度规定，配线子系统信道的最大长度不应大于一百米新造总长度不应大于2000米。",
+            "option": "{'true': '正确', 'false': '错误'}",
+            "right_answer": "[\"true\"]",
+            "knowledge_evidence": "题目对应知识点为K_系统对_计算机科学与技术, K_系统对_计算机科学与技术对应的课程为网络综合布线, ",
+            "is_correct": 0,
+            "explanation": ""
+        },
+        {
+            "content": "水平插头子系统从工作区的信息插座开始到管理间子系统的（）。",
+            "option": "{'A': 'RJ-45', 'B': '信息终端', 'C': '信息插座', 'D': '配线架'}",
+            "right_answer": "[\"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_配线架_计算机科学与技术, K_配线架_计算机科学与技术对应的课程为网络综合布线, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "吊顶上加工线槽布线由楼层管理间引出来的线缆先走吊顶内线槽道个房间后经分支线槽从桥梁时电缆管道分叉后将电缆穿过一段支管引向墙壁沿墙而下到墙内信息插座的布线方式",
+            "option": "{'true': '正确', 'false': '错误'}",
+            "right_answer": "[\"true\"]",
+            "knowledge_evidence": "题目对应知识点为K_线缆_计算机科学与技术, K_线缆_计算机科学与技术对应的课程为网络综合布线, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "路由的选择主要依据建筑物的结构以及建筑物内预埋管道而定。",
+            "option": "{'true': '正确', 'false': '错误'}",
+            "right_answer": "[\"true\"]",
+            "knowledge_evidence": "题目对应知识点为K_路由_计算机科学与技术, K_路由_计算机科学与技术对应的课程为网络综合布线, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "跳线架的作用是上级程控交换机过来的接线与到桌面终端的语音信息点连接线之间的连接和跳接部分，便于管理，维护测试。",
+            "option": "{'true': '正确', 'false': '错误'}",
+            "right_answer": "[\"true\"]",
+            "knowledge_evidence": "题目对应知识点为K_接线_计算机科学与技术, K_接线_计算机科学与技术对应的课程为网络综合布线, ",
+            "is_correct": 1,
+            "explanation": ""
+        }
+    ],
+    "result": [
+        {
+            "content": "工作区子系统也被称为“工作站”子系统。",
+            "option": "{'true': '正确', 'false': '错误'}",
+            "answer": "['False']",
+            "course_name": "网络综合布线",
+            "concept_id": "K_服务区_计算机科学与技术",
+            "explanation": "工作区子系统的正确别称是“服务区”，而非“工作站”。"
+        },
+        {
+            "content": "垂直干线子系统的主要功能是连接不同楼层的配线架，因此它也被称为“综合”子系统。",
+            "option": "{'true': '正确', 'false': '错误'}",
+            "answer": "['False']",
+            "course_name": "网络综合布线",
+            "concept_id": "K_综合_计算机科学与技术",
+            "explanation": "垂直干线子系统的正确别称是“干线”，而非“综合”。"
+        },
+        {
+            "content": "水平子系统的传输线路长度标准规定，单段电缆的最大长度不得超过100米。",
+            "option": "{'true': '正确', 'false': '错误'}",
+            "answer": "['True']",
+            "course_name": "网络综合布线",
+            "concept_id": "K_传输线路_计算机科学与技术",
+            "explanation": "根据行业标准，水平子系统中单段电缆的最大长度限制为100米。"
+        },
+        {
+            "content": "在网络布线中，水平子系统的总缆线长度可以超过2000米，只要每段电缆长度不超过100米即可。",
+            "option": "{'true': '正确', 'false': '错误'}",
+            "answer": "['False']",
+            "course_name": "网络综合布线",
+            "concept_id": "K_系统对_计算机科学与技术",
+            "explanation": "水平子系统的总缆线长度通常不应超过特定限制（如TIA/EIA-568标准中的规定）。"
+        },
+        {
+            "content": "工作区子系统的别称是“服务区”，用于描述从信息插座到终端设备的区域。",
+            "option": "{'true': '正确', 'false': '错误'}",
+            "answer": "['True']",
+            "course_name": "网络综合布线",
+            "concept_id": "K_服务区_计算机科学与技术",
+            "explanation": "工作区子系统的正确别称是“服务区”，用于描述从信息插座到终端设备的区域。"
+        },
+        {
+            "content": "垂直干线子系统通常被称为“干线”子系统，因为它负责连接建筑物内不同楼层的通信设备。",
+            "option": "{'true': '正确', 'false': '错误'}",
+            "answer": "['True']",
+            "course_name": "网络综合布线",
+            "concept_id": "K_综合_计算机科学与技术",
+            "explanation": "垂直干线子系统的正确别称是“干线”，用于连接不同楼层的通信设备。"
+        },
+        {
+            "content": "根据TIA/EIA-568标准，水平子系统的信道总长度（包括跳线和设备电缆）不应超过90米。",
+            "option": "{'true': '正确', 'false': '错误'}",
+            "answer": "['False']",
+            "course_name": "网络综合布线",
+            "concept_id": "K_系统对_计算机科学与技术",
+            "explanation": "根据TIA/EIA-568标准，水平子系统的信道总长度应不超过100米，而非90米。"
+        },
+        {
+            "content": "在一个实际布线项目中，如果某楼层的信息点数量为50个，且每个信息点需要铺设一条100米的电缆，则该楼层的总缆线长度可以达到5000米。",
+            "option": "{'true': '正确', 'false': '错误'}",
+            "answer": "['False']",
+            "course_name": "网络综合布线",
+            "concept_id": "K_传输线路_计算机科学与技术",
+            "explanation": "即使每个信息点的电缆长度为100米，总缆线长度仍需符合行业标准，通常不应超过特定限制。"
+        },
+        {
+            "content": "在设计水平子系统时，若建筑物设计图纸未明确标注信息点位置，则可以根据经验直接估算信息点数量和位置，无需进一步确认。",
+            "option": "{'true': '正确', 'false': '错误'}",
+            "answer": "['False']",
+            "course_name": "网络综合布线",
+            "concept_id": "K_点数_信息与通信工程",
+            "explanation": "水平子系统设计必须基于准确的建筑物设计图纸，确保信息点的数量和位置符合实际需求，不能仅凭经验估算。"
+        },
+        {
+            "content": "在吊顶内布线时，若分支线槽的容量不足，则可以通过增加额外的线槽或使用更大直径的线槽来解决线缆分叉问题。",
+            "option": "{'true': '正确', 'false': '错误'}",
+            "answer": "['True']",
+            "course_name": "网络综合布线",
+            "concept_id": "K_线缆_计算机科学与技术",
+            "explanation": "在实际布线中，合理规划线槽容量是确保线缆管理效率的重要措施。"
+        }
+    ],
+    "cost": {
+        "usage_including_cached_inference": {
+            "total_cost": 0.1699296,
+            "qwen-max-latest": {
+                "cost": 0.1699296,
+                "prompt_tokens": 37472,
+                "completion_tokens": 8333,
+                "total_tokens": 45805
+            }
+        },
+        "usage_excluding_cached_inference": {
+            "total_cost": 0.1699296,
+            "qwen-max-latest": {
+                "cost": 0.1699296,
+                "prompt_tokens": 37472,
+                "completion_tokens": 8333,
+                "total_tokens": 45805
+            }
+        }
+    }
+},
+{
+    "round": 19,
+    "examples": [
+        {
+            "content": "可以用哪个命令测试两台主机之间网络的连通性。",
+            "option": "{'A': 'ping', 'B': 'ifconfig', 'C': 'ipconfig', 'D': 'route'}",
+            "right_answer": "[\"A\"]",
+            "knowledge_evidence": "题目对应知识点为K_ipconfig_计算机科学与技术, K_ipconfig_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student correctly identified 'ping' as the command used to test network connectivity between two hosts. This is the standard and widely used method to check if a host is reachable within a network by sending ICMP echo request packets and measuring the response time. The other options, 'ifconfig', 'ipconfig', and 'route', serve different purposes related to configuring network interfaces and routing tables but do not directly test network connectivity like 'ping' does."
+        },
+        {
+            "content": "回环接口为系统提供一个单机网络环境，一般用于网络程序的调试。",
+            "option": "{'true': '正确', 'false': '错误'}",
+            "right_answer": "[\"true\"]",
+            "knowledge_evidence": "题目对应知识点为K_调试_计算机科学与技术, K_调试_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student's answer is correct. The loopback interface, which is commonly represented by the IP address 127.0.0.1, allows for network tests and software development to be conducted within a single machine, acting as a standalone network environment. This is particularly useful for debugging network applications on the Linux operating system, and aligns with the content and answer provided."
+        },
+        {
+            "content": "在Linux中，打开BASH后的命令提示符，能够告诉你有关主机的哪些信息？",
+            "option": "{'A': '登录的主机名', 'B': '登录的用户名', 'C': '用户当前所处的工作目录', 'D': '用户上次登录时间'}",
+            "right_answer": "[\"A\", \"B\", \"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_主机名_计算机科学与技术, K_主机名_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The student's answer was incorrect because they likely included all options without recognizing that option D '用户上次登录时间' is not typically displayed in the BASH command prompt. The BASH prompt in Linux generally shows the login hostname, login username, and current working directory, which corresponds to options A, B, and C. The prompt does not, by default, display the last login time, so including option D led to the answer being incorrect."
+        },
+        {
+            "content": "关于修改主机名，下面那些说法是正确的：",
+            "option": "{'A': '需要修改/etc/sysconfig/network文件', 'B': '需要修改/etc/hosts文件', 'C': '需要修改/etc/sysconfig/network-scripts/ifcfg-eth0文件', 'D': '一般需要重启系统，让修改生效'}",
+            "right_answer": "[\"A\", \"B\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_主机名_计算机科学与技术, K_主机名_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student answered the question correctly. The task was to identify which statements are true regarding modifying the hostname. The correct answers were options A, B, and D. These options are correct because: A) /etc/sysconfig/network file typically needs to be modified to change the hostname setting; B) /etc/hosts file is often modified to map the hostname to its associated IP address; and D) a system restart is generally required for changes to take full effect. Option C is not typically required for changing the hostname, which the student correctly omitted."
+        },
+        {
+            "content": "在Linux中，打开BASH后的命令提示符，能够告诉你有关主机的哪些信息？",
+            "option": "{'A': '登录的主机名', 'B': '登录的用户名', 'C': '用户当前所处的工作目录', 'D': '用户上次登录时间'}",
+            "right_answer": "[\"A\", \"B\", \"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_主机名_计算机科学与技术, K_主机名_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The student's answer was incorrect because they likely included all options without recognizing that option D '用户上次登录时间' is not typically displayed in the BASH command prompt. The BASH prompt in Linux generally shows the login hostname, login username, and current working directory, which corresponds to options A, B, and C. The prompt does not, by default, display the last login time, so including option D led to the answer being incorrect."
+        },
+        {
+            "content": "关于修改主机名，下面那些说法是正确的：",
+            "option": "{'A': '需要修改/etc/sysconfig/network文件', 'B': '需要修改/etc/hosts文件', 'C': '需要修改/etc/sysconfig/network-scripts/ifcfg-eth0文件', 'D': '一般需要重启系统，让修改生效'}",
+            "right_answer": "[\"A\", \"B\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_主机名_计算机科学与技术, K_主机名_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student answered the question correctly. The task was to identify which statements are true regarding modifying the hostname. The correct answers were options A, B, and D. These options are correct because: A) /etc/sysconfig/network file typically needs to be modified to change the hostname setting; B) /etc/hosts file is often modified to map the hostname to its associated IP address; and D) a system restart is generally required for changes to take full effect. Option C is not typically required for changing the hostname, which the student correctly omitted."
+        },
+        {
+            "content": "关于Linux中的软件管理，下面那些选项是正确的？",
+            "option": "{'A': '在某个Linux发行版下开发和编译的程序，直接放到另外一个Linux发行版下有可能性无法运行', 'B': '早期的Linux的软件都是通过源码来分发', 'C': 'RPM是所有Linux发现版本上的通用的软件包管理器', 'D': 'RPM是Linux下软件资源最丰富的软件包类型'}",
+            "right_answer": "[\"A\", \"B\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_软件资源_计算机科学与技术, K_软件资源_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The student's answer was marked incorrect because they did not select option 'C', which states 'RPM是所有Linux发现版本上的通用的软件包管理器'. This statement is incorrect because RPM (Red Hat Package Manager) is not universal to all Linux distributions. Some distributions, such as those based on Debian, use a different package management system called APT (Advanced Package Tool). Therefore, the correct options are 'A', 'B', and 'D'. Option 'A' is correct because a program developed and compiled on one Linux distribution may not run on another due to differences in environment and library dependencies. Option 'B' is accurate as early Linux software was indeed distributed as source code that users needed to compile. Option 'D' is also correct, noting RPM's richness in terms of available software, although it is not universal. The student's mistake was likely due to a misunderstanding of 'RPM' being a 'universal package manager' across all Linux distributions."
+        },
+        {
+            "content": "关于Linux中的软件管理，下面那些选项是正确的？",
+            "option": "{'A': '在某个Linux发行版下开发和编译的程序，直接放到另外一个Linux发行版下有可能性无法运行', 'B': '早期的Linux的软件都是通过源码来分发', 'C': 'RPM是所有Linux发现版本上的通用的软件包管理器', 'D': 'RPM是Linux下软件资源最丰富的软件包类型'}",
+            "right_answer": "[\"A\", \"B\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_软件资源_计算机科学与技术, K_软件资源_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student answered the question correctly. Option A is correct because programs developed and compiled on one Linux distribution may not run on another due to differences in libraries and system configurations. Option B is correct as historically, early Linux software was distributed primarily in source code form. Option D is correct because RPM (Red Hat Package Manager) based systems (such as Red Hat, Fedora, CentOS) have a large repository of available software, making it one of the most resource-rich package management systems. Option C is incorrect because not all Linux distributions use RPM; some use other package managers like APT (Advanced Package Tool) used by Debian-based systems. The student correctly identified options A, B, and D as accurate statements about Linux software management."
+        },
+        {
+            "content": "关于用rpm卸载软件，下面哪些说法是正确的：",
+            "option": "{'A': '使用-r选项', 'B': '使用-e选项', 'C': '卸载软件需要知道软件安装后包括版本号在内的全名', 'D': '卸载软件只需要知道软件名即可', 'E': '卸载一个软件可能会导致系统中别的软件无法使用'}",
+            "right_answer": "[\"B\", \"C\", \"E\"]",
+            "knowledge_evidence": "题目对应知识点为K_全名_计算机科学与技术, K_全名_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The student incorrectly answered the question about using rpm to uninstall software. The correct options were B, C, and E. Option B is correct because the -e flag is used for erasing (uninstalling) a package with rpm. Option C is correct because you typically need the full name of the installed package, including its version, to uninstall it. Option E is also correct because uninstalling a software package could potentially affect other software if they depend on the uninstalled package. The incorrect options provided by the student were likely based on common misconceptions, such as assuming option D (only the software name is needed) is sufficient, which is not necessarily true with rpm."
+        },
+        {
+            "content": "关于用rpm卸载软件，下面哪些说法是正确的：",
+            "option": "{'A': '使用-r选项', 'B': '使用-e选项', 'C': '卸载软件需要知道软件安装后包括版本号在内的全名', 'D': '卸载软件只需要知道软件名即可', 'E': '卸载一个软件可能会导致系统中别的软件无法使用'}",
+            "right_answer": "[\"B\", \"C\", \"E\"]",
+            "knowledge_evidence": "题目对应知识点为K_全名_计算机科学与技术, K_全名_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student correctly answered the question about uninstalling software using RPM in Linux. They selected option B (using the -e option), option C (needing the full name including version number to uninstall the software), and option E (uninstalling might cause other software to become unusable). These selections are correct because, to uninstall using RPM, the -e option is used, you need the full name of the installed package including version, and removing software dependencies is a real risk when uninstalling software."
+        },
+        {
+            "content": "下面关于yum的说法那些是错误的？",
+            "option": "{'A': 'yum目的就是为了解决RPM管理软件包时的依赖关系难题', 'B': 'yum是一种区别于RPM软件封装模式', 'C': 'yum是红帽系列Linux中的默认软件管理器', 'D': 'yum客户端在安装软件时无需了解该软件包的依赖关系信息'}",
+            "right_answer": "[\"B\", \"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_软件管理器_计算机科学与技术, K_软件管理器_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The student incorrectly identified the statements about 'yum' in Linux systems because they likely misunderstood the details about what 'yum' is and its functionalities. Let's analyze their choices: \r\n\r\n1. Option A: 'yum目的就是为了解决RPM管理软件包时的依赖关系难题' (Yum aims to resolve dependency issues when managing packages with RPM) - This statement is correct because 'yum' (Yellowdog Updater, Modified) was specifically designed to handle dependencies in RPM package management, making package installation easier by automatically resolving and installing dependencies.\r\n\r\n2. Option B: 'yum是一种区别于RPM软件封装模式' (Yum is a packaging mode different from RPM) - This statement is incorrect. Yum is not a packaging mode; instead, it is a command-line package-management utility for RPM-compatible Linux operating systems, designed to manage package installations, upgrades, and removals.\r\n\r\n3. Option C: 'yum是红帽系列Linux中的默认软件管理器' (Yum is the default package manager in Red Hat Linux series) - This statement is incorrect because while Yum is commonly used in Red Hat-based systems like CentOS and Fedora, it is not alone; other package managers such as dnf have replaced Yum in newer versions of some distributions (like Fedora), though it still serves as a default in older versions.\r\n\r\n4. Option D: 'yum客户端在安装软件时无需了解该软件包的依赖关系信息' (Yum clients do not need to know the dependency information when installing software) - This statement is correct as yum takes care of dependencies automatically, meaning the user doesn't have to manually identify and resolve dependencies for package installations.\r\n\r\nThe correct answers for the incorrect statements are 'B' and 'C', which the student failed to identify accurately."
+        },
+        {
+            "content": "下面关于yum的说法那些是错误的？",
+            "option": "{'A': 'yum目的就是为了解决RPM管理软件包时的依赖关系难题', 'B': 'yum是一种区别于RPM软件封装模式', 'C': 'yum是红帽系列Linux中的默认软件管理器', 'D': 'yum客户端在安装软件时无需了解该软件包的依赖关系信息'}",
+            "right_answer": "[\"B\", \"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_软件管理器_计算机科学与技术, K_软件管理器_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student answered the question correctly by identifying options B and C as incorrect regarding yum. Option B is incorrect because yum is not a different software packaging mode from RPM; it works as a package manager that resolves dependencies for RPM packages. Option C is incorrect because while yum may be the default package manager in some Red Hat-based distributions, it is not universally the default across all Red Hat distributions as newer ones use DNF. Therefore, the student's answer aligns correctly with the provided right answer."
+        },
+        {
+            "content": "8088CPU中，以下哪一个部件不属于EU部分（   ）.",
+            "option": "{'A': 'ALU', 'B': '通用寄存器和标志寄存器', 'C': '段寄存器', 'D': 'EU控制电路'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_段寄存器_计算机科学与技术, K_段寄存器_计算机科学与技术对应的课程为微机原理与接口技术, ",
+            "is_correct": 0,
+            "explanation": "The question asks which component does not belong to the Execution Unit (EU) part of an 8088 CPU. The student chose option 'C', which was correct. However, their answer was marked as incorrect due to a misunderstanding. In the 8088 CPU, the segment registers are part of the Bus Interface Unit (BIU), not the EU. Options 'A', 'B', and 'D' mention components that are part of the EU, such as the Arithmetic Logic Unit (ALU) and EU control circuits. Despite this mix-up, 'C' is indeed the correct choice as it is not part of the EU in the 8088 architecture."
+        },
+        {
+            "content": "指令流水线是指（   ）.",
+            "option": "{'A': '微处理器有序地执行指令', 'B': '微处理器顺序地执行指令', 'C': '微处理器同时执行多条指令', 'D': '指令通过流水线传送给微处理器'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_指令流水线_计算机科学与技术, K_指令流水线_计算机科学与技术对应的课程为微机原理与接口技术, ",
+            "is_correct": 0,
+            "explanation": "The student answered incorrectly because they selected an option that does not accurately describe the concept of 'instruction pipeline'. The correct answer is 'C: 微处理器同时执行多条指令' which means 'the microprocessor executes multiple instructions simultaneously'. This is a key feature of instruction pipelining, which enhances the processor's performance by overlapping instruction execution. The incorrect options suggested sequential execution or the method of instruction delivery to the processor, which do not capture the essence of pipelining."
+        },
+        {
+            "content": "8088CPU中，以下哪一个部件不属于BIU部分（  ）.<!--!doctype-->",
+            "option": "{'A': '段寄存器<!--!doctype-->', 'B': '指令队列<!--!doctype-->', 'C': '通用寄存器<!--!doctype-->', 'D': '地址加法器、总线控制逻辑<!--!doctype-->'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_总线_计算机科学与技术, K_总线_计算机科学与技术对应的课程为微机原理与接口技术, ",
+            "is_correct": 0,
+            "explanation": "The question asks which component is not part of the BIU (Bus Interface Unit) of the 8088 CPU. The correct answer is 'C' which refers to '通用寄存器' (general-purpose registers). This is correct because general-purpose registers are part of the Execution Unit (EU), not the Bus Interface Unit. The student got the answer wrong, possibly due to confusion about the specific roles and components of the BIU and EU in the 8088 CPU architecture."
+        },
+        {
+            "content": "在计算机系统中，外部设备必须通过（ ）才能实现与主机的信息交换。",
+            "option": "{'A': '电缆', 'B': '总线插槽', 'C': '接口', 'D': '电源'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_总线_计算机科学与技术, K_总线_计算机科学与技术对应的课程为微机原理与接口技术, ",
+            "is_correct": 1,
+            "explanation": "The student answered the question correctly by selecting option 'C' for '接口' (interface). In a computer system, external devices must go through an interface to exchange information with the host. This is a fundamental concept in computer science, particularly in the study of microcomputers and interface technology. The interface acts as a bridge, allowing communication and data transfer between the external device and the computer's internal components. The student's choice reflects an understanding of how data exchange is handled in computing systems."
+        }
+    ],
+    "tasks": [
+        {
+            "content": "可以用哪个命令测试两台主机之间网络的连通性。",
+            "option": "{'A': 'ping', 'B': 'ifconfig', 'C': 'ipconfig', 'D': 'route'}",
+            "right_answer": "[\"A\"]",
+            "knowledge_evidence": "题目对应知识点为K_ipconfig_计算机科学与技术, K_ipconfig_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "回环接口为系统提供一个单机网络环境，一般用于网络程序的调试。",
+            "option": "{'true': '正确', 'false': '错误'}",
+            "right_answer": "[\"true\"]",
+            "knowledge_evidence": "题目对应知识点为K_调试_计算机科学与技术, K_调试_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "关于修改主机名，下面那些说法是正确的：",
+            "option": "{'A': '需要修改/etc/sysconfig/network文件', 'B': '需要修改/etc/hosts文件', 'C': '需要修改/etc/sysconfig/network-scripts/ifcfg-eth0文件', 'D': '一般需要重启系统，让修改生效'}",
+            "right_answer": "[\"A\", \"B\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_主机名_计算机科学与技术, K_主机名_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": ""
+        },
+        {
+            "content": "关于为网络接口配置DHCP，下面那些说法是正确的：",
+            "option": "{'A': 'DHCP很方便，但是更容易发生配置错误', 'B': 'DHCP服务器可以指定接口的IP地址、子网掩码和网关', 'C': '默认情况下，CentOS使用DHCP协议配置接口网络参数', 'D': 'DHCP服务器还可以指定主机名'}",
+            "right_answer": "[\"B\", \"C\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_主机名_计算机科学与技术, K_主机名_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "关于Linux中的软件管理，下面那些选项是正确的？",
+            "option": "{'A': '在某个Linux发行版下开发和编译的程序，直接放到另外一个Linux发行版下有可能性无法运行', 'B': '早期的Linux的软件都是通过源码来分发', 'C': 'RPM是所有Linux发现版本上的通用的软件包管理器', 'D': 'RPM是Linux下软件资源最丰富的软件包类型'}",
+            "right_answer": "[\"A\", \"B\", \"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_软件资源_计算机科学与技术, K_软件资源_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": ""
+        },
+        {
+            "content": "关于用rpm卸载软件，下面哪些说法是正确的：",
+            "option": "{'A': '使用-r选项', 'B': '使用-e选项', 'C': '卸载软件需要知道软件安装后包括版本号在内的全名', 'D': '卸载软件只需要知道软件名即可', 'E': '卸载一个软件可能会导致系统中别的软件无法使用'}",
+            "right_answer": "[\"B\", \"C\", \"E\"]",
+            "knowledge_evidence": "题目对应知识点为K_全名_计算机科学与技术, K_全名_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "下面关于yum的说法那些是错误的？",
+            "option": "{'A': 'yum目的就是为了解决RPM管理软件包时的依赖关系难题', 'B': 'yum是一种区别于RPM软件封装模式', 'C': 'yum是红帽系列Linux中的默认软件管理器', 'D': 'yum客户端在安装软件时无需了解该软件包的依赖关系信息'}",
+            "right_answer": "[\"B\", \"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_软件管理器_计算机科学与技术, K_软件管理器_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": ""
+        },
+        {
+            "content": "8088CPU中，以下哪一个部件不属于EU部分（   ）.",
+            "option": "{'A': 'ALU', 'B': '通用寄存器和标志寄存器', 'C': '段寄存器', 'D': 'EU控制电路'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_段寄存器_计算机科学与技术, K_段寄存器_计算机科学与技术对应的课程为微机原理与接口技术, ",
+            "is_correct": 0,
+            "explanation": ""
+        },
+        {
+            "content": "指令流水线是指（   ）.",
+            "option": "{'A': '微处理器有序地执行指令', 'B': '微处理器顺序地执行指令', 'C': '微处理器同时执行多条指令', 'D': '指令通过流水线传送给微处理器'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_指令流水线_计算机科学与技术, K_指令流水线_计算机科学与技术对应的课程为微机原理与接口技术, ",
+            "is_correct": 0,
+            "explanation": ""
+        },
+        {
+            "content": "8088CPU中，以下哪一个部件不属于BIU部分（  ）.<!--!doctype-->",
+            "option": "{'A': '段寄存器<!--!doctype-->', 'B': '指令队列<!--!doctype-->', 'C': '通用寄存器<!--!doctype-->', 'D': '地址加法器、总线控制逻辑<!--!doctype-->'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_总线_计算机科学与技术, K_总线_计算机科学与技术对应的课程为微机原理与接口技术, ",
+            "is_correct": 0,
+            "explanation": ""
+        }
+    ],
+    "result": [
+        {
+            "content": "修改Linux系统主机名时，仅需更新`/etc/sysconfig/network-scripts/ifcfg-eth0`文件即可生效。",
+            "option": "{}",
+            "answer": "['False']",
+            "course_name": "Linux系统管理",
+            "concept_id": "主机名修改_计算机科学与技术",
+            "explanation": "主机名修改涉及多个配置文件（如`/etc/sysconfig/network`和`/etc/hosts`），而`ifcfg-eth0`仅用于网络接口配置，与主机名无关。"
+        },
+        {
+            "content": "在Linux系统中，修改主机名后通常需要重启系统以确保更改完全生效。",
+            "option": "{}",
+            "answer": "['True']",
+            "course_name": "Linux系统管理",
+            "concept_id": "主机名修改_计算机科学与技术",
+            "explanation": "在某些情况下（如未使用`hostnamectl`命令），重启系统是确保主机名更改生效的必要步骤。"
+        },
+        {
+            "content": "RPM是所有Linux发行版上的通用软件包管理器。",
+            "option": "{}",
+            "answer": "['False']",
+            "course_name": "Linux系统管理",
+            "concept_id": "软件包管理_计算机科学与技术",
+            "explanation": "RPM主要适用于基于Red Hat的发行版，而Debian及其衍生版本（如Ubuntu）使用APT作为默认包管理工具。"
+        },
+        {
+            "content": "在基于Debian的Linux发行版（如Ubuntu）中，APT是默认的软件包管理工具。",
+            "option": "{}",
+            "answer": "['True']",
+            "course_name": "Linux系统管理",
+            "concept_id": "软件包管理_计算机科学与技术",
+            "explanation": "APT确实是Debian及其衍生版本的默认包管理工具，用于安装、更新和管理软件包。"
+        },
+        {
+            "content": "YUM是一种独立于RPM的全新软件封装模式。",
+            "option": "{}",
+            "answer": "['False']",
+            "course_name": "Linux系统管理",
+            "concept_id": "YUM_计算机科学与技术",
+            "explanation": "YUM并非独立的封装模式，而是基于RPM的包管理工具，主要用于解决依赖关系问题。"
+        },
+        {
+            "content": "在Fedora等现代Linux发行版中，DNF已取代YUM成为默认的软件包管理器。",
+            "option": "{}",
+            "answer": "['True']",
+            "course_name": "Linux系统管理",
+            "concept_id": "YUM_计算机科学与技术",
+            "explanation": "DNF确实在Fedora等现代发行版中取代了YUM，提供了更高的性能和更好的依赖解析能力。"
+        },
+        {
+            "content": "在8088 CPU中，段寄存器属于执行单元（EU）部分。",
+            "option": "{}",
+            "answer": "['False']",
+            "course_name": "微机原理与接口技术",
+            "concept_id": "CPU结构_计算机科学与技术",
+            "explanation": "段寄存器属于总线接口单元（BIU），而非执行单元（EU）。EU负责指令的执行，而BIU负责与外部总线交互。"
+        },
+        {
+            "content": "8088 CPU中的指令队列和地址加法器都属于总线接口单元（BIU）。",
+            "option": "{}",
+            "answer": "['True']",
+            "course_name": "微机原理与接口技术",
+            "concept_id": "BIU结构_计算机科学与技术",
+            "explanation": "指令队列和地址加法器确实属于BIU，它们支持指令的预取和地址计算等功能。"
+        },
+        {
+            "content": "指令流水线的核心思想是通过将指令分解为多个阶段，使得多个指令可以同时在不同阶段处理。",
+            "option": "{}",
+            "answer": "['True']",
+            "course_name": "微机原理与接口技术",
+            "concept_id": "流水线技术_计算机科学与技术",
+            "explanation": "指令流水线通过将指令分解为多个阶段（如取指、译码、执行等），实现了多条指令的并行处理，从而提高处理器的吞吐量。"
+        },
+        {
+            "content": "指令流水线的主要目的是让微处理器按顺序逐条执行指令。",
+            "option": "{}",
+            "answer": "['False']",
+            "course_name": "微机原理与接口技术",
+            "concept_id": "流水线技术_计算机科学与技术",
+            "explanation": "指令流水线的主要目的是通过并行处理多条指令来提升处理器性能，而非按顺序逐条执行指令。"
+        }
+    ],
+    "cost": {
+        "usage_including_cached_inference": {
+            "total_cost": 0.1539864,
+            "qwen-max-latest": {
+                "cost": 0.1539864,
+                "prompt_tokens": 36093,
+                "completion_tokens": 7017,
+                "total_tokens": 43110
+            }
+        },
+        "usage_excluding_cached_inference": {
+            "total_cost": 0.1539864,
+            "qwen-max-latest": {
+                "cost": 0.1539864,
+                "prompt_tokens": 36093,
+                "completion_tokens": 7017,
+                "total_tokens": 43110
+            }
+        }
+    }
+},
+{
+    "round": 20,
+    "examples": [
+        {
+            "content": "标志位SF表示（   ）",
+            "option": "{'A': '最高位是否向更高位有进借位', 'B': '运算结果是否为0', 'C': '运算结果是否超出符号数的范围', 'D': '运算结果的最高位是否为1'}",
+            "right_answer": "[\"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_位_计算机科学与技术, K_位_计算机科学与技术对应的课程为微机原理与接口技术, ",
+            "is_correct": 1,
+            "explanation": "The student correctly identified the function of the SF (Sign Flag) as described in the context of computer science and microprocessor technology. Option 'D', which states that the SF indicates whether the highest bit (the sign bit in signed arithmetic) of the operation result is 1, aligns with the traditional understanding of the Sign Flag. This indicates a negative result in signed arithmetic operations. As this matches the expected answer outlined in the course material, the student's answer was marked correct."
+        },
+        {
+            "content": "以下哪一个特征不属于8086/8088CPU最小工作模式的特点（   ）.",
+            "option": "{'A': '仅支持少量设备组成的单处理器系统', 'B': '系统控制总线的信号由8088/8086CPU直接产生', 'C': '还需要其它控制器产生总线控制信号和命令信号', 'D': '最小模式构成的系统不能进行DMA传送'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_系统控制_计算机科学与技术, K_系统控制_计算机科学与技术对应的课程为微机原理与接口技术, ",
+            "is_correct": 1,
+            "explanation": "The student correctly identified the option 'C' as the feature that does not belong to the minimum mode characteristics of the 8086/8088 CPUs. In the minimum mode, the 8086/8088 CPUs generate all necessary control signals for its operations, and do not require additional controllers to generate bus control and command signals. Option 'C' suggests that other controllers are needed, which is incorrect, hence making it the right choice."
+        },
+        {
+            "content": "总线的基本功能是（   ）",
+            "option": "{'A': '数据传输、地址传输、控制信号传输', 'B': '传输同步、仲裁控制、总线驱动', 'C': '输入、输出', 'D': '连接各个部件'}",
+            "right_answer": "[\"B\"]",
+            "knowledge_evidence": "题目对应知识点为K_步_计算机科学与技术, K_步_计算机科学与技术对应的课程为微机原理与接口技术, ",
+            "is_correct": 0,
+            "explanation": "The student answered this question incorrectly because the correct answer is option 'A', which includes 'data transfer, address transfer, and control signal transfer' as the basic functions of a bus in computer systems. However, the student selected option 'B', which focuses on 'transmission synchronization, arbitration control, and bus driving,' which are functions related to bus management rather than the core functions described in option 'A'. Understanding the basic operations of a computer bus involves recognizing that it primarily facilitates the transfer of data, addresses, and control signals across different components."
+        },
+        {
+            "content": "在8088/8086系统中，程序代码被存放在（    ）",
+            "option": "{'A': '代码段或数据段', 'B': '数据段或附加段', 'C': '代码段或堆栈段', 'D': '只能存放在代码段'}",
+            "right_answer": "[\"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_代码段_计算机科学与技术, K_代码段_计算机科学与技术对应的课程为微机原理与接口技术, ",
+            "is_correct": 0,
+            "explanation": "在8088/8086系统中，程序代码应该被存放在代码段。学生的回答为'A'，即认为程序代码可以存储在代码段或数据段，这与题目的正确答案'D'不符。正确答案'D'表明程序代码只能存放在代码段中。学生可能误解了代码段和数据段的不同用途，导致选择了错误的选项。"
+        },
+        {
+            "content": "8088CPU中，以下哪一个部件不属于BIU部分（  ）.<!--!doctype-->",
+            "option": "{'A': '段寄存器<!--!doctype-->', 'B': '指令队列<!--!doctype-->', 'C': '通用寄存器<!--!doctype-->', 'D': '地址加法器、总线控制逻辑<!--!doctype-->'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_总线_计算机科学与技术, K_总线_计算机科学与技术对应的课程为微机原理与接口技术, ",
+            "is_correct": 0,
+            "explanation": "The question asks which component is not part of the BIU (Bus Interface Unit) of the 8088 CPU. The correct answer is 'C' which refers to '通用寄存器' (general-purpose registers). This is correct because general-purpose registers are part of the Execution Unit (EU), not the Bus Interface Unit. The student got the answer wrong, possibly due to confusion about the specific roles and components of the BIU and EU in the 8088 CPU architecture."
+        },
+        {
+            "content": "在计算机系统中，外部设备必须通过（ ）才能实现与主机的信息交换。",
+            "option": "{'A': '电缆', 'B': '总线插槽', 'C': '接口', 'D': '电源'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_总线_计算机科学与技术, K_总线_计算机科学与技术对应的课程为微机原理与接口技术, ",
+            "is_correct": 1,
+            "explanation": "The student answered the question correctly by selecting option 'C' for '接口' (interface). In a computer system, external devices must go through an interface to exchange information with the host. This is a fundamental concept in computer science, particularly in the study of microcomputers and interface technology. The interface acts as a bridge, allowing communication and data transfer between the external device and the computer's internal components. The student's choice reflects an understanding of how data exchange is handled in computing systems."
+        },
+        {
+            "content": "以下说法中，不正确的是（    ）",
+            "option": "{'A': '每个内存单元在整个内存空间中都具有惟一的地址', 'B': '8088/8086CPU系统中，每个内存单元地址都可以表示为32位的逻辑地址。', 'C': '在8088/8086CPU系统中，偏移地址可以是16bit或8bit，但段基地址必须是16bit。', 'D': '在8088/8086CPU系统中，20bit地址一定是物理地址。'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_逻辑地址_计算机科学与技术, K_逻辑地址_计算机科学与技术对应的课程为微机原理与接口技术, ",
+            "is_correct": 0,
+            "explanation": "The student chose the wrong option for this problem. The question asked which statement is incorrect. The correct answer is option C, which states that in an 8088/8086 CPU system, the offset address can be 16 bits or 8 bits, but the segment base address must be 16 bits. This statement is incorrect because the offset address is always 16 bits in 8086 systems; 8-bit offsets do not apply. Understanding the correct bit structure for addressing in 8088/8086 systems is crucial. The student might have misunderstood the bit size for segment and offset addresses, leading to the incorrect choice. Recommending a review of the addressing modes in 8088/8086 architecture would be beneficial."
+        },
+        {
+            "content": "在8088/8086系统中，程序代码被存放在（    ）",
+            "option": "{'A': '代码段或数据段', 'B': '数据段或附加段', 'C': '代码段或堆栈段', 'D': '只能存放在代码段'}",
+            "right_answer": "[\"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_数据段_计算机科学与技术, K_数据段_计算机科学与技术对应的课程为微机原理与接口技术, ",
+            "is_correct": 0,
+            "explanation": "The student answered incorrectly because in the 8088/8086 systems, program code must be stored in the 'code segment,' which corresponds to option D. The incorrect options suggest storing the code in other combinations of segments that are not correct for where program code should exclusively reside. Therefore, the student's choice did not match the correct requirement for the storage of program code, which can only be in the 'code segment.'"
+        },
+        {
+            "content": "以下说法中，不正确的是（  ）",
+            "option": "{'A': '每个内存单元中都只存放8bit二进制数', 'B': '程序执行的顺序由CS和IP决定；', 'C': '程序执行的数据可以存放在数据段、附加段或堆栈段中；', 'D': '不同类型的逻辑段必须占有不同的内存空间。'}",
+            "right_answer": "[\"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_数据段_计算机科学与技术, K_数据段_计算机科学与技术对应的课程为微机原理与接口技术, ",
+            "is_correct": 1,
+            "explanation": "The student answered the multiple-choice question correctly by selecting option D as the incorrect statement. The statement '不同类型的逻辑段必须占有不同的内存空间' is incorrect because in memory management, different logical segments like data, stack, and code segments can share the same memory area, relying on segmentation to delineate their boundaries logically. Therefore, selecting D reflects an accurate understanding of memory segmentation principles covered in '微机原理与接口技术'."
+        },
+        {
+            "content": "在CentOS中，默认情况下，虚拟用户的UID范围是:",
+            "option": "{'A': '1-499', 'B': '0-499', 'C': '0-500', 'D': '500以后'}",
+            "right_answer": "[\"A\"]",
+            "knowledge_evidence": "题目对应知识点为K_虚拟用户_计算机科学与技术, K_虚拟用户_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The question asks about the default UID range for virtual users in CentOS. The student's answer was incorrect. In CentOS, the UID range for system and virtual users is typically from 1 to 499. This range is reserved for system processes and services, while UIDs from 500 onwards are generally allocated to regular user accounts. Therefore, the correct answer is '1-499', which corresponds to option 'A'. It seems the student might have overlooked this specific user range assignment in CentOS system management."
+        },
+        {
+            "content": "关于切换用户命令su，下面描述正确的是：",
+            "option": "{'A': '由根用户切换普通用户时需要输入用户密码', 'B': '由普通用户切换根用户时需要输入用户密码', 'C': '由普通用户之间相互切换时需要输入用户密码', 'D': '由根用户切换为虚拟用户时需要输入用户密码', 'E': '切换用户身份后，对系统的访问权限也随之改变'}",
+            "right_answer": "[\"B\", \"C\", \"E\"]",
+            "knowledge_evidence": "题目对应知识点为K_虚拟用户_计算机科学与技术, K_虚拟用户_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The question is about the proper usage of the 'su' command in Linux for switching users. Options B, C, and E are correct. Option B states that a normal user needs to provide a password to switch to the root user, which is true as root access requires authentication. Option C mentions that password is needed when switching between normal users, which is correct. Option E relates to the fact that access permissions change according to the user profile, which is also accurate. The student answered the question correctly by selecting these options, showing an understanding of user permissions and the functionality of the 'su' command."
+        },
+        {
+            "content": "在CentOS中，默认情况下，虚拟用户的UID范围是:",
+            "option": "{'A': '1-499', 'B': '0-499', 'C': '0-500', 'D': '500以后'}",
+            "right_answer": "[\"A\"]",
+            "knowledge_evidence": "题目对应知识点为K_虚拟用户_计算机科学与技术, K_虚拟用户_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The question asks about the default UID range for virtual users in CentOS. The student's answer was incorrect. In CentOS, the UID range for system and virtual users is typically from 1 to 499. This range is reserved for system processes and services, while UIDs from 500 onwards are generally allocated to regular user accounts. Therefore, the correct answer is '1-499', which corresponds to option 'A'. It seems the student might have overlooked this specific user range assignment in CentOS system management."
+        },
+        {
+            "content": "关于切换用户命令su，下面描述正确的是：",
+            "option": "{'A': '由根用户切换普通用户时需要输入用户密码', 'B': '由普通用户切换根用户时需要输入用户密码', 'C': '由普通用户之间相互切换时需要输入用户密码', 'D': '由根用户切换为虚拟用户时需要输入用户密码', 'E': '切换用户身份后，对系统的访问权限也随之改变'}",
+            "right_answer": "[\"B\", \"C\", \"E\"]",
+            "knowledge_evidence": "题目对应知识点为K_虚拟用户_计算机科学与技术, K_虚拟用户_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The question is about the proper usage of the 'su' command in Linux for switching users. Options B, C, and E are correct. Option B states that a normal user needs to provide a password to switch to the root user, which is true as root access requires authentication. Option C mentions that password is needed when switching between normal users, which is correct. Option E relates to the fact that access permissions change according to the user profile, which is also accurate. The student answered the question correctly by selecting these options, showing an understanding of user permissions and the functionality of the 'su' command."
+        },
+        {
+            "content": "id命令能够查看的用户信息有：",
+            "option": "{'A': '用户的创建时间', 'B': '用户的主用户组', 'C': '用户从属的用户组名', 'D': '用户家目录'}",
+            "right_answer": "[\"B\", \"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_用户组_计算机科学与技术, K_用户组_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": "The question asked which user information can be viewed by the 'id' command in Linux. The correct options are 'B: 用户的主用户组' (user's primary group) and 'C: 用户从属的用户组名' (names of the user groups the user belongs to). The student's answer was incorrect because they did not select the correct options 'B' and 'C'. The 'id' command does not provide information such as 'A: 用户的创建时间' (user's creation time) or 'D: 用户家目录' (user's home directory), which might be why the student made a mistake if these were chosen."
+        },
+        {
+            "content": "关于Linux中的用户组，描述错误的是：",
+            "option": "{'A': '用户组的身份标识叫做GID', 'B': '一个用户只能从属于一个用户组', 'C': '一个用户组能够包含多个用户', 'D': '在同一时刻，一个用户的主用户组只能有一个', 'E': '每个用户都必定从属于一个与用户同名的独立的私有用户组'}",
+            "right_answer": "[\"B\", \"E\"]",
+            "knowledge_evidence": "题目对应知识点为K_用户组_计算机科学与技术, K_用户组_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": "The student answered the question correctly. The question asked for the incorrect statements about user groups in Linux. Options 'B' and 'E' were both identified as incorrect by the student: 'B' states that a user can only belong to one user group, which is false as a user can belong to multiple groups besides their primary group. 'E' states that each user must belong to a private group named after them, which is also incorrect as it is not a requirement to create a matching group for each user. The student correctly identified these as the incorrect statements, demonstrating an understanding of how user groups work in Linux."
+        }
+    ],
+    "tasks": [
+        {
+            "content": "标志位SF表示（   ）",
+            "option": "{'A': '最高位是否向更高位有进借位', 'B': '运算结果是否为0', 'C': '运算结果是否超出符号数的范围', 'D': '运算结果的最高位是否为1'}",
+            "right_answer": "[\"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_位_计算机科学与技术, K_位_计算机科学与技术对应的课程为微机原理与接口技术, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "以下哪一个特征不属于8086/8088CPU最小工作模式的特点（   ）.",
+            "option": "{'A': '仅支持少量设备组成的单处理器系统', 'B': '系统控制总线的信号由8088/8086CPU直接产生', 'C': '还需要其它控制器产生总线控制信号和命令信号', 'D': '最小模式构成的系统不能进行DMA传送'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_系统控制_计算机科学与技术, K_系统控制_计算机科学与技术对应的课程为微机原理与接口技术, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "总线的基本功能是（   ）",
+            "option": "{'A': '数据传输、地址传输、控制信号传输', 'B': '传输同步、仲裁控制、总线驱动', 'C': '输入、输出', 'D': '连接各个部件'}",
+            "right_answer": "[\"B\"]",
+            "knowledge_evidence": "题目对应知识点为K_步_计算机科学与技术, K_步_计算机科学与技术对应的课程为微机原理与接口技术, ",
+            "is_correct": 0,
+            "explanation": ""
+        },
+        {
+            "content": "在8088/8086系统中，程序代码被存放在（    ）",
+            "option": "{'A': '代码段或数据段', 'B': '数据段或附加段', 'C': '代码段或堆栈段', 'D': '只能存放在代码段'}",
+            "right_answer": "[\"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_代码段_计算机科学与技术, K_代码段_计算机科学与技术对应的课程为微机原理与接口技术, ",
+            "is_correct": 0,
+            "explanation": ""
+        },
+        {
+            "content": "8086发现READY引脚变为0时，它将在当前总线周期中插入（    ）周期。",
+            "option": "{'A': '总线周期', 'B': '时钟周期', 'C': '空闲周期', 'D': '查询周期'}",
+            "right_answer": "[\"B\"]",
+            "knowledge_evidence": "题目对应知识点为K_总线_计算机科学与技术, K_总线_计算机科学与技术对应的课程为微机原理与接口技术, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "以下说法中，不正确的是（    ）",
+            "option": "{'A': '每个内存单元在整个内存空间中都具有惟一的地址', 'B': '8088/8086CPU系统中，每个内存单元地址都可以表示为32位的逻辑地址。', 'C': '在8088/8086CPU系统中，偏移地址可以是16bit或8bit，但段基地址必须是16bit。', 'D': '在8088/8086CPU系统中，20bit地址一定是物理地址。'}",
+            "right_answer": "[\"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_逻辑地址_计算机科学与技术, K_逻辑地址_计算机科学与技术对应的课程为微机原理与接口技术, ",
+            "is_correct": 0,
+            "explanation": ""
+        },
+        {
+            "content": "以下说法中，不正确的是（  ）",
+            "option": "{'A': '每个内存单元中都只存放8bit二进制数', 'B': '程序执行的顺序由CS和IP决定；', 'C': '程序执行的数据可以存放在数据段、附加段或堆栈段中；', 'D': '不同类型的逻辑段必须占有不同的内存空间。'}",
+            "right_answer": "[\"D\"]",
+            "knowledge_evidence": "题目对应知识点为K_数据段_计算机科学与技术, K_数据段_计算机科学与技术对应的课程为微机原理与接口技术, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "在CentOS中，默认情况下，虚拟用户的UID范围是:",
+            "option": "{'A': '1-499', 'B': '0-499', 'C': '0-500', 'D': '500以后'}",
+            "right_answer": "[\"A\"]",
+            "knowledge_evidence": "题目对应知识点为K_虚拟用户_计算机科学与技术, K_虚拟用户_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": ""
+        },
+        {
+            "content": "关于CentOS中的用户，描述错误的是：",
+            "option": "{'A': '虚拟用户是给系统的访客使用的', 'B': '根用户的UID是固定的', 'C': '虚拟用户使用的默认Shell是BASH', 'D': 'Linux是通过用户名来识别用户的身份的', 'E': '普通用户对系统有只有有限的权限'}",
+            "right_answer": "[\"A\", \"C\"]",
+            "knowledge_evidence": "题目对应知识点为K_虚拟用户_计算机科学与技术, K_虚拟用户_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 0,
+            "explanation": ""
+        },
+        {
+            "content": "关于Linux中的用户组，描述错误的是：",
+            "option": "{'A': '用户组的身份标识叫做GID', 'B': '一个用户只能从属于一个用户组', 'C': '一个用户组能够包含多个用户', 'D': '在同一时刻，一个用户的主用户组只能有一个', 'E': '每个用户都必定从属于一个与用户同名的独立的私有用户组'}",
+            "right_answer": "[\"B\", \"E\"]",
+            "knowledge_evidence": "题目对应知识点为K_用户组_计算机科学与技术, K_用户组_计算机科学与技术对应的课程为Linux系统管理, ",
+            "is_correct": 1,
+            "explanation": ""
+        }
+    ],
+    "result": [
+        {
+            "content": "总线的基础功能包括数据传输、地址传输和控制信号传输。",
+            "option": "{}",
+            "answer": "[\"True\"]",
+            "course_name": "微机原理与接口技术",
+            "concept_id": "K_步_计算机科学与技术",
+            "explanation": "总线的基础功能包括数据传输、地址传输和控制信号传输，这些是总线的基本作用。"
+        },
+        {
+            "content": "在总线管理功能中，总线驱动的作用是确保数据在总线上的正确传输。",
+            "option": "{}",
+            "answer": "[\"True\"]",
+            "course_name": "微机原理与接口技术",
+            "concept_id": "K_步_计算机科学与技术",
+            "explanation": "总线驱动是总线管理功能的一部分，其作用是确保数据在总线上的正确传输。"
+        },
+        {
+            "content": "8088/8086系统的堆栈段主要用于存储函数调用和局部变量，而不是程序指令。",
+            "option": "{}",
+            "answer": "[\"True\"]",
+            "course_name": "微机原理与接口技术",
+            "concept_id": "K_代码段_计算机科学与技术",
+            "explanation": "堆栈段的主要作用是存储函数调用和局部变量，而程序指令应存放在代码段中。"
+        },
+        {
+            "content": "数据段的主要作用是存放变量等数据信息。",
+            "option": "{}",
+            "answer": "[\"True\"]",
+            "course_name": "微机原理与接口技术",
+            "concept_id": "K_代码段_计算机科学与技术",
+            "explanation": "数据段用于存放变量和其他数据信息，与代码段的功能不同。"
+        },
+        {
+            "content": "在8088/8086系统中，逻辑地址可以直接映射为20位物理地址。",
+            "option": "{}",
+            "answer": "[\"True\"]",
+            "course_name": "微机原理与接口技术",
+            "concept_id": "K_逻辑地址_计算机科学与技术",
+            "explanation": "逻辑地址通过段基地址和偏移地址计算后，可直接映射为20位物理地址。"
+        },
+        {
+            "content": "偏移地址在8088/8086系统中必须与段基地址结合使用，以形成完整的逻辑地址。",
+            "option": "{}",
+            "answer": "[\"True\"]",
+            "course_name": "微机原理与接口技术",
+            "concept_id": "K_逻辑地址_计算机科学与技术",
+            "explanation": "偏移地址必须与段基地址结合使用，才能形成完整的逻辑地址。"
+        },
+        {
+            "content": "虚拟用户的默认Shell通常设置为/sbin/nologin以防止交互式登录。",
+            "option": "{}",
+            "answer": "[\"True\"]",
+            "course_name": "Linux系统管理",
+            "concept_id": "K_虚拟用户_计算机科学与技术",
+            "explanation": "虚拟用户的默认Shell通常设置为/sbin/nologin，以防止交互式登录。"
+        },
+        {
+            "content": "虚拟用户的主要用途是为运行特定服务或守护进程提供非交互式账户。",
+            "option": "{}",
+            "answer": "[\"True\"]",
+            "course_name": "Linux系统管理",
+            "concept_id": "K_虚拟用户_计算机科学与技术",
+            "explanation": "虚拟用户的主要用途是为运行特定服务或守护进程提供非交互式账户，而非为系统访客提供临时访问权限。"
+        },
+        {
+            "content": "在8086最小工作模式下，所有总线控制信号由CPU直接生成，无需额外控制器。",
+            "option": "{}",
+            "answer": "[\"True\"]",
+            "course_name": "微机原理与接口技术",
+            "concept_id": "K_系统控制_计算机科学与技术",
+            "explanation": "在8086最小工作模式下，所有总线控制信号由CPU直接生成，无需额外控制器。"
+        },
+        {
+            "content": "在Linux系统中，并非每个用户都必须从属于一个与用户名同名的私有用户组。",
+            "option": "{}",
+            "answer": "[\"True\"]",
+            "course_name": "Linux系统管理",
+            "concept_id": "K_用户组_计算机科学与技术",
+            "explanation": "并非每个用户都必须从属于一个与用户名同名的私有用户组，这种配置是可选的。"
+        }
+    ],
+    "cost": {
+        "usage_including_cached_inference": {
+            "total_cost": 0.15229199999999998,
+            "qwen-max-latest": {
+                "cost": 0.15229199999999998,
+                "prompt_tokens": 43339,
+                "completion_tokens": 5029,
+                "total_tokens": 48368
+            }
+        },
+        "usage_excluding_cached_inference": {
+            "total_cost": 0.15229199999999998,
+            "qwen-max-latest": {
+                "cost": 0.15229199999999998,
+                "prompt_tokens": 43339,
+                "completion_tokens": 5029,
+                "total_tokens": 48368
             }
         }
     }

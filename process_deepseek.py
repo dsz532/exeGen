@@ -35,10 +35,10 @@ concept_relation_filtered = pandas.read_csv("subject_data(1)/concept_relationshi
 llm_config = {
     "cache_seed": None,
     "config_list": [{
-        "model": "deepseek/deepseek-chat",
+        "model": "deepseek/deepseek-r1:free",
         "base_url": "https://openrouter.ai/api/v1",
         "api_key": "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",
-        "price": [0.00125, 0.00125]
+        "price": [0, 0]
     }]
 }
 

@@ -38,7 +38,7 @@ llm_config = {
         "model": "qwen-max-latest",
         "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
         "api_key": "sk-8f73e51272114ecba3c6ce4059923625",
-        "price": [0.0016, 0.0064]
+        "price": [0.0024, 0.0096]
     }]
 }
 
@@ -361,7 +361,7 @@ def extract_last_json(s):
     return None
 
 
-for i in range(8,9):
+for i in range(20,21):
 
     text = {
         "round": i,
