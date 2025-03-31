@@ -370,7 +370,7 @@ text = {
 
 # 获取task数组
 stuRec_1000_with_tokens = pandas.read_csv("subject_data(1)/stuRec_1000_with_tokens.csv")
-stuRec_1000_with_tokens = stuRec_1000_with_tokens.iloc[15:22]
+stuRec_1000_with_tokens = stuRec_1000_with_tokens.iloc[3:22]
 selected_columns1 = ['content', 'option', 'right_answer', 'knowledge_evidence', 'is_correct', 'explanation']
 
 # 硬匹配
@@ -389,7 +389,7 @@ if not stuRec_1000_with_tokens.empty:
 
 # 匹配完成后重新读取习题记录信息
 stuRec_1000_with_tokens = pandas.read_csv("subject_data(1)/stuRec_1000_with_tokens.csv")
-stuRec_1000_with_tokens = stuRec_1000_with_tokens.iloc[15:22]
+stuRec_1000_with_tokens = stuRec_1000_with_tokens.iloc[3:22]
 selected_columns2 = ['content', 'option', 'right_answer', 'knowledge_evidence', 'is_correct']
 stuRec_1000_with_tokens = stuRec_1000_with_tokens[selected_columns2]
 
