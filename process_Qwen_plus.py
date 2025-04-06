@@ -20,6 +20,7 @@ from typing import Union
 from autogen import *
 from create_prompt import *
 import argparse
+import os
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--type_of_prompt", type=str, help="natural_language_text or json_text")
@@ -442,8 +443,8 @@ res_exe = extract_last_json(chat_his_str)
 text = json.loads(text)
 text["result"] = res_exe
 text["cost"] = chat_cost
+text["chat_history"] = chat_his
 text = json.dumps(text, ensure_ascii=False, indent=4)
-with open('txtfile/case_study_stu.txt', 'a', encoding='utf-8') as f:
-    f.write(text + ',\n')
-
-print(json.dumps(chat_his, ensure_ascii=False, indent=4))
+chat_his = json.dumps(chat_his, ensure_ascii=False, indent=4)
+with open(f'output/output{os.getpid()}.txt', 'w', encoding='utf-8') as f:
+    f.write(text)
