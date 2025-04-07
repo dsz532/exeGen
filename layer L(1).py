@@ -15,12 +15,12 @@ if __name__ == '__main__':
     plt.rcParams['mathtext.fontset'] = 'stix'
 
     #Single Choice
-    hr = [4.70, 4.88, 4.91]
-    Clarity = [4.69, 4.88, 4.90]
-    AA = [4.81, 4.90, 4.92]
-    DA = [4.69, 4.78, 4.83]
-    EF = [4.60, 4.75, 4.75]
-    SE = [4.47, 4.65, 4.80]
+    # hr = [4.70, 4.88, 4.91]
+    # Clarity = [4.69, 4.88, 4.90]
+    # AA = [4.81, 4.90, 4.92]
+    # DA = [4.69, 4.78, 4.83]
+    # EF = [4.60, 4.75, 4.75]
+    # SE = [4.47, 4.65, 4.80]
 
     #Multiple Choice
     # hr = [4.70, 4.75, 4.91]
@@ -31,12 +31,12 @@ if __name__ == '__main__':
     # SE = [4.52, 4.60, 4.80]
 
     #Judgment
-    # hr = [4.83, 4.85, 4.90]
-    # Clarity = [4.79, 4.83, 4.85]
-    # AA = [4.88, 4.92, 4.93]
-    # DA = [4.54, 4.65, 4.70]
-    # EF = [4.63, 4.75, 4.80]
-    # SE = [4.53, 4.60, 4.75]
+    hr = [4.83, 4.85, 4.90]
+    Clarity = [4.79, 4.83, 4.85]
+    AA = [4.88, 4.92, 4.93]
+    DA = [4.54, 4.65, 4.70]
+    EF = [4.63, 4.75, 4.80]
+    SE = [4.53, 4.60, 4.75]
 
     '''
     # sampling_steps20
@@ -64,7 +64,7 @@ if __name__ == '__main__':
     x5 = range(3)
     x6 = range(3)
 
-    fig, ax1 = plt.subplots(dpi=600, figsize=(10, 7))
+    fig, ax1 = plt.subplots(dpi=600, figsize=(5, 3))
     fig.subplots_adjust(left=0.07, right=0.87, bottom=0.1, top=0.9)
 
     # plt.rcParams['axes.facecolor'] = 'white'
@@ -74,10 +74,10 @@ if __name__ == '__main__':
     ax1.set_xticklabels(xticks_label, fontweight='bold', fontsize=18)
 
     ax1.set_ylim(4.4, 4.95)
-    ax1.set_xlabel(r'Multiple Choice',
+    ax1.set_xlabel(r'Judgment',
                    fontdict={'family': 'Times New Roman', "weight": "bold", 'size': 18})
     ax1.patch.set_facecolor('white')
-    plt.plot(x1, hr, "#084C95", marker='^', markersize=7, linewidth=2, label='KR', zorder=3)
+    plt.plot(x1, hr, "#f9f871", marker='^', markersize=7, linewidth=2, label='KR', zorder=3)
 
     ax1.spines['top'].set_visible(True)  # Top border
     ax1.spines['right'].set_visible(True)  # Right border
@@ -90,12 +90,12 @@ if __name__ == '__main__':
     plt.axhline(y=0.03, color='gray', linestyle='--', linewidth=1, zorder=2)
     plt.axhline(y=0.035, color='gray', linestyle='--', linewidth=1, zorder=2)
 
-    plt.plot(x2, Clarity, "#8B008B", marker='.', markersize=7, linewidth=2, label='Clarity', zorder=3)
-    plt.plot(x3, AA, "#CD5555", marker='o', markersize=7, linewidth=2, label='AA', zorder=3)
-    plt.plot(x4, DA, "#EEC900", marker='*', markersize=7, linewidth=2, label='DA', zorder=3)
-    plt.plot(x5, EF, "#008B8B", marker='x', markersize=7, linewidth=2, label='EF', zorder=3)
-    plt.plot(x6, SE, "#FF4500", marker='1', markersize=7, linewidth=2, label='SE', zorder=3)
-    plt.legend(loc='upper right',bbox_to_anchor=(1.15, 1),)
+    plt.plot(x2, Clarity, "#0089ba", marker='.', markersize=7, linewidth=2, label='Clarity', zorder=3)
+    plt.plot(x3, AA, "#00a7c5", marker='o', markersize=7, linewidth=2, label='AA', zorder=3)
+    plt.plot(x4, DA, "#00c2bb", marker='*', markersize=7, linewidth=2, label='DA', zorder=3)
+    plt.plot(x5, EF, "#48daa2", marker='x', markersize=7, linewidth=2, label='EF', zorder=3)
+    plt.plot(x6, SE, "#a3ed84", marker='1', markersize=7, linewidth=2, label='SE', zorder=3)
+    plt.legend(loc='upper right',bbox_to_anchor=(1.3, 1),)
     ax1.set_yticks([4.4, 4.5, 4.6, 4.7, 4.8, 4.9, 5.0])
 
     ax1.spines['top'].set_color('black')  # Top border
@@ -107,7 +107,7 @@ if __name__ == '__main__':
     # 以下为添加的绘制垂直线代码
     for i in x:
         ax1.axvline(x=i, ymin=0, ymax=1, color='gray', linestyle='--', linewidth=1, zorder=2)
-    plt.savefig('txtfile/multiple_choice_Qwen_pre6.png', dpi=600, bbox_inches='tight')
+    plt.savefig('txtfile/judgment_Qwen_pre6.png', dpi=600, bbox_inches='tight')
     plt.show()
 '''
 if __name__ == '__main__':
