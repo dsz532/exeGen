@@ -77,53 +77,6 @@ agent_generator = ConversableAgent(  # 习题生成代理
     """,
 )
 
-# 3个习题评判专家
-agent_discriminator_1 = ConversableAgent(
-    name="Linguistic_Fluency_discriminator",
-    llm_config=llm_config,
-    system_message="""
-    You are an exercise evaluation expert specializing in assessing linguistic fluency.
-    You will receive a list of newly generated exercises and their answers created by the exercise generation expert. Your task is to determine whether the language used in these exercises is fluent and appropriate for effective communication.
-    **Evaluation Process**:
-    1. **Evaluate Sentence Structure**:
-       - Analyze the grammatical structure of each exercise to ensure it adheres to standard language conventions.
-       - Check for any grammatical errors, awkward phrasing, or incomplete sentences.
-    2. **Assess Word Choice**:
-       - Ensure the vocabulary used is suitable for the target audience.
-       - Identify and flag any ambiguous, overly complex, or contextually inappropriate words.
-    3. **Check Coherence and Clarity**:
-       - Confirm that the language in the exercises clearly conveys the intended meaning.
-       - Ensure the exercises and answers are logically structured and easy to understand.
-    4. **Provide Suggestions for Improvement**:
-       - Highlight specific aspects where linguistic fluency can be enhanced.
-       - Offer recommendations for rephrasing or simplifying content without altering its meaning.
-    Your evaluation should focus on ensuring that the exercises are free of language errors and effectively communicate the intended concepts.
-    """,
-)
-
-agent_discriminator_3 = ConversableAgent(
-    name="Correctness_and_Reasonableness_discriminator",
-    llm_config=llm_config,
-    system_message="""
-    You are an exercise evaluation expert specializing in assessing the correctness and reasonableness of exercises.
-    You will receive a list of newly generated exercises and their answers created by the exercise generation expert. Your task is to evaluate whether the exercises and their answers are accurate, logical, and reasonable.
-    **Evaluation Process**:
-    1. **Check the Accuracy of Answers**:
-       - Verify whether the answers provided are correct and align with the knowledge concepts being tested.
-       - Flag any incorrect or incomplete answers.
-    2. **Evaluate the Logic of Exercises**:
-       - Ensure each exercise has a clear and logical structure.
-       - Confirm that the exercise aligns with the provided answer and the intended knowledge concept.
-    3. **Assess the Reasonableness of Exercises**:
-       - Determine whether the exercises are appropriate for the student's current learning level.
-       - Ensure the difficulty level is neither too high nor too low, making it suitable for practice or assessment.
-    4. **Provide Feedback**:
-       - Highlight specific issues with incorrect or unreasonable exercises.
-       - Recommend improvements to enhance clarity, accuracy, or alignment with learning goals.
-    Your evaluation should ensure that the exercises are accurate, logical, and effectively designed to meet the student’s learning needs.
-    """,
-)
-
 o_format = parser.parse_args().output_type
 if o_format == "natural_language":
     f = open("txtfile/n_output.txt", "r")
@@ -145,22 +98,8 @@ agent_host = ConversableAgent(
     1. **Generate New Exercises**:
        - Instruct agent_generator to create ten new exercises, ensuring these exercises are specifically designed around knowledge concepts and adhere to the specified exercise type format.
        - **Important**: Ensure that the instructions to agent_generator are clear and to the point. Avoid excessive introductory or redundant statements.
-    2. **Evaluate the Linguistic Fluency**:
-       - Submit the newly generated exercises to **Linguistic Fluency Discriminator**: Verifies whether the exercises are linguistically accurate, fluent, and clear.
-    3. **Evaluate the Knowledge Concept Coverage**:
-       - Submit the newly generated exercises to **Knowledge Concept Coverage discriminator**: Ensures that the exercises adequately cover the student’s weak knowledge concepts.
-    4. **Evaluate the Correctness and Reasonableness**:
-       - Submit the newly generated exercises to **Correctness and Reasonableness discriminator**: Confirms whether the exercises and their answers are accurate, logical, and suitable for the student’s current learning level.
-    5. **Iterative Regeneration**:
-       - If any agent_discriminator finds the exercises unsatisfactory:
-         - Return to agent_generator and instruct them to regenerate the exercises based on the feedback provided.
-         - Repeat this iterative process until all three agents agree that the exercises meet the required standards.
-    6. **Final Output**:
-       - Once all agents have approved the exercise, you need to edit the final version of the exercise list strictly in the format {o_fmt} and return it, and say 'stopChat' to let the chat end.
-    **Key Guidelines**:
-    - Prioritize the student’s weak knowledge concepts throughout the process to ensure targeted learning.
-    - Ensure that all steps are completed efficiently and logically, with clear communication between agents.
-    - Manage the iterative refinement process to guarantee that the final exercises are of high quality and effectively address the student’s learning needs.
+    2. **Output**:
+       - You need to edit the final version of the exercise list strictly in the format {o_fmt} and return it, and say 'stopChat' to let the chat end.
     - **Important**: Ensure that all agents focus on their specific task without unnecessary repetition. Any redundant remarks should be minimized to avoid clutter and ensure an efficient workflow.
     Your ultimate goal is to manage collaboration between agents and produce a final list of exercises that are accurate, relevant, and highly tailored to the student’s learning requirements.
     """,
@@ -179,7 +118,7 @@ def custom_speaker_selection_func(
 
 
 out_groupchat = GroupChat(
-    agents=[agent_generator, agent_discriminator_1, agent_discriminator_3, agent_host],
+    agents=[agent_generator, agent_host],
     select_speaker_message_template="""
     Selects the next speaking agent based on what agent_host has said.
     End the chat when agent_host returns the final list of exercises.
@@ -198,8 +137,6 @@ out_groupchat_manager = GroupChatManager(
 )
 
 agent_generator.description = "an exercise generation expert"
-agent_discriminator_1.description = "exercise evaluation expert 1"
-agent_discriminator_3.description = "exercise evaluation expert 3"
 agent_host.description = "host of the chat"
 
 
