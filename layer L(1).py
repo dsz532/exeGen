@@ -14,7 +14,7 @@ if __name__ == '__main__':
     plt.rcParams['ytick.labelsize'] = 18
     plt.rcParams['mathtext.fontset'] = 'stix'
 
-    #Single Choice
+    # Single Choice
     # hr = [4.70, 4.88, 4.91]
     # Clarity = [4.69, 4.88, 4.90]
     # AA = [4.81, 4.90, 4.92]
@@ -22,7 +22,7 @@ if __name__ == '__main__':
     # EF = [4.60, 4.75, 4.75]
     # SE = [4.47, 4.65, 4.80]
 
-    #Multiple Choice
+    # Multiple Choice
     # hr = [4.70, 4.75, 4.91]
     # Clarity = [4.82, 4.85, 4.90]
     # AA = [4.73, 4.80, 4.92]
@@ -30,7 +30,7 @@ if __name__ == '__main__':
     # EF = [4.63, 4.70, 4.75]
     # SE = [4.52, 4.60, 4.80]
 
-    #Judgment
+    # Judgment
     hr = [4.83, 4.85, 4.90]
     Clarity = [4.79, 4.83, 4.85]
     AA = [4.88, 4.92, 4.93]
@@ -57,27 +57,28 @@ if __name__ == '__main__':
     DA = np.array(DA)
     EF = np.array(EF)
     SE = np.array(SE)
-    x1 = range(3)
-    x2 = range(3)
-    x3 = range(3)
-    x4 = range(3)
-    x5 = range(3)
-    x6 = range(3)
+    x1 = [0.7, 1.5, 2.3]
+    x2 = [0.7, 1.5, 2.3]
+    x3 = [0.7, 1.5, 2.3]
+    x4 = [0.7, 1.5, 2.3]
+    x5 = [0.7, 1.5, 2.3]
+    x6 = [0.7, 1.5, 2.3]
 
     fig, ax1 = plt.subplots(dpi=600, figsize=(5, 3))
-    fig.subplots_adjust(left=0.07, right=0.87, bottom=0.1, top=0.9)
+    fig.subplots_adjust(left=0.07, right=0.7, bottom=0.1, top=0.9)
 
     # plt.rcParams['axes.facecolor'] = 'white'
     xticks_label = ['turbo', 'plus', 'max']
-    x = range(0, 3)
+    x = [0.7, 1.5, 2.3]
+    ax1.set_xlim(0, 3)
     ax1.set_xticks(list(x)[::], xticks_label)
     ax1.set_xticklabels(xticks_label, fontweight='bold', fontsize=18)
 
-    ax1.set_ylim(4.4, 4.95)
+    ax1.set_ylim(4.4, 5.1)
     ax1.set_xlabel(r'Judgment',
                    fontdict={'family': 'Times New Roman', "weight": "bold", 'size': 18})
     ax1.patch.set_facecolor('white')
-    plt.plot(x1, hr, "#f9f871", marker='^', markersize=7, linewidth=2, label='KR', zorder=3)
+    plt.plot(x1, hr, "#0089ba", marker='^', markersize=7, linewidth=2, label='KR', zorder=3)
 
     ax1.spines['top'].set_visible(True)  # Top border
     ax1.spines['right'].set_visible(True)  # Right border
@@ -90,13 +91,13 @@ if __name__ == '__main__':
     plt.axhline(y=0.03, color='gray', linestyle='--', linewidth=1, zorder=2)
     plt.axhline(y=0.035, color='gray', linestyle='--', linewidth=1, zorder=2)
 
-    plt.plot(x2, Clarity, "#0089ba", marker='.', markersize=7, linewidth=2, label='Clarity', zorder=3)
-    plt.plot(x3, AA, "#00a7c5", marker='o', markersize=7, linewidth=2, label='AA', zorder=3)
-    plt.plot(x4, DA, "#00c2bb", marker='*', markersize=7, linewidth=2, label='DA', zorder=3)
-    plt.plot(x5, EF, "#48daa2", marker='x', markersize=7, linewidth=2, label='EF', zorder=3)
-    plt.plot(x6, SE, "#a3ed84", marker='1', markersize=7, linewidth=2, label='SE', zorder=3)
-    plt.legend(loc='upper right',bbox_to_anchor=(1.3, 1),)
-    ax1.set_yticks([4.4, 4.5, 4.6, 4.7, 4.8, 4.9, 5.0])
+    plt.plot(x2, Clarity, "#374955", marker='.', markersize=7, linewidth=2, label='Clarity', zorder=3)
+    plt.plot(x3, AA, "#d0595a", marker='o', markersize=7, linewidth=2, label='AA', zorder=3)
+    plt.plot(x4, DA, "#783864", marker='*', markersize=7, linewidth=2, label='DA', zorder=3)
+    plt.plot(x5, EF, "#008572", marker='x', markersize=7, linewidth=2, label='EF', zorder=3)
+    plt.plot(x6, SE, "#eb9929", marker='1', markersize=7, linewidth=2, label='SE', zorder=3)
+    plt.legend(loc='upper center', ncol=3, bbox_to_anchor=(0.5, 1.02), frameon=False, fontsize=12)
+    ax1.set_yticks([4.4, 4.5, 4.6, 4.7, 4.8, 4.9, 5.0,5.1])
 
     ax1.spines['top'].set_color('black')  # Top border
     ax1.spines['right'].set_color('black')  # Right border

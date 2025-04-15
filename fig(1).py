@@ -22,50 +22,47 @@ Judgment = [0.41, 0.62, 0.65, 0.62, 0.73, 0.72]
 
 # 设置柱状图的位置
 x = np.arange(6)
-width = 0.75  # 每个柱的宽度
+width = 0.7  # 每个柱的宽度
 colors = ['#86A3B8', '#E8D2A6', '#8ECFC9', '#86A3B8', '#E8D2A6', '#8ECFC9']  # 每个模型的颜色
 
 # 创建 2x2 子图布局
-fig, axs = plt.subplots(1, 1, figsize=(5, 3))
+fig, axs = plt.subplots(1, 1, figsize=(4, 3))
 
 # 绘制 Single_Choice 数据集
-# for i in range(3):
-#     axs.bar(i, Single_Choice[i], width, color=colors[i], edgecolor='black')
-# axs.bar(3, 0, width)
-# for i in range(4, 7):
-#     axs.bar(i, Single_Choice[i - 2], width, color=colors[i - 2], edgecolor='black')
-# axs.set_ylabel('Single Choice')
-# axs.set_ylim(0.1, 1)
-# axs.set_xticks([1.35 * width, 6.67 * width], ['HR', 'Recall'])
-
-# 绘制 Multiple_Choice 数据集的 NDCG@10
 for i in range(3):
-    axs.bar(i, Multiple_Choice[i], width, color=colors[i], edgecolor='black')
-axs.bar(3, 0, width)
-for i in range(4, 7):
-    axs.bar(i, Multiple_Choice[i - 2], width, color=colors[i - 2], edgecolor='black')
-axs.set_ylabel('Multiple Choice')
+    axs.bar(i*0.9, Single_Choice[i], width, color=colors[i], edgecolor='black')
+for i in range(3, 6):
+    axs.bar(i*0.9+0.4, Single_Choice[i ], width, color=colors[i ], edgecolor='black')
+axs.set_ylabel('Single Choice')
 axs.set_ylim(0.1, 1)
 axs.set_xticks([1.35 * width, 6.67 * width], ['HR', 'Recall'])
 
-# 绘制 Judgment 数据集的 HR@10
+# # 绘制 Multiple_Choice 数据集的 NDCG@10
 # for i in range(3):
-#     axs.bar(i, Judgment[i], width, color=colors[i], edgecolor='black')
-# axs.bar(3, 0, width)
-# for i in range(4, 7):
-#     axs.bar(i, Judgment[i - 2], width, color=colors[i - 2], edgecolor='black')
+#     axs.bar(i*0.9, Multiple_Choice[i], width, color=colors[i], edgecolor='black')
+# for i in range(3, 6):
+#     axs.bar(i*0.9+0.4, Multiple_Choice[i ], width, color=colors[i ], edgecolor='black')
+# axs.set_ylabel('Multiple Choice')
+# axs.set_ylim(0.1, 1)
+# axs.set_xticks([1.35 * width, 6.67 * width], ['HR', 'Recall'])
+
+# # 绘制 Judgment 数据集的 HR@10
+# for i in range(3):
+#     axs.bar(i * 0.9, Judgment[i], width, color=colors[i], edgecolor='black')
+# for i in range(3, 6):
+#     axs.bar(i * 0.9 + 0.4, Judgment[i], width, color=colors[i], edgecolor='black')
 # axs.set_ylabel('Judgment')
 # axs.set_ylim(0.1, 1)
 # axs.set_xticks([1.35 * width, 6.67 * width], ['HR', 'Recall'])
 
 # 设置统一的图例
 handles = [plt.Line2D([0], [0], color=color, lw=4) for color in colors]
-fig.legend(handles, categories, loc='upper center', bbox_to_anchor=(0.55, 1.0), ncol=len(categories))
+fig.legend(handles, categories, loc='upper center', ncol=3, bbox_to_anchor=(0.5, 0.95), frameon=False, fontsize=12)
 
 # 调整布局
 plt.tight_layout(rect=[0, 0, 1, 0.9])  # 为图例留出空间
 
-plt.savefig('txtfile/fig2.png', dpi=600, bbox_inches='tight')
+plt.savefig('txtfile/fig1.png', dpi=600, bbox_inches='tight')
 
 plt.show()
 
