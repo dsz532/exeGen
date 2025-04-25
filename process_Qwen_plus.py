@@ -36,9 +36,9 @@ concept_relation_filtered = pandas.read_csv("subject_data(1)/concept_relationshi
 llm_config = {
     "cache_seed": None,
     "config_list": [{
-        "model": "qwen-plus",
-        "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
-        "api_key": "sk-bdcb2c3dc326473cb15ebb03ce2008bb",
+        "model": "qwen2.5-32b-instruct",
+        "base_url": "https://api.xty.app/v1",
+        "api_key": "sk-NBrunetBiCRAhuUA1cB57f8c0fB347Cb87BeC2E5E710C30b",
         "price": [0.0004, 0.0012]
     }]
 }
@@ -52,7 +52,6 @@ examplar_gene = ConversableAgent(
 agent_kt = ConversableAgent(  # 知识追踪代理
     name="agent_kt",
     llm_config=llm_config,
-    silent=True,
     system_message="""
     You are a knowledge tracking expert.
     You will receive a file containing sample exercises and a record of the student’s performance on these exercises. Each record includes the student's response, whether it was correct or incorrect, and the associated knowledge concept. The explanation attribute represents the reasoning behind why the student answered correctly or incorrectly, but some explanations may be missing or incomplete.
@@ -105,7 +104,6 @@ elif exercise_type == "True_or_False":
 agent_generator = ConversableAgent(  # 习题生成代理
     name="agent_generator",
     llm_config=llm_config,
-    silent=True,
     system_message=f"""
     You are an exercise generation expert; 
     you will receive a list containing the knowledge tracking expert's summary of the student's knowledge state of the knowledge concepts, including examples with concept_id to guide you. 
@@ -135,7 +133,6 @@ agent_generator = ConversableAgent(  # 习题生成代理
 agent_discriminator_1 = ConversableAgent(
     name="Linguistic_Fluency_discriminator",
     llm_config=llm_config,
-    silent=True,
     system_message="""
     You are an exercise evaluation expert specializing in assessing linguistic fluency.
     You will receive a list of newly generated exercises and their answers created by the exercise generation expert. Your task is to determine whether the language used in these exercises is fluent and appropriate for effective communication.
@@ -159,7 +156,6 @@ agent_discriminator_1 = ConversableAgent(
 agent_discriminator_2 = ConversableAgent(
     name="Knowledge_Concept_Coverage_discriminator",
     llm_config=llm_config,
-    silent=True,
     system_message="""
     You are an exercise evaluation expert specializing in assessing the coverage of knowledge concepts.
     You will receive:
@@ -221,7 +217,6 @@ else:
 agent_host = ConversableAgent(
     name="agent_host",
     llm_config=llm_config,
-    silent=True,
     system_message=f"""
     You are the moderator of this workflow, responsible for overseeing the collaborative process between multiple agents to create and evaluate high-quality exercises tailored to a student’s learning needs.
     Each time you speak you need to specify the next agent to speak.
@@ -296,7 +291,6 @@ out_groupchat = GroupChat(
 out_groupchat_manager = GroupChatManager(
     groupchat=out_groupchat,
     llm_config=llm_config,
-    silent=True,
 )
 
 agent_kt.description = "a knowledge tracking expert"
@@ -430,7 +424,6 @@ else:
 chat_res = out_groupchat_manager.initiate_chat(
     agent_kt,
     message=prompt,
-    silent=True,
     summary_method="reflection_with_llm",
     max_turns=20
 )
