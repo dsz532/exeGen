@@ -36,7 +36,7 @@ concept_relation_filtered = pandas.read_csv("subject_data(1)/concept_relationshi
 llm_config = {
     "cache_seed": None,
     "config_list": [{
-        "model": "gpt-4o",
+        "model": "gpt-4-turbo",
         "base_url": "https://api.xty.app/v1",
         "api_key": "sk-NBrunetBiCRAhuUA1cB57f8c0fB347Cb87BeC2E5E710C30b",
         "price": [0.0004, 0.0012]
@@ -250,6 +250,7 @@ agent_host = ConversableAgent(
          - Repeat this iterative process until all three agents agree that the exercises meet the required standards.
     7. **Final Output**:
        - Once all agents have approved the exercise, you need to edit the final version of the exercise list strictly in the format {o_fmt} and return it, and say 'stopChat' to let the chat end.
+       - The knowledge concepts must be written in Chinese. 
     **Key Guidelines**:
     - Prioritize the student’s weak knowledge concepts throughout the process to ensure targeted learning.
     - Ensure that all steps are completed efficiently and logically, with clear communication between agents.
@@ -364,14 +365,14 @@ def extract_last_json(s):
 
 
 text = {
-    # "round": i,
+    "round": "user16",
     "examples": [],
     "tasks": []
 }
 
 # 获取task数组
 stuRec_1000_with_tokens = pandas.read_csv("subject_data(1)/stuRec_1000_with_tokens.csv")
-stuRec_1000_with_tokens = stuRec_1000_with_tokens.iloc[35:45]
+stuRec_1000_with_tokens = stuRec_1000_with_tokens.iloc[227:249]
 selected_columns1 = ['content', 'option', 'right_answer', 'knowledge_evidence', 'is_correct', 'explanation']
 
 # 硬匹配
@@ -390,7 +391,7 @@ if not stuRec_1000_with_tokens.empty:
 
 # 匹配完成后重新读取习题记录信息
 stuRec_1000_with_tokens = pandas.read_csv("subject_data(1)/stuRec_1000_with_tokens.csv")
-stuRec_1000_with_tokens = stuRec_1000_with_tokens.iloc[35:45]
+stuRec_1000_with_tokens = stuRec_1000_with_tokens.iloc[227:249]
 selected_columns2 = ['content', 'option', 'right_answer', 'knowledge_evidence', 'is_correct']
 stuRec_1000_with_tokens = stuRec_1000_with_tokens[selected_columns2]
 
@@ -438,5 +439,5 @@ text["cost"] = chat_cost
 text["chat_history"] = chat_his
 text = json.dumps(text, ensure_ascii=False, indent=4)
 chat_his = json.dumps(chat_his, ensure_ascii=False, indent=4)
-with open(f'output/output{os.getpid()}.txt', 'w', encoding='utf-8') as f:
+with open(f'output/user1.txt', 'a', encoding='utf-8') as f:
     f.write(text)
