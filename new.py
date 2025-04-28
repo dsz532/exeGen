@@ -20,12 +20,15 @@ for user in j:
         outtxt = outtxt + "选项：" + task["option"] + "\n"
         outtxt = outtxt + "正确答案：" + task["right_answer"] + "\n"
         outtxt = outtxt + "学生是否正确作答：" + iscorrect(task["is_correct"]) + "\n"
+        outtxt = outtxt + task["knowledge_evidence"] + "\n"
         outtxt = outtxt + "\n"
     outtxt = outtxt + "\n"
     for result, i in zip(user["result"], range(len((user["result"])))):
         outtxt = outtxt + str(i + 1) + ". " + result["content"] + "\n"
         outtxt = outtxt + "选项：" + result["option"] + "\n"
         outtxt = outtxt + "正确答案：" + result["answer"] + "\n"
+        outtxt = outtxt + "课程名：" + result["course_name"] + "\n"
+        outtxt = outtxt + "知识点：" + result["concept_id"] + "\n"
         outtxt = outtxt + "\n"
     outtxt = outtxt + "\n"
 
