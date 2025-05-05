@@ -1,38 +1,20 @@
 import json
 
-j = open("output/user1.txt", "r", encoding='utf-8')
-j = json.load(j)
+# j = open("txtfile/result-questionnaire.txt", "r", encoding='utf-8')
+# j = json.load(j)
+# j = j["list"]
+# for i in j:
+#     if len(i["answers"]) <= 19: continue
+#     answers = i["answers"][19]
+#     if answers != None and answers != {'0': 1, '1': 1, '2': 1, '3': 1, '4': 1}:
+#         print(answers)
 
-
-def iscorrect(i):
-    if i == 1:
-        return "正确"
-    else:
-        return "错误"
-
-
-outtxt = ""
-for user in j:
-    outtxt = outtxt + user["round"] + "\n"
-    outtxt = outtxt + "\n"
-    for task, i in zip(user["tasks"], range(len((user["tasks"])))):
-        outtxt = outtxt + str(i + 1) + ". " + task["content"] + "\n"
-        outtxt = outtxt + "选项：" + task["option"] + "\n"
-        outtxt = outtxt + "正确答案：" + task["right_answer"] + "\n"
-        outtxt = outtxt + "学生是否正确作答：" + iscorrect(task["is_correct"]) + "\n"
-        outtxt = outtxt + task["knowledge_evidence"] + "\n"
-        outtxt = outtxt + "\n"
-    outtxt = outtxt + "\n"
-    for result, i in zip(user["result"], range(len((user["result"])))):
-        outtxt = outtxt + str(i + 1) + ". " + result["content"] + "\n"
-        outtxt = outtxt + "选项：" + result["option"] + "\n"
-        outtxt = outtxt + "正确答案：" + result["answer"] + "\n"
-        outtxt = outtxt + "课程名：" + result["course_name"] + "\n"
-        outtxt = outtxt + "知识点：" + result["concept_id"] + "\n"
-        outtxt = outtxt + "\n"
-    outtxt = outtxt + "\n"
-
-print(outtxt)
-o = open("output/questionnaire.txt", "w", encoding='utf-8')
-o.write(outtxt)
-o.close()
+r = open("txtfile/ques-res.txt", "r", encoding='utf-8')
+r = json.load(r)
+r = r["res"]
+ave = [0,0,0,0,0]
+for i in range(5):
+    for line in r:
+        ave[i] += line[f"{i}"]
+    ave[i] /= 19
+print(ave)
