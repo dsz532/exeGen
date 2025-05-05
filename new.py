@@ -12,9 +12,11 @@ import json
 r = open("txtfile/ques-res.txt", "r", encoding='utf-8')
 r = json.load(r)
 r = r["res"]
-ave = [0,0,0,0,0]
+ave = [0, 0, 0, 0, 0]
 for i in range(5):
     for line in r:
         ave[i] += line[f"{i}"]
-    ave[i] /= 19
+    ave[i] /= 20
 print(ave)
+
+# [4.45, 4.85, 4.65, 4.25, 4.1]
