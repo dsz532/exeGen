@@ -37,7 +37,7 @@ llm_config = {
     "config_list": [{
         "model": "deepseek/deepseek-r1:free",
         "base_url": "https://openrouter.ai/api/v1",
-        "api_key": "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",
+        "api_key": "",
         "price": [0, 0]
     }]
 }

@@ -37,7 +37,7 @@ llm_config = {
     "config_list": [{
         "model": "qwen-max-latest",
         "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
-        "api_key": "sk-8f73e51272114ecba3c6ce4059923625",
+        "api_key": "",
         "price": [0.0024, 0.0096]
     }]
 }

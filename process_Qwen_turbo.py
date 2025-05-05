@@ -37,7 +37,7 @@ llm_config = {
     "config_list": [{
         "model": "qwen-turbo-1101",
         "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
-        "api_key": "sk-5a37c296e0324248bbe0a69b082c9b84",
+        "api_key": "",
         "price": [0, 0]
     }]
 }

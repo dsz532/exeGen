@@ -10,7 +10,7 @@ llm_config = {
     "config_list": [{
         "model": "openai/gpt-4o",
         "base_url": "https://openrouter.ai/api/v1",
-        "api_key": "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",
+        "api_key": "",
         "price": [0.5, 1.5]
     }]
 }

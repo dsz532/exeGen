@@ -38,7 +38,7 @@ llm_config = {
     "config_list": [{
         "model": "qwen2.5-32b-instruct",
         "base_url": "https://api.xty.app/v1",
-        "api_key": "sk-NBrunetBiCRAhuUA1cB57f8c0fB347Cb87BeC2E5E710C30b",
+        "api_key": "",
         "price": [0.0004, 0.0012]
     }]
 }

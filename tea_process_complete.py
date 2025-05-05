@@ -27,7 +27,7 @@ llm_config = {
     "config_list": [{
         "model": "qwen-plus",
         "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
-        "api_key": "sk-bdcb2c3dc326473cb15ebb03ce2008bb",
+        "api_key": "",
         "price": [0.0004, 0.0012]
     }]
 }
