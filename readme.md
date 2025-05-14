@@ -1,173 +1,173 @@
 ```
 ExeGen
-©¦  .gitignore
-©¦  process.py   # Run this file to generate exercises
-©¦  readme.md
-©¦  requirements.txt
-©À©¤ablation experiment   #Code used for ablation experiments
-©¦      process_no_discriminator.py
-©¦      process_no_generator.py
-©¦      process_no_knowledgechain.py
-©¦      process_no_kt.py
-©¦      process_no_regeneration.py
-©¦      
-©À©¤bert  
-©¦  ©¦  vocab.txt
-©¦  ©¦  
-©¦  ©¸©¤bert-base-chinese
-©¦          config.json
-©¦          pytorch_model.bin
-©¦          
-©À©¤experiment    #Code used for the experiment
-©¦      baseline.py
-©¦      create_prompt.py
-©¦      dataSet.py
-©¦      ECR.py
-©¦      gene_explanation.py
-©¦      knowledge_extraction.py
-©¦      LLM_SCORE.py
-©¦      new.py
-©¦      process_deepseek.py
-©¦      process_Llama.py
-©¦      process_Qwen_max.py
-©¦      process_Qwen_plus.py
-©¦      process_Qwen_turbo.py
-©¦      test_Multiple_Choice.py
-©¦      test_Single_Choice.py
-©¦      test_TrueorFalse.py
-©¦      
-©À©¤graph
-©¦      fig(1).py
-©¦      figcompare.py
-©¦      figstu.py
-©¦      layer L(1).py
-©¦      layer.py
-©¦      rader_graph.py
-©¦      
-©À©¤output
-©¦      output12248.txt
-©¦      output17360.txt
-©¦      output17500.txt
-©¦      output24880.txt
-©¦      questionnaire.txt
-©¦      user1.txt
-©¦      
-©À©¤processed_data(1)
-©¦      challenge2id.pkl
-©¦      challenge2topic.txt
-©¦      course2challenge.txt
-©¦      course2id.pkl
-©¦      course2topic.txt
-©¦      course_info.txt
-©¦      user2challenge.txt
-©¦      user2course.txt
-©¦      user2id.pkl
-©¦      
-©À©¤subject_data(1)   #Dataset
-©¦      concept.csv
-©¦      concept_relationship.csv
-©¦      concept_relationship_filtered.csv
-©¦      course_concept.csv
-©¦      course_exercise.csv
-©¦      course_problem.csv
-©¦      course_profile.csv
-©¦      error.txt
-©¦      example.csv
-©¦      examples_with_explanation(short).csv
-©¦      examples_with_explanation.csv
-©¦      examples_with_explanation_with_tokens.csv
-©¦      problem.csv
-©¦      problem_concept.csv
-©¦      stuRec.csv
-©¦      stuRec_1000.csv
-©¦      stuRec_1000_with_tokens.csv
-©¦      user_course.csv
-©¦      user_problem.csv
-©¦      user_profile.csv
-©¦      
-©À©¤testData
-©¦      course_concepts.csv
-©¦      course_profile.csv
-©¦      problem_profile.csv
-©¦      user_problem.csv
-©¦      user_profile.csv
-©¦      
-©À©¤txtfile   #Results of the experiment
-©¦      case_study.txt
-©¦      case_study_stu.txt
-©¦      compare.zip
-©¦      error.txt
-©¦      fig.png
-©¦      fig1.png
-©¦      fig2.png
-©¦      fig3.png
-©¦      figcompare.png
-©¦      figcompare.zip
-©¦      figcomparenew.png
-©¦      figcomparenewstu.png
-©¦      figcomparestu.png
-©¦      figcomparestu.zip
-©¦      figcomparetogether.png
-©¦      figcomparetogether.zip
-©¦      figstu.png
-©¦      figstu.zip
-©¦      formet.txt
-©¦      java_kt_example.txt
-©¦      Judgment_Qwen_f2.png
-©¦      judgment_Qwen_pre6.png
-©¦      judgment_rader.png
-©¦      j_output.txt
-©¦      multiple_choice_Qwen_pre6.png
-©¦      Multiple_Qwen_f2.png
-©¦      multiple_rader.png
-©¦      n_output.txt
-©¦      prompt.txt
-©¦      ques-res.txt
-©¦      requirements.txt
-©¦      res.txt
-©¦      result-questionnaire.txt
-©¦      result_complete.txt
-©¦      result_complete_4o_mul.txt
-©¦      result_complete_4o_sin.txt
-©¦      result_complete_4o_ToF.txt
-©¦      result_deepseek_sin.txt
-©¦      result_Llama_mul.txt
-©¦      result_Llama_sin.txt
-©¦      result_Llama_ToF.txt
-©¦      result_no_discriminator_4o.txt
-©¦      result_no_generator_4o.txt
-©¦      result_no_knowledgechain_4o.txt
-©¦      result_no_kt_4o.txt
-©¦      result_no_regeneration_4o.txt
-©¦      result_Qwen_max_mul.txt
-©¦      result_Qwen_max_sin.txt
-©¦      result_Qwen_max_ToF.txt
-©¦      result_Qwen_plus_mul.txt
-©¦      result_Qwen_plus_sin.txt
-©¦      result_Qwen_plus_ToF.txt
-©¦      result_Qwen_turbo_mul.txt
-©¦      result_Qwen_turbo_sin.txt
-©¦      result_Qwen_turbo_ToF.txt
-©¦      single_choice_Qwen_pre6.png
-©¦      Single_Qwen_f2.png
-©¦      single_rader.png
-©¦      temp.py
-©¦      test.txt
-©¦      ×¨¼ÒÆÀÅĞ.txt
-©¦      Ë«ÕÛÏß.zip
-©¦      Ñ§ÉúÆÀÅĞ.txt
-©¦      ¶Ô±ÈÆÀÅĞ.txt
-©¦      ÕÛÏß.zip
-©¦      Öù×´Í¼.zip
-©¦      À×´ïÍ¼.zip
-©¦      
-©À©¤webapp
-©¦      questionnaire_result.py
-©¦      result.txt
-©¦      tea_process_complete.py
-©¦      tea_process_no_discriminator.py
-©¦      
-©¸©¤__pycache__
+â”‚  .gitignore
+â”‚  process.py   # Run this file to generate exercises
+â”‚  readme.md
+â”‚  requirements.txt
+â”œâ”€ablation experiment   #Code used for ablation experiments
+â”‚      process_no_discriminator.py
+â”‚      process_no_generator.py
+â”‚      process_no_knowledgechain.py
+â”‚      process_no_kt.py
+â”‚      process_no_regeneration.py
+â”‚      
+â”œâ”€bert  
+â”‚  â”‚  vocab.txt
+â”‚  â”‚  
+â”‚  â””â”€bert-base-chinese
+â”‚          config.json
+â”‚          pytorch_model.bin
+â”‚          
+â”œâ”€experiment    #Code used for the experiment
+â”‚      baseline.py
+â”‚      create_prompt.py
+â”‚      dataSet.py
+â”‚      ECR.py
+â”‚      gene_explanation.py
+â”‚      knowledge_extraction.py
+â”‚      LLM_SCORE.py
+â”‚      new.py
+â”‚      process_deepseek.py
+â”‚      process_Llama.py
+â”‚      process_Qwen_max.py
+â”‚      process_Qwen_plus.py
+â”‚      process_Qwen_turbo.py
+â”‚      test_Multiple_Choice.py
+â”‚      test_Single_Choice.py
+â”‚      test_TrueorFalse.py
+â”‚      
+â”œâ”€graph
+â”‚      fig(1).py
+â”‚      figcompare.py
+â”‚      figstu.py
+â”‚      layer L(1).py
+â”‚      layer.py
+â”‚      rader_graph.py
+â”‚      
+â”œâ”€output
+â”‚      output12248.txt
+â”‚      output17360.txt
+â”‚      output17500.txt
+â”‚      output24880.txt
+â”‚      questionnaire.txt
+â”‚      user1.txt
+â”‚      
+â”œâ”€processed_data(1)
+â”‚      challenge2id.pkl
+â”‚      challenge2topic.txt
+â”‚      course2challenge.txt
+â”‚      course2id.pkl
+â”‚      course2topic.txt
+â”‚      course_info.txt
+â”‚      user2challenge.txt
+â”‚      user2course.txt
+â”‚      user2id.pkl
+â”‚      
+â”œâ”€subject_data(1)   #Dataset
+â”‚      concept.csv
+â”‚      concept_relationship.csv
+â”‚      concept_relationship_filtered.csv
+â”‚      course_concept.csv
+â”‚      course_exercise.csv
+â”‚      course_problem.csv
+â”‚      course_profile.csv
+â”‚      error.txt
+â”‚      example.csv
+â”‚      examples_with_explanation(short).csv
+â”‚      examples_with_explanation.csv
+â”‚      examples_with_explanation_with_tokens.csv
+â”‚      problem.csv
+â”‚      problem_concept.csv
+â”‚      stuRec.csv
+â”‚      stuRec_1000.csv
+â”‚      stuRec_1000_with_tokens.csv
+â”‚      user_course.csv
+â”‚      user_problem.csv
+â”‚      user_profile.csv
+â”‚      
+â”œâ”€testData
+â”‚      course_concepts.csv
+â”‚      course_profile.csv
+â”‚      problem_profile.csv
+â”‚      user_problem.csv
+â”‚      user_profile.csv
+â”‚      
+â”œâ”€txtfile   #Results of the experiment
+â”‚      case_study.txt
+â”‚      case_study_stu.txt
+â”‚      compare.zip
+â”‚      error.txt
+â”‚      fig.png
+â”‚      fig1.png
+â”‚      fig2.png
+â”‚      fig3.png
+â”‚      figcompare.png
+â”‚      figcompare.zip
+â”‚      figcomparenew.png
+â”‚      figcomparenewstu.png
+â”‚      figcomparestu.png
+â”‚      figcomparestu.zip
+â”‚      figcomparetogether.png
+â”‚      figcomparetogether.zip
+â”‚      figstu.png
+â”‚      figstu.zip
+â”‚      formet.txt
+â”‚      java_kt_example.txt
+â”‚      Judgment_Qwen_f2.png
+â”‚      judgment_Qwen_pre6.png
+â”‚      judgment_rader.png
+â”‚      j_output.txt
+â”‚      multiple_choice_Qwen_pre6.png
+â”‚      Multiple_Qwen_f2.png
+â”‚      multiple_rader.png
+â”‚      n_output.txt
+â”‚      prompt.txt
+â”‚      ques-res.txt
+â”‚      requirements.txt
+â”‚      res.txt
+â”‚      result-questionnaire.txt
+â”‚      result_complete.txt
+â”‚      result_complete_4o_mul.txt
+â”‚      result_complete_4o_sin.txt
+â”‚      result_complete_4o_ToF.txt
+â”‚      result_deepseek_sin.txt
+â”‚      result_Llama_mul.txt
+â”‚      result_Llama_sin.txt
+â”‚      result_Llama_ToF.txt
+â”‚      result_no_discriminator_4o.txt
+â”‚      result_no_generator_4o.txt
+â”‚      result_no_knowledgechain_4o.txt
+â”‚      result_no_kt_4o.txt
+â”‚      result_no_regeneration_4o.txt
+â”‚      result_Qwen_max_mul.txt
+â”‚      result_Qwen_max_sin.txt
+â”‚      result_Qwen_max_ToF.txt
+â”‚      result_Qwen_plus_mul.txt
+â”‚      result_Qwen_plus_sin.txt
+â”‚      result_Qwen_plus_ToF.txt
+â”‚      result_Qwen_turbo_mul.txt
+â”‚      result_Qwen_turbo_sin.txt
+â”‚      result_Qwen_turbo_ToF.txt
+â”‚      single_choice_Qwen_pre6.png
+â”‚      Single_Qwen_f2.png
+â”‚      single_rader.png
+â”‚      temp.py
+â”‚      test.txt
+â”‚      ä¸“å®¶è¯„åˆ¤.txt
+â”‚      åŒæŠ˜çº¿.zip
+â”‚      å­¦ç”Ÿè¯„åˆ¤.txt
+â”‚      å¯¹æ¯”è¯„åˆ¤.txt
+â”‚      æŠ˜çº¿.zip
+â”‚      æŸ±çŠ¶å›¾.zip
+â”‚      é›·è¾¾å›¾.zip
+â”‚      
+â”œâ”€webapp
+â”‚      questionnaire_result.py
+â”‚      result.txt
+â”‚      tea_process_complete.py
+â”‚      tea_process_no_discriminator.py
+â”‚      
+â””â”€__pycache__
 ```
 
 ## Quick Start
