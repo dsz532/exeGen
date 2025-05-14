@@ -3,8 +3,8 @@ from os import getenv
 from autogen import ConversableAgent, GroupChat, GroupChatManager
 import pandas as pd
 
-stuRec_1000_with_tokens = pd.read_csv("subject_data(1)/stuRec_1000_with_tokens.csv")
-examples_with_explanation_with_tokens = pd.read_csv("subject_data(1)/examples_with_explanation_with_tokens.csv")
+stuRec_1000_with_tokens = pd.read_csv("../subject_data(1)/stuRec_1000_with_tokens.csv")
+examples_with_explanation_with_tokens = pd.read_csv("../subject_data(1)/examples_with_explanation_with_tokens.csv")
 
 llm_config = {
     "config_list": [{

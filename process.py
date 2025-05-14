@@ -13,14 +13,11 @@
 # 生成数量
 # 每个知识点匹配正负example
 # 硬匹配和软匹配
-# todo: 做实验
-import json
 from typing import Union
 
 from autogen import *
-from create_prompt import *
+from experiment.create_prompt import *
 import argparse
-import os
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--type_of_prompt", type=str, help="natural_language_text or json_text")

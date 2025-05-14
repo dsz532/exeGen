@@ -5,15 +5,15 @@ import pandas
 # concept = pandas.read_csv("subject_data(1)/concept.csv")
 # concept_relation = pandas.read_csv("subject_data(1)/concept_relationship.csv")
 # user_problem = pandas.read_csv("subject_data(1)/user_problem.csv")
-stuRec_1000_with_tokens = pandas.read_csv("subject_data(1)/stuRec_1000_with_tokens.csv")
+stuRec_1000_with_tokens = pandas.read_csv("../subject_data(1)/stuRec_1000_with_tokens.csv")
 # example = pandas.read_csv("subject_data(1)/example.csv")
 # examples_with_explanation = pandas.read_csv("subject_data(1)/examples_with_explanation.csv")
-concept_relation_filtered = pandas.read_csv("subject_data(1)/concept_relationship_filtered.csv")
+concept_relation_filtered = pandas.read_csv("../subject_data(1)/concept_relationship_filtered.csv")
 
 # course_profile = pandas.read_csv("subject_data(1)/course_profile.csv")
 # course_problem = pandas.read_csv("subject_data(1)/course_problem.csv")
 # user_profile = pandas.read_csv("subject_data(1)/user_profile.csv")
-examples_with_explanation_with_tokens = pandas.read_csv("subject_data(1)/examples_with_explanation_with_tokens.csv")
+examples_with_explanation_with_tokens = pandas.read_csv("../subject_data(1)/examples_with_explanation_with_tokens.csv")
 
 # 构造example
 # top3_problems = problem_concept.groupby('concept_id').head(1).reset_index(drop=True)

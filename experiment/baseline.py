@@ -29,9 +29,9 @@ parser.add_argument("--exercise_type", type=str,
 parser.add_argument("--output_type", type=str, help="natural_language or json")
 parser.add_argument("--Number_of_Generations", type=int)
 
-stuRec_1000_with_tokens = pandas.read_csv("subject_data(1)/stuRec_1000_with_tokens.csv")
-examples_with_explanation_with_tokens = pandas.read_csv("subject_data(1)/examples_with_explanation_with_tokens.csv")
-concept_relation_filtered = pandas.read_csv("subject_data(1)/concept_relationship_filtered.csv")
+stuRec_1000_with_tokens = pandas.read_csv("../subject_data(1)/stuRec_1000_with_tokens.csv")
+examples_with_explanation_with_tokens = pandas.read_csv("../subject_data(1)/examples_with_explanation_with_tokens.csv")
+concept_relation_filtered = pandas.read_csv("../subject_data(1)/concept_relationship_filtered.csv")
 
 llm_config = {
     "cache_seed": None,
@@ -103,13 +103,13 @@ elif exercise_type == "True_or_False":
 
 o_format = parser.parse_args().output_type
 if o_format == "natural_language":
-    f = open("txtfile/n_output.txt", "r")
+    f = open("../txtfile/n_output.txt", "r")
     o_fmt = f.read()
 elif o_format == "json":
-    f = open("txtfile/j_output.txt", "r")
+    f = open("../txtfile/j_output.txt", "r")
     o_fmt = f.read()
 else:
-    f = open("txtfile/j_output.txt", "r")
+    f = open("../txtfile/j_output.txt", "r")
     o_fmt = f.read()
 
 agent_generator = ConversableAgent(  # 习题生成代理
@@ -363,7 +363,7 @@ text = {
 }
 
 # 获取task数组
-stuRec_1000_with_tokens = pandas.read_csv("subject_data(1)/stuRec_1000_with_tokens.csv")
+stuRec_1000_with_tokens = pandas.read_csv("../subject_data(1)/stuRec_1000_with_tokens.csv")
 stuRec_1000_with_tokens = stuRec_1000_with_tokens.iloc[35:45]
 selected_columns1 = ['content', 'option', 'right_answer', 'knowledge_evidence', 'is_correct', 'explanation']
 
@@ -382,7 +382,7 @@ if not stuRec_1000_with_tokens.empty:
     text["examples"] += res
 
 # 匹配完成后重新读取习题记录信息
-stuRec_1000_with_tokens = pandas.read_csv("subject_data(1)/stuRec_1000_with_tokens.csv")
+stuRec_1000_with_tokens = pandas.read_csv("../subject_data(1)/stuRec_1000_with_tokens.csv")
 stuRec_1000_with_tokens = stuRec_1000_with_tokens.iloc[35:45]
 selected_columns2 = ['content', 'option', 'right_answer', 'knowledge_evidence', 'is_correct']
 stuRec_1000_with_tokens = stuRec_1000_with_tokens[selected_columns2]

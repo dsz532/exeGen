@@ -28,9 +28,9 @@ parser.add_argument("--exercise_type", type=str,
 parser.add_argument("--output_type", type=str, help="natural_language or json")
 parser.add_argument("--Number_of_Generations", type=int)
 
-stuRec_1000_with_tokens = pandas.read_csv("subject_data(1)/stuRec_1000_with_tokens.csv")
-examples_with_explanation_with_tokens = pandas.read_csv("subject_data(1)/examples_with_explanation_with_tokens.csv")
-concept_relation_filtered = pandas.read_csv("subject_data(1)/concept_relationship_filtered.csv")
+stuRec_1000_with_tokens = pandas.read_csv("../subject_data(1)/stuRec_1000_with_tokens.csv")
+examples_with_explanation_with_tokens = pandas.read_csv("../subject_data(1)/examples_with_explanation_with_tokens.csv")
+concept_relation_filtered = pandas.read_csv("../subject_data(1)/concept_relationship_filtered.csv")
 
 llm_config = {
     "cache_seed": None,
@@ -203,13 +203,13 @@ agent_discriminator_3 = ConversableAgent(
 
 o_format = parser.parse_args().output_type
 if o_format == "natural_language":
-    f = open("txtfile/n_output.txt", "r")
+    f = open("../txtfile/n_output.txt", "r")
     o_fmt = f.read()
 elif o_format == "json":
-    f = open("txtfile/j_output.txt", "r")
+    f = open("../txtfile/j_output.txt", "r")
     o_fmt = f.read()
 else:
-    f = open("txtfile/j_output.txt", "r")
+    f = open("../txtfile/j_output.txt", "r")
     o_fmt = f.read()
 
 agent_host = ConversableAgent(
@@ -370,7 +370,7 @@ for i in range(20,21):
     }
 
     # 获取task数组
-    stuRec_1000_with_tokens = pandas.read_csv("subject_data(1)/stuRec_1000_with_tokens.csv")
+    stuRec_1000_with_tokens = pandas.read_csv("../subject_data(1)/stuRec_1000_with_tokens.csv")
     stuRec_1000_with_tokens = stuRec_1000_with_tokens.iloc[(i * 10):((i + 1) * 10)]
     selected_columns1 = ['content', 'option', 'right_answer', 'knowledge_evidence', 'is_correct', 'explanation']
 
@@ -389,7 +389,7 @@ for i in range(20,21):
         text["examples"] += res
 
     # 匹配完成后重新读取习题记录信息
-    stuRec_1000_with_tokens = pandas.read_csv("subject_data(1)/stuRec_1000_with_tokens.csv")
+    stuRec_1000_with_tokens = pandas.read_csv("../subject_data(1)/stuRec_1000_with_tokens.csv")
     stuRec_1000_with_tokens = stuRec_1000_with_tokens.iloc[(i * 10):((i + 1) * 10)]
     selected_columns2 = ['content', 'option', 'right_answer', 'knowledge_evidence', 'is_correct']
     stuRec_1000_with_tokens = stuRec_1000_with_tokens[selected_columns2]
@@ -436,7 +436,7 @@ for i in range(20,21):
     text["result"] = res_exe
     text["cost"] = chat_cost
     text = json.dumps(text, ensure_ascii=False, indent=4)
-    with open('txtfile/result_Qwen_max_ToF.txt', 'a', encoding='utf-8') as f:
+    with open('../txtfile/result_Qwen_max_ToF.txt', 'a', encoding='utf-8') as f:
         f.write(text + ',\n')
 
     print(json.dumps(res_exe, ensure_ascii=False, indent=4))

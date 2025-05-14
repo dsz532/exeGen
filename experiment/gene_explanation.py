@@ -2,7 +2,7 @@ import pandas
 from autogen import *
 import json
 
-examples_with_explanation = pandas.read_csv("subject_data(1)/examples_with_explanation_with_tokens.csv")
+examples_with_explanation = pandas.read_csv("../subject_data(1)/examples_with_explanation_with_tokens.csv")
 
 llm_config = {
     "cache_seed": None,

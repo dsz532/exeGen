@@ -15,6 +15,7 @@
 # 硬匹配和软匹配
 # todo: 做实验
 import json
+from typing import Union
 
 from autogen import *
 from create_prompt import *
@@ -27,15 +28,15 @@ parser.add_argument("--exercise_type", type=str,
 parser.add_argument("--output_type", type=str, help="natural_language or json")
 parser.add_argument("--Number_of_Generations", type=int)
 
-stuRec_1000_with_tokens = pandas.read_csv("subject_data(1)/stuRec_1000_with_tokens.csv")
-examples_with_explanation_with_tokens = pandas.read_csv("subject_data(1)/examples_with_explanation_with_tokens.csv")
-concept_relation_filtered = pandas.read_csv("subject_data(1)/concept_relationship_filtered.csv")
+stuRec_1000_with_tokens = pandas.read_csv("../subject_data(1)/stuRec_1000_with_tokens.csv")
+examples_with_explanation_with_tokens = pandas.read_csv("../subject_data(1)/examples_with_explanation_with_tokens.csv")
+concept_relation_filtered = pandas.read_csv("../subject_data(1)/concept_relationship_filtered.csv")
 
 llm_config = {
     "cache_seed": None,
     "config_list": [{
-        "model": "openai/gpt-4o",
-        "base_url": "https://openrouter.ai/api/v1",
+        "model": "qwen-turbo-1101",
+        "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
         "api_key": "",
         "price": [0, 0]
     }]
@@ -99,8 +100,8 @@ elif exercise_type == "True_or_False":
                     - **Answer:** ['True' or 'False'] 
                     - **Concept:** Related Knowledge Concept (in Chinese, from historical records, matching concept_id) """
 
-agent_exeGen_generator = ConversableAgent(  # 习题生成代理
-    name="agent_exeGen_generator",
+agent_generator = ConversableAgent(  # 习题生成代理
+    name="agent_generator",
     llm_config=llm_config,
     system_message=f"""
     You are an exercise generation expert; 
@@ -128,8 +129,8 @@ agent_exeGen_generator = ConversableAgent(  # 习题生成代理
 )
 
 # 3个习题评判专家
-agent_exeGen_discriminator_1 = ConversableAgent(
-    name="agent_exeGen_discriminator_1",
+agent_discriminator_1 = ConversableAgent(
+    name="Linguistic_Fluency_discriminator",
     llm_config=llm_config,
     system_message="""
     You are an exercise evaluation expert specializing in assessing linguistic fluency.
@@ -151,8 +152,8 @@ agent_exeGen_discriminator_1 = ConversableAgent(
     """,
 )
 
-agent_exeGen_discriminator_2 = ConversableAgent(
-    name="agent_exeGen_discriminator_2",
+agent_discriminator_2 = ConversableAgent(
+    name="Knowledge_Concept_Coverage_discriminator",
     llm_config=llm_config,
     system_message="""
     You are an exercise evaluation expert specializing in assessing the coverage of knowledge concepts.
@@ -177,8 +178,8 @@ agent_exeGen_discriminator_2 = ConversableAgent(
     """,
 )
 
-agent_exeGen_discriminator_3 = ConversableAgent(
-    name="agent_exeGen_discriminator_3",
+agent_discriminator_3 = ConversableAgent(
+    name="Correctness_and_Reasonableness_discriminator",
     llm_config=llm_config,
     system_message="""
     You are an exercise evaluation expert specializing in assessing the correctness and reasonableness of exercises.
@@ -202,13 +203,13 @@ agent_exeGen_discriminator_3 = ConversableAgent(
 
 o_format = parser.parse_args().output_type
 if o_format == "natural_language":
-    f = open("txtfile/n_output.txt", "r")
+    f = open("../txtfile/n_output.txt", "r")
     o_fmt = f.read()
 elif o_format == "json":
-    f = open("txtfile/j_output.txt", "r")
+    f = open("../txtfile/j_output.txt", "r")
     o_fmt = f.read()
 else:
-    f = open("txtfile/j_output.txt", "r")
+    f = open("../txtfile/j_output.txt", "r")
     o_fmt = f.read()
 
 agent_host = ConversableAgent(
@@ -216,11 +217,9 @@ agent_host = ConversableAgent(
     llm_config=llm_config,
     system_message=f"""
     You are the moderator of this workflow, responsible for overseeing the collaborative process between multiple agents to create and evaluate high-quality exercises tailored to a student’s learning needs.
+    Each time you speak you need to specify the next agent to speak.
     Your responsibilities include the following: 
-    1. **Obtain Initial Input**:
-       - Receive a list containing information about exercises and the student’s answer statuses.
-    2. **Track Knowledge State**:
-       - Transmit records of students' answers (including content, options, right_answer, knowledge_evidence, is_correct, explanation) to **Knowledge Tracking Specialist (agent_kt)**.
+    1. **Track Knowledge State**:
        - Instruct **agent_kt** to generate a comprehensive summary of the student’s knowledge state, including both mastered concepts and weak aspects. Specifically, **agent_kt** should:
          - Analyze each exercise in the student's record, deducing reasoning for correct answers and identifying misunderstandings for incorrect answers.
          - Complete any missing or incomplete explanations, providing a breakdown of the student’s thought process.
@@ -234,22 +233,22 @@ agent_host = ConversableAgent(
          - Ensure that all **knowledge_evidence** entries are clearly formatted and correspond to the relevant knowledge concepts in the exercise, as exemplified in the provided template.
          - Return  the summary of student’s knowledge states in the exact format, ensuring consistency with the example, so that it is actionable and precise for future steps.
          - **Important**: Do not provide redundant or unnecessary information in your responses. Directly analyze and return the output as per the required format without elaborating excessively on the process.
-    3. **Generate New Exercises**:
-       - Provide the knowledge state from agent_kt to the **exercise generation expert (agent_exeGen_generator)**.
-       - Instruct agent_exeGen_generator to create ten new exercises, ensuring these exercises are specifically designed around the student’s weak knowledge concepts and adhere to the specified exercise type format.
-       - **Important**: Ensure that the instructions to agent_exeGen_generator are clear and to the point. Avoid excessive introductory or redundant statements.
-    4. **Evaluate the Exercises**:
-       - Submit the newly generated exercises to the three **exercise evaluation experts (agent_exeGen_discriminators)** for review. Each expert evaluates a specific aspect of the exercises:
-         - **Linguistic Fluency (agent_exeGen_discriminator_1)**: Verifies whether the exercises are linguistically accurate, fluent, and clear.
-         - **Knowledge Concept Coverage (agent_exeGen_discriminator_2)**: Ensures that the exercises adequately cover the student’s weak knowledge concepts.
-         - **Correctness and Reasonableness (agent_exeGen_discriminator_3)**: Confirms whether the exercises and their answers are accurate, logical, and suitable for the student’s current learning level.
-         - **Important**: Instruct each evaluation expert to directly evaluate the exercises without unnecessary preambles or redundant statements. They should focus on the specific task assigned and provide concise feedback.
-    5. **Iterative Regeneration**:
-       - If any agent_exeGen_discriminator finds the exercises unsatisfactory:
-         - Return to agent_exeGen_generator and instruct them to regenerate the exercises based on the feedback provided.
+    2. **Generate New Exercises**:
+       - Provide the knowledge state from agent_kt to the **exercise generation expert (agent_generator)**.
+       - Instruct agent_generator to create ten new exercises, ensuring these exercises are specifically designed around the student’s weak knowledge concepts and adhere to the specified exercise type format.
+       - **Important**: Ensure that the instructions to agent_generator are clear and to the point. Avoid excessive introductory or redundant statements.
+    3. **Evaluate the Linguistic Fluency**:
+       - Submit the newly generated exercises to **Linguistic Fluency Discriminator**: Verifies whether the exercises are linguistically accurate, fluent, and clear.
+    4. **Evaluate the Knowledge Concept Coverage**:
+       - Submit the newly generated exercises to **Knowledge Concept Coverage discriminator**: Ensures that the exercises adequately cover the student’s weak knowledge concepts.
+    5. **Evaluate the Correctness and Reasonableness**:
+       - Submit the newly generated exercises to **Correctness and Reasonableness discriminator**: Confirms whether the exercises and their answers are accurate, logical, and suitable for the student’s current learning level.
+    6. **Iterative Regeneration**:
+       - If any agent_discriminator finds the exercises unsatisfactory:
+         - Return to agent_generator and instruct them to regenerate the exercises based on the feedback provided.
          - Repeat this iterative process until all three agents agree that the exercises meet the required standards.
-    6. **Final Output**:
-       - Once all agents have approved the exercise, you need to edit the final version of the exercise list strictly in the format {o_fmt} and return it, then let the chat end.
+    7. **Final Output**:
+       - Once all agents have approved the exercise, you need to edit the final version of the exercise list strictly in the format {o_fmt} and return it, and say 'stopChat' to let the chat end.
     **Key Guidelines**:
     - Prioritize the student’s weak knowledge concepts throughout the process to ensure targeted learning.
     - Ensure that all steps are completed efficiently and logically, with clear communication between agents.
@@ -259,11 +258,32 @@ agent_host = ConversableAgent(
     """,
 )
 
+
+def custom_speaker_selection_func(
+        last_speaker: Agent, groupchat: GroupChat
+) -> Union[Agent, str, None]:
+    if "stopChat" in groupchat.messages[-1]["content"]:
+        return None
+    if last_speaker is agent_host:
+        return "auto"
+    else:
+        return agent_host
+
+
 out_groupchat = GroupChat(
-    agents=[agent_kt, agent_exeGen_generator, agent_exeGen_discriminator_1, agent_exeGen_discriminator_2,
-            agent_exeGen_discriminator_3, agent_host],
+    agents=[agent_kt, agent_generator, agent_discriminator_1, agent_discriminator_2,
+            agent_discriminator_3, agent_host],
+    select_speaker_message_template="""
+    Selects the next speaking agent based on what agent_host has said.
+    End the chat when agent_host returns the final list of exercises.
+    The following roles are available:
+    {roles}.
+    Select the next role from {agentlist} to speak. Only return the role.
+    """,
+    speaker_selection_method=custom_speaker_selection_func,
+    allow_repeat_speaker=[agent_kt],
     messages=[],
-    send_introductions=True,
+    max_round=20,
 )
 
 out_groupchat_manager = GroupChatManager(
@@ -272,10 +292,10 @@ out_groupchat_manager = GroupChatManager(
 )
 
 agent_kt.description = "a knowledge tracking expert"
-agent_exeGen_generator.description = "an exercise generation expert"
-agent_exeGen_discriminator_1.description = "exercise evaluation expert 1"
-agent_exeGen_discriminator_2.description = "exercise evaluation expert 2"
-agent_exeGen_discriminator_3.description = "exercise evaluation expert 3"
+agent_generator.description = "an exercise generation expert"
+agent_discriminator_1.description = "exercise evaluation expert 1"
+agent_discriminator_2.description = "exercise evaluation expert 2"
+agent_discriminator_3.description = "exercise evaluation expert 3"
 agent_host.description = "host of the chat"
 
 
@@ -332,41 +352,44 @@ def extract_last_json(s):
     if matches:
         json_str = matches[-1]
         try:
-            json_obj = json.loads(json_str)
+            json_obj = json.loads(json_str, strict=False)
             return json_obj
         except json.JSONDecodeError as e:
             print(f"解析错误：{e}")
     return None
 
 
-for i in range(23, 24):
+for i in range(27, 28):
+
     text = {
+        "round": i,
+        "examples": [],
         "tasks": []
     }
 
     # 获取task数组
-    stuRec_1000_with_tokens = pandas.read_csv("subject_data(1)/stuRec_1000_with_tokens.csv")
+    stuRec_1000_with_tokens = pandas.read_csv("../subject_data(1)/stuRec_1000_with_tokens.csv")
     stuRec_1000_with_tokens = stuRec_1000_with_tokens.iloc[(i * 10):((i + 1) * 10)]
     selected_columns1 = ['content', 'option', 'right_answer', 'knowledge_evidence', 'is_correct', 'explanation']
 
     # 硬匹配
-    # hard_example, stuRec_1000_with_tokens = get_examples_by_concept(examples_with_explanation_with_tokens,
-    #                                                                 stuRec_1000_with_tokens)
-    # hard_example = hard_example[selected_columns1]
+    hard_example, stuRec_1000_with_tokens = get_examples_by_concept(examples_with_explanation_with_tokens,
+                                                                    stuRec_1000_with_tokens)
+    hard_example = hard_example[selected_columns1]
 
-    # text['examples'] += hard_example.to_dict(orient='records')
+    text['examples'] += hard_example.to_dict(orient='records')
 
     # 软匹配
-    # if not stuRec_1000_with_tokens.empty:
-    #     res = get_examples_by_similarity(examples_with_explanation_with_tokens, stuRec_1000_with_tokens)[
-    #         selected_columns1].to_dict(orient='records')
-    #
-    #     text["examples"] += res
+    if not stuRec_1000_with_tokens.empty:
+        res = get_examples_by_similarity(examples_with_explanation_with_tokens, stuRec_1000_with_tokens)[
+            selected_columns1].to_dict(orient='records')
+
+        text["examples"] += res
 
     # 匹配完成后重新读取习题记录信息
-    stuRec_1000_with_tokens = pandas.read_csv("subject_data(1)/stuRec_1000_with_tokens.csv")
+    stuRec_1000_with_tokens = pandas.read_csv("../subject_data(1)/stuRec_1000_with_tokens.csv")
     stuRec_1000_with_tokens = stuRec_1000_with_tokens.iloc[(i * 10):((i + 1) * 10)]
-    selected_columns2 = ['content', 'option', 'right_answer', 'is_correct']
+    selected_columns2 = ['content', 'option', 'right_answer', 'knowledge_evidence', 'is_correct']
     stuRec_1000_with_tokens = stuRec_1000_with_tokens[selected_columns2]
 
     # 计算习题记录的知识链
@@ -396,7 +419,7 @@ for i in range(23, 24):
         prompt = text
 
     chat_res = out_groupchat_manager.initiate_chat(
-        agent_host,
+        agent_kt,
         message=prompt,
         summary_method="reflection_with_llm",
     )
@@ -404,15 +427,13 @@ for i in range(23, 24):
     # 获取生成的新题目
     chat_cost = chat_res.cost
     chat_his = chat_res.chat_history
-    chat_his_str = ""
-    for sentence in chat_his:
-        chat_his_str += str(sentence['content']) + "\n"
+    chat_his_str = chat_his[-1]['content']
     res_exe = extract_last_json(chat_his_str)
     text = json.loads(text)
     text["result"] = res_exe
     text["cost"] = chat_cost
     text = json.dumps(text, ensure_ascii=False, indent=4)
-    with open('txtfile/result_no_knowledgechain_4o.txt', 'a', encoding='utf-8') as f:
+    with open('../txtfile/case_study.txt', 'a', encoding='utf-8') as f:
         f.write(text + ',\n')
 
     print(json.dumps(res_exe, ensure_ascii=False, indent=4))
