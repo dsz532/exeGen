@@ -135,7 +135,7 @@ else:
     o_fmt = f.read()
 
 agent_host = ConversableAgent(
-    name="agent_host",
+    name="RecommendationManager",
     llm_config=llm_config,
     system_message=f"""
     You are the moderator of this workflow, responsible for overseeing the collaborative process between multiple agents to create and evaluate high-quality exercises tailored to a student’s learning needs.
@@ -180,8 +180,8 @@ def custom_speaker_selection_func(
 out_groupchat = GroupChat(
     agents=[agent_generator, agent_discriminator_1, agent_discriminator_3, agent_host],
     select_speaker_message_template="""
-    Selects the next speaking agent based on what agent_host has said.
-    End the chat when agent_host returns the final list of exercises.
+    Selects the next speaking agent based on what RecommendationManager has said.
+    End the chat when RecommendationManager returns the final list of exercises.
     The following roles are available:
     {roles}.
     Select the next role from {agentlist} to speak. Only return the role.

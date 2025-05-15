@@ -46,8 +46,8 @@ examplar_gene = ConversableAgent(
     system_message="",
 )
 
-agent_kt = ConversableAgent(  # 知识追踪代理
-    name="agent_kt",
+KnowledgePerceiver = ConversableAgent(  # 知识追踪代理
+    name="KnowledgePerceiver",
     llm_config=llm_config,
     system_message="""
     You are a knowledge tracking expert.
@@ -98,8 +98,8 @@ elif exercise_type == "True_or_False":
                     - **Answer:** ['True' or 'False'] 
                     - **Concept:** Related Knowledge Concept (in Chinese, from historical records, matching concept_id) """
 
-agent_exeGen_generator = ConversableAgent(  # 习题生成代理
-    name="agent_exeGen_generator",
+ExerciseGenerator = ConversableAgent(  # 习题生成代理
+    name="ExerciseGenerator",
     llm_config=llm_config,
     system_message=f"""
     You are an exercise generation expert; 
@@ -127,8 +127,8 @@ agent_exeGen_generator = ConversableAgent(  # 习题生成代理
 )
 
 # 3个习题评判专家
-agent_exeGen_discriminator_1 = ConversableAgent(
-    name="agent_exeGen_discriminator_1",
+QualityEvaluationExpert_1 = ConversableAgent(
+    name="QualityEvaluationExpert_1",
     llm_config=llm_config,
     system_message="""
     You are an exercise evaluation expert specializing in assessing linguistic fluency.
@@ -150,8 +150,8 @@ agent_exeGen_discriminator_1 = ConversableAgent(
     """,
 )
 
-agent_exeGen_discriminator_2 = ConversableAgent(
-    name="agent_exeGen_discriminator_2",
+QualityEvaluationExpert_2 = ConversableAgent(
+    name="QualityEvaluationExpert_2",
     llm_config=llm_config,
     system_message="""
     You are an exercise evaluation expert specializing in assessing the coverage of knowledge concepts.
@@ -176,8 +176,8 @@ agent_exeGen_discriminator_2 = ConversableAgent(
     """,
 )
 
-agent_exeGen_discriminator_3 = ConversableAgent(
-    name="agent_exeGen_discriminator_3",
+QualityEvaluationExpert_3 = ConversableAgent(
+    name="QualityEvaluationExpert_3",
     llm_config=llm_config,
     system_message="""
     You are an exercise evaluation expert specializing in assessing the correctness and reasonableness of exercises.
@@ -210,8 +210,8 @@ else:
     f = open("../txtfile/j_output.txt", "r")
     o_fmt = f.read()
 
-agent_host = ConversableAgent(
-    name="agent_host",
+RecommendationManager = ConversableAgent(
+    name="RecommendationManager",
     llm_config=llm_config,
     system_message=f"""
     You are the moderator of this workflow, responsible for overseeing the collaborative process between multiple agents to create and evaluate high-quality exercises tailored to a student’s learning needs.
@@ -219,8 +219,8 @@ agent_host = ConversableAgent(
     1. **Obtain Initial Input**:
        - Receive a list containing information about exercises and the student’s answer statuses.
     2. **Track Knowledge State**:
-       - Transmit records of students' answers (including content, options, right_answer, knowledge_evidence, is_correct, explanation) to **Knowledge Tracking Specialist (agent_kt)**.
-       - Instruct **agent_kt** to generate a comprehensive summary of the student’s knowledge state, including both mastered concepts and weak aspects. Specifically, **agent_kt** should:
+       - Transmit records of students' answers (including content, options, right_answer, knowledge_evidence, is_correct, explanation) to **Knowledge Tracking Specialist (KnowledgePerceiver)**.
+       - Instruct **KnowledgePerceiver** to generate a comprehensive summary of the student’s knowledge state, including both mastered concepts and weak aspects. Specifically, **KnowledgePerceiver** should:
          - Analyze each exercise in the student's record, deducing reasoning for correct answers and identifying misunderstandings for incorrect answers.
          - Complete any missing or incomplete explanations, providing a breakdown of the student’s thought process.
          - Ensure the output follows the exact format provided below, where each exercise record includes:
@@ -234,18 +234,18 @@ agent_host = ConversableAgent(
          - Return  the summary of student’s knowledge states in the exact format, ensuring consistency with the example, so that it is actionable and precise for future steps.
          - **Important**: Do not provide redundant or unnecessary information in your responses. Directly analyze and return the output as per the required format without elaborating excessively on the process.
     3. **Generate New Exercises**:
-       - Provide the knowledge state from agent_kt to the **exercise generation expert (agent_exeGen_generator)**.
-       - Instruct agent_exeGen_generator to create ten new exercises, ensuring these exercises are specifically designed around the student’s weak knowledge concepts and adhere to the specified exercise type format.
-       - **Important**: Ensure that the instructions to agent_exeGen_generator are clear and to the point. Avoid excessive introductory or redundant statements.
+       - Provide the knowledge state from KnowledgePerceiver to the **exercise generation expert (ExerciseGenerator)**.
+       - Instruct ExerciseGenerator to create ten new exercises, ensuring these exercises are specifically designed around the student’s weak knowledge concepts and adhere to the specified exercise type format.
+       - **Important**: Ensure that the instructions to ExerciseGenerator are clear and to the point. Avoid excessive introductory or redundant statements.
     4. **Evaluate the Exercises**:
-       - Submit the newly generated exercises to the three **exercise evaluation experts (agent_exeGen_discriminators)** for review. Each expert evaluates a specific aspect of the exercises:
-         - **Linguistic Fluency (agent_exeGen_discriminator_1)**: Verifies whether the exercises are linguistically accurate, fluent, and clear.
-         - **Knowledge Concept Coverage (agent_exeGen_discriminator_2)**: Ensures that the exercises adequately cover the student’s weak knowledge concepts.
-         - **Correctness and Reasonableness (agent_exeGen_discriminator_3)**: Confirms whether the exercises and their answers are accurate, logical, and suitable for the student’s current learning level.
+       - Submit the newly generated exercises to the three **exercise evaluation experts (QualityEvaluationExperts)** for review. Each expert evaluates a specific aspect of the exercises:
+         - **Linguistic Fluency (QualityEvaluationExpert_1)**: Verifies whether the exercises are linguistically accurate, fluent, and clear.
+         - **Knowledge Concept Coverage (QualityEvaluationExpert_2)**: Ensures that the exercises adequately cover the student’s weak knowledge concepts.
+         - **Correctness and Reasonableness (QualityEvaluationExpert_3)**: Confirms whether the exercises and their answers are accurate, logical, and suitable for the student’s current learning level.
          - **Important**: Instruct each evaluation expert to directly evaluate the exercises without unnecessary preambles or redundant statements. They should focus on the specific task assigned and provide concise feedback.
     5. **Iterative Regeneration**:
-       - If any agent_exeGen_discriminator finds the exercises unsatisfactory:
-         - Return to agent_exeGen_generator and instruct them to regenerate the exercises based on the feedback provided.
+       - If any QualityEvaluationExpert finds the exercises unsatisfactory:
+         - Return to ExerciseGenerator and instruct them to regenerate the exercises based on the feedback provided.
          - Repeat this iterative process until all three agents agree that the exercises meet the required standards.
     6. **Final Output**:
        - Once all agents have approved the exercise, you need to edit the final version of the exercise list strictly in the format {o_fmt} and return it, then let the chat end.
@@ -259,8 +259,8 @@ agent_host = ConversableAgent(
 )
 
 out_groupchat = GroupChat(
-    agents=[agent_kt, agent_exeGen_generator, agent_exeGen_discriminator_1, agent_exeGen_discriminator_2,
-            agent_exeGen_discriminator_3, agent_host],
+    agents=[KnowledgePerceiver, ExerciseGenerator, QualityEvaluationExpert_1, QualityEvaluationExpert_2,
+            QualityEvaluationExpert_3, RecommendationManager],
     messages=[],
     send_introductions=True,
 )
@@ -270,12 +270,12 @@ out_groupchat_manager = GroupChatManager(
     llm_config=llm_config,
 )
 
-agent_kt.description = "a knowledge tracking expert"
-agent_exeGen_generator.description = "an exercise generation expert"
-agent_exeGen_discriminator_1.description = "exercise evaluation expert 1"
-agent_exeGen_discriminator_2.description = "exercise evaluation expert 2"
-agent_exeGen_discriminator_3.description = "exercise evaluation expert 3"
-agent_host.description = "host of the chat"
+KnowledgePerceiver.description = "a knowledge tracking expert"
+ExerciseGenerator.description = "an exercise generation expert"
+QualityEvaluationExpert_1.description = "exercise evaluation expert 1"
+QualityEvaluationExpert_2.description = "exercise evaluation expert 2"
+QualityEvaluationExpert_3.description = "exercise evaluation expert 3"
+RecommendationManager.description = "host of the chat"
 
 
 def convert_to_natural_language(text):
@@ -395,7 +395,7 @@ for i in range(23, 24):
         prompt = text
 
     chat_res = out_groupchat_manager.initiate_chat(
-        agent_host,
+        RecommendationManager,
         message=prompt,
         summary_method="reflection_with_llm",
     )

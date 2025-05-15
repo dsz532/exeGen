@@ -48,8 +48,8 @@ examplar_gene = ConversableAgent(
     system_message="",
 )
 
-agent_kt = ConversableAgent(  # 知识追踪代理
-    name="agent_kt",
+KnowledgePerceiver = ConversableAgent(  # 知识追踪代理
+    name="KnowledgePerceiver",
     llm_config=llm_config,
     system_message="""
     You are a knowledge tracking expert.
@@ -129,7 +129,7 @@ agent_generator = ConversableAgent(  # 习题生成代理
 )
 
 # 3个习题评判专家
-agent_discriminator_1 = ConversableAgent(
+QualityEvaluationExpert_1 = ConversableAgent(
     name="Linguistic_Fluency_discriminator",
     llm_config=llm_config,
     system_message="""
@@ -152,7 +152,7 @@ agent_discriminator_1 = ConversableAgent(
     """,
 )
 
-agent_discriminator_2 = ConversableAgent(
+QualityEvaluationExpert_2 = ConversableAgent(
     name="Knowledge_Concept_Coverage_discriminator",
     llm_config=llm_config,
     system_message="""
@@ -178,7 +178,7 @@ agent_discriminator_2 = ConversableAgent(
     """,
 )
 
-agent_discriminator_3 = ConversableAgent(
+QualityEvaluationExpert_3 = ConversableAgent(
     name="Correctness_and_Reasonableness_discriminator",
     llm_config=llm_config,
     system_message="""
@@ -212,15 +212,15 @@ else:
     f = open("../txtfile/j_output.txt", "r")
     o_fmt = f.read()
 
-agent_host = ConversableAgent(
-    name="agent_host",
+RecommendationManager = ConversableAgent(
+    name="RecommendationManager",
     llm_config=llm_config,
     system_message=f"""
     You are the moderator of this workflow, responsible for overseeing the collaborative process between multiple agents to create and evaluate high-quality exercises tailored to a student’s learning needs.
     Each time you speak you need to specify the next agent to speak.
     Your responsibilities include the following: 
     1. **Track Knowledge State**:
-       - Instruct **agent_kt** to generate a comprehensive summary of the student’s knowledge state, including both mastered concepts and weak aspects. Specifically, **agent_kt** should:
+       - Instruct **KnowledgePerceiver** to generate a comprehensive summary of the student’s knowledge state, including both mastered concepts and weak aspects. Specifically, **KnowledgePerceiver** should:
          - Analyze each exercise in the student's record, deducing reasoning for correct answers and identifying misunderstandings for incorrect answers.
          - Complete any missing or incomplete explanations, providing a breakdown of the student’s thought process.
          - Ensure the output follows the exact format provided below, where each exercise record includes:
@@ -234,7 +234,7 @@ agent_host = ConversableAgent(
          - Return  the summary of student’s knowledge states in the exact format, ensuring consistency with the example, so that it is actionable and precise for future steps.
          - **Important**: Do not provide redundant or unnecessary information in your responses. Directly analyze and return the output as per the required format without elaborating excessively on the process.
     2. **Generate New Exercises**:
-       - Provide the knowledge state from agent_kt to the **exercise generation expert (agent_generator)**.
+       - Provide the knowledge state from KnowledgePerceiver to the **exercise generation expert (agent_generator)**.
        - Instruct agent_generator to create ten new exercises, ensuring these exercises are specifically designed around the student’s weak knowledge concepts and adhere to the specified exercise type format.
        - **Important**: Ensure that the instructions to agent_generator are clear and to the point. Avoid excessive introductory or redundant statements.
     3. **Evaluate the Linguistic Fluency**:
@@ -244,7 +244,7 @@ agent_host = ConversableAgent(
     5. **Evaluate the Correctness and Reasonableness**:
        - Submit the newly generated exercises to **Correctness and Reasonableness discriminator**: Confirms whether the exercises and their answers are accurate, logical, and suitable for the student’s current learning level.
     6. **Iterative Regeneration**:
-       - If any agent_discriminator finds the exercises unsatisfactory:
+       - If any QualityEvaluationExpert finds the exercises unsatisfactory:
          - Return to agent_generator and instruct them to regenerate the exercises based on the feedback provided.
          - Repeat this iterative process until all three agents agree that the exercises meet the required standards.
     7. **Final Output**:
@@ -264,24 +264,24 @@ def custom_speaker_selection_func(
 ) -> Union[Agent, str, None]:
     if "stopChat" in groupchat.messages[-1]["content"]:
         return None
-    if last_speaker is agent_host:
+    if last_speaker is RecommendationManager:
         return "auto"
     else:
-        return agent_host
+        return RecommendationManager
 
 
 out_groupchat = GroupChat(
-    agents=[agent_kt, agent_generator, agent_discriminator_1, agent_discriminator_2,
-            agent_discriminator_3, agent_host],
+    agents=[KnowledgePerceiver, agent_generator, QualityEvaluationExpert_1, QualityEvaluationExpert_2,
+            QualityEvaluationExpert_3, RecommendationManager],
     select_speaker_message_template="""
-    Selects the next speaking agent based on what agent_host has said.
-    End the chat when agent_host returns the final list of exercises.
+    Selects the next speaking agent based on what RecommendationManager has said.
+    End the chat when RecommendationManager returns the final list of exercises.
     The following roles are available:
     {roles}.
     Select the next role from {agentlist} to speak. Only return the role.
     """,
     speaker_selection_method=custom_speaker_selection_func,
-    allow_repeat_speaker=[agent_kt],
+    allow_repeat_speaker=[KnowledgePerceiver],
     messages=[],
     max_round=20,
 )
@@ -291,12 +291,12 @@ out_groupchat_manager = GroupChatManager(
     llm_config=llm_config,
 )
 
-agent_kt.description = "a knowledge tracking expert"
+KnowledgePerceiver.description = "a knowledge tracking expert"
 agent_generator.description = "an exercise generation expert"
-agent_discriminator_1.description = "exercise evaluation expert 1"
-agent_discriminator_2.description = "exercise evaluation expert 2"
-agent_discriminator_3.description = "exercise evaluation expert 3"
-agent_host.description = "host of the chat"
+QualityEvaluationExpert_1.description = "exercise evaluation expert 1"
+QualityEvaluationExpert_2.description = "exercise evaluation expert 2"
+QualityEvaluationExpert_3.description = "exercise evaluation expert 3"
+RecommendationManager.description = "host of the chat"
 
 
 def convert_to_natural_language(text):
@@ -419,7 +419,7 @@ for i in range(27, 28):
         prompt = text
 
     chat_res = out_groupchat_manager.initiate_chat(
-        agent_kt,
+        KnowledgePerceiver,
         message=prompt,
         summary_method="reflection_with_llm",
     )

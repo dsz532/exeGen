@@ -214,8 +214,8 @@ agent_generator = ConversableAgent(  # 习题生成代理
 # )
 
 
-# agent_host = ConversableAgent(
-#     name="agent_host",
+# RecommendationManager = ConversableAgent(
+#     name="RecommendationManager",
 #     llm_config=llm_config,
 #     system_message=f"""
 #     You are the moderator of this workflow, responsible for overseeing the collaborative process between multiple agents to create and evaluate high-quality exercises tailored to a student’s learning needs.
@@ -266,17 +266,17 @@ agent_generator = ConversableAgent(  # 习题生成代理
 # ) -> Union[Agent, str, None]:
 #     if "stopChat" in groupchat.messages[-1]["content"]:
 #         return None
-#     if last_speaker is agent_host:
+#     if last_speaker is RecommendationManager:
 #         return "auto"
 #     else:
-#         return agent_host
+#         return RecommendationManager
 
 
 out_groupchat = GroupChat(
     agents=[agent_generator],
     select_speaker_message_template="""
-    Selects the next speaking agent based on what agent_host has said.
-    End the chat when agent_host returns the final list of exercises.
+    Selects the next speaking agent based on what RecommendationManager has said.
+    End the chat when RecommendationManager returns the final list of exercises.
     The following roles are available:
     {roles}.
     Select the next role from {agentlist} to speak. Only return the role.

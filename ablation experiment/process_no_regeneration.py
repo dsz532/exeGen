@@ -226,7 +226,7 @@ else:
     o_fmt = f.read()
 
 agent_host = ConversableAgent(
-    name="agent_host",
+    name="RecommendationManager",
     llm_config=llm_config,
     system_message=f"""
     You are the moderator of this workflow, responsible for overseeing the collaborative process between multiple agents to create and evaluate high-quality exercises tailored to a student’s learning needs.
