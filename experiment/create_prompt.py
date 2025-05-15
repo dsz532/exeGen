@@ -6,9 +6,9 @@ import re
 
 from pandas.core.interchange.dataframe_protocol import DataFrame
 
-stuRec_1000_with_tokens = pandas.read_csv("../subject_data(1)/stuRec_1000_with_tokens.csv")
-examples_with_explanation_with_tokens = pandas.read_csv("../subject_data(1)/examples_with_explanation_with_tokens.csv")
-concept_relation_filtered = pandas.read_csv("../subject_data(1)/concept_relationship_filtered.csv")
+stuRec_1000_with_tokens = pandas.read_csv("../subject_data/stuRec_1000_with_tokens.csv")
+examples_with_explanation_with_tokens = pandas.read_csv("../subject_data/examples_with_explanation_with_tokens.csv")
+concept_relation_filtered = pandas.read_csv("../subject_data/concept_relationship_filtered.csv")
 
 
 def get_chain(concept, chain):

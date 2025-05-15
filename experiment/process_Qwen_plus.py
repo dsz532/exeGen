@@ -14,9 +14,9 @@ parser.add_argument("--exercise_type", type=str,
 parser.add_argument("--output_type", type=str, help="natural_language or json")
 parser.add_argument("--Number_of_Generations", type=int)
 
-stuRec_1000_with_tokens = pandas.read_csv("../subject_data(1)/stuRec_1000_with_tokens.csv")
-examples_with_explanation_with_tokens = pandas.read_csv("../subject_data(1)/examples_with_explanation_with_tokens.csv")
-concept_relation_filtered = pandas.read_csv("../subject_data(1)/concept_relationship_filtered.csv")
+stuRec_1000_with_tokens = pandas.read_csv("../subject_data/stuRec_1000_with_tokens.csv")
+examples_with_explanation_with_tokens = pandas.read_csv("../subject_data/examples_with_explanation_with_tokens.csv")
+concept_relation_filtered = pandas.read_csv("../subject_data/concept_relationship_filtered.csv")
 
 llm_config = {
     "cache_seed": None,
@@ -352,7 +352,7 @@ text = {
     "tasks": []
 }
 
-stuRec_1000_with_tokens = pandas.read_csv("../subject_data(1)/stuRec_1000_with_tokens.csv")
+stuRec_1000_with_tokens = pandas.read_csv("../subject_data/stuRec_1000_with_tokens.csv")
 stuRec_1000_with_tokens = stuRec_1000_with_tokens.iloc[35:45]
 selected_columns1 = ['content', 'option', 'right_answer', 'knowledge_evidence', 'is_correct', 'explanation']
 
@@ -368,7 +368,7 @@ if not stuRec_1000_with_tokens.empty:
 
     text["examples"] += res
 
-stuRec_1000_with_tokens = pandas.read_csv("../subject_data(1)/stuRec_1000_with_tokens.csv")
+stuRec_1000_with_tokens = pandas.read_csv("../subject_data/stuRec_1000_with_tokens.csv")
 stuRec_1000_with_tokens = stuRec_1000_with_tokens.iloc[35:45]
 selected_columns2 = ['content', 'option', 'right_answer', 'knowledge_evidence', 'is_correct']
 stuRec_1000_with_tokens = stuRec_1000_with_tokens[selected_columns2]

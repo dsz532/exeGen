@@ -2,7 +2,7 @@ import pandas
 from autogen import *
 import json
 
-examples_with_explanation = pandas.read_csv("../subject_data(1)/examples_with_explanation_with_tokens.csv")
+examples_with_explanation = pandas.read_csv("../subject_data/examples_with_explanation_with_tokens.csv")
 
 llm_config = {
     "cache_seed": None,
@@ -40,4 +40,4 @@ for index, row in examples_with_explanation[
     print(res)
     res = json.loads(res)
     examples_with_explanation.at[index, "explanation"] = res["explanation"]
-    examples_with_explanation.to_csv("subject_data(1)/examples_with_explanation_with_tokens.csv", index=False)
+    examples_with_explanation.to_csv("subject_data/examples_with_explanation_with_tokens.csv", index=False)

@@ -1,33 +1,33 @@
 import pandas
 
-# problem = pandas.read_csv("subject_data(1)/problem.csv")
-# problem_concept = pandas.read_csv("subject_data(1)/problem_concept.csv")
-# concept = pandas.read_csv("subject_data(1)/concept.csv")
-# concept_relation = pandas.read_csv("subject_data(1)/concept_relationship.csv")
-# user_problem = pandas.read_csv("subject_data(1)/user_problem.csv")
-stuRec_1000_with_tokens = pandas.read_csv("../subject_data(1)/stuRec_1000_with_tokens.csv")
-# example = pandas.read_csv("subject_data(1)/example.csv")
-# examples_with_explanation = pandas.read_csv("subject_data(1)/examples_with_explanation.csv")
-concept_relation_filtered = pandas.read_csv("../subject_data(1)/concept_relationship_filtered.csv")
+# problem = pandas.read_csv("subject_data/problem.csv")
+# problem_concept = pandas.read_csv("subject_data/problem_concept.csv")
+# concept = pandas.read_csv("subject_data/concept.csv")
+# concept_relation = pandas.read_csv("subject_data/concept_relationship.csv")
+# user_problem = pandas.read_csv("subject_data/user_problem.csv")
+stuRec_1000_with_tokens = pandas.read_csv("../subject_data/stuRec_1000_with_tokens.csv")
+# example = pandas.read_csv("subject_data/example.csv")
+# examples_with_explanation = pandas.read_csv("subject_data/examples_with_explanation.csv")
+concept_relation_filtered = pandas.read_csv("../subject_data/concept_relationship_filtered.csv")
 
-# course_profile = pandas.read_csv("subject_data(1)/course_profile.csv")
-# course_problem = pandas.read_csv("subject_data(1)/course_problem.csv")
-# user_profile = pandas.read_csv("subject_data(1)/user_profile.csv")
-examples_with_explanation_with_tokens = pandas.read_csv("../subject_data(1)/examples_with_explanation_with_tokens.csv")
+# course_profile = pandas.read_csv("subject_data/course_profile.csv")
+# course_problem = pandas.read_csv("subject_data/course_problem.csv")
+# user_profile = pandas.read_csv("subject_data/user_profile.csv")
+examples_with_explanation_with_tokens = pandas.read_csv("../subject_data/examples_with_explanation_with_tokens.csv")
 
 
 # top3_problems = problem_concept.groupby('concept_id').head(1).reset_index(drop=True)
 # result_df = pandas.merge(problem_concept, problem, on='problem_id', how='left')
 # result_df = pandas.merge(user_problem, result_df, on='problem_id', how='left')
 # result_df = result_df.dropna(subset=['title'])
-# result_df.to_csv("subject_data(1)/example.csv", index=False)
+# result_df.to_csv("subject_data/example.csv", index=False)
 
 
 # stuRec = pandas.merge(stuRec, course_problem, on="problem_id", how="left")
 # selected_columns = ["course_id", "name"]
 # course_profile = course_profile[selected_columns]
 # stuRec = pandas.merge(stuRec, course_profile, on="course_id", how="left")
-# stuRec.to_csv("subject_data(1)/stuRec.csv", index=False)
+# stuRec.to_csv("subject_data/stuRec.csv", index=False)
 
 
 # result_df = pandas.merge(problem_concept, problem, on='problem_id', how='left')
@@ -38,7 +38,7 @@ examples_with_explanation_with_tokens = pandas.read_csv("../subject_data(1)/exam
 #
 # result_df = result_df.dropna(subset=['concept_id'])
 
-# result_df.to_csv("subject_data(1)/example.csv", index=False)
+# result_df.to_csv("subject_data/example.csv", index=False)
 
 
 # user_profile = user_profile[["user_id"]]
@@ -52,18 +52,18 @@ examples_with_explanation_with_tokens = pandas.read_csv("../subject_data(1)/exam
 # print(len(stuRec_1000))
 # stuRec_1000 = pandas.merge(stuRec_1000, course_profile[["course_id", "name"]], on="course_id")
 # print(len(stuRec_1000))
-# stuRec_1000.to_csv("subject_data(1)/stuRec_1000.csv", index=False)
+# stuRec_1000.to_csv("subject_data/stuRec_1000.csv", index=False)
 
 # example["explanation"] = "No explanation provided."
 # selected_columns = ['content', 'option', 'answer', 'is_correct', 'concept_id','course_name', 'knowledge_chain', 'explanation']
 # df_selected = example[selected_columns]
-# df_selected.to_csv('subject_data(1)/examples_with_explanation(short).csv', index=False)
+# df_selected.to_csv('subject_data/examples_with_explanation(short).csv', index=False)
 
 
 # df_filtered = concept_relation[concept_relation['ground_truth'] != 0]
 # df_filtered = df_filtered[df_filtered['ground_truth'] != -1]
 #
-# df_filtered.to_csv('subject_data(1)/concept_relationship_filtered.csv', index=False)
+# df_filtered.to_csv('subject_data/concept_relationship_filtered.csv', index=False)
 
 
 # example["knowledge_chain"] = ""
@@ -72,7 +72,7 @@ examples_with_explanation_with_tokens = pandas.read_csv("../subject_data(1)/exam
 #     chain = get_chain(row['concept_id'], row['concept_id'])
 #     example.at[index, 'knowledge_chain'] = chain
 #
-# example.to_csv("subject_data(1)/example.csv", index=False)
+# example.to_csv("subject_data/example.csv", index=False)
 
 
 
@@ -112,7 +112,7 @@ examples_with_explanation_with_tokens = pandas.read_csv("../subject_data(1)/exam
 #     print(len(tokens))
 #     examples_with_explanation.at[index, 'tokens'] = tokens
 #
-# examples_with_explanation.to_csv("subject_data(1)/examples_with_explanation_with_tokens.csv", index=False)
+# examples_with_explanation.to_csv("subject_data/examples_with_explanation_with_tokens.csv", index=False)
 
 # chain = ""
 #
@@ -140,7 +140,7 @@ examples_with_explanation_with_tokens = pandas.read_csv("../subject_data(1)/exam
 #     get_chain(row['concept_id'])
 #     examples_with_explanation_with_tokens.at[index, 'knowledge_chain'] = chain
 #
-# examples_with_explanation_with_tokens.to_csv("subject_data(1)/examples_with_explanation_with_tokens.csv", index=False)
+# examples_with_explanation_with_tokens.to_csv("subject_data/examples_with_explanation_with_tokens.csv", index=False)
 
 examples_with_explanation_with_tokens["knowledge_evidence"] = ""
 for index, row in examples_with_explanation_with_tokens.iterrows():
@@ -151,4 +151,4 @@ for index, row in examples_with_explanation_with_tokens.iterrows():
     # if not str(row['knowledge_chain']) == "nan":
     #     examples_with_explanation_with_tokens.at[index, 'knowledge_evidence'] += row['knowledge_chain']
 
-examples_with_explanation_with_tokens.to_csv("subject_data(1)/examples_with_explanation_with_tokens.csv")
+examples_with_explanation_with_tokens.to_csv("subject_data/examples_with_explanation_with_tokens.csv")
