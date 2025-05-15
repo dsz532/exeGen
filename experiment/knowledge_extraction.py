@@ -24,24 +24,19 @@ if __name__ == "__main__":
     with open(input_path, "r", encoding="utf-8") as file:
         lines = file.readlines()
 
-    # 提取知识点信息
     current_section = None
     for line in lines:
         line = line.strip()
-        # 检测当前段落
         if line.startswith("==========") and any(section in line for section in sections):
-            current_section = line.split()[-1]  # 获取当前方法名称（如 ZERO_SHOT）
+            current_section = line.split()[-1]
         elif line.startswith("- **Concept:**") and current_section:
-            # 提取 Concept，从第一个字母开始读取，不包含 "**"
             concept_name = line.split(":")[-1].strip().replace("**", "").strip()
 
-            # 确保知识点从字母开始（去除可能的非字母开头字符）
-            concept_name = concept_name.lstrip("!@#$%^&*()-+=~`<>,./?;:'\"|\\[]{} ")  # 去除前缀非字母字符
+            concept_name = concept_name.lstrip("!@#$%^&*()-+=~`<>,./?;:'\"|\\[]{} ")
             concept_data.append(concept_name)
 
     concept_df = pd.DataFrame(concept_data, columns=["Knowledge Concepts"])
 
-    # 保存到 Excel 文件
     concept_df.to_excel(output_path, index=False, header=False)
 
-    print(f"知识点已成功提取并保存为 Excel 文件：{output_path}")
+    print(f"saved as：{output_path}")

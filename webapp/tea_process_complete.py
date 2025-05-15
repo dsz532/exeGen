@@ -55,7 +55,7 @@ elif exercise_type == "True_or_False":
 
 language = parser.parse_args().Language
 difficulty = parser.parse_args().Difficulty
-agent_generator = ConversableAgent(  # 习题生成代理
+agent_generator = ConversableAgent(
     name="agent_generator",
     llm_config=llm_config,
     system_message=f"""
@@ -76,7 +76,6 @@ agent_generator = ConversableAgent(  # 习题生成代理
     """,
 )
 
-# 3个习题评判专家
 agent_discriminator_1 = ConversableAgent(
     name="Linguistic_Fluency_discriminator",
     llm_config=llm_config,
@@ -205,7 +204,6 @@ agent_host.description = "host of the chat"
 def convert_to_natural_language(text):
     natural_language_text = ""
 
-    # 处理examples
     natural_language_text += "examples:\n"
     flag = 0
     for example in text['examples']:
@@ -226,7 +224,6 @@ def convert_to_natural_language(text):
         natural_language_text += "is_correct:" + str(is_correct) + "\n"
         natural_language_text += "explanation:" + explanation + "\n"
 
-    # 处理tasks，逻辑与examples相同
     natural_language_text += "tasks:\n"
     flag = 0
     for task in text['tasks']:
@@ -258,7 +255,7 @@ def extract_last_json(s):
             json_obj = json.loads(json_str, strict=False)
             return json_obj
         except json.JSONDecodeError as e:
-            print(f"解析错误：{e}")
+            print(f"error：{e}")
     return None
 
 
@@ -271,7 +268,6 @@ text = {
     "tasks": []
 }
 
-# 获取task数组
 knowledge_concept = parser.parse_args().Knowledge_Concept
 stuRec_1000_with_tokens = pandas.read_csv("../subject_data(1)/stuRec_1000_with_tokens.csv")
 stuRec_1000_with_tokens = stuRec_1000_with_tokens.loc[
@@ -285,34 +281,29 @@ hard_example = hard_example[selected_columns1]
 
 text['examples'] += hard_example.to_dict(orient='records')
 
-# 软匹配
 if not stuRec_1000_with_tokens.empty:
     res = get_examples_by_similarity(examples_with_explanation_with_tokens, stuRec_1000_with_tokens)[
         selected_columns1].to_dict(orient='records')
 
     text["examples"] += res
 
-# 匹配完成后重新读取习题记录信息
 stuRec_1000_with_tokens = pandas.read_csv("../subject_data(1)/stuRec_1000_with_tokens.csv")
 stuRec_1000_with_tokens = stuRec_1000_with_tokens.loc[
     stuRec_1000_with_tokens['concept_id'] == knowledge_concept].head(10)
 selected_columns2 = ['content', 'option', 'right_answer', 'knowledge_evidence', 'is_correct']
 stuRec_1000_with_tokens = stuRec_1000_with_tokens[selected_columns2]
 
-# 计算习题记录的知识链
 # stuRec_1000_with_tokens["knowledge_chain"] = ""
 # for index, row in stuRec_1000_with_tokens.iterrows():
 #     chain = get_chain(row['concept_id'], row['concept_id'])
 #     stuRec_1000_with_tokens.at[index, 'knowledge_chain'] = chain
 
-# 将新题目explanation置空
 stuRec_1000_with_tokens["explanation"] = ""
 stuRec_1000_with_tokens = stuRec_1000_with_tokens.to_dict(orient='records')
 text["tasks"] = stuRec_1000_with_tokens
 
 text = json.dumps(text, ensure_ascii=False, indent=4)
 
-# 将提示词文本转换为自然语言形式
 n_text = json.loads(text)
 
 # n_text = convert_to_natural_language(n_text)
@@ -332,7 +323,6 @@ chat_res = out_groupchat_manager.initiate_chat(
     max_turns=20
 )
 
-# 获取生成的新题目
 chat_cost = chat_res.cost
 chat_his = chat_res.chat_history
 chat_his_str = chat_his[-1]['content']

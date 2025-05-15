@@ -15,21 +15,21 @@ concept_relation_filtered = pandas.read_csv("../subject_data(1)/concept_relation
 # user_profile = pandas.read_csv("subject_data(1)/user_profile.csv")
 examples_with_explanation_with_tokens = pandas.read_csv("../subject_data(1)/examples_with_explanation_with_tokens.csv")
 
-# 构造example
+
 # top3_problems = problem_concept.groupby('concept_id').head(1).reset_index(drop=True)
 # result_df = pandas.merge(problem_concept, problem, on='problem_id', how='left')
 # result_df = pandas.merge(user_problem, result_df, on='problem_id', how='left')
 # result_df = result_df.dropna(subset=['title'])
 # result_df.to_csv("subject_data(1)/example.csv", index=False)
 
-# 添加课程信息
+
 # stuRec = pandas.merge(stuRec, course_problem, on="problem_id", how="left")
 # selected_columns = ["course_id", "name"]
 # course_profile = course_profile[selected_columns]
 # stuRec = pandas.merge(stuRec, course_profile, on="course_id", how="left")
 # stuRec.to_csv("subject_data(1)/stuRec.csv", index=False)
 
-# 获取一个用户的作答记录
+
 # result_df = pandas.merge(problem_concept, problem, on='problem_id', how='left')
 # result_df = result_df.dropna(subset=['title'])
 #
@@ -40,7 +40,7 @@ examples_with_explanation_with_tokens = pandas.read_csv("../subject_data(1)/exam
 
 # result_df.to_csv("subject_data(1)/example.csv", index=False)
 
-# 采样1000个用户的答题数据
+
 # user_profile = user_profile[["user_id"]]
 # stuRec_1000 = pandas.merge(user_problem, user_profile, on="user_id")
 # print(len(stuRec_1000))
@@ -54,19 +54,18 @@ examples_with_explanation_with_tokens = pandas.read_csv("../subject_data(1)/exam
 # print(len(stuRec_1000))
 # stuRec_1000.to_csv("subject_data(1)/stuRec_1000.csv", index=False)
 
-# 添加带有explanation属性的example表
 # example["explanation"] = "No explanation provided."
 # selected_columns = ['content', 'option', 'answer', 'is_correct', 'concept_id','course_name', 'knowledge_chain', 'explanation']
 # df_selected = example[selected_columns]
 # df_selected.to_csv('subject_data(1)/examples_with_explanation(short).csv', index=False)
 
-# 删除所有无效行
-# df_filtered = concept_relation[concept_relation['ground_truth'] != 0]  # 删除值为0的行
-# df_filtered = df_filtered[df_filtered['ground_truth'] != -1]  # 删除值为-1的行
+
+# df_filtered = concept_relation[concept_relation['ground_truth'] != 0]
+# df_filtered = df_filtered[df_filtered['ground_truth'] != -1]
 #
 # df_filtered.to_csv('subject_data(1)/concept_relationship_filtered.csv', index=False)
 
-# 递归计算知识链
+
 # example["knowledge_chain"] = ""
 
 # for index, row in example.iterrows():
@@ -75,10 +74,8 @@ examples_with_explanation_with_tokens = pandas.read_csv("../subject_data(1)/exam
 #
 # example.to_csv("subject_data(1)/example.csv", index=False)
 
-# 构造提示词
 
 
-# 排查循环错误
 # a = 0
 # for index1, row1 in concept_relation_filtered.iterrows():
 #     for index2, row2 in concept_relation_filtered.iterrows():
@@ -88,7 +85,6 @@ examples_with_explanation_with_tokens = pandas.read_csv("../subject_data(1)/exam
 #
 # print(a)
 
-# 用bert生成句向量
 # vocab_file = 'bert/vocab.txt'
 # tokenizer = BertTokenizer(vocab_file)
 # bert = BertModel.from_pretrained('bert/bert-base-chinese')
@@ -118,7 +114,6 @@ examples_with_explanation_with_tokens = pandas.read_csv("../subject_data(1)/exam
 #
 # examples_with_explanation.to_csv("subject_data(1)/examples_with_explanation_with_tokens.csv", index=False)
 
-# 获取知识链
 # chain = ""
 #
 #
@@ -126,11 +121,10 @@ examples_with_explanation_with_tokens = pandas.read_csv("../subject_data(1)/exam
 #     global chain
 #     filtered_df = concept_relation_filtered[concept_relation_filtered['c2'] == concept]
 #     if not filtered_df.empty:
-#         # 若还存在上级知识点，则链接新链后进行递归
 #         for index, row in filtered_df.iterrows():
 #             upper_concept = row['c1']
 #             under_concept = row['c2']
-#             temp = under_concept + "的先修为" + upper_concept + ", "
+#             temp = under_concept + "" + upper_concept + ", "
 #             if chain.find(temp) != -1:
 #                 continue
 #             chain += temp
@@ -150,9 +144,9 @@ examples_with_explanation_with_tokens = pandas.read_csv("../subject_data(1)/exam
 
 examples_with_explanation_with_tokens["knowledge_evidence"] = ""
 for index, row in examples_with_explanation_with_tokens.iterrows():
-    examples_with_explanation_with_tokens.at[index, 'knowledge_evidence'] += "题目对应知识点为" + row[
+    examples_with_explanation_with_tokens.at[index, 'knowledge_evidence'] += "" + row[
         'concept_id'] + ", "
-    examples_with_explanation_with_tokens.at[index, 'knowledge_evidence'] += row['concept_id'] + "对应的课程为" + row[
+    examples_with_explanation_with_tokens.at[index, 'knowledge_evidence'] += row['concept_id'] + "" + row[
         'course_name'] + ", "
     # if not str(row['knowledge_chain']) == "nan":
     #     examples_with_explanation_with_tokens.at[index, 'knowledge_evidence'] += row['knowledge_chain']

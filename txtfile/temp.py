@@ -106,9 +106,3 @@ print(userc)
 #         costturbo += i['cost']['usage_excluding_cached_inference']['gpt-4-turbo']['prompt_tokens'] * 0.01 * 0.001 + \
 #                      i['cost']['usage_excluding_cached_inference']['gpt-4-turbo']['completion_tokens'] * 0.03 * 0.001
 #         timturbo += 1
-# print(f'平均每用户消耗：{cost / 20}')
-# print(f'总消耗：{cost}')
-# print(f"使用4o用户数：{tim4o}")
-# print(f"使用turbo用户数：{timturbo}")
-# print(f"4o平均消耗：{cost4o / tim4o}")
-# print(f"turbo平均消耗：{costturbo / timturbo}")

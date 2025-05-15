@@ -13,9 +13,9 @@ def saveResult():
     R = open("result.txt", "a")
     R.write(dumps(result, ensure_ascii=False, indent=4) + ",\n")
     R.close()
-    res = make_response(jsonify(token=123456, gender=0, method=request.method))  # 设置响应体
-    res.status = '200'  # 设置状态码
-    res.headers['Access-Control-Allow-Origin'] = "*"  # 设置允许跨域
+    res = make_response(jsonify(token=123456, gender=0, method=request.method))
+    res.status = '200'
+    res.headers['Access-Control-Allow-Origin'] = "*"
     res.headers['Access-Control-Allow-Methods'] = 'PUT,GET,POST,DELETE'
     return res
 

@@ -2,7 +2,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib
 
-# 设置字体
 
 matplotlib.rcParams['font.size'] = 15
 plt.rcParams['legend.fontsize'] = 15
@@ -12,7 +11,6 @@ plt.rcParams['font.weight'] = 'bold'
 plt.rcParams['axes.labelweight'] = 'bold'
 plt.rcParams['font.sans-serif'] = ['Times New Roman']
 plt.rcParams['mathtext.fontset'] = 'stix'
-# 数据（请根据实际情况调整）
 categories = ["LLaMa", "Qwen", "GPT-4o"]
 
 #
@@ -20,15 +18,12 @@ Single_Choice = [0.59, 0.81, 0.70, 0.60, 0.74, 0.75]
 Multiple_Choice = [0.61, 0.82, 0.79, 0.52, 0.74, 0.82]
 Judgment = [0.41, 0.62, 0.65, 0.62, 0.73, 0.72]
 
-# 设置柱状图的位置
 x = np.arange(6)
-width = 0.7  # 每个柱的宽度
-colors = ['#86A3B8', '#E8D2A6', '#8ECFC9', '#86A3B8', '#E8D2A6', '#8ECFC9']  # 每个模型的颜色
+width = 0.7
+colors = ['#86A3B8', '#E8D2A6', '#8ECFC9', '#86A3B8', '#E8D2A6', '#8ECFC9']
 
-# 创建 2x2 子图布局
 fig, axs = plt.subplots(1, 1, figsize=(4, 3))
 
-# 绘制 Single_Choice 数据集
 for i in range(3):
     axs.bar(i*0.9, Single_Choice[i], width, color=colors[i], edgecolor='black')
 for i in range(3, 6):
@@ -37,7 +32,6 @@ axs.set_ylabel('Single Choice')
 axs.set_ylim(0.1, 1)
 axs.set_xticks([1.35 * width, 6.67 * width], ['HR', 'Recall'])
 
-# # 绘制 Multiple_Choice 数据集的 NDCG@10
 # for i in range(3):
 #     axs.bar(i*0.9, Multiple_Choice[i], width, color=colors[i], edgecolor='black')
 # for i in range(3, 6):
@@ -46,7 +40,6 @@ axs.set_xticks([1.35 * width, 6.67 * width], ['HR', 'Recall'])
 # axs.set_ylim(0.1, 1)
 # axs.set_xticks([1.35 * width, 6.67 * width], ['HR', 'Recall'])
 
-# # 绘制 Judgment 数据集的 HR@10
 # for i in range(3):
 #     axs.bar(i * 0.9, Judgment[i], width, color=colors[i], edgecolor='black')
 # for i in range(3, 6):
@@ -55,12 +48,10 @@ axs.set_xticks([1.35 * width, 6.67 * width], ['HR', 'Recall'])
 # axs.set_ylim(0.1, 1)
 # axs.set_xticks([1.35 * width, 6.67 * width], ['HR', 'Recall'])
 
-# 设置统一的图例
 handles = [plt.Line2D([0], [0], color=color, lw=4) for color in colors]
 fig.legend(handles, categories, loc='upper center', ncol=3, bbox_to_anchor=(0.5, 0.95), frameon=False, fontsize=12)
 
-# 调整布局
-plt.tight_layout(rect=[0, 0, 1, 0.9])  # 为图例留出空间
+plt.tight_layout(rect=[0, 0, 1, 0.9])
 
 plt.savefig('txtfile/fig1.png', dpi=600, bbox_inches='tight')
 
@@ -72,7 +63,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib
 
-# 设置字体
 matplotlib.rcParams['font.size'] = 18
 plt.rcParams['legend.fontsize'] = 18
 plt.rcParams['xtick.labelsize'] = 18
@@ -81,59 +71,49 @@ plt.rcParams['font.weight'] = 'bold'
 plt.rcParams['axes.labelweight'] = 'bold'
 plt.rcParams['font.sans-serif'] = ['Times New Roman']
 
-# 数据（请根据实际情况调整）
 categories = ["w/o. I-level", "w/o. R-level", "w/o. T-level", "w/o. I-condit", "w/o. R-condit", "Ours"]
 Single_Choice = [0.0518, 0.0499, 0.0258, 0.0350, 0.0431, 0.0718]
 Multiple_Choice = [0.0252, 0.0251, 0.0123, 0.0183, 0.0210, 0.0368]
 Judgment = [0.0321, 0.0231, 0.0280, 0.0328, 0.0325, 0.0333]
 ijcai_ndcg = [0.0196, 0.0126, 0.0151, 0.0188, 0.0186, 0.0201]
 
-# 设置柱状图的位置
 x = np.arange(len(categories))
-width = 0.4  # 每个柱的宽度
-colors = ['#86A3B8', '#E8D2A6', '#8ECFC9', '#F48484', '#AEE2FF', '#7286D3']  # 每个模型的颜色
+width = 0.4  
+colors = ['#86A3B8', '#E8D2A6', '#8ECFC9', '#F48484', '#AEE2FF', '#7286D3'] 
 
-# 创建 1x4 子图布局
 fig, axs = plt.subplots(1, 4, figsize=(20, 5))
 
-# 绘制 Bebei 数据集的 HR@10
 for i in range(len(categories)):
     axs[0].bar(i, Single_Choice[i], width, color=colors[i])
 axs[0].set_ylabel('HR@10')
 axs[0].set_ylim(0.02, max(Single_Choice) + 0.005)
 axs[0].set_xticks([])
 axs[0].set_xlabel('BeiBei')
-# 绘制 Bebei 数据集的 NDCG@10
 for i in range(len(categories)):
     axs[1].bar(i, Multiple_Choice[i], width, color=colors[i])
 axs[1].set_ylabel('NDCG@10')
 axs[1].set_ylim(0.01, max(Multiple_Choice) + 0.005)
 axs[1].set_xticks([])
 axs[1].set_xlabel('BeiBei')
-# 绘制 IJCai 数据集的 HR@10
 for i in range(len(categories)):
     axs[2].bar(i, Judgment[i], width, color=colors[i])
 axs[2].set_ylabel('HR@10')
 axs[2].set_ylim(0.0225, max(Judgment) + 0.001)
 axs[2].set_xticks([])
 axs[2].set_xlabel('IJCAI')
-# 绘制 IJCai 数据集的 NDCG@10
 for i in range(len(categories)):
     axs[3].bar(i, ijcai_ndcg[i], width, color=colors[i])
 axs[3].set_ylabel('NDCG@10')
 axs[3].set_ylim(0.012, max(ijcai_ndcg) + 0.001)
 axs[3].set_xticks([])
 axs[3].set_xlabel('IJCAI')
-# 设置统一的图例
 handles = [plt.Line2D([0], [0], color=color, lw=4) for color in colors]
 fig.legend(handles, categories, loc='upper center', bbox_to_anchor=(0.5, 1.0), ncol=len(categories))
 
-# 设置统一的图例
 handles = [plt.Line2D([0], [0], color=color, lw=4) for color in colors]
 fig.legend(handles, categories, loc='upper center', bbox_to_anchor=(0.5, 1.0), ncol=len(categories))
 
-# 调整布局
-plt.tight_layout(rect=[0, 0, 1, 0.9])  # 为图例留出空间
+plt.tight_layout(rect=[0, 0, 1, 0.9]) 
 
 plt.savefig('F:\postgraduate work\ICDE2025\\fig\\ablation.png', dpi=600, bbox_inches='tight')
 
@@ -228,7 +208,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.legend_handler import HandlerTuple
 
-# 设置字体大小等参数
 matplotlib.rcParams['font.size'] = 20
 plt.rcParams['legend.fontsize'] = 20
 plt.rcParams['xtick.labelsize'] = 20
@@ -238,76 +217,58 @@ plt.rcParams['axes.labelweight'] = 'bold'
 plt.rcParams['font.sans-serif'] = ['Times New Roman']
 plt.rcParams['mathtext.fontset'] = 'stix'
 
-# 类别标签
 categories = ['IJCAI', 'Tmall', 'BeiBei']
 fig, ax = plt.subplots(figsize=(8, 7))
 
-# Skew Score数据（负值）
 skew_scores_top3 = [-0.8047, -0.4392, -0.3938]
 skew_scores_top5 = [-11.4680, -4.1398, -4.6082]
 
-# RED Score数据
 red_scores_top3 = [15.35, 5.84, 5.65]
 red_scores_top5 = [22.97, 18.96, 18.81]
 
-# 设置柱状图的宽度
-bar_width = 0.05  # 减小宽度以减小间隔
+bar_width = 0.05  
 
-# 设置y轴位置
 r = np.array([0, 0.25, 0.5])
 
-# 绘制柱状图
 ax.barh(r, skew_scores_top3, color='#31859B', height=bar_width, label='Skew')
 ax.barh(r + bar_width, skew_scores_top5, color='#B7DDE8', height=bar_width, label='Skew')
 ax.barh(r, red_scores_top3, color='#D58882', height=bar_width, label='RED')
 ax.barh(r + bar_width, red_scores_top5, color='#EED0CE', height=bar_width, label='RED')
 
-# 设置y轴标签和刻度
 ax.set_ylabel('Datasets')
 ax.set_yticks([r + bar_width * 0.5 for r in np.array([0, 0.25, 0.5])])
 ax.set_yticklabels(categories)
 
-# 自定义横轴刻度标签
 custom_ticks = np.array([-12, -8, -4, 0, 4, 8, 12, 16, 20, 24])
 ax.set_xticks(custom_ticks)
-ax.set_xticklabels([str(abs(t)) for t in custom_ticks])  # 将负数转换为正数显示
+ax.set_xticklabels([str(abs(t)) for t in custom_ticks])  
 
-# 关闭x轴的其他刻度
-ax.tick_params(axis='x', which='both', bottom=False, top=False, labelbottom=True)  # labelbottom=True 表示显示自定义的刻度标签
+ax.tick_params(axis='x', which='both', bottom=False, top=False, labelbottom=True)  
 
-# 在横轴0的位置画一条白色的竖线
 ax.axvline(x=0, color='white', linestyle='-', linewidth=2)
 
-# 在横轴左边添加标题
 ax.text(0.25, -0.1, 'Training Time Per Epoch (min)', transform=ax.transAxes)
-# 在横轴右边添加标题
 ax.text(0.65, -0.1, 'GPU Memory Usage (GiB)', transform=ax.transAxes)
 
-# 设置x轴的范围
 ax.set_xlim(-12, 24)
 
-# 创建用于图例的线条对象
+
 skew_handle_1 = plt.Line2D([0], [0], color='#31859B', lw=4)
 skew_handle_2 = plt.Line2D([0], [0], color='#D58882', lw=4)
 red_handle_1 = plt.Line2D([0], [0], color='#B7DDE8', lw=4)
 red_handle_2 = plt.Line2D([0], [0], color='#EED0CE', lw=4)
 
-# 将同一类的线条对象组合在一起，用于共享图例标签
 skew_handles = (skew_handle_1, skew_handle_2)
 red_handles = (red_handle_1, red_handle_2)
 
-# 设置图例标签
 labels = ['D$^3$MBR + CRGCN', 'DPT']
 
-# 添加图例，使用HandlerTuple让同一类的多个线条共享一个标签，并设置为一行排列，放在图上面
 ax.legend([skew_handles, red_handles], labels, handler_map={
     skew_handles: HandlerTuple(ndivide=None),
     red_handles: HandlerTuple(ndivide=None)
 }, loc='upper center', bbox_to_anchor=(0.5, 1.2), ncol=2, fontsize=16, frameon=True, framealpha=0.8, edgecolor='black')
 
-# 保存图表
 plt.savefig('Test.png', dpi=600, bbox_inches='tight')
 
-# 显示图表
 plt.show()
 '''

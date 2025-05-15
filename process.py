@@ -1,18 +1,4 @@
-# json和自然语言两种提示词格式
-# 采样实验数据 1000个用户
-# example库添加语意向量属性,使用bert生成,计算向量相似度匹配example 取前三
-# 生成题型统一为四种,每次生成只生成同一种题型
-# 代理不读取多余信息
-# 添加一个判断答案是否正确的代理
-# 链接内容
-# 不用限定新知识点数量
-# 统一用词为exercise
-# 输出格式改为参数,可选格式
-# 生成example表中的所有解释
-# 思维链
-# 生成数量
-# 每个知识点匹配正负example
-# 硬匹配和软匹配
+
 from typing import Union
 
 from autogen import *
@@ -46,7 +32,7 @@ examplar_gene = ConversableAgent(
     system_message="",
 )
 
-KnowledgePerceiver = ConversableAgent(  # 知识追踪代理
+KnowledgePerceiver = ConversableAgent(
     name="KnowledgePerceiver",
     llm_config=llm_config,
     system_message="""
@@ -69,7 +55,7 @@ KnowledgePerceiver = ConversableAgent(  # 知识追踪代理
          - **content**: The content of the exercise (e.g., question text).
          - **option**: The options provided for the exercise (if applicable).
          - **right_answer**: The correct answer(s) to the exercise (e.g., a list of correct answers).
-         - **knowledge_evidence**: Multiple knowledge triples (e.g., "课程包含知识点", "知识点对应题目", "知识点1的先修是知识点2"). This should represent the relationship between the topic, the exercise, and the relevant knowledge concepts.
+         - **knowledge_evidence**: Multiple knowledge triples. This should represent the relationship between the topic, the exercise, and the relevant knowledge concepts.
          - **is_correct**: A boolean indicating whether the student's answer was correct or not.
          - **explanation**: A detailed breakdown of the student’s reasoning, or an explanation of why the answer was correct/incorrect.
     Please ensure that your explanations are precise, clear, and grounded in logical reasoning to provide actionable insights into the student’s knowledge state. The format should be consistent with the example provided and focus on delivering a detailed yet structured response. Ensure that the `knowledge_evidence` includes the necessary knowledge triples for each exercise.
@@ -98,7 +84,7 @@ elif exercise_type == "True_or_False":
                     - **Answer:** ['True' or 'False'] 
                     - **Concept:** Related Knowledge Concept (in Chinese, from historical records, matching concept_id) """
 
-ExerciseGenerator = ConversableAgent(  # 习题生成代理
+ExerciseGenerator = ConversableAgent(
     name="ExerciseGenerator",
     llm_config=llm_config,
     system_message=f"""
@@ -128,7 +114,6 @@ ExerciseGenerator = ConversableAgent(  # 习题生成代理
     """,
 )
 
-# 3个习题评判专家
 QualityEvaluationExpert_1 = ConversableAgent(
     name="Linguistic_Fluency_discriminator",
     llm_config=llm_config,
@@ -227,7 +212,7 @@ RecommendationManager = ConversableAgent(
            - **content**: The content of the exercise (e.g., question text).
            - **option**: The options provided for the exercise (if applicable).
            - **right_answer**: A list of the correct answers to the exercise.
-           - **knowledge_evidence**: Multiple knowledge triples, which should represent relationships such as "课程包含知识点", "知识点对应题目", and "知识点1的先修是知识点2".
+           - **knowledge_evidence**: Multiple knowledge triples, which should represent relationships.
            - **is_correct**: A boolean indicating whether the student answered correctly.
            - **explanation**: A detailed explanation of why the student’s answer was correct or incorrect, including the reasoning behind their answer.
          - Ensure that all **knowledge_evidence** entries are clearly formatted and correspond to the relevant knowledge concepts in the exercise, as exemplified in the provided template.
@@ -305,7 +290,6 @@ RecommendationManager.description = "host of the chat"
 def convert_to_natural_language(text):
     natural_language_text = ""
 
-    # 处理examples
     natural_language_text += "examples:\n"
     flag = 0
     for example in text['examples']:
@@ -326,7 +310,6 @@ def convert_to_natural_language(text):
         natural_language_text += "is_correct:" + str(is_correct) + "\n"
         natural_language_text += "explanation:" + explanation + "\n"
 
-    # 处理tasks，逻辑与examples相同
     natural_language_text += "tasks:\n"
     flag = 0
     for task in text['tasks']:
@@ -358,7 +341,7 @@ def extract_last_json(s):
             json_obj = json.loads(json_str, strict=False)
             return json_obj
         except json.JSONDecodeError as e:
-            print(f"解析错误：{e}")
+            print(f"error：{e}")
     return None
 
 
@@ -371,45 +354,45 @@ text = {
     "tasks": []
 }
 
-# 获取task数组
+
 stuRec_1000_with_tokens = pandas.read_csv("subject_data(1)/stuRec_1000_with_tokens.csv")
 stuRec_1000_with_tokens = stuRec_1000_with_tokens.iloc[26:38]
 selected_columns1 = ['content', 'option', 'right_answer', 'knowledge_evidence', 'is_correct', 'explanation']
 
-# 硬匹配
+
 hard_example, stuRec_1000_with_tokens = get_examples_by_concept(examples_with_explanation_with_tokens,
                                                                 stuRec_1000_with_tokens)
 hard_example = hard_example[selected_columns1]
 
 text['examples'] += hard_example.to_dict(orient='records')
 
-# 软匹配
+
 if not stuRec_1000_with_tokens.empty:
     res = get_examples_by_similarity(examples_with_explanation_with_tokens, stuRec_1000_with_tokens)[
         selected_columns1].to_dict(orient='records')
 
     text["examples"] += res
 
-# 匹配完成后重新读取习题记录信息
+
 stuRec_1000_with_tokens = pandas.read_csv("subject_data(1)/stuRec_1000_with_tokens.csv")
 stuRec_1000_with_tokens = stuRec_1000_with_tokens.iloc[26:38]
 selected_columns2 = ['content', 'option', 'right_answer', 'knowledge_evidence', 'is_correct']
 stuRec_1000_with_tokens = stuRec_1000_with_tokens[selected_columns2]
 
-# 计算习题记录的知识链
+
 # stuRec_1000_with_tokens["knowledge_chain"] = ""
 # for index, row in stuRec_1000_with_tokens.iterrows():
 #     chain = get_chain(row['concept_id'], row['concept_id'])
 #     stuRec_1000_with_tokens.at[index, 'knowledge_chain'] = chain
 
-# 将新题目explanation置空
+
 stuRec_1000_with_tokens["explanation"] = ""
 stuRec_1000_with_tokens = stuRec_1000_with_tokens.to_dict(orient='records')
 text["tasks"] = stuRec_1000_with_tokens
 
 text = json.dumps(text, ensure_ascii=False, indent=4)
 
-# 将提示词文本转换为自然语言形式
+
 n_text = json.loads(text)
 
 # n_text = convert_to_natural_language(n_text)
@@ -429,7 +412,7 @@ chat_res = out_groupchat_manager.initiate_chat(
     max_turns=20
 )
 
-# 获取生成的新题目
+
 chat_cost = chat_res.cost
 chat_his = chat_res.chat_history
 chat_his_str = chat_his[-1]['content']

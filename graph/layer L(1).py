@@ -8,8 +8,8 @@ if __name__ == '__main__':
 
     plt.rcParams['font.weight'] = 'bold'
     plt.rcParams['font.sans-serif'] = ['Times New Roman']
-    plt.rcParams['savefig.dpi'] = 600  # 图片像素
-    plt.rcParams['figure.dpi'] = 600  # 分辨率
+    plt.rcParams['savefig.dpi'] = 600
+    plt.rcParams['figure.dpi'] = 600
     plt.rcParams['xtick.labelsize'] = 20
     plt.rcParams['ytick.labelsize'] = 18
     plt.rcParams['mathtext.fontset'] = 'stix'
@@ -105,7 +105,6 @@ if __name__ == '__main__':
     ax1.spines['left'].set_color('black')  # Left border
 
     ax1.tick_params(axis='y', colors='#084C95')
-    # 以下为添加的绘制垂直线代码
     for i in x:
         ax1.axvline(x=i, ymin=0, ymax=1, color='gray', linestyle='--', linewidth=1, zorder=2)
     plt.savefig('txtfile/judgment_Qwen_pre6.png', dpi=600, bbox_inches='tight')
@@ -114,14 +113,13 @@ if __name__ == '__main__':
 if __name__ == '__main__':
     plt.rcParams['font.weight'] = 'bold'
     plt.rcParams['font.sans-serif'] = ['Times New Roman']
-    plt.rcParams['savefig.dpi'] = 600  # 图片像素
-    plt.rcParams['figure.dpi'] = 600  # 分辨率
+    plt.rcParams['savefig.dpi'] = 600  
+    plt.rcParams['figure.dpi'] = 600 
     plt.rcParams['xtick.labelsize'] = 18
     plt.rcParams['ytick.labelsize'] = 18
     plt.rcParams['mathtext.fontset'] = 'stix'
     plt.rcParams['axes.facecolor'] = 'white'
     plt.figure(figsize=(6, 4))
-    # 数据
     x = ['1e^{-5}', '1e^{-4}', '5e^{-3}', '1e^{-2}', '1e^{-1}']
     # hr10
     y1 = [0.0333, 0.0309, 0.0285, 0.0261, 0.0271]
@@ -143,12 +141,10 @@ if __name__ == '__main__':
     y2 = [0.0138, 0.0028, 0.0023, 0.0022, 0.0022]
     y3 = [0.0048, 0.0052, 0.0041, 0.004, 0.004]
     '''    '''
-    # 绘制三条折线，设置颜色和样式
     plt.plot(x, y1, label='CRGCN+D$^3$MBR', marker='o', color='#CC4242', linestyle='-')
     plt.plot(x, y2, label='CRGCN', marker='s', color='#1C84C3', linestyle='-')
     plt.plot(x, y3, label='DPT', marker='^', color='#4853A2', linestyle='-')
 
-    # 设置标题和轴标签
     #plt.title('Three Lines in One Graph')
     plt.xlabel('Noise Ratio', fontdict={'family': 'Times New Roman', "weight": "bold", 'size': 18})
     plt.ylabel('NDCG@20', fontdict={'family': 'Times New Roman', "weight": "bold", 'size': 18})
@@ -169,6 +165,5 @@ if __name__ == '__main__':
     plt.ylim(0, 0.03)
     plt.legend(loc='upper center', ncol=3, fontsize=12)
     plt.savefig('Noise Ratio_N20.png', dpi=600, bbox_inches='tight')
-    # 显示图形
     plt.show()
 '''
