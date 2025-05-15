@@ -280,7 +280,6 @@ agent_generator.description = "an exercise generation expert"
 def convert_to_natural_language(text):
     natural_language_text = ""
 
-    # 处理examples
     natural_language_text += "examples:\n"
     flag = 0
     for example in text['examples']:
