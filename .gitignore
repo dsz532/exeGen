@@ -3,6 +3,7 @@
 
 # IntelliJ project files
 .idea
+venv
 *.iml
 out
 gen
@@ -13,3 +14,4 @@ testData
 *.gitignore
 processed_data(1)
 bert/bert-base-chinese/pytorch_model.bin
+/txtfile/

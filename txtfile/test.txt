@@ -1,1 +1,0 @@
---type_of_prompt json_text --exercise_type Multiple_Choice --output_type json --Number_of_Generations 10

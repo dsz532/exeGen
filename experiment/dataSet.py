@@ -33,7 +33,7 @@ examples_with_explanation_with_tokens = pandas.read_csv("../subject_data(1)/exam
 # result_df = pandas.merge(problem_concept, problem, on='problem_id', how='left')
 # result_df = result_df.dropna(subset=['title'])
 #
-# user_problem = user_problem.query("user_id == 'U_29040364'")  # 样例用户对应的做题条目
+# user_problem = user_problem.query("user_id == 'U_29040364'")
 # result_df = pandas.merge(user_problem, result_df, on='problem_id', how='left')
 #
 # result_df = result_df.dropna(subset=['concept_id'])

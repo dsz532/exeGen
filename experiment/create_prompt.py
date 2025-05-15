@@ -31,7 +31,7 @@ def cosine_similarity(vec1, vec2):
     return dot_product / (norm_vec1 * norm_vec2)
 
 
-def get_examples_by_similarity(example, rec):  # 软匹配
+def get_examples_by_similarity(example, rec):
 
     result_rows = []
 
@@ -63,7 +63,7 @@ def get_examples_by_similarity(example, rec):  # 软匹配
     return result_df
 
 
-def get_examples_by_concept(example, rec):  # 硬匹配
+def get_examples_by_concept(example, rec):
     result_rows = []
     for index, rec_row in rec.iterrows():
         temp = example[example['concept_id'] == rec_row['concept_id']]
